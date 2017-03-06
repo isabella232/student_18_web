@@ -1,0 +1,16 @@
+@import "../../lib/bootstrap/scss/variables";
+
+.servers-status {
+
+  margin-top: 20px;
+
+  .table {
+    tr.has-error {
+      color: $red;
+    }
+  }
+
+  .servers-status-loading {
+    text-align: center;
+  }
+}
