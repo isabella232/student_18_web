@@ -1,0 +1,22 @@
+@import "../../../lib/bootstrap/scss/variables";
+
+$dropFileAreaWidth: 300px;
+$dropFileAreaHeight: 100px;
+
+.drop-file-area {
+  width: $dropFileAreaWidth;
+  height: $dropFileAreaHeight;
+  margin: 20px;
+
+  border: 2px dashed $green;
+  border-radius: 10px;
+
+  text-align: center;
+  line-height: $dropFileAreaHeight;
+
+  &:hover {
+    cursor: pointer;
+    border-color: darken($green, 20);
+    color: darken($green, 20);
+  }
+}

@@ -1,0 +1,18 @@
+@import "../../lib/bootstrap/scss/variables";
+
+.module {
+  margin: 10px;
+  padding: 10px;
+  background: lighten($black, 12);
+
+  .module-header {
+    white-space: nowrap;
+    font-size: 1.3em;
+    font-weight: bold;
+
+    span {
+      margin-right: 20px;
+      vertical-align: middle;
+    }
+  }
+}
