@@ -1,15 +1,15 @@
-import React from 'react'
+import React, {PropTypes as T} from 'react'
 
 import './drop-file-area.css'
 
 export default class DropFileArea extends React.Component {
+
+  static propTypes = {
+    onFileDropped: T.func
+  };
   
   constructor(props) {
     super(props);
-    
-    this.state = {
-      file: undefined
-    };
     
     this.handleClick = this.handleClick.bind(this);
     this.handleUpload = this.handleUpload.bind(this);
@@ -31,38 +31,25 @@ export default class DropFileArea extends React.Component {
   }
   
   render() {
-    const {file} = this.state;
-    console.log(file);
-    
-    const dropzone = file ? null : (
+    return (
+      <div>
+        <input type="file" ref="file-input" style={{display: "none"}} onChange={this.handleUpload}/>
+
         <div className="drop-file-area"
              onClick={this.handleClick}
              onDrop={this.handleDrop}
              onDragOver={(e) => e.preventDefault()}>
           Drop or click to upload a file
         </div>
-      );
-    
-    const resume = !file ? null : (
-        <div className="drop-file-resume">
-          {file.name}
-        </div>
-      );
-    
-    return (
-      <div>
-        <input type="file" ref="file-input" style={{display: "none"}} onChange={this.handleUpload}/>
-        
-        {dropzone || resume}
       </div>
     );
   }
   
   _handleFileDropped(files) {
-    if (files.length > 0) {
-      this.setState({
-        file: files[0]
-      });
+    const {onFileDropped} = this.props;
+
+    if (files.length > 0 && typeof onFileDropped === 'function') {
+      onFileDropped(files[0]);
     }
   }
 }
