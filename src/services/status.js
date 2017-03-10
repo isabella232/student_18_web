@@ -55,6 +55,26 @@ export default class StatusService {
     }
   }
 
+  getAvailableServerAddress() {
+    return Object.keys(this.status).reduce((acc, addr) => {
+      const system = this.status[addr].system;
+      // TODO : CoSi not working well with some servers ???
+      if (system && system.Status.field.Description.match(/epfl/i)) {
+        return addr;
+      }
+
+      return acc;
+    }, '');
+  }
+
+  getAvailableRoster() {
+    return Object.keys(this.status)
+      .filter((addr) => !!this.status[addr].system)
+      .map((addr) => {
+        return this.status[addr].server;
+      });
+  }
+
   _triggerEvent(listener) {
     if (typeof listener.onStatusUpdate === 'function') {
       listener.onStatusUpdate(this.status);
