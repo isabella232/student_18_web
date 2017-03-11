@@ -1,11 +1,16 @@
 @import "../../lib/bootstrap/scss/variables";
 
 .module {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  height: 200px;
   margin: 10px;
   padding: 10px;
   background: lighten($black, 12);
 
   .module-header {
+    flex: none;
     white-space: nowrap;
     font-size: 1.3em;
     font-weight: bold;
@@ -13,6 +18,23 @@
     span {
       margin-right: 20px;
       vertical-align: middle;
+    }
+  }
+
+  .module-body {
+    flex: 1;
+
+    .module-leave {
+      display: none;
+    }
+
+    .module-enter {
+      opacity: 0;
+
+      &.module-enter-active {
+        opacity: 1;
+        transition: opacity 300ms ease-in-out;
+      }
     }
   }
 }

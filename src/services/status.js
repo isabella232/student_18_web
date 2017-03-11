@@ -58,8 +58,7 @@ export default class StatusService {
   getAvailableServerAddress() {
     return Object.keys(this.status).reduce((acc, addr) => {
       const system = this.status[addr].system;
-      // TODO : CoSi not working well with some servers ???
-      if (system && system.Status.field.Description.match(/epfl/i)) {
+      if (system) {
         return addr;
       }
 

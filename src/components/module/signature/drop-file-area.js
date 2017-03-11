@@ -1,11 +1,12 @@
 import React, {PropTypes as T} from 'react'
+import FontAwesome from 'react-fontawesome'
 
 import './drop-file-area.css'
 
 export default class DropFileArea extends React.Component {
-
+  
   static propTypes = {
-    onFileDropped: T.func
+    onFileDrop: T.func
   };
   
   constructor(props) {
@@ -32,24 +33,31 @@ export default class DropFileArea extends React.Component {
   
   render() {
     return (
-      <div>
+      <div className="drop-file-area">
         <input type="file" ref="file-input" style={{display: "none"}} onChange={this.handleUpload}/>
-
-        <div className="drop-file-area"
+  
+        <div className="drop-file-container"
              onClick={this.handleClick}
              onDrop={this.handleDrop}
              onDragOver={(e) => e.preventDefault()}>
-          Drop or click to upload a file
+          
+          <FontAwesome name="download"/><br/>
+          Click or drop a file
         </div>
       </div>
     );
   }
   
+  /**
+   * Trigger the file dropped event with the given file
+   * @param files {Array}
+   * @private
+   */
   _handleFileDropped(files) {
-    const {onFileDropped} = this.props;
+    const {onFileDrop} = this.props;
 
-    if (files.length > 0 && typeof onFileDropped === 'function') {
-      onFileDropped(files[0]);
+    if (files.length > 0 && typeof onFileDrop === 'function') {
+      onFileDrop(files[0]);
     }
   }
 }
