@@ -87,8 +87,12 @@ export default class VerifyModule extends React.Component {
     
     const result = !isVerified ? null : (
         <FormGroup>
-          <Label>Hash: <strong>{isHashCorrect ? 'verified' : 'wrong'}</strong></Label><br/>
-          <Label>Signature: <strong>{isSignatureCorrect ? 'verified' : 'wrong'}</strong></Label>
+          <Label>
+            Hash: <strong>{isHashCorrect ? 'verified' : <span className="has-error">wrong</span>}</strong>
+          </Label><br/>
+          <Label>
+            Signature: <strong>{isSignatureCorrect ? 'verified' : <span className="has-error">wrong</span>}</strong>
+          </Label>
         </FormGroup>
       );
     
@@ -96,13 +100,13 @@ export default class VerifyModule extends React.Component {
       <Form>
         <FormGroup check>
           <Label check onClick={this.handleFileReset}>
-            <Input type="radio" name="step" checked={!file}/>
+            <Input type="radio" name="step" checked={!file} readOnly/>
             Upload the file
           </Label>
         </FormGroup>
-        <FormGroup check>
+        <FormGroup className={!file ? 'disable' : ''} check>
           <Label check>
-            <Input type="radio" name="step" checked={!!file}/>
+            <Input type="radio" name="step" checked={!!file} readOnly/>
             Upload the signature
           </Label>
         </FormGroup>
