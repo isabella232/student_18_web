@@ -1,12 +1,12 @@
 import React from 'react'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
-import {Row, Col} from 'reactstrap'
+import {Row, Col, Form, FormGroup, Label, Input} from 'reactstrap'
 
 import './module-verify.css'
 import Module from '../module'
 import DropFileArea from './drop-file-area'
 import {readAsString, hashFile} from '../../../utils/file'
-import {hex2buf} from '../../../utils/buffer'
+import {hex2buf, buf2hex} from '../../../utils/buffer'
 
 export default class VerifyModule extends React.Component {
   
@@ -16,13 +16,19 @@ export default class VerifyModule extends React.Component {
     this.state = {
       file: undefined,
       isVerified: false,
+      isHashCorrect: false,
       isSignatureCorrect: false,
       error: ''
     };
     
     this.handleFileDrop = this.handleFileDrop.bind(this);
+    this.handleFileReset = this.handleFileReset.bind(this);
   }
   
+  /**
+   * Handle a file dropped in the drop area
+   * @param fileDropped {File}
+   */
   handleFileDrop(fileDropped) {
     const {file, isVerified} = this.state;
     
@@ -37,6 +43,18 @@ export default class VerifyModule extends React.Component {
     }
     
     this._verifySignature(fileDropped);
+  }
+  
+  /**
+   * Reset the current state to be able to change the file selected
+   */
+  handleFileReset() {
+    this.setState({
+      file: undefined,
+      isVerified: false,
+      isSignatureCorrect: false,
+      isHashCorrect: false
+    });
   }
   
   render() {
@@ -61,20 +79,36 @@ export default class VerifyModule extends React.Component {
   }
   
   _generateFeedback() {
-    const {file, isVerified, isSignatureCorrect, error} = this.state;
-    
+    const {file, isVerified, isSignatureCorrect, isHashCorrect, error} = this.state;
+  
     if (error.length > 0) {
       return <p key="step-error" className="has-error">{error}</p>
     }
-    else if (!file) {
-      return <p key="step-1">1. Upload the file</p>
-    }
-    else if (!isVerified) {
-      return <p key="step-2">2. Upload the signature file</p>
-    }
-    else {
-      return <p key="step-3">{isSignatureCorrect ? 'Yes!' : 'Hmm...'}</p>
-    }
+    
+    const result = !isVerified ? null : (
+        <FormGroup>
+          <Label>Hash: <strong>{isHashCorrect ? 'verified' : 'wrong'}</strong></Label><br/>
+          <Label>Signature: <strong>{isSignatureCorrect ? 'verified' : 'wrong'}</strong></Label>
+        </FormGroup>
+      );
+    
+    return (
+      <Form>
+        <FormGroup check>
+          <Label check onClick={this.handleFileReset}>
+            <Input type="radio" name="step" checked={!file}/>
+            Upload the file
+          </Label>
+        </FormGroup>
+        <FormGroup check>
+          <Label check>
+            <Input type="radio" name="step" checked={!!file}/>
+            Upload the signature
+          </Label>
+        </FormGroup>
+        {result}
+      </Form>
+    );
   }
   
   /**
@@ -100,6 +134,7 @@ export default class VerifyModule extends React.Component {
                   this.setState({
                     error: '',
                     isVerified: true,
+                    isHashCorrect: buf2hex(hash) === info.hash,
                     isSignatureCorrect: cryptoJS.verify(pubkey, hash, signature) // eslint-disable-line
                   });
                   

@@ -9,6 +9,12 @@
       color: $red;
     }
 
+    form {
+      input {
+        margin-right: 20px;
+      }
+    }
+
     .feedback-leave {
       display: none;
     }
