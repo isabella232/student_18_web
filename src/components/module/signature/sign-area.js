@@ -46,39 +46,41 @@ export default class SignArea extends React.Component {
     this._signPromise = new Promise((resolve, reject) => {
       hashFile(file).then(
         (hash) => {
-          const address = this.service.getAvailableServerAddress();
           const roster = this.service.getAvailableRoster();
-      
+          if (roster.length === 0) {
+            reject('No node available.');
+            return;
+          }
+          
+          const servers = roster.map(r => r.server);
+          const address = roster[0].address;
+          
           if (address.length > 0) {
-            CothorityWebsocket.getSignature(hash, address, roster)
+            console.log(address);
+            CothorityWebsocket.getSignature(hash, address, servers)
               .then(
                 (response) => {
                   const signature = (response.signature || []).slice(0, 64);
               
-                  this._generateSignatureFile(signature, file, hash, roster);
+                  this._generateSignatureFile(signature, file, hash, servers);
                   this._triggerOnBack();
                   
                   resolve();
                 }
               )
               .catch(() => {
-                this.setState({
-                  error: 'Oops, something went wrong...'
-                });
-                
-                reject();
+                reject('Oops, something went wrong...');
               })
           }
           else {
-            this.setState({
-              error: 'It seems there is no server available'
-            });
-            
-            reject();
+            reject('It seems there is no server available');
           }
         }
       );
     });
+    
+    // We want to display the error message if it occurs
+    this._signPromise.catch(e => this.setState({error: e}));
   }
 
   render() {

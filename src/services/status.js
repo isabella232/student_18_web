@@ -55,22 +55,14 @@ export default class StatusService {
     }
   }
 
-  getAvailableServerAddress() {
-    return Object.keys(this.status).reduce((acc, addr) => {
-      const system = this.status[addr].system;
-      if (system) {
-        return addr;
-      }
-
-      return acc;
-    }, '');
-  }
-
   getAvailableRoster() {
     return Object.keys(this.status)
-      .filter((addr) => !!this.status[addr].system)
-      .map((addr) => {
-        return this.status[addr].server;
+      .filter((address) => !!this.status[address].system)
+      .map((address) => {
+        return {
+          address,
+          server: this.status[address].server
+        };
       });
   }
 
