@@ -1,5 +1,6 @@
 import React from 'react'
 import {Table} from 'reactstrap'
+import Moment from 'moment'
 
 import './servers-status.css'
 import LastUpdate from './last-update'
@@ -98,7 +99,7 @@ function generateRows(status) {
         <td>{data.Host}</td>
         <td>{data.ConnType}</td>
         <td>{data.Port}</td>
-        <td>{data.Uptime}</td>
+        <td>{formatUptime(data.Uptime)}</td>
         <td>{parseTraffic(data.RX_bytes, data.TX_bytes, data.Uptime)}</td>
         <td>{data.Available_Services}</td>
         <td>{data.Version}</td>
@@ -136,4 +137,19 @@ function parseUptime(uptime) {
   uptime.split(/[hm.]/).reverse().slice(1).forEach((t, i) => seconds += Number(t) * TO_SECONDS_ADAPTER[i]);
 
   return seconds;
+}
+
+/**
+ * Format the uptime in a nicer string
+ * @param uptime
+ */
+function formatUptime(uptime) {
+  if (!uptime) {
+    return '';
+  }
+  
+  const seconds = parseUptime(uptime);
+  const duration = Moment.duration(seconds, 'seconds');
+  
+  return duration.humanize();
 }
