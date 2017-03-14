@@ -1,4 +1,5 @@
 import React from 'react'
+import Faker from 'faker'
 import {mount} from 'enzyme'
 
 import ModuleVerify from './module-verify'
@@ -54,6 +55,23 @@ describe(ModuleVerify, () => {
     return wrapper.instance()._verifyPromise.then(() => {
       expect(wrapper.instance().state.isSignatureCorrect).toBeTruthy();
     });
+  });
+
+  it('should reset the state', () => {
+    const wrapper = mount(<ModuleVerify/>);
+    wrapper.instance().handleFileDrop(MOCK_FILE);
+    expect(wrapper.instance().state.file).toBeDefined();
+
+    wrapper.instance().handleFileReset();
+    expect(wrapper.instance().state.file).toBeUndefined();
+  });
+
+  it('should display the error', () => {
+    const wrapper = mount(<ModuleVerify/>);
+    const error = Faker.lorem.sentence();
+    wrapper.setState({error: error});
+
+    expect(wrapper.text()).toContain(error);
   });
   
 });

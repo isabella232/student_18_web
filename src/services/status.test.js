@@ -102,4 +102,24 @@ describe(StatusService, () => {
     service.subscribe(listener);
   });
 
+  it('should return the roster', () => {
+    CothorityWS.getStatus.mockReturnValue(Promise.resolve({
+      system: {}
+    }));
+
+    return new Promise((resolve) => {
+      const service = new StatusService(30000);
+      const listener = {
+        onStatusUpdate() {
+          if (service.status.localhost) {
+            expect(service.getAvailableRoster()).toHaveLength(1);
+            resolve();
+          }
+        }
+      };
+
+      service.subscribe(listener);
+    });
+  });
+
 });
