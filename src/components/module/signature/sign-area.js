@@ -72,9 +72,6 @@ export default class SignArea extends React.Component {
                 reject('Oops, something went wrong...');
               })
           }
-          else {
-            reject('It seems there is no server available');
-          }
         }
       );
     });

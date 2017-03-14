@@ -1,9 +1,5 @@
 jest.mock('../../../services/status', () => class {
-  getAvailableServerAddress = jest.fn()
-  
-  getAvailableRoster() {
-    return [];
-  }
+  getAvailableRoster = jest.fn()
 });
 
 jest.mock('../../../services/websocket', () => new class {
@@ -53,7 +49,13 @@ describe(SignArea, () => {
     
     CothorityWebsocket.getSignature.mockReturnValue(Promise.resolve({signature: 'super-signature'}));
     const wrapper = mount(<SignArea file={MOCK_FILE}/>);
-    wrapper.instance().service.getAvailableServerAddress.mockReturnValue('address');
+    const roster = [{
+      address: 'address',
+      server: {
+        public: new Uint8Array([])
+      }
+    }];
+    wrapper.instance().service.getAvailableRoster.mockReturnValue(roster);
     
     wrapper.find(Button).at(1).simulate('click');
     
@@ -67,7 +69,7 @@ describe(SignArea, () => {
     
     CothorityWebsocket.getSignature.mockReturnValue(Promise.reject());
     const wrapper = mount(<SignArea file={MOCK_FILE}/>);
-    wrapper.instance().service.getAvailableServerAddress.mockReturnValue('address');
+    wrapper.instance().service.getAvailableRoster.mockReturnValue([{address: 'address'}]);
     
     wrapper.find(Button).at(1).simulate('click');
     
@@ -76,16 +78,16 @@ describe(SignArea, () => {
     });
   });
   
-  it('should display an error because of missing address', () => {
+  it('should display an error because of empty roster', () => {
     expect.assertions(1);
     
     const wrapper = mount(<SignArea file={MOCK_FILE}/>);
-    wrapper.instance().service.getAvailableServerAddress.mockReturnValue('');
+    wrapper.instance().service.getAvailableRoster.mockReturnValue([]);
   
     wrapper.find(Button).at(1).simulate('click');
   
     return wrapper.instance()._signPromise.catch(() => {
-      expect(wrapper.text()).toContain('no server');
+      expect(wrapper.text()).toContain('No node available');
     });
   })
   
