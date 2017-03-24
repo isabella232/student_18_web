@@ -6,7 +6,7 @@ import './sign-area.css'
 import {hashFile} from '../../../utils/file'
 import {buf2hex} from '../../../utils/buffer'
 import CothorityWebsocket from '../../../services/websocket'
-import CothorityStatus from '../../../services/status'
+import StatusService from '../../../services/status'
 
 export default class SignArea extends React.Component {
 
@@ -17,8 +17,6 @@ export default class SignArea extends React.Component {
 
   constructor(props) {
     super(props);
-
-    this.service = new CothorityStatus();
     
     this.state = {
       isSigning: false,
@@ -46,7 +44,7 @@ export default class SignArea extends React.Component {
     this._signPromise = new Promise((resolve, reject) => {
       hashFile(file).then(
         (hash) => {
-          const roster = this.service.getAvailableRoster();
+          const roster = StatusService.getAvailableRoster();
           if (roster.length === 0) {
             reject('No node available.');
             return;

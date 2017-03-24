@@ -35,6 +35,35 @@ class CothorityWebsocket {
 
   }
 
+  getLatestBlock(address, id) {
+
+    return new Promise((resolve, reject) => {
+      this.latest_block = createSocket(
+        this.latest_block,
+        address + '/Skipchain/GetUpdateChain',
+        (e) => reject(e),
+        (data) => resolve(CothorityMessages.decodeLatestBlockResponse(data)),
+        CothorityMessages.createLatestBlockRequest(id)
+      )
+    });
+
+  }
+
+
+  storeNewBlock(address, id, servers) {
+
+    return new Promise((resolve, reject) => {
+      this.store_block = createSocket(
+        this.store_block,
+        address + '/Skipchain/StoreSkipBlock',
+        (e) => reject(e),
+        (data) => resolve(CothorityMessages.decodeStoreSkipBlockResponse(data)),
+        CothorityMessages.createStoreSkipBlockRequest(id, servers)
+      )
+    });
+
+  }
+
 }
 
 export default new CothorityWebsocket();

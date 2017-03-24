@@ -12,8 +12,6 @@ export default class ServersStatus extends React.Component {
   constructor(props) {
     super(props);
 
-    this.service = new StatusService(30000);
-
     this.state = {
       status: [],
       isLoading: true
@@ -28,11 +26,11 @@ export default class ServersStatus extends React.Component {
   }
 
   componentDidMount() {
-    this.service.subscribe(this);
+    StatusService.subscribe(this);
   }
 
   componentWillUnmount() {
-    this.service.unsubscribe(this);
+    StatusService.unsubscribe(this);
   }
 
   render() {

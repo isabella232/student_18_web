@@ -38,14 +38,66 @@ const signatureResponse = new Type$5("SignatureResponse")
   .add(new Field$4('hash', 1, 'bytes', 'required'))
   .add(new Field$4('signature', 2, 'bytes', 'required'));
 
+const {Type: Type$6, Field: Field$5} = protobuf;
+
+const StoreSkipBlockRequest = new Type$6("StoreSkipBlockRequest")
+  .add(new Field$5('LatestID', 1, 'bytes'))
+  .add(new Field$5('NewBlock', 2, 'SkipBlock'));
+
+const {Type: Type$7, Field: Field$6} = protobuf;
+
+const StoreSkipBlockResponse = new Type$7("StoreSkipBlockResponse")
+  .add(new Field$6('Previous', 1, 'SkipBlock'))
+  .add(new Field$6('Latest', 2, 'SkipBlock'));
+
+const {Type: Type$8, Field: Field$7} = protobuf;
+
+const LatestBlockRequest = new Type$8("LatestBlockRequest")
+  .add(new Field$7('LatestID', 1, 'bytes'));
+
+const {Type: Type$9, Field: Field$8} = protobuf;
+
+const LatestBlockResponse = new Type$9("LatestBlockResponse")
+  .add(new Field$8('Update', 1, 'SkipBlock', 'repeated'));
+
+const {Type: Type$10, Field: Field$9} = protobuf;
+
+const SkipBlock = new Type$10("SkipBlock")
+  .add(new Field$9('Index', 1, 'sint32'))
+  .add(new Field$9('Height', 2, 'sint32'))
+  .add(new Field$9('MaximumHeight', 3, 'sint32'))
+  .add(new Field$9('BaseHeight', 4, 'sint32'))
+  .add(new Field$9('BackLinkIDs', 5, 'bytes', 'repeated'))
+  .add(new Field$9('VerifierIDs', 6, 'bytes', 'repeated'))
+  .add(new Field$9('ParentBlockID', 7, 'bytes'))
+  .add(new Field$9('GenesisID', 8, 'bytes'))
+  .add(new Field$9('RespPublic', 9, 'bytes', 'repeated'))
+  .add(new Field$9('Data', 10, 'bytes'))
+  .add(new Field$9('Roster', 11, 'Roster'))
+  .add(new Field$9('Hash', 12, 'bytes'))
+  .add(new Field$9('ForwardLink', 13, 'BlockLink', 'repeated'))
+  .add(new Field$9('ChildSL', 14, 'bytes'));
+
+const {Type: Type$11, Field: Field$10} = protobuf;
+
+const BlockLink = new Type$11("BlockLink")
+  .add(new Field$10('Hash', 1, 'bytes'))
+  .add(new Field$10('Signature', 2, 'bytes'));
+
 const {Root} = protobuf;
 
 const root = new Root();
 root.define("cothority")
-  .add(status)
+  .add(SkipBlock)
   .add(serverIdentity)
-  .add(StatusResponse)
   .add(roster)
+  .add(BlockLink)
+  .add(LatestBlockRequest)
+  .add(LatestBlockResponse)
+  .add(StoreSkipBlockRequest)
+  .add(StoreSkipBlockResponse)
+  .add(status)
+  .add(StatusResponse)
   .add(signatureRequest)
   .add(signatureResponse);
 
@@ -134,6 +186,46 @@ class CothorityMessages extends CothorityProtobuf {
     response = new Uint8Array(response);
 
     return this.decodeMessage('StatusResponse', response);
+  }
+
+  createStoreSkipBlockRequest(id, servers) {
+    if (!(id instanceof Uint8Array)) {
+      throw new Error("message must be a instance of Uint8Array");
+    }
+
+    return this.encodeMessage('StoreSkipBlockRequest', {
+      LatestID: id,
+      NewBlock: {
+        MaximumHeight: 1,
+        BaseHeight: 1,
+        Data: new Uint8Array([]),
+        Roster: {
+          list: servers
+        }
+      }
+    });
+  }
+
+  decodeStoreSkipBlockResponse(response) {
+    response = new Uint8Array(response);
+
+    return this.decodeMessage('StoreSkipBlockResponse', response);
+  }
+
+  createLatestBlockRequest(id) {
+    if (!(id instanceof Uint8Array)) {
+      throw new Error("message must be a instance of Uint8Array");
+    }
+
+    return this.encodeMessage('LatestBlockRequest', {
+      LatestID: id
+    });
+  }
+
+  decodeLatestBlockResponse(response) {
+    response = new Uint8Array(response);
+
+    return this.decodeMessage('LatestBlockResponse', response);
   }
   
 }

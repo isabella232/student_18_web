@@ -1,37 +1,33 @@
-import ServersList from '../constants/servers'
 import CothorityWS from './websocket'
+import SkipChainService from './skipchain'
+import {hex2buf} from '../utils/buffer'
 
 const REFRESH_INTERVAL = 30000;
 
-export default class StatusService {
+export class StatusService {
 
   status = {};
   listeners = [];
+  servers = [];
 
-  constructor(refreshInterval = REFRESH_INTERVAL) {
+  constructor() {
+    this.refreshInterval = REFRESH_INTERVAL;
 
-    // Set up a timer to update status every 30s
-    const self = this;
-    const updateStatus = function () {
-      ServersList.forEach((address) => CothorityWS.getStatus(address)
-        .then((response) => {
-          response.timestamp = Date.now();
-          self.status[address] = response;
-          self.triggerUpdate();
+    // Get the servers list and the genesis block id
+    fetch('http://skipchain.dedis.ch', {headers: {'Content-Type': 'application/json'}})
+      .then(
+        (response) => response.json().then(data => {
+          SkipChainService.getLatestBlock(data.servers, hex2buf(data.genesisBlockID))
+            .then(
+              (servers) => {
+                this.servers = servers;
+                this._updateStatus();
+              }
+            )
+            .catch((e) => console.log('Oops', e));
         })
-        .catch(() => {
-          self.status[address] = {
-            timestamp: Date.now(),
-            server: {address}
-          };
-          self.triggerUpdate();
-        })
-      );
-
-      setTimeout(updateStatus, refreshInterval);
-    };
-
-    updateStatus();
+      )
+      .catch(e => console.log(e));
   }
 
   triggerUpdate() {
@@ -66,9 +62,32 @@ export default class StatusService {
       });
   }
 
+  _updateStatus() {
+    const self = this;
+
+    this.servers.forEach((address) => CothorityWS.getStatus(address)
+      .then((response) => {
+        response.timestamp = Date.now();
+        self.status[address] = response;
+        self.triggerUpdate();
+      })
+      .catch(() => {
+        self.status[address] = {
+          timestamp: Date.now(),
+          server: {address}
+        };
+        self.triggerUpdate();
+      })
+    );
+
+    setTimeout(() => self._updateStatus(), self.refreshInterval);
+  }
+
   _triggerEvent(listener) {
     if (typeof listener.onStatusUpdate === 'function') {
       listener.onStatusUpdate(this.status);
     }
   }
 }
+
+export default new StatusService();
