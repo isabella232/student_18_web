@@ -5,5 +5,9 @@ export function hex2buf(hex) {
 }
 
 export function buf2hex(buffer) {
+  if (!buffer) {
+    return '';
+  }
+
   return ByteBuffer.wrap(buffer).toHex();
 }

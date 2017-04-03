@@ -5,14 +5,15 @@ import {Row, Col, Form, FormGroup, Label, Input} from 'reactstrap'
 import './module-verify.css'
 import Module from '../module'
 import DropFileArea from './drop-file-area'
+import GenesisService from '../../../services/genesis'
 import {readAsString, hashFile} from '../../../utils/file'
 import {hex2buf, buf2hex} from '../../../utils/buffer'
 
 export default class VerifyModule extends React.Component {
-  
+
   constructor(props) {
     super(props);
-    
+
     this.state = {
       file: undefined,
       isVerified: false,
@@ -20,18 +21,18 @@ export default class VerifyModule extends React.Component {
       isSignatureCorrect: false,
       error: ''
     };
-    
+
     this.handleFileDrop = this.handleFileDrop.bind(this);
     this.handleFileReset = this.handleFileReset.bind(this);
   }
-  
+
   /**
    * Handle a file dropped in the drop area
    * @param fileDropped {File}
    */
   handleFileDrop(fileDropped) {
     const {file, isVerified} = this.state;
-    
+
     if (!file || (!!file && isVerified)) {
       // Either the file hasn't been uploaded yet or we have already verified the previous one
       this.setState({
@@ -41,10 +42,10 @@ export default class VerifyModule extends React.Component {
       });
       return;
     }
-    
+
     this._verifySignature(fileDropped);
   }
-  
+
   /**
    * Reset the current state to be able to change the file selected
    */
@@ -56,10 +57,10 @@ export default class VerifyModule extends React.Component {
       isHashCorrect: false
     });
   }
-  
+
   render() {
     const feedback = this._generateFeedback();
-    
+
     return (
       <Module className="module-verify" title="Verify" icon="unlock">
         <Row>
@@ -77,14 +78,14 @@ export default class VerifyModule extends React.Component {
       </Module>
     );
   }
-  
+
   _generateFeedback() {
     const {file, isVerified, isSignatureCorrect, isHashCorrect, error} = this.state;
-  
+
     if (error.length > 0) {
       return <p key="step-error" className="has-error">{error}</p>
     }
-    
+
     const result = !isVerified ? null : (
         <FormGroup>
           <Label>
@@ -95,7 +96,7 @@ export default class VerifyModule extends React.Component {
           </Label>
         </FormGroup>
       );
-    
+
     return (
       <Form>
         <FormGroup check>
@@ -114,7 +115,7 @@ export default class VerifyModule extends React.Component {
       </Form>
     );
   }
-  
+
   /**
    * Check the signature
    * @param infoFile {File}
@@ -122,36 +123,43 @@ export default class VerifyModule extends React.Component {
    */
   _verifySignature(infoFile) {
     const {file} = this.state;
-  
+
     this._verifyPromise = new Promise((resolve, reject) => {
       readAsString(infoFile).then(
         (info) => {
-          hashFile(file)
-            .then(
+          try {
+            info = JSON.parse(info);
+
+            if (!info.genesisID || !info.blockID || !info.hash || !info.signature) {
+              throw new Error();
+            }
+          } catch (e) {
+            this.setState({
+              error: 'The json file is unreadable. Please make sure you provided the correct signature file.'
+            });
+
+            reject(e);
+            return;
+          }
+
+          GenesisService.getLatestFromGenesisID(info.genesisID, info.blockID).then((block) => {
+            const pubkey = cryptoJS.aggregateKeys(block.Roster.list.map(s => s.public)); // eslint-disable-line
+
+            hashFile(file).then(
               (hash) => {
-                try {
-                  info = JSON.parse(info);
-              
-                  const pubkey = hex2buf(info.public_key);
-                  const signature = hex2buf(info.signature);
-              
-                  this.setState({
-                    error: '',
-                    isVerified: true,
-                    isHashCorrect: buf2hex(hash) === info.hash,
-                    isSignatureCorrect: cryptoJS.verify(pubkey, hash, signature) // eslint-disable-line
-                  });
-                  
-                  resolve();
-                } catch (e) {
-                  this.setState({
-                    error: 'The json file is unreadable. Please make sure you provided the correct signature file.'
-                  });
-                  
-                  reject();
-                }
+                const signature = hex2buf(info.signature);
+
+                this.setState({
+                  error: '',
+                  isVerified: true,
+                  isHashCorrect: buf2hex(hash) === info.hash,
+                  isSignatureCorrect: cryptoJS.verify(pubkey, hash, signature) // eslint-disable-line
+                });
+
+                resolve();
               }
             );
+          }).catch((e) => reject(e));
         }
       );
     });

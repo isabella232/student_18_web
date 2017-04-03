@@ -5,8 +5,9 @@ import FontAwesome from 'react-fontawesome'
 import './sign-area.css'
 import {hashFile} from '../../../utils/file'
 import {buf2hex} from '../../../utils/buffer'
+import {tcp2ws} from '../../../utils/network'
 import CothorityWebsocket from '../../../services/websocket'
-import StatusService from '../../../services/status'
+import GenesisService from '../../../services/genesis'
 
 export default class SignArea extends React.Component {
 
@@ -17,14 +18,38 @@ export default class SignArea extends React.Component {
 
   constructor(props) {
     super(props);
-    
+
     this.state = {
       isSigning: false,
-      error: ''
+      error: '',
+
+      latestBlock: null,
+      genesisID: ''
     };
 
     this.handleBackAction = this.handleBackAction.bind(this);
     this.handleSign = this.handleSign.bind(this);
+  }
+
+  componentWillMount() {
+    GenesisService.subscribe(this);
+  }
+
+  componentWillUnmount() {
+    GenesisService.unsubscribe(this);
+  }
+
+  onGenesisUpdate(blocks, genesisList, currGenesis) {
+    this.setState({
+      genesisID: currGenesis,
+      block: blocks.slice().pop()
+    });
+  }
+
+  onGenesisError(error) {
+    this.setState({
+      error: error.message
+    });
   }
 
   handleBackAction() {
@@ -38,31 +63,28 @@ export default class SignArea extends React.Component {
     this.setState({
       isSigning: true
     });
-    
+
     const {file} = this.props;
+    // We assume we have a valid genesis ID and the associated block
+    // else an error will be displayed before letting the user sign
+    const {genesisID, block} = this.state;
+
+    const servers = block.Roster.list.slice();
 
     this._signPromise = new Promise((resolve, reject) => {
       hashFile(file).then(
         (hash) => {
-          const roster = StatusService.getAvailableRoster();
-          if (roster.length === 0) {
-            reject('No node available.');
-            return;
-          }
-          
-          const servers = roster.map(r => r.server);
-          const address = roster[0].address;
-          
+          const address = tcp2ws(servers[0].address);
+
           if (address.length > 0) {
-            console.log(address);
             CothorityWebsocket.getSignature(hash, address, servers)
               .then(
                 (response) => {
                   const signature = (response.signature || []).slice(0, 64);
-              
-                  this._generateSignatureFile(signature, file, hash, servers);
+
+                  this._generateSignatureFile(signature, file, hash, genesisID, buf2hex(block.Hash));
                   this._triggerOnBack();
-                  
+
                   resolve();
                 }
               )
@@ -73,7 +95,7 @@ export default class SignArea extends React.Component {
         }
       );
     });
-    
+
     // We want to display the error message if it occurs
     this._signPromise.catch(e => this.setState({error: e}));
   }
@@ -90,10 +112,10 @@ export default class SignArea extends React.Component {
         </div>
       );
     }
-    
+
     const {file} = this.props;
-    const size = (file.size / (1024*1024)).toFixed(2);
-    
+    const size = (file.size / (1024 * 1024)).toFixed(2);
+
     const {isSigning} = this.state;
     const signAction = isSigning ? <div className="loading"><FontAwesome name="circle-o-notch" size="2x" spin/></div> :
       <Button color="success" onClick={this.handleSign}>Sign</Button>;
@@ -111,28 +133,28 @@ export default class SignArea extends React.Component {
       </div>
     );
   }
-  
+
   /**
    * Generate and download a file with the different information about the signature
    * @param signature {Uint8Array} signature returned by the server
    * @param file {File} file to be signed
    * @param hash {Uint8Array} Hash of the file
-   * @param roster {Array} list of servers
+   * @param genesisID {String} genesisID hexlify
+   * @param blockID {String} block ID hexlify
    * @private
    */
-  _generateSignatureFile(signature, file, hash, roster) {
-    const aggKey = cryptoJS.aggregateKeys(roster.map((r) => r.public)); //eslint-disable-line
-    
+  _generateSignatureFile(signature, file, hash, genesisID, blockID) {
     const body = {
       filename: file.name,
       signature: buf2hex(signature),
       hash: buf2hex(hash),
-      public_key: buf2hex(aggKey)
+      genesisID,
+      blockID
     };
-  
+
     saveAs(new Blob([JSON.stringify(body, null, '\t')]), `signature_${Date.now()}.json`); // eslint-disable-line
   }
-  
+
   _triggerOnBack() {
     const {onBack} = this.props;
     if (typeof onBack === 'function') {

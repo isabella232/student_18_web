@@ -71,12 +71,11 @@ const SkipBlock = new Type$10("SkipBlock")
   .add(new Field$9('VerifierIDs', 6, 'bytes', 'repeated'))
   .add(new Field$9('ParentBlockID', 7, 'bytes'))
   .add(new Field$9('GenesisID', 8, 'bytes'))
-  .add(new Field$9('RespPublic', 9, 'bytes', 'repeated'))
-  .add(new Field$9('Data', 10, 'bytes'))
-  .add(new Field$9('Roster', 11, 'Roster'))
-  .add(new Field$9('Hash', 12, 'bytes'))
-  .add(new Field$9('ForwardLink', 13, 'BlockLink', 'repeated'))
-  .add(new Field$9('ChildSL', 14, 'bytes'));
+  .add(new Field$9('Data', 9, 'bytes'))
+  .add(new Field$9('Roster', 10, 'Roster'))
+  .add(new Field$9('Hash', 11, 'bytes'))
+  .add(new Field$9('ForwardLink', 12, 'BlockLink', 'repeated'))
+  .add(new Field$9('ChildSL', 13, 'bytes'));
 
 const {Type: Type$11, Field: Field$10} = protobuf;
 

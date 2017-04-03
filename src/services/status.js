@@ -1,6 +1,6 @@
 import CothorityWS from './websocket'
-import SkipChainService from './skipchain'
-import {hex2buf} from '../utils/buffer'
+import GenesisService from './genesis'
+import {tcp2ws} from '../utils/network'
 
 const REFRESH_INTERVAL = 30000;
 
@@ -8,26 +8,26 @@ export class StatusService {
 
   status = {};
   listeners = [];
+
   servers = [];
+  genesisList = [];
 
   constructor() {
     this.refreshInterval = REFRESH_INTERVAL;
 
-    // Get the servers list and the genesis block id
-    fetch('http://skipchain.dedis.ch', {headers: {'Content-Type': 'application/json'}})
-      .then(
-        (response) => response.json().then(data => {
-          SkipChainService.getLatestBlock(data.servers, hex2buf(data.genesisBlockID))
-            .then(
-              (servers) => {
-                this.servers = servers;
-                this._updateStatus();
-              }
-            )
-            .catch((e) => console.log('Oops', e));
-        })
-      )
-      .catch(e => console.log(e));
+    GenesisService.subscribe(this);
+  }
+
+  onGenesisUpdate(blocks, genesisList) {
+    if (blocks.length === 0) {
+      return;
+    }
+
+    this.status = {};
+    this.servers = blocks.slice().pop().Roster.list.map(block => tcp2ws(block.address));
+    this.genesisList = genesisList;
+
+    this._updateStatus();
   }
 
   triggerUpdate() {
@@ -49,17 +49,6 @@ export class StatusService {
     if (index >= 0) {
       this.listeners.splice(index, 1);
     }
-  }
-
-  getAvailableRoster() {
-    return Object.keys(this.status)
-      .filter((address) => !!this.status[address].system)
-      .map((address) => {
-        return {
-          address,
-          server: this.status[address].server
-        };
-      });
   }
 
   _updateStatus() {
@@ -85,7 +74,7 @@ export class StatusService {
 
   _triggerEvent(listener) {
     if (typeof listener.onStatusUpdate === 'function') {
-      listener.onStatusUpdate(this.status);
+      listener.onStatusUpdate(this.status, this.genesisList);
     }
   }
 }

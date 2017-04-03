@@ -1,15 +1,13 @@
-jest.mock('./websocket', () => new class {
-  getStatus = jest.fn()
-});
-jest.mock('../constants/servers', () => ["localhost"]);
+jest.mock('./websocket');
+jest.mock('./genesis');
 
-import StatusService from './status'
+import {StatusService} from './status'
 import CothorityWS from './websocket'
 
 describe(StatusService, () => {
 
   beforeEach(() => {
-    CothorityWS.getStatus.mockClear();
+    CothorityWS.getStatus = jest.fn();
   });
 
   it('should get the status', () => {
@@ -19,11 +17,11 @@ describe(StatusService, () => {
     CothorityWS.getStatus.mockReturnValue(Promise.resolve(status));
 
     return new Promise((resolve) => {
-      const service = new StatusService(30000);
+      const service = new StatusService();
       const listener = {
         onStatusUpdate() {
-          if (service.status.localhost) {
-            expect(service.status.localhost).toBe(status);
+          if (Object.keys(service.status).length > 0) {
+            expect(Object.keys(service.status)[0].indexOf('127.0.0.1')).toBe(0);
             resolve();
           }
         }
@@ -34,7 +32,9 @@ describe(StatusService, () => {
   });
 
   it('should subscribe and unsubscribe', () => {
-    const service = new StatusService(30000);
+    CothorityWS.getStatus.mockReturnValue(Promise.resolve());
+
+    const service = new StatusService();
     const listener = {
       onStatusUpdate: jest.fn()
     };
@@ -58,7 +58,7 @@ describe(StatusService, () => {
     CothorityWS.getStatus.mockReturnValue(Promise.resolve({}));
 
     const listener = {onStatusUpdate: jest.fn()};
-    const service = new StatusService(500);
+    const service = new StatusService();
     service.subscribe(listener);
 
     return new Promise((resolve, reject) => {
@@ -81,11 +81,12 @@ describe(StatusService, () => {
     CothorityWS.getStatus.mockReturnValue(Promise.reject());
 
     return new Promise((resolve) => {
-      const service = new StatusService(30000);
+      const service = new StatusService();
       const listener = {
         onStatusUpdate() {
-          if (service.status.localhost) {
-            expect(service.status.localhost.server).toBeDefined();
+          if (Object.keys(service.status).length > 0) {
+            const key = Object.keys(service.status).pop();
+            expect(service.status[key].server).toBeDefined();
             resolve();
           }
         }
@@ -96,30 +97,12 @@ describe(StatusService, () => {
   });
 
   it('should manage a listener without func declaration', () => {
+    CothorityWS.getStatus.mockReturnValue(Promise.resolve());
+
     const listener = {};
-    const service = new StatusService(30000);
+    const service = new StatusService();
 
     service.subscribe(listener);
-  });
-
-  it('should return the roster', () => {
-    CothorityWS.getStatus.mockReturnValue(Promise.resolve({
-      system: {}
-    }));
-
-    return new Promise((resolve) => {
-      const service = new StatusService(30000);
-      const listener = {
-        onStatusUpdate() {
-          if (service.status.localhost) {
-            expect(service.getAvailableRoster()).toHaveLength(1);
-            resolve();
-          }
-        }
-      };
-
-      service.subscribe(listener);
-    });
   });
 
 });

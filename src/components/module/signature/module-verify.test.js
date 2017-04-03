@@ -1,3 +1,5 @@
+jest.mock('../../../services/genesis');
+
 import React from 'react'
 import Faker from 'faker'
 import {mount} from 'enzyme'
@@ -10,7 +12,9 @@ global.FileReader = class {
       target: {
         result: JSON.stringify({
           signature: '000000',
-          public_key: '010101'
+          hash: '11',
+          genesisID: 'aa',
+          blockID: 'bb'
         })
       }
     });
@@ -26,6 +30,9 @@ global.cryptoJS = {
   },
   verify() {
     return true
+  },
+  aggregateKeys() {
+    return new Uint8Array([]);
   }
 };
 
@@ -54,7 +61,7 @@ describe(ModuleVerify, () => {
     
     return wrapper.instance()._verifyPromise.then(() => {
       expect(wrapper.instance().state.isSignatureCorrect).toBeTruthy();
-    });
+    }, (e) => console.log(e));
   });
 
   it('should reset the state', () => {

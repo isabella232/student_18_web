@@ -14,9 +14,12 @@ export class SkipChainService {
     let index = 0;
 
     return new Promise((resolve, reject) => {
+      if (!servers || !genesisID || servers.length === 0) {
+        reject(new Error("Cannot get the latest updates of the skip-chain."));
+      }
 
-      const onSuccess = (servers) => {
-        resolve(servers);
+      const onSuccess = (blocks) => {
+        resolve(blocks);
       };
 
       const onError = () => {
@@ -27,7 +30,7 @@ export class SkipChainService {
           this._getUpdates(servers[index], genesisID).then(onSuccess, onError);
         }
         else {
-          reject("No servers available");
+          reject(new Error("No servers available"));
         }
       };
 
@@ -56,15 +59,7 @@ export class SkipChainService {
           throw new Error("Update blocks are corrupted");
         }
 
-        const latest = response.Update[response.Update.length - 1];
-
-        // Use the addresses of the roster to generate the WS addresses
-        return latest.Roster.list.map(si => {
-          const addr = si.address.match(/([0-9]{1,3}\.){3}[0-9]{1,3}/)[0];
-          const port = Number(si.address.match(/[0-9]{1,6}$/)[0]);
-
-          return addr.replace("127.0.0.1", "192.33.210.8") + ':' + (port + 1);
-        });
+        return response.Update;
       }
 
     );
@@ -81,13 +76,7 @@ export class SkipChainService {
 
     return blocks.every((block, blockIndex) => {
 
-      const hash = cryptoJS.hashSkipBlock( // eslint-disable-line
-        [block.Index, block.Height, block.MaximumHeight, block.BaseHeight],
-        block.BackLinkIDs,
-        block.GenesisID,
-        blockIndex === 0 ? [] : block.RespPublic,
-        block.Roster.list.map(s => s.public)
-      );
+      const hash = cryptoJS.hashSkipBlock(block); // eslint-disable-line
 
       // Check the hash of the block
       if (buf2hex(hash) !== buf2hex(block.Hash)) {
@@ -95,16 +84,38 @@ export class SkipChainService {
         return false;
       }
 
+      block._hash_verified = true;
+
       // Check the forward links
       const publicKeys = block.Roster.list.map(server => server.public);
 
       block.ForwardLink.forEach(link => {
-        const res = cryptoJS.verifyForwardLink(publicKeys, link.Hash, link.Signature); // eslint-disable-line
+        const res = cryptoJS.verifyForwardLink({ // eslint-disable-line
+          publicKeys: publicKeys,
+          hash: link.Hash,
+          signature: link.Signature
+        });
         if (!res) {
           console.log("Wrong signature for block", blockIndex, block);
           return false;
         }
       });
+
+      block._signature_verified = true;
+
+      if (blockIndex > 0) { // Genesis back link is random
+        for (let i = 0; i < block.BackLinkIDs.length; i++) {
+          const link = buf2hex(block.BackLinkIDs[i]);
+
+          const prev = blocks.filter(b => buf2hex(b.Hash) === link).pop();
+          if (!prev || !prev._hash_verified || !prev._signature_verified || !prev._backlink_verified) {
+            console.log("Back link is corrupted");
+            return false;
+          }
+        }
+      }
+
+      block._backlink_verified = true;
 
       return true;
     });

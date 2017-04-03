@@ -1,7 +1,4 @@
-jest.mock('../../services/status', () => class {
-  subscribe = jest.fn();
-  unsubscribe = jest.fn();
-});
+jest.mock('../../services/status');
 
 import React from 'react'
 import Faker from 'faker'
@@ -11,6 +8,11 @@ import ServersStatus from './servers-status'
 import StatusService from '../../services/status'
 
 describe(ServersStatus, () => {
+
+  beforeEach(() => {
+    StatusService.subscribe.mockClear();
+    StatusService.unsubscribe.mockClear();
+  });
 
   it('should render without crashing', () => {
     const wrapper = mount(<ServersStatus/>);
@@ -40,7 +42,7 @@ describe(ServersStatus, () => {
     const wrapper = mount(<ServersStatus/>);
     wrapper.instance().onStatusUpdate({
       localhost: MOCK_STATUS
-    });
+    }, []);
 
     const fields = MOCK_STATUS.system.Status.field;
     expect(wrapper.text().indexOf(fields.Description) >= 0).toBeTruthy();
@@ -57,18 +59,17 @@ describe(ServersStatus, () => {
     const wrapper = mount(<ServersStatus/>);
     wrapper.instance().onStatusUpdate({
       localhost: MOCK_ERROR_STATUS
-    });
+    }, []);
 
     expect(wrapper.find('tbody tr').hasClass("has-error")).toBeTruthy();
   });
 
   it('should subscribe and unsubscribe', () => {
     const wrapper = mount(<ServersStatus/>);
-    const service = wrapper.instance().service;
     wrapper.unmount();
 
-    expect(service.subscribe).toHaveBeenCalledTimes(1);
-    expect(service.unsubscribe).toHaveBeenCalledTimes(1);
+    expect(StatusService.subscribe).toHaveBeenCalledTimes(1);
+    expect(StatusService.unsubscribe).toHaveBeenCalledTimes(1);
   });
 
 });

@@ -14,14 +14,16 @@ export default class ServersStatus extends React.Component {
 
     this.state = {
       status: [],
+      genesisList: [],
       isLoading: true
     };
   }
 
-  onStatusUpdate(status) {
+  onStatusUpdate(status, genesisList) {
     this.setState({
       isLoading: false,
-      status: Object.keys(status).map((server) => status[server])
+      status: Object.keys(status).map((server) => status[server]),
+      genesisList
     });
   }
 
@@ -34,13 +36,16 @@ export default class ServersStatus extends React.Component {
   }
 
   render() {
-    const {status, isLoading} = this.state;
+    const {status, genesisList, isLoading} = this.state;
 
     const rows = generateRows(status);
     const loading = isLoading ? generateLoading() : null;
 
     return (
       <div className="servers-status">
+        <div>
+          Number of SkipChains {genesisList.length}
+        </div>
         <Table hover>
           <thead>
             <tr>

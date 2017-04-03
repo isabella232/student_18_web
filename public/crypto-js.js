@@ -28513,7 +28513,7 @@ $packages["github.com/dedis/crypto/eddsa"] = (function() {
 	return $pkg;
 })();
 $packages["github.com/dedis/crypto-js/crypto"] = (function() {
-	var $pkg = {}, $init, cipher, sha256, sha512, binary, abstract$1, cosi, ed25519, eddsa, sliceType, sliceType$1, Sha256, Sha512, KeyPairEdDSA, KeyPairFromPrivate, PublicKey, AggregateKeys, Sign, Verify, HashSkipBlock, VerifyForwardLink;
+	var $pkg = {}, $init, cipher, sha256, sha512, binary, abstract$1, cosi, ed25519, eddsa, js, sliceType, ptrType, sliceType$1, sliceType$2, mapType, sliceType$3, Sha256, Sha512, KeyPairEdDSA, KeyPairFromPrivate, PublicKey, AggregateKeys, Sign, Verify, HashSkipBlock, VerifyForwardLink;
 	cipher = $packages["crypto/cipher"];
 	sha256 = $packages["crypto/sha256"];
 	sha512 = $packages["crypto/sha512"];
@@ -28522,8 +28522,13 @@ $packages["github.com/dedis/crypto-js/crypto"] = (function() {
 	cosi = $packages["github.com/dedis/crypto/cosi"];
 	ed25519 = $packages["github.com/dedis/crypto/ed25519"];
 	eddsa = $packages["github.com/dedis/crypto/eddsa"];
+	js = $packages["github.com/gopherjs/gopherjs/js"];
 	sliceType = $sliceType($Uint8);
-	sliceType$1 = $sliceType(abstract$1.Point);
+	ptrType = $ptrType(js.Object);
+	sliceType$1 = $sliceType(ptrType);
+	sliceType$2 = $sliceType($emptyInterface);
+	mapType = $mapType($String, $emptyInterface);
+	sliceType$3 = $sliceType(abstract$1.Point);
 	Sha256 = function(bytes) {
 		var $ptr, _r, _r$1, bytes, hash, $s, $r;
 		/* */ $s = 0; var $f, $c = false; if (this !== undefined && this.$blk !== undefined) { $f = this; $c = true; $ptr = $f.$ptr; _r = $f._r; _r$1 = $f._r$1; bytes = $f.bytes; hash = $f.hash; $s = $f.$s; $r = $f.$r; } s: while (true) { switch ($s) { case 0:
@@ -28631,71 +28636,106 @@ $packages["github.com/dedis/crypto-js/crypto"] = (function() {
 		/* */ } return; } if ($f === undefined) { $f = { $blk: Verify }; } $f.$ptr = $ptr; $f._r = _r; $f._r$1 = _r$1; $f._r$2 = _r$2; $f.msg = msg; $f.pubkey = pubkey; $f.public$1 = public$1; $f.signature = signature; $f.suite = suite; $f.$s = $s; $f.$r = $r; return $f;
 	};
 	$pkg.Verify = Verify;
-	HashSkipBlock = function(values, backLinkIDs, genesisID, respPublic, pubKeys) {
-		var $ptr, _i, _i$1, _i$2, _i$3, _r, _r$1, _r$2, _r$3, _r$4, _r$5, _ref, _ref$1, _ref$2, _ref$3, backLinkIDs, bl, genesisID, hash, i, pub, pub$1, pubKeys, respPublic, values, x, $s, $r;
-		/* */ $s = 0; var $f, $c = false; if (this !== undefined && this.$blk !== undefined) { $f = this; $c = true; $ptr = $f.$ptr; _i = $f._i; _i$1 = $f._i$1; _i$2 = $f._i$2; _i$3 = $f._i$3; _r = $f._r; _r$1 = $f._r$1; _r$2 = $f._r$2; _r$3 = $f._r$3; _r$4 = $f._r$4; _r$5 = $f._r$5; _ref = $f._ref; _ref$1 = $f._ref$1; _ref$2 = $f._ref$2; _ref$3 = $f._ref$3; backLinkIDs = $f.backLinkIDs; bl = $f.bl; genesisID = $f.genesisID; hash = $f.hash; i = $f.i; pub = $f.pub; pub$1 = $f.pub$1; pubKeys = $f.pubKeys; respPublic = $f.respPublic; values = $f.values; x = $f.x; $s = $f.$s; $r = $f.$r; } s: while (true) { switch ($s) { case 0:
+	HashSkipBlock = function(block) {
+		var $ptr, _entry, _i, _i$1, _i$2, _i$3, _r, _r$1, _r$2, _r$3, _r$4, _r$5, _ref, _ref$1, _ref$2, _ref$3, block, hash, i, i$1, i$2, server, x, $s, $r;
+		/* */ $s = 0; var $f, $c = false; if (this !== undefined && this.$blk !== undefined) { $f = this; $c = true; $ptr = $f.$ptr; _entry = $f._entry; _i = $f._i; _i$1 = $f._i$1; _i$2 = $f._i$2; _i$3 = $f._i$3; _r = $f._r; _r$1 = $f._r$1; _r$2 = $f._r$2; _r$3 = $f._r$3; _r$4 = $f._r$4; _r$5 = $f._r$5; _ref = $f._ref; _ref$1 = $f._ref$1; _ref$2 = $f._ref$2; _ref$3 = $f._ref$3; block = $f.block; hash = $f.hash; i = $f.i; i$1 = $f.i$1; i$2 = $f.i$2; server = $f.server; x = $f.x; $s = $f.$s; $r = $f.$r; } s: while (true) { switch ($s) { case 0:
 		hash = sha256.New();
-		_ref = values;
+		_ref = new sliceType$1([block.Index, block.Height, block.MaximumHeight, block.BaseHeight]);
 		_i = 0;
 		/* while (true) { */ case 1:
 			/* if (!(_i < _ref.$length)) { break; } */ if(!(_i < _ref.$length)) { $s = 2; continue; }
 			i = ((_i < 0 || _i >= _ref.$length) ? ($throwRuntimeError("index out of range"), undefined) : _ref.$array[_ref.$offset + _i]);
-			_r = binary.Write(hash, (x = binary.LittleEndian, new x.constructor.elem(x)), new $Int(i)); /* */ $s = 3; case 3: if($c) { $c = false; _r = _r.$blk(); } if (_r && _r.$blk !== undefined) { break s; }
+			_r = binary.Write(hash, (x = binary.LittleEndian, new x.constructor.elem(x)), new $Int(($parseInt(i) >> 0))); /* */ $s = 3; case 3: if($c) { $c = false; _r = _r.$blk(); } if (_r && _r.$blk !== undefined) { break s; }
 			_r;
 			_i++;
 		/* } */ $s = 1; continue; case 2:
-		_ref$1 = backLinkIDs;
-		_i$1 = 0;
-		/* while (true) { */ case 4:
-			/* if (!(_i$1 < _ref$1.$length)) { break; } */ if(!(_i$1 < _ref$1.$length)) { $s = 5; continue; }
-			bl = ((_i$1 < 0 || _i$1 >= _ref$1.$length) ? ($throwRuntimeError("index out of range"), undefined) : _ref$1.$array[_ref$1.$offset + _i$1]);
-			_r$1 = hash.Write(bl); /* */ $s = 6; case 6: if($c) { $c = false; _r$1 = _r$1.$blk(); } if (_r$1 && _r$1.$blk !== undefined) { break s; }
-			_r$1;
-			_i$1++;
-		/* } */ $s = 4; continue; case 5:
-		_r$2 = hash.Write(genesisID); /* */ $s = 7; case 7: if($c) { $c = false; _r$2 = _r$2.$blk(); } if (_r$2 && _r$2.$blk !== undefined) { break s; }
-		_r$2;
-		_ref$2 = respPublic;
-		_i$2 = 0;
-		/* while (true) { */ case 8:
-			/* if (!(_i$2 < _ref$2.$length)) { break; } */ if(!(_i$2 < _ref$2.$length)) { $s = 9; continue; }
-			pub = ((_i$2 < 0 || _i$2 >= _ref$2.$length) ? ($throwRuntimeError("index out of range"), undefined) : _ref$2.$array[_ref$2.$offset + _i$2]);
-			_r$3 = hash.Write(pub); /* */ $s = 10; case 10: if($c) { $c = false; _r$3 = _r$3.$blk(); } if (_r$3 && _r$3.$blk !== undefined) { break s; }
+		/* */ if (!(block.BackLinkIDs === undefined)) { $s = 4; continue; }
+		/* */ $s = 5; continue;
+		/* if (!(block.BackLinkIDs === undefined)) { */ case 4:
+			_ref$1 = $assertType($internalize(block.BackLinkIDs, $emptyInterface), sliceType$2);
+			_i$1 = 0;
+			/* while (true) { */ case 6:
+				/* if (!(_i$1 < _ref$1.$length)) { break; } */ if(!(_i$1 < _ref$1.$length)) { $s = 7; continue; }
+				i$1 = ((_i$1 < 0 || _i$1 >= _ref$1.$length) ? ($throwRuntimeError("index out of range"), undefined) : _ref$1.$array[_ref$1.$offset + _i$1]);
+				_r$1 = hash.Write($assertType(i$1, sliceType)); /* */ $s = 8; case 8: if($c) { $c = false; _r$1 = _r$1.$blk(); } if (_r$1 && _r$1.$blk !== undefined) { break s; }
+				_r$1;
+				_i$1++;
+			/* } */ $s = 6; continue; case 7:
+		/* } */ case 5:
+		/* */ if (!(block.VerifierIDs === undefined)) { $s = 9; continue; }
+		/* */ $s = 10; continue;
+		/* if (!(block.VerifierIDs === undefined)) { */ case 9:
+			_ref$2 = $assertType($internalize(block.VerifierIDs, $emptyInterface), sliceType$2);
+			_i$2 = 0;
+			/* while (true) { */ case 11:
+				/* if (!(_i$2 < _ref$2.$length)) { break; } */ if(!(_i$2 < _ref$2.$length)) { $s = 12; continue; }
+				i$2 = ((_i$2 < 0 || _i$2 >= _ref$2.$length) ? ($throwRuntimeError("index out of range"), undefined) : _ref$2.$array[_ref$2.$offset + _i$2]);
+				_r$2 = hash.Write($assertType(i$2, sliceType)); /* */ $s = 13; case 13: if($c) { $c = false; _r$2 = _r$2.$blk(); } if (_r$2 && _r$2.$blk !== undefined) { break s; }
+				_r$2;
+				_i$2++;
+			/* } */ $s = 11; continue; case 12:
+		/* } */ case 10:
+		/* */ if (!(block.GenesisID === undefined)) { $s = 14; continue; }
+		/* */ $s = 15; continue;
+		/* if (!(block.GenesisID === undefined)) { */ case 14:
+			_r$3 = hash.Write($assertType($internalize(block.GenesisID, $emptyInterface), sliceType)); /* */ $s = 16; case 16: if($c) { $c = false; _r$3 = _r$3.$blk(); } if (_r$3 && _r$3.$blk !== undefined) { break s; }
 			_r$3;
-			_i$2++;
-		/* } */ $s = 8; continue; case 9:
-		_ref$3 = pubKeys;
-		_i$3 = 0;
-		/* while (true) { */ case 11:
-			/* if (!(_i$3 < _ref$3.$length)) { break; } */ if(!(_i$3 < _ref$3.$length)) { $s = 12; continue; }
-			pub$1 = ((_i$3 < 0 || _i$3 >= _ref$3.$length) ? ($throwRuntimeError("index out of range"), undefined) : _ref$3.$array[_ref$3.$offset + _i$3]);
-			_r$4 = hash.Write(pub$1); /* */ $s = 13; case 13: if($c) { $c = false; _r$4 = _r$4.$blk(); } if (_r$4 && _r$4.$blk !== undefined) { break s; }
-			_r$4;
-			_i$3++;
-		/* } */ $s = 11; continue; case 12:
-		_r$5 = hash.Sum(sliceType.nil); /* */ $s = 14; case 14: if($c) { $c = false; _r$5 = _r$5.$blk(); } if (_r$5 && _r$5.$blk !== undefined) { break s; }
+		/* } */ case 15:
+		/* */ if (!(block.Roster === undefined) && !(block.Roster.list === undefined)) { $s = 17; continue; }
+		/* */ $s = 18; continue;
+		/* if (!(block.Roster === undefined) && !(block.Roster.list === undefined)) { */ case 17:
+			_ref$3 = $assertType($internalize(block.Roster.list, $emptyInterface), sliceType$2);
+			_i$3 = 0;
+			/* while (true) { */ case 19:
+				/* if (!(_i$3 < _ref$3.$length)) { break; } */ if(!(_i$3 < _ref$3.$length)) { $s = 20; continue; }
+				server = ((_i$3 < 0 || _i$3 >= _ref$3.$length) ? ($throwRuntimeError("index out of range"), undefined) : _ref$3.$array[_ref$3.$offset + _i$3]);
+				_r$4 = hash.Write($assertType((_entry = $assertType(server, mapType)[$String.keyFor("public")], _entry !== undefined ? _entry.v : $ifaceNil), sliceType)); /* */ $s = 21; case 21: if($c) { $c = false; _r$4 = _r$4.$blk(); } if (_r$4 && _r$4.$blk !== undefined) { break s; }
+				_r$4;
+				_i$3++;
+			/* } */ $s = 19; continue; case 20:
+		/* } */ case 18:
+		_r$5 = hash.Sum(sliceType.nil); /* */ $s = 22; case 22: if($c) { $c = false; _r$5 = _r$5.$blk(); } if (_r$5 && _r$5.$blk !== undefined) { break s; }
 		$s = -1; return _r$5;
-		/* */ } return; } if ($f === undefined) { $f = { $blk: HashSkipBlock }; } $f.$ptr = $ptr; $f._i = _i; $f._i$1 = _i$1; $f._i$2 = _i$2; $f._i$3 = _i$3; $f._r = _r; $f._r$1 = _r$1; $f._r$2 = _r$2; $f._r$3 = _r$3; $f._r$4 = _r$4; $f._r$5 = _r$5; $f._ref = _ref; $f._ref$1 = _ref$1; $f._ref$2 = _ref$2; $f._ref$3 = _ref$3; $f.backLinkIDs = backLinkIDs; $f.bl = bl; $f.genesisID = genesisID; $f.hash = hash; $f.i = i; $f.pub = pub; $f.pub$1 = pub$1; $f.pubKeys = pubKeys; $f.respPublic = respPublic; $f.values = values; $f.x = x; $f.$s = $s; $f.$r = $r; return $f;
+		/* */ } return; } if ($f === undefined) { $f = { $blk: HashSkipBlock }; } $f.$ptr = $ptr; $f._entry = _entry; $f._i = _i; $f._i$1 = _i$1; $f._i$2 = _i$2; $f._i$3 = _i$3; $f._r = _r; $f._r$1 = _r$1; $f._r$2 = _r$2; $f._r$3 = _r$3; $f._r$4 = _r$4; $f._r$5 = _r$5; $f._ref = _ref; $f._ref$1 = _ref$1; $f._ref$2 = _ref$2; $f._ref$3 = _ref$3; $f.block = block; $f.hash = hash; $f.i = i; $f.i$1 = i$1; $f.i$2 = i$2; $f.server = server; $f.x = x; $f.$s = $s; $f.$r = $r; return $f;
 	};
 	$pkg.HashSkipBlock = HashSkipBlock;
-	VerifyForwardLink = function(pubs, hash, signature) {
-		var $ptr, _r, _r$1, _r$2, hash, i, p, publics, pubs, signature, suite, $s, $r;
-		/* */ $s = 0; var $f, $c = false; if (this !== undefined && this.$blk !== undefined) { $f = this; $c = true; $ptr = $f.$ptr; _r = $f._r; _r$1 = $f._r$1; _r$2 = $f._r$2; hash = $f.hash; i = $f.i; p = $f.p; publics = $f.publics; pubs = $f.pubs; signature = $f.signature; suite = $f.suite; $s = $f.$s; $r = $f.$r; } s: while (true) { switch ($s) { case 0:
+	VerifyForwardLink = function(obj) {
+		var $ptr, _i, _r, _r$1, _r$2, _ref, hash, i, k, keys, obj, p, signature, suite, $s, $r;
+		/* */ $s = 0; var $f, $c = false; if (this !== undefined && this.$blk !== undefined) { $f = this; $c = true; $ptr = $f.$ptr; _i = $f._i; _r = $f._r; _r$1 = $f._r$1; _r$2 = $f._r$2; _ref = $f._ref; hash = $f.hash; i = $f.i; k = $f.k; keys = $f.keys; obj = $f.obj; p = $f.p; signature = $f.signature; suite = $f.suite; $s = $f.$s; $r = $f.$r; } s: while (true) { switch ($s) { case 0:
 		suite = ed25519.NewAES128SHA256Ed25519(false);
-		publics = $makeSlice(sliceType$1, pubs.$length);
-		i = 0;
-		/* while (true) { */ case 1:
-			/* if (!(i < pubs.$length)) { break; } */ if(!(i < pubs.$length)) { $s = 2; continue; }
-			_r = suite.Point(); /* */ $s = 3; case 3: if($c) { $c = false; _r = _r.$blk(); } if (_r && _r.$blk !== undefined) { break s; }
-			p = _r;
-			_r$1 = p.UnmarshalBinary(((i < 0 || i >= pubs.$length) ? ($throwRuntimeError("index out of range"), undefined) : pubs.$array[pubs.$offset + i])); /* */ $s = 4; case 4: if($c) { $c = false; _r$1 = _r$1.$blk(); } if (_r$1 && _r$1.$blk !== undefined) { break s; }
-			_r$1;
-			((i < 0 || i >= publics.$length) ? ($throwRuntimeError("index out of range"), undefined) : publics.$array[publics.$offset + i] = p);
-			i = i + (1) >> 0;
-		/* } */ $s = 1; continue; case 2:
-		_r$2 = cosi.VerifySignature(suite, publics, hash, signature); /* */ $s = 5; case 5: if($c) { $c = false; _r$2 = _r$2.$blk(); } if (_r$2 && _r$2.$blk !== undefined) { break s; }
+		keys = sliceType$3.nil;
+		/* */ if (!(obj.publicKeys === undefined)) { $s = 1; continue; }
+		/* */ $s = 2; continue;
+		/* if (!(obj.publicKeys === undefined)) { */ case 1:
+			keys = $makeSlice(sliceType$3, $parseInt(obj.publicKeys.length));
+			_ref = $assertType($internalize(obj.publicKeys, $emptyInterface), sliceType$2);
+			_i = 0;
+			/* while (true) { */ case 3:
+				/* if (!(_i < _ref.$length)) { break; } */ if(!(_i < _ref.$length)) { $s = 4; continue; }
+				i = _i;
+				k = ((_i < 0 || _i >= _ref.$length) ? ($throwRuntimeError("index out of range"), undefined) : _ref.$array[_ref.$offset + _i]);
+				_r = suite.Point(); /* */ $s = 5; case 5: if($c) { $c = false; _r = _r.$blk(); } if (_r && _r.$blk !== undefined) { break s; }
+				p = _r;
+				_r$1 = p.UnmarshalBinary($assertType(k, sliceType)); /* */ $s = 6; case 6: if($c) { $c = false; _r$1 = _r$1.$blk(); } if (_r$1 && _r$1.$blk !== undefined) { break s; }
+				_r$1;
+				((i < 0 || i >= keys.$length) ? ($throwRuntimeError("index out of range"), undefined) : keys.$array[keys.$offset + i] = p);
+				_i++;
+			/* } */ $s = 3; continue; case 4:
+		/* } */ case 2:
+		hash = sliceType.nil;
+		if (!(obj.hash === undefined)) {
+			hash = $assertType($internalize(obj.hash, $emptyInterface), sliceType);
+		}
+		signature = sliceType.nil;
+		if (!(obj.signature === undefined)) {
+			signature = $assertType($internalize(obj.signature, $emptyInterface), sliceType);
+		}
+		if (keys === sliceType$3.nil || hash === sliceType.nil || signature === sliceType.nil) {
+			$s = -1; return false;
+		}
+		_r$2 = cosi.VerifySignature(suite, keys, hash, signature); /* */ $s = 7; case 7: if($c) { $c = false; _r$2 = _r$2.$blk(); } if (_r$2 && _r$2.$blk !== undefined) { break s; }
 		$s = -1; return $interfaceIsEqual(_r$2, $ifaceNil);
-		/* */ } return; } if ($f === undefined) { $f = { $blk: VerifyForwardLink }; } $f.$ptr = $ptr; $f._r = _r; $f._r$1 = _r$1; $f._r$2 = _r$2; $f.hash = hash; $f.i = i; $f.p = p; $f.publics = publics; $f.pubs = pubs; $f.signature = signature; $f.suite = suite; $f.$s = $s; $f.$r = $r; return $f;
+		/* */ } return; } if ($f === undefined) { $f = { $blk: VerifyForwardLink }; } $f.$ptr = $ptr; $f._i = _i; $f._r = _r; $f._r$1 = _r$1; $f._r$2 = _r$2; $f._ref = _ref; $f.hash = hash; $f.i = i; $f.k = k; $f.keys = keys; $f.obj = obj; $f.p = p; $f.signature = signature; $f.suite = suite; $f.$s = $s; $f.$r = $r; return $f;
 	};
 	$pkg.VerifyForwardLink = VerifyForwardLink;
 	$init = function() {
@@ -28709,13 +28749,14 @@ $packages["github.com/dedis/crypto-js/crypto"] = (function() {
 		$r = cosi.$init(); /* */ $s = 6; case 6: if($c) { $c = false; $r = $r.$blk(); } if ($r && $r.$blk !== undefined) { break s; }
 		$r = ed25519.$init(); /* */ $s = 7; case 7: if($c) { $c = false; $r = $r.$blk(); } if ($r && $r.$blk !== undefined) { break s; }
 		$r = eddsa.$init(); /* */ $s = 8; case 8: if($c) { $c = false; $r = $r.$blk(); } if ($r && $r.$blk !== undefined) { break s; }
+		$r = js.$init(); /* */ $s = 9; case 9: if($c) { $c = false; $r = $r.$blk(); } if ($r && $r.$blk !== undefined) { break s; }
 		/* */ } return; } if ($f === undefined) { $f = { $blk: $init }; } $f.$s = $s; $f.$r = $r; return $f;
 	};
 	$pkg.$init = $init;
 	return $pkg;
 })();
 $packages["github.com/dedis/crypto-js"] = (function() {
-	var $pkg = {}, $init, crypto, js, sliceType, funcType, funcType$1, funcType$2, funcType$3, sliceType$1, funcType$4, sliceType$2, funcType$5, funcType$6, mapType, main;
+	var $pkg = {}, $init, crypto, js, sliceType, funcType, funcType$1, funcType$2, funcType$3, sliceType$1, funcType$4, ptrType, funcType$5, funcType$6, mapType, main;
 	crypto = $packages["github.com/dedis/crypto-js/crypto"];
 	js = $packages["github.com/gopherjs/gopherjs/js"];
 	sliceType = $sliceType($Uint8);
@@ -28725,9 +28766,9 @@ $packages["github.com/dedis/crypto-js"] = (function() {
 	funcType$3 = $funcType([sliceType, sliceType, sliceType], [$Bool], false);
 	sliceType$1 = $sliceType(sliceType);
 	funcType$4 = $funcType([sliceType$1], [sliceType], false);
-	sliceType$2 = $sliceType($Int);
-	funcType$5 = $funcType([sliceType$2, sliceType$1, sliceType, sliceType$1, sliceType$1], [sliceType], false);
-	funcType$6 = $funcType([sliceType$1, sliceType, sliceType], [$Bool], false);
+	ptrType = $ptrType(js.Object);
+	funcType$5 = $funcType([ptrType], [sliceType], false);
+	funcType$6 = $funcType([ptrType], [$Bool], false);
 	mapType = $mapType($String, $emptyInterface);
 	main = function() {
 		var $ptr;
