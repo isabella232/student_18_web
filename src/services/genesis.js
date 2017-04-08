@@ -73,13 +73,15 @@ export class GenesisService {
 
   getLatestFromGenesisID(id, blockID) {
     return new Promise((resolve, reject) => {
-      fetch(GENESIS_BLOCK_SERVER + id + '.html', {headers: {'Content-Type': 'application/json'}}).then(
-        (response) => response.json().then(data => {
-          SkipChainService.getLatestBlock(data.Servers.map(addr => tcp2ws(addr)), hex2buf(id)).then(data => {
-            resolve(data.filter(block => buf2hex(block.Hash) === blockID).pop());
-          });
-        })
-      ).catch(e => reject(e));
+      fetch(GENESIS_BLOCK_SERVER + id + '.html', {headers: {'Content-Type': 'application/json'}})
+        .then(
+          (response) => response.json().then(data => {
+            SkipChainService.getLatestBlock(data.Servers.map(addr => tcp2ws(addr)), hex2buf(id)).then(data => {
+              resolve(data.filter(block => buf2hex(block.Hash) === blockID).pop());
+            });
+          })
+        )
+        .catch(e => reject(e));
     });
   }
 
@@ -101,12 +103,7 @@ export class GenesisService {
       return this.updateGenesis(new Error("Cannot find the block associated with the genesis ID"));
     }
 
-    const servers = block.Servers.map(s => {
-      const addr = s.match(/([0-9]{1,3}\.){3}[0-9]{1,3}/)[0];
-      const port = Number(s.match(/[0-9]{1,6}$/)[0]);
-
-      return addr + ':' + (port + 1);
-    });
+    const servers = block.Servers.map(addr => tcp2ws(addr));
 
     return SkipChainService.getLatestBlock(servers, hex2buf(block.GenesisID))
       .then((data) => {

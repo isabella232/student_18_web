@@ -58,6 +58,11 @@ export class StatusService {
   }
 
   _updateStatus() {
+    if (this._timer) {
+      clearTimeout(this._timer);
+      delete this._timer;
+    }
+
     const self = this;
 
     this.servers.forEach((address, i) => CothorityWS.getStatus(address)
@@ -75,7 +80,7 @@ export class StatusService {
       })
     );
 
-    setTimeout(() => self._updateStatus(), self.refreshInterval);
+    this._timer = setTimeout(() => self._updateStatus(), self.refreshInterval);
   }
 
   _triggerEvent(listener) {
