@@ -8,6 +8,7 @@ import {Button} from 'reactstrap'
 
 import SignArea from './sign-area'
 import CothorityWebsocket from '../../../services/websocket'
+import StatusService from '../../../services/status'
 
 global.FileReader = class {
   readAsArrayBuffer() {
@@ -21,11 +22,18 @@ global.cryptoJS = {
 
 global.saveAs = jest.fn();
 
-describe(SignArea, () => {
+describe('module:signature:sign-area', () => {
   
   const MOCK_FILE = new File([], '');
 
-  beforeEach(() => CothorityWebsocket.getSignature = jest.fn());
+  beforeEach(() => {
+    StatusService.getAvailableRoster.mockClear();
+    StatusService.getAvailableRoster.mockReturnValue([{
+      system: {},
+      server: {address: '127.0.0.1:7000'}
+    }]);
+    CothorityWebsocket.getSignature = jest.fn();
+  });
   
   it('should render without crashing', () => {
     const wrapper = mount(<SignArea file={MOCK_FILE}/>);
@@ -47,6 +55,9 @@ describe(SignArea, () => {
 
     CothorityWebsocket.getSignature.mockReturnValue(Promise.resolve({signature: 'super-signature'}));
     const wrapper = mount(<SignArea file={MOCK_FILE}/>);
+    wrapper.setState({
+      block: {Roster: {list: [{}]}}
+    });
     
     wrapper.find(Button).at(1).simulate('click');
     
@@ -59,7 +70,11 @@ describe(SignArea, () => {
     expect.assertions(1);
     
     CothorityWebsocket.getSignature.mockReturnValue(Promise.reject());
+
     const wrapper = mount(<SignArea file={MOCK_FILE}/>);
+    wrapper.setState({
+      block: {Roster: {list: [{}]}}
+    });
     
     wrapper.find(Button).at(1).simulate('click');
     

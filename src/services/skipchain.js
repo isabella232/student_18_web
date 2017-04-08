@@ -88,6 +88,7 @@ export class SkipChainService {
 
       // Check the forward links
       const publicKeys = block.Roster.list.map(server => server.public);
+      let isSignatureVerified = true;
 
       block.ForwardLink.forEach(link => {
         const res = cryptoJS.verifyForwardLink({ // eslint-disable-line
@@ -97,17 +98,20 @@ export class SkipChainService {
         });
         if (!res) {
           console.log("Wrong signature for block", blockIndex, block);
-          return false;
+          isSignatureVerified = false;
         }
       });
 
-      block._signature_verified = true;
+      block._signature_verified = isSignatureVerified;
+      if (!isSignatureVerified) {
+        return false;
+      }
 
       if (blockIndex > 0) { // Genesis back link is random
         for (let i = 0; i < block.BackLinkIDs.length; i++) {
           const link = buf2hex(block.BackLinkIDs[i]);
 
-          const prev = blocks.filter(b => buf2hex(b.Hash) === link).pop();
+          const prev = blocks.filter(b => buf2hex(b.Hash) === link && block !== b).pop();
           if (!prev || !prev._hash_verified || !prev._signature_verified || !prev._backlink_verified) {
             console.log("Back link is corrupted");
             return false;

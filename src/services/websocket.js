@@ -2,7 +2,7 @@ import CothorityMessages from '../lib/cothority-messages'
 
 const EMPTY_MESSAGE = new Uint8Array([]);
 
-class CothorityWebsocket {
+export class CothorityWebsocket {
 
   status = {};
 

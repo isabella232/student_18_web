@@ -6,8 +6,10 @@ import './module-verify.css'
 import Module from '../module'
 import DropFileArea from './drop-file-area'
 import GenesisService from '../../../services/genesis'
+import SignatureFile from '../../../models/signature-file'
 import {readAsString, hashFile} from '../../../utils/file'
-import {hex2buf, buf2hex} from '../../../utils/buffer'
+import {buf2hex} from '../../../utils/buffer'
+import {tcp2ws} from '../../../utils/network'
 
 export default class VerifyModule extends React.Component {
 
@@ -36,6 +38,7 @@ export default class VerifyModule extends React.Component {
     if (!file || (!!file && isVerified)) {
       // Either the file hasn't been uploaded yet or we have already verified the previous one
       this.setState({
+        error: '',
         file: fileDropped,
         isVerified: false,
         isSignatureCorrect: false
@@ -43,7 +46,17 @@ export default class VerifyModule extends React.Component {
       return;
     }
 
-    this._verifySignature(fileDropped);
+    return this._verifySignature(fileDropped).then(
+      (state) => {
+        this.setState(Object.assign(state, {file: undefined}));
+      },
+      (e) => {
+        this.setState({
+          file: undefined,
+          error: e.message
+        });
+      }
+    );
   }
 
   /**
@@ -82,11 +95,12 @@ export default class VerifyModule extends React.Component {
   _generateFeedback() {
     const {file, isVerified, isSignatureCorrect, isHashCorrect, error} = this.state;
 
+    let errorMessage = null;
     if (error.length > 0) {
-      return <p key="step-error" className="has-error">{error}</p>
+      errorMessage = <p key="step-error" className="has-error">{error}</p>
     }
 
-    const result = !isVerified ? null : (
+    const result = !isVerified ? errorMessage : (
         <FormGroup>
           <Label>
             Hash: <strong>{isHashCorrect ? 'verified' : <span className="has-error">wrong</span>}</strong>
@@ -94,6 +108,8 @@ export default class VerifyModule extends React.Component {
           <Label>
             Signature: <strong>{isSignatureCorrect ? 'verified' : <span className="has-error">wrong</span>}</strong>
           </Label>
+
+          {errorMessage}
         </FormGroup>
       );
 
@@ -124,44 +140,42 @@ export default class VerifyModule extends React.Component {
   _verifySignature(infoFile) {
     const {file} = this.state;
 
-    this._verifyPromise = new Promise((resolve, reject) => {
-      readAsString(infoFile).then(
-        (info) => {
-          try {
-            info = JSON.parse(info);
-
-            if (!info.genesisID || !info.blockID || !info.hash || !info.signature) {
-              throw new Error();
+    return new Promise((resolve, reject) => {
+      readAsString(infoFile)
+        .then(
+          (info) => {
+            const signFile = new SignatureFile();
+            try {
+              signFile.parse(info);
             }
-          } catch (e) {
-            this.setState({
-              error: 'The json file is unreadable. Please make sure you provided the correct signature file.'
-            });
+            catch (e) {
+              reject(e);
+              return;
+            }
 
-            reject(e);
-            return;
+            GenesisService.getLatestFromGenesisID(signFile.getGenesisID(true), signFile.getBlockID(true))
+              .then((block) => {
+                const pubkey = cryptoJS.aggregateKeys( // eslint-disable-line
+                  block.Roster.list
+                    .filter(s => signFile.getOfflineServers().every(off => tcp2ws(s.address).indexOf(off) === -1))
+                    .map(s => s.public)
+                );
+
+                hashFile(file).then(
+                  (hash) => {
+                    resolve({
+                      error: '',
+                      isVerified: true,
+                      isHashCorrect: buf2hex(hash) === signFile.getHash(true),
+                      isSignatureCorrect: cryptoJS.verify(pubkey, hash, signFile.getSignature()) // eslint-disable-line
+                    });
+                  }
+                );
+              })
+              .catch((e) => reject(e));
           }
-
-          GenesisService.getLatestFromGenesisID(info.genesisID, info.blockID).then((block) => {
-            const pubkey = cryptoJS.aggregateKeys(block.Roster.list.map(s => s.public)); // eslint-disable-line
-
-            hashFile(file).then(
-              (hash) => {
-                const signature = hex2buf(info.signature);
-
-                this.setState({
-                  error: '',
-                  isVerified: true,
-                  isHashCorrect: buf2hex(hash) === info.hash,
-                  isSignatureCorrect: cryptoJS.verify(pubkey, hash, signature) // eslint-disable-line
-                });
-
-                resolve();
-              }
-            );
-          }).catch((e) => reject(e));
-        }
-      );
+        )
+        .catch(e => reject(e));
     });
   }
 }

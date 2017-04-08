@@ -3,11 +3,24 @@ jest.mock('./genesis');
 
 import {StatusService} from './status'
 import CothorityWS from './websocket'
+import GenesisService from './genesis'
 
 describe(StatusService, () => {
 
   beforeEach(() => {
     CothorityWS.getStatus = jest.fn();
+
+    GenesisService.subscribe = function (listener) {
+      const blocks = [{
+        Roster: {
+          list: [{
+            address: '127.0.0.1:7000'
+          }]
+        }
+      }];
+
+      listener.onGenesisUpdate(blocks);
+    }
   });
 
   it('should get the status', () => {
@@ -103,6 +116,17 @@ describe(StatusService, () => {
     const service = new StatusService();
 
     service.subscribe(listener);
+  });
+
+  it('should return the available roster', () => {
+    CothorityWS.getStatus.mockReturnValue(Promise.resolve());
+    const service = new StatusService();
+    service.status = {
+      '1': {},
+      '2': {}
+    };
+
+    expect(service.getAvailableRoster()).toHaveLength(2);
   });
 
 });

@@ -43,8 +43,13 @@ export default class ServersStatus extends React.Component {
 
     return (
       <div className="servers-status">
-        <div>
-          Number of SkipChains {genesisList.length}
+        <div className="servers-status-info">
+          <div>
+            Number of SkipChains: <strong>{genesisList.length}</strong>
+          </div>
+          <div>
+            Number of Servers: <strong>{status.length}</strong>
+          </div>
         </div>
         <Table hover>
           <thead>

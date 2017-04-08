@@ -4,10 +4,11 @@ import FontAwesome from 'react-fontawesome'
 
 import './sign-area.css'
 import {hashFile} from '../../../utils/file'
-import {buf2hex} from '../../../utils/buffer'
 import {tcp2ws} from '../../../utils/network'
 import CothorityWebsocket from '../../../services/websocket'
 import GenesisService from '../../../services/genesis'
+import StatusService from '../../../services/status'
+import SignatureFile from '../../../models/signature-file'
 
 export default class SignArea extends React.Component {
 
@@ -69,31 +70,47 @@ export default class SignArea extends React.Component {
     // else an error will be displayed before letting the user sign
     const {genesisID, block} = this.state;
 
-    const servers = block.Roster.list.slice();
+    const servers = StatusService.getAvailableRoster().filter(r => !!r.system).map(r => r.server);
+
+    const signFile = new SignatureFile();
+    signFile.setFileName(file.name);
+    signFile.setGenesisID(genesisID);
+    signFile.setBlockID(block.Hash);
+    signFile.setOfflineServers(StatusService.getAvailableRoster().filter(r => !r.system).map(r => r.server.address));
 
     this._signPromise = new Promise((resolve, reject) => {
-      hashFile(file).then(
-        (hash) => {
-          const address = tcp2ws(servers[0].address);
+      // Check if more than 2/3 of the servers are available
+      if (servers.length / block.Roster.list.length < 2 / 3) {
+        reject("Not enough available servers");
+        return;
+      }
 
-          if (address.length > 0) {
-            CothorityWebsocket.getSignature(hash, address, servers)
-              .then(
-                (response) => {
-                  const signature = (response.signature || []).slice(0, 64);
+      hashFile(file)
+        .then(
+          (hash) => {
+            signFile.setHash(hash);
+            const address = tcp2ws(servers[0].address);
 
-                  this._generateSignatureFile(signature, file, hash, genesisID, buf2hex(block.Hash));
-                  this._triggerOnBack();
+            if (address.length > 0) {
+              CothorityWebsocket.getSignature(hash, address, servers)
+                .then(
+                  (response) => {
+                    const signature = (response.signature || []).slice(0, 64);
+                    signFile.setSignature(signature);
 
-                  resolve();
-                }
-              )
-              .catch(() => {
-                reject('Oops, something went wrong...');
-              })
+                    signFile.save();
+                    this._triggerOnBack();
+
+                    resolve();
+                  }
+                )
+                .catch(() => {
+                  reject('Oops, something went wrong...');
+                })
+            }
           }
-        }
-      );
+        )
+        .catch(e => reject(e));
     });
 
     // We want to display the error message if it occurs
@@ -132,27 +149,6 @@ export default class SignArea extends React.Component {
         </div>
       </div>
     );
-  }
-
-  /**
-   * Generate and download a file with the different information about the signature
-   * @param signature {Uint8Array} signature returned by the server
-   * @param file {File} file to be signed
-   * @param hash {Uint8Array} Hash of the file
-   * @param genesisID {String} genesisID hexlify
-   * @param blockID {String} block ID hexlify
-   * @private
-   */
-  _generateSignatureFile(signature, file, hash, genesisID, blockID) {
-    const body = {
-      filename: file.name,
-      signature: buf2hex(signature),
-      hash: buf2hex(hash),
-      genesisID,
-      blockID
-    };
-
-    saveAs(new Blob([JSON.stringify(body, null, '\t')]), `signature_${Date.now()}.json`); // eslint-disable-line
   }
 
   _triggerOnBack() {

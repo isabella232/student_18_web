@@ -19,7 +19,7 @@ global.FileReader = class {
       }
     });
   }
-  
+
   readAsArrayBuffer() {
     this.onload({target: {result: new Uint8Array([])}});
   }
@@ -37,31 +37,30 @@ global.cryptoJS = {
 };
 
 describe(ModuleVerify, () => {
-  
+
   const MOCK_FILE = new File([], '');
-  
+
   it('should render without crashing', () => {
     const wrapper = mount(<ModuleVerify/>);
     expect(wrapper.hasClass("module-verify")).toBeTruthy();
   });
-  
+
   it('should handle the dropping', () => {
     const wrapper = mount(<ModuleVerify/>);
     wrapper.instance().handleFileDrop(MOCK_FILE);
-    
+
     expect(wrapper.instance().state.file).toBe(MOCK_FILE);
   });
-  
+
   it('should verify the signature', () => {
     expect.assertions(1);
-    
+
     const wrapper = mount(<ModuleVerify/>);
     wrapper.instance().handleFileDrop(MOCK_FILE);
-    wrapper.instance().handleFileDrop(MOCK_FILE);
-    
-    return wrapper.instance()._verifyPromise.then(() => {
-      expect(wrapper.instance().state.isSignatureCorrect).toBeTruthy();
-    }, (e) => console.log(e));
+    return wrapper.instance().handleFileDrop(MOCK_FILE)
+      .then(() => {
+        expect(wrapper.instance().state.isSignatureCorrect).toBeTruthy();
+      }, (e) => console.log(e));
   });
 
   it('should reset the state', () => {
@@ -80,5 +79,5 @@ describe(ModuleVerify, () => {
 
     expect(wrapper.text()).toContain(error);
   });
-  
+
 });

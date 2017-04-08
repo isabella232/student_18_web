@@ -51,10 +51,16 @@ export class StatusService {
     }
   }
 
+  getAvailableRoster() {
+    return Object.keys(this.status).map(key => {
+      return this.status[key];
+    });
+  }
+
   _updateStatus() {
     const self = this;
 
-    this.servers.forEach((address) => CothorityWS.getStatus(address)
+    this.servers.forEach((address, i) => CothorityWS.getStatus(address)
       .then((response) => {
         response.timestamp = Date.now();
         self.status[address] = response;

@@ -4,7 +4,13 @@ export default new class {
   subscribe(listener) {
     const blocks = [{
       Roster: {
-        list: [{address: '127.0.0.1:7000'}]
+        list: [{
+          address: '127.0.0.1:7000'
+        },{
+          address: '127.0.0.1:7002'
+        },{
+          address: '127.0.0.1:7004'
+        }]
       }
     }];
 

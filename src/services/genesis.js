@@ -17,15 +17,14 @@ export class GenesisService {
 
   constructor() {
     // Get the servers list and the genesis block id
-    fetch(GENESIS_BLOCK_SERVER, {headers: {'Content-Type': 'application/json'}})
+    this._fetch_request = fetch(GENESIS_BLOCK_SERVER, {headers: {'Content-Type': 'application/json'}})
       .then(
         (response) => response.json().then(data => {
-
           // We keep the list of available blocks
           this.genesisList = data.Blocks;
           this.curr_genesis = this.genesisList[0].GenesisID;
 
-          this._fetchStatusForGenesisID(this.curr_genesis);
+          this._request = this._fetchStatusForGenesisID(this.curr_genesis);
         })
       )
       .catch(() => {
@@ -68,7 +67,7 @@ export class GenesisService {
     const data = this.genesisList.filter(b => b.GenesisID === id).pop();
     if (data) {
       this.curr_genesis = id;
-      this._fetchStatusForGenesisID(id);
+      this._request = this._fetchStatusForGenesisID(id);
     }
   }
 
@@ -80,7 +79,7 @@ export class GenesisService {
             resolve(data.filter(block => buf2hex(block.Hash) === blockID).pop());
           });
         })
-      ).catch(() => reject());
+      ).catch(e => reject(e));
     });
   }
 
@@ -109,7 +108,7 @@ export class GenesisService {
       return addr + ':' + (port + 1);
     });
 
-    SkipChainService.getLatestBlock(servers, hex2buf(block.GenesisID))
+    return SkipChainService.getLatestBlock(servers, hex2buf(block.GenesisID))
       .then((data) => {
         this.blocks = data;
         this.updateGenesis();
