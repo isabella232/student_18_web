@@ -19,6 +19,7 @@
   "devDependencies": {
     "enzyme": "^2.7.1",
     "faker": "^4.1.0",
+    "inliner": "^1.12.1",
     "mock-socket": "^6.0.4",
     "node-sass": "^4.5.0",
     "npm-run-all": "^4.0.2",

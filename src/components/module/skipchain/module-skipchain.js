@@ -1,5 +1,6 @@
 import React from 'react'
 import Module from '../module'
+import ByteBuffer from 'bytebuffer'
 import {FormGroup, Label, Input} from 'reactstrap'
 import {Scrollbars} from 'react-custom-scrollbars';
 
@@ -21,8 +22,15 @@ export default class ModuleSkipChain extends React.Component {
 
   onGenesisUpdate(blocks, genesisList, curr_genesis) {
     this.setState({
-      blocks: blocks,
-      genesisList,
+      blocks,
+      genesisList: genesisList.filter(b => {
+        const data = ByteBuffer.fromBase64(b.Data);
+        if (data.capacity() > 18) {
+          return !data.slice(18).toString('utf8').match(/^https?:\/\//);
+        }
+
+        return true;
+      }),
       currGenesis: curr_genesis
     });
   }

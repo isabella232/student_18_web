@@ -5,6 +5,7 @@ import ServersStatus from './components/servers-status/servers-status'
 import ModuleSign from './components/module/signature/module-sign'
 import ModuleVerify from './components/module/signature/module-verify'
 import ModuleSkipChain from './components/module/skipchain/module-skipchain'
+import ModuleHTML from './components/module/html/module-html'
 
 import './app.scss';
 
@@ -22,6 +23,9 @@ class App extends React.Component {
             </Col>
             <Col>
               <ModuleSkipChain/>
+            </Col>
+            <Col>
+              <ModuleHTML/>
             </Col>
             <Col xs="12">
               <ServersStatus/>

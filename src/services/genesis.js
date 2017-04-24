@@ -77,7 +77,12 @@ export class GenesisService {
         .then(
           (response) => response.json().then(data => {
             SkipChainService.getLatestBlock(data.Servers.map(addr => tcp2ws(addr)), hex2buf(id)).then(data => {
-              resolve(data.filter(block => buf2hex(block.Hash) === blockID).pop());
+              if (blockID) {
+                resolve(data.filter(block => buf2hex(block.Hash) === blockID).pop());
+              }
+              else {
+                resolve(data.pop());
+              }
             });
           })
         )

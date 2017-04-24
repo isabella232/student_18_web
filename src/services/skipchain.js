@@ -73,7 +73,6 @@ export class SkipChainService {
    * @private
    */
   _verifyUpdates(blocks) {
-
     return blocks.every((block, blockIndex) => {
 
       const hash = cryptoJS.hashSkipBlock(block); // eslint-disable-line
@@ -112,7 +111,7 @@ export class SkipChainService {
           const link = buf2hex(block.BackLinkIDs[i]);
 
           const prev = blocks.filter(b => buf2hex(b.Hash) === link && block !== b).pop();
-          if (!prev || !prev._hash_verified || !prev._signature_verified || !prev._backlink_verified) {
+          if (prev && (!prev._signature_verified || !prev._backlink_verified)) {
             console.log("Back link is corrupted");
             return false;
           }
