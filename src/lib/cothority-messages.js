@@ -1,104 +1,10 @@
 import protobuf from 'protobufjs';
 
-const {Type, Field, MapField} = protobuf;
-
-const StatusResponse = new Type('StatusResponse')
-  .add(new MapField('system', 1, 'string', 'Status'))
-  .add(new Field('server', 2, 'ServerIdentity'));
-
-const {Type: Type$1, MapField: MapField$1} = protobuf;
-
-const status = new Type$1('Status')
-  .add(new MapField$1('field', 1, 'string', 'string'));
-
-const {Type: Type$2, Field: Field$1} = protobuf;
-
-const serverIdentity = new Type$2('ServerIdentity')
-  .add(new Field$1('public', 1, 'bytes'))
-  .add(new Field$1('id', 2, 'bytes'))
-  .add(new Field$1('address', 3, 'string'))
-  .add(new Field$1('description', 4, 'string'));
-
-const {Type: Type$3, Field: Field$2} = protobuf;
-
-const roster = new Type$3("Roster")
-  .add(new Field$2('id', 1, 'bytes'))
-  .add(new Field$2('list', 2, 'ServerIdentity', 'repeated'))
-  .add(new Field$2('aggregate', 3, 'bytes'));
-
-const {Type: Type$4, Field: Field$3} = protobuf;
-
-const signatureRequest = new Type$4("SignatureRequest")
-  .add(new Field$3('message', 1, 'bytes'))
-  .add(new Field$3('roster', 2, 'Roster'));
-
-const {Type: Type$5, Field: Field$4} = protobuf;
-
-const signatureResponse = new Type$5("SignatureResponse")
-  .add(new Field$4('hash', 1, 'bytes', 'required'))
-  .add(new Field$4('signature', 2, 'bytes', 'required'));
-
-const {Type: Type$6, Field: Field$5} = protobuf;
-
-const StoreSkipBlockRequest = new Type$6("StoreSkipBlockRequest")
-  .add(new Field$5('LatestID', 1, 'bytes'))
-  .add(new Field$5('NewBlock', 2, 'SkipBlock'));
-
-const {Type: Type$7, Field: Field$6} = protobuf;
-
-const StoreSkipBlockResponse = new Type$7("StoreSkipBlockResponse")
-  .add(new Field$6('Previous', 1, 'SkipBlock'))
-  .add(new Field$6('Latest', 2, 'SkipBlock'));
-
-const {Type: Type$8, Field: Field$7} = protobuf;
-
-const LatestBlockRequest = new Type$8("LatestBlockRequest")
-  .add(new Field$7('LatestID', 1, 'bytes'));
-
-const {Type: Type$9, Field: Field$8} = protobuf;
-
-const LatestBlockResponse = new Type$9("LatestBlockResponse")
-  .add(new Field$8('Update', 1, 'SkipBlock', 'repeated'));
-
-const {Type: Type$10, Field: Field$9} = protobuf;
-
-const SkipBlock = new Type$10("SkipBlock")
-  .add(new Field$9('Index', 1, 'sint32'))
-  .add(new Field$9('Height', 2, 'sint32'))
-  .add(new Field$9('MaximumHeight', 3, 'sint32'))
-  .add(new Field$9('BaseHeight', 4, 'sint32'))
-  .add(new Field$9('BackLinkIDs', 5, 'bytes', 'repeated'))
-  .add(new Field$9('VerifierIDs', 6, 'bytes', 'repeated'))
-  .add(new Field$9('ParentBlockID', 7, 'bytes'))
-  .add(new Field$9('GenesisID', 8, 'bytes'))
-  .add(new Field$9('Data', 9, 'bytes'))
-  .add(new Field$9('Roster', 10, 'Roster'))
-  .add(new Field$9('Hash', 11, 'bytes'))
-  .add(new Field$9('ForwardLink', 12, 'BlockLink', 'repeated'))
-  .add(new Field$9('ChildSL', 13, 'bytes'));
-
-const {Type: Type$11, Field: Field$10} = protobuf;
-
-const BlockLink = new Type$11("BlockLink")
-  .add(new Field$10('Hash', 1, 'bytes'))
-  .add(new Field$10('Signature', 2, 'bytes'));
+var skeleton = '{"nested":{"cothority":{},"BlockLink":{"fields":{"Hash":{"rule":"required","type":"bytes","id":1},"Signature":{"rule":"required","type":"bytes","id":2}}},"LatestBlockRequest":{"fields":{"LatestID":{"rule":"required","type":"bytes","id":1}}},"LatestBlockResponse":{"fields":{"Update":{"rule":"repeated","type":"SkipBlock","id":1,"options":{"packed":false}}}},"Roster":{"fields":{"id":{"type":"bytes","id":1},"list":{"rule":"repeated","type":"ServerIdentity","id":2,"options":{"packed":false}},"aggregate":{"type":"bytes","id":3}}},"ServerIdentity":{"fields":{"public":{"rule":"required","type":"bytes","id":1},"id":{"rule":"required","type":"bytes","id":2},"address":{"rule":"required","type":"string","id":3},"description":{"rule":"required","type":"string","id":4}}},"SignatureRequest":{"fields":{"message":{"rule":"required","type":"bytes","id":1},"roster":{"rule":"required","type":"Roster","id":2}}},"SignatureResponse":{"fields":{"hash":{"rule":"required","type":"bytes","id":1},"signature":{"rule":"required","type":"bytes","id":2}}},"SkipBlock":{"fields":{"test":{"type":"sint32","id":1},"Height":{"type":"sint32","id":2},"MaximumHeight":{"type":"sint32","id":3},"BaseHeight":{"type":"sint32","id":4},"BackLinkIDs":{"rule":"repeated","type":"bytes","id":5,"options":{"packed":false}},"VerifierIDs":{"rule":"repeated","type":"bytes","id":6,"options":{"packed":false}},"ParentBlockID":{"type":"bytes","id":7},"GenesisID":{"type":"bytes","id":8},"Data":{"type":"bytes","id":9},"Roster":{"type":"Roster","id":10},"Hash":{"type":"bytes","id":11},"ForwardLink":{"rule":"repeated","type":"BlockLink","id":12,"options":{"packed":false}},"ChildSL":{"type":"bytes","id":13}}},"StatusResponse":{"fields":{"system":{"keyType":"string","type":"Status","id":1},"server":{"type":"ServerIdentity","id":2}},"nested":{"Status":{"fields":{"field":{"keyType":"string","type":"string","id":1}}}}},"StoreSkipBlockRequest":{"fields":{"LatestID":{"rule":"required","type":"bytes","id":1},"NewBlock":{"rule":"required","type":"SkipBlock","id":2}}},"StoreSkipBlockResponse":{"fields":{"Previous":{"rule":"required","type":"SkipBlock","id":1},"Latest":{"rule":"required","type":"SkipBlock","id":2}}}}}';
 
 const {Root} = protobuf;
 
-const root = new Root();
-root.define("cothority")
-  .add(SkipBlock)
-  .add(serverIdentity)
-  .add(roster)
-  .add(BlockLink)
-  .add(LatestBlockRequest)
-  .add(LatestBlockResponse)
-  .add(StoreSkipBlockRequest)
-  .add(StoreSkipBlockResponse)
-  .add(status)
-  .add(StatusResponse)
-  .add(signatureRequest)
-  .add(signatureResponse);
+const root = Root.fromJSON(JSON.parse(skeleton));
 
 class CothorityProtobuf {
   
@@ -138,7 +44,7 @@ class CothorityProtobuf {
    * @returns {ReflectionObject|?ReflectionObject|string}
    */
   getModel(name) {
-    return this.root.lookup(`cothority.${name}`);
+    return this.root.lookup(`${name}`);
   }
 }
 
@@ -232,3 +138,4 @@ class CothorityMessages extends CothorityProtobuf {
 var index = new CothorityMessages();
 
 export default index;
+//# sourceMappingURL=cothority-messages.js.map

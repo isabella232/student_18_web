@@ -76,7 +76,7 @@ export default class ModuleSkipChain extends React.Component {
 
     return (
       <Module title="SkipChain" icon="chain" className="module-skip-chain">
-        <Scrollbars style={{height: "100%"}}
+        <Scrollbars style={{width: "100%", height: "100%"}}
                     renderThumbVertical={props => <div {...props} className="thumb-vertical"/>}>
           {rows}
         </Scrollbars>

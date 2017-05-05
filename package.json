@@ -17,6 +17,7 @@
     "reactstrap": "^4.2.0"
   },
   "devDependencies": {
+    "argv-parser": "^0.1.4",
     "enzyme": "^2.7.1",
     "faker": "^4.1.0",
     "inliner": "^1.12.1",
