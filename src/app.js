@@ -27,7 +27,9 @@ class App extends React.Component {
             <Col>
               <ModuleHTML/>
             </Col>
-            <Col xs="12">
+          </Row>
+          <Row>
+            <Col>
               <ServersStatus/>
             </Col>
           </Row>

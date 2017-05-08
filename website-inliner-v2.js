@@ -60,7 +60,7 @@ function getPages(url) {
       }
 
       pages[url] = html;
-      const regex = new RegExp(`<a[^>]href="(${baseURL}[^"]*)"`, 'g');
+      const regex = new RegExp(`<a[^>]+href="(${baseURL}[^"]*)"`, 'g');
       const promises = [];
 
       let match;
@@ -126,11 +126,11 @@ function createSkipChain(url) {
  */
 function updateURL() {
   for (let url in pages) {
-    const regex = new RegExp(`<a[^>]href="(${baseURL}[^"]*)"`, 'g');
+    const regex = new RegExp(`<a[^>]+href="(${baseURL}[^"]*)"`, 'g');
 
     const html = pages[url].replace(regex, (match, p1) => {
-      p1 = cleanURL(p1);
-      return match.replace(p1, `javascript:void 0" onclick="window.parent.postMessage('skipchain://${config[p1]}', '*')`);
+      const key = cleanURL(p1);
+      return match.replace(p1, `javascript:void 0" onclick="window.parent.postMessage('skipchain://${config[key]}', '*')`);
     });
 
     updatePageSkipChain(html, url);
