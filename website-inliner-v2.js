@@ -5,6 +5,14 @@ const Inliner = require('inliner');
 
 const GET_UPDATE_DATA_PREFIX = 'BlockData:';
 
+/**
+ * @author Gaylor Bosson (gaylor.bosson@epfl.ch)
+ *
+ * This script will create a suite of skipchains to store the inlined pages of a website
+ *
+ * config: c40c4cfd16
+ */
+
 // Get the url and the config genesis id
 const params = parser.parse(process.argv, {rules: {
   block: {
@@ -39,6 +47,7 @@ const pages = {};
  * @returns {Promise}
  */
 function getPages(url) {
+  url = cleanURL(url);
   console.log('Fetching ' + url);
 
   pages[url] = null;
@@ -51,14 +60,14 @@ function getPages(url) {
       }
 
       pages[url] = html;
-      const regex = new RegExp(`<a href="(${baseURL}[^"]*)"`, 'g');
+      const regex = new RegExp(`<a[^>]href="(${baseURL}[^"]*)"`, 'g');
       const promises = [];
 
       let match;
       do {
         match = regex.exec(html);
-        if (match && !pages.hasOwnProperty(match[1])) {
-          promises.push(getPages(match[1]));
+        if (match && !pages.hasOwnProperty(cleanURL(match[1]))) {
+          promises.push(getPages(cleanURL(match[1])));
         }
 
       } while (match !== null);
@@ -88,7 +97,11 @@ function populateConfig() {
     fs.writeFileSync('.tmp', JSON.stringify(config));
     const out = exec(`scmgr addWeb ${params.block} .tmp`).toString('utf8');
 
-    console.log(extractLastLine(out));
+    const line = extractLastLine(out);
+    const matches = line.match(/[0-9a-f]{64}/);
+    if (matches) {
+      console.log(`Update config block ${matches[0].substr(0, 10)}`);
+    }
   }
 }
 
@@ -113,10 +126,11 @@ function createSkipChain(url) {
  */
 function updateURL() {
   for (let url in pages) {
-    const regex = new RegExp(`<a href="(${baseURL}[^"]*)"`, 'g');
+    const regex = new RegExp(`<a[^>]href="(${baseURL}[^"]*)"`, 'g');
 
     const html = pages[url].replace(regex, (match, p1) => {
-      return `<a href="javascript:void 0" onclick="window.parent.postMessage('skipchain://${config[p1]}', '*')"`;
+      p1 = cleanURL(p1);
+      return match.replace(p1, `javascript:void 0" onclick="window.parent.postMessage('skipchain://${config[p1]}', '*')`);
     });
 
     updatePageSkipChain(html, url);
@@ -132,7 +146,12 @@ function updatePageSkipChain(html, url) {
   fs.writeFileSync('.tmp', html, 'utf8');
 
   const out = exec(`scmgr addWeb ${config[url]} .tmp`).toString('utf8');
-  console.log(extractLastLine(out));
+  const line = extractLastLine(out);
+
+  const matches = line.match(/[0-9a-f]{64}/);
+  if (matches) {
+    console.log(`${url} -> Block ${matches[0].substr(0, 10)}`)
+  }
 }
 
 /**
@@ -148,6 +167,10 @@ function extractLastLine(out) {
   }
 
   return '';
+}
+
+function cleanURL(url) {
+  return url.replace(/\/$/, '');
 }
 
 
@@ -183,12 +206,14 @@ else {
   }
   catch (e) {
     console.log(e.stdout.toString('utf8'));
+    throw e;
   }
 
   const matches = out.match(/[0-9a-f]{64}/);
   if (matches) {
     params.block = matches[0];
-    console.log(extractLastLine(out));
+
+    console.log(`Config block ID: ${params.block.substr(0, 10)}`);
   }
   else {
     throw new Error("Cannot create the skip-chain for the config");
@@ -206,6 +231,6 @@ getPages(baseURL)
     updateURL();
 
     console.log('------------- Ended correctly');
-  })
+  }, (e) => console.log(e))
   .catch((e) => console.log('something went wrong when fetching the pages', e.message))
   .then(() => fs.unlinkSync('.tmp'));
