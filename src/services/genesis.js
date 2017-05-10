@@ -5,16 +5,21 @@ import {tcp2ws} from '../utils/network'
 const GENESIS_BLOCK_SERVER = "http://skipchain.dedis.ch/";
 
 /**
- * This service will contact the DEDIS server in order to get the latest genesis ID available.
- * You can also get the list of servers related to a given genesis ID
+ * @author Gaylor Bosson (gaylor.bosson@epfl.ch)
+ * This service will contact the DEDIS server to get the list of skipchains with their servers. Those servers may
+ * not be available.
  */
 export class GenesisService {
 
   listeners = [];
   genesisList = [];
-  curr_genesis = '';
+  curr_genesis = ''; // hex form
   blocks = [];
 
+  /**
+   * Make a request to the GENESIS_BLOCK_SERVER url to get the list of genesis IDs of the skipchains
+   * @constructor
+   */
   constructor() {
     // Get the servers list and the genesis block id
     this._fetch_request = fetch(GENESIS_BLOCK_SERVER, {headers: {'Content-Type': 'application/json'}})
@@ -32,6 +37,10 @@ export class GenesisService {
       });
   }
 
+  /**
+   * Add the given listener to the list of object which will be called on update events
+   * @param listener {Object} must have onGenesisUpdate function to get the updates
+   */
   subscribe(listener) {
     if (this.listeners.indexOf(listener < 0)) {
       this.listeners.push(listener);
@@ -46,6 +55,10 @@ export class GenesisService {
     }
   }
 
+  /**
+   * Remove the given listener from the list
+   * @param listener {Object}
+   */
   unsubscribe(listener) {
     const index = this.listeners.indexOf(listener);
     if (index >= 0) {
@@ -53,6 +66,10 @@ export class GenesisService {
     }
   }
 
+  /**
+   * Trigger either an update or an error update
+   * @param error {Error} a potential error that triggered
+   */
   updateGenesis(error) {
     if (error) {
       this.error = error;
@@ -63,23 +80,36 @@ export class GenesisService {
     }
   }
 
+  /**
+   * Change the current skipchain given the ID of the genesis block
+   * @param id {String} hex form of the ID
+   */
   setCurrentGenesisID(id) {
-    const data = this.genesisList.filter(b => b.GenesisID === id).pop();
-    if (data) {
+    const block = this.genesisList.filter(b => b.GenesisID === id).pop();
+    if (block) {
+      // if the id exists we fetch the skipchain
       this.curr_genesis = id;
       this._request = this._fetchStatusForGenesisID(id);
     }
   }
 
+  /**
+   * Given a genesis ID and a block ID, it will get the servers of the skipchain and then fetch the list of
+   * blocks of the skipchain to finally return the block if it exists
+   * If the block ID is not provided, we return the latest block
+   * @param id {String} Genesis ID
+   * @param blockID {String} 64 hex-digits Block ID
+   * @returns {Promise}
+   */
   getLatestFromGenesisID(id, blockID) {
     return new Promise((resolve, reject) => {
       fetch(GENESIS_BLOCK_SERVER + id + '.html', {headers: {'Content-Type': 'application/json'}})
         .then(
           (response) => response.json().then(data => {
             SkipChainService.getLatestBlock(data.Servers.map(addr => tcp2ws(addr)), hex2buf(id)).then(data => {
-              console.log(data);
               if (blockID) {
-                resolve(data.filter(block => buf2hex(block.Hash) === blockID).pop());
+                const block = data.filter(block => buf2hex(block.Hash) === blockID).pop();
+                block ? resolve(block) : reject();
               }
               else {
                 resolve(data.pop());
@@ -91,18 +121,37 @@ export class GenesisService {
     });
   }
 
+  /**
+   * Trigger an update event to the listener with params:
+   *  1. blocks The list of blocks of the skipchain
+   *  2. genesisList The current list of available skipchains
+   *  3. curr_genesis The current genesis ID of the current skipchain
+   * @param listener {object} An object with a declaration of onGenesisUpdate
+   * @private
+   */
   _triggerEvent(listener) {
     if (typeof listener.onGenesisUpdate === 'function') {
       listener.onGenesisUpdate(this.blocks, this.genesisList, this.curr_genesis);
     }
   }
 
+  /**
+   * Trigger an error event
+   * @param listener
+   * @private
+   */
   _triggerError(listener) {
     if (typeof listener.onGenesisError === 'function') {
       listener.onGenesisError(this.error);
     }
   }
 
+  /**
+   * It will check that the skipchain exists and then it gets the list of blocks. Finally
+   * it trigger according to the result either an update or an error
+   * @param id {String} The genesis ID
+   * @private
+   */
   _fetchStatusForGenesisID(id) {
     const block = this.genesisList.filter(b => b.GenesisID === id).pop();
     if (!block) {
@@ -114,7 +163,7 @@ export class GenesisService {
     return SkipChainService.getLatestBlock(servers, hex2buf(block.GenesisID))
       .then((data) => {
         this.blocks = data;
-        this.updateGenesis();
+        this.updateGenesis(null);
       })
       .catch((e) => this.updateGenesis(e));
   }

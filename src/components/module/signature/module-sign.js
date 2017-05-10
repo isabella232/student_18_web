@@ -2,11 +2,20 @@ import React from 'react'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 import Module from '../module'
-import FileDropArea from './drop-file-area'
-import SignArea from './sign-area'
+import FileDropArea from './utils/drop-file-area'
+import SignArea from './utils/sign-area'
 
+/**
+ * @author Gaylor Bosson (gaylor.bosson@epfl.ch)
+ *
+ * Module to upload a file and sign it using the current skipchain
+ */
 export default class BlockSign extends React.Component {
 
+  /**
+   * @constructor
+   * @param props
+   */
   constructor(props) {
     super(props);
 
@@ -18,12 +27,19 @@ export default class BlockSign extends React.Component {
     this.handleBack = this.handleBack.bind(this);
   }
 
+  /**
+   * Change the file we want to sign
+   * @param file
+   */
   handleFileDropped(file) {
     this.setState({
       file
     });
   }
 
+  /**
+   * Cancel the current file
+   */
   handleBack() {
     this.setState({file: undefined});
   }

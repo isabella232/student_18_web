@@ -3,6 +3,12 @@ import FontAwesome from 'react-fontawesome'
 
 import './module.css'
 
+/**
+ * @author Gaylor Bosson (gaylor.bosson@epfl.ch)
+ *
+ * Base component of a module. You can define the title of the module and its icon using the name
+ * of an icon in http://fontawesome.io/icons/
+ */
 export default class Module extends React.Component {
   
   static propTypes = {

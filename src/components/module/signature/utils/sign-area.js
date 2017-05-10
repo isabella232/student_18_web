@@ -3,13 +3,18 @@ import {Button} from 'reactstrap'
 import FontAwesome from 'react-fontawesome'
 
 import './sign-area.css'
-import {hashFile} from '../../../utils/file'
-import {tcp2ws} from '../../../utils/network'
-import CothorityWebsocket from '../../../services/websocket'
-import GenesisService from '../../../services/genesis'
-import StatusService from '../../../services/status'
-import SignatureFile from '../../../models/signature-file'
+import {hashFile} from '../../../../utils/file'
+import {tcp2ws} from '../../../../utils/network'
+import CothorityWebsocket from '../../../../services/websocket'
+import GenesisService from '../../../../services/genesis'
+import StatusService from '../../../../services/status'
+import SignatureFile from '../../../../models/signature-file'
 
+/**
+ * @author Gaylor Bosson (gaylor.bosson@epfl.ch)
+ *
+ * Show the status of the sign process
+ */
 export default class SignArea extends React.Component {
 
   static propTypes = {
@@ -17,6 +22,10 @@ export default class SignArea extends React.Component {
     onBack: T.func
   };
 
+  /**
+   * @constructor
+   * @param props
+   */
   constructor(props) {
     super(props);
 
@@ -40,6 +49,12 @@ export default class SignArea extends React.Component {
     GenesisService.unsubscribe(this);
   }
 
+  /**
+   * @see GenesisService._triggerEvent
+   * @param blocks
+   * @param genesisList
+   * @param currGenesis
+   */
   onGenesisUpdate(blocks, genesisList, currGenesis) {
     this.setState({
       genesisID: currGenesis,
@@ -47,12 +62,19 @@ export default class SignArea extends React.Component {
     });
   }
 
+  /**
+   * @see GenesisService._triggerError
+   * @param error
+   */
   onGenesisError(error) {
     this.setState({
       error: error.message
     });
   }
 
+  /**
+   * Return to the drop file component
+   */
   handleBackAction() {
     this._triggerOnBack();
   }
@@ -151,6 +173,10 @@ export default class SignArea extends React.Component {
     );
   }
 
+  /**
+   * Trigger the back event
+   * @private
+   */
   _triggerOnBack() {
     const {onBack} = this.props;
     if (typeof onBack === 'function') {

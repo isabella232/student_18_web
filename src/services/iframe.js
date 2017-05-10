@@ -2,10 +2,21 @@ import './iframe.css'
 import GenesisService from '../services/genesis'
 import ByteBuffer from 'bytebuffer'
 
+/**
+ * @author Gaylor Bosson (gaylor.bosson@epfl.ch)
+ *
+ * This service displays an HTML skipchain using the genesis ID of the page you want to open. It also listen
+ * the message events to know when the IFrame wants to change the page
+ */
 class IFrameService {
 
   _root = null;
 
+  /**
+   * 1. Get the html node for the service
+   * 2. Add a listener to message event
+   * @constructor
+   */
   constructor() {
     this._root = document.getElementById('block-iframe');
 
@@ -17,6 +28,10 @@ class IFrameService {
     });
   }
 
+  /**
+   * Fetch and display the page of the skipchain with the given genesis ID
+   * @param id {String} 64 hex-digits ID of the genesis block
+   */
   open(id) {
 
     GenesisService.getLatestFromGenesisID(id).then((block) => {
@@ -34,6 +49,9 @@ class IFrameService {
     });
   }
 
+  /**
+   * Hide the website emulator
+   */
   back() {
     this._root.className = "";
     this._root.innerHTML = "";
@@ -47,11 +65,15 @@ window.IFrameService = service;
 
 export default service;
 
+/**
+ * Translate char by char a sequence of hex digit to UTF-8 digit
+ * @param str
+ * @returns {string}
+ */
 function hexToUTF8(str){
-  var j;
-  var hexes = str.match(/.{1,2}/g) || [];
-  var back = "";
-  for(j = 0; j<hexes.length; j++) {
+  const hexes = str.match(/.{1,2}/g) || [];
+  let back = "";
+  for(let j = 0; j<hexes.length; j++) {
     back += String.fromCharCode(parseInt(hexes[j], 16));
   }
 

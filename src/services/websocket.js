@@ -2,10 +2,20 @@ import CothorityMessages from '../lib/cothority-messages'
 
 const EMPTY_MESSAGE = new Uint8Array([]);
 
+/**
+ * @author Gaylor Bosson (gaylor.bosson@epfl.ch)
+ *
+ * This service maintains or create websockets for the different actions the front-end can perform
+ */
 export class CothorityWebsocket {
 
   status = {};
 
+  /**
+   * Get the status of the given server among a WS
+   * @param address {String} ip address
+   * @returns {Promise}
+   */
   getStatus(address) {
 
     // The promise will resolve when the socket sends back the response of the call
@@ -21,6 +31,13 @@ export class CothorityWebsocket {
 
   }
 
+  /**
+   * Get the signature of the given hash with the given roster
+   * @param hash {Uint8Array} hash of the message
+   * @param address {String} ip address
+   * @param roster {Roster} check protobuf Roster message
+   * @returns {Promise}
+   */
   getSignature(hash, address, roster) {
 
     return new Promise((resolve, reject) => {
@@ -35,6 +52,12 @@ export class CothorityWebsocket {
 
   }
 
+  /**
+   * Get the list of blocks of the skipchain with the given genesis ID
+   * @param address {String} ip address
+   * @param id {Uint8Array} Genesis ID
+   * @returns {Promise}
+   */
   getLatestBlock(address, id) {
 
     return new Promise((resolve, reject) => {
@@ -49,7 +72,13 @@ export class CothorityWebsocket {
 
   }
 
-
+  /**
+   * Store a new block with the given roster
+   * @param address {String} ip address
+   * @param id {Uint8Array} Genesis ID
+   * @param servers {Array} list of servers
+   * @returns {Promise}
+   */
   storeNewBlock(address, id, servers) {
 
     return new Promise((resolve, reject) => {

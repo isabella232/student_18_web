@@ -1,6 +1,12 @@
 import CothorityWS from './websocket'
 import {buf2hex} from '../utils/buffer'
 
+/**
+ * @author Gaylor Bosson (gaylor.bosson@epfl.ch)
+ *
+ * This service provide the function to get the list of blocks of the skipchain with the
+ * underlying logic and verification
+ */
 export class SkipChainService {
 
   /**
@@ -68,7 +74,7 @@ export class SkipChainService {
 
   /**
    * Check the sanity of the skip blocks and return false if an error occurred
-   * @param blocks
+   * @param blocks {Array}
    * @returns {boolean}
    * @private
    */

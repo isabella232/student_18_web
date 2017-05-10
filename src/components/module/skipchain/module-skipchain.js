@@ -24,9 +24,11 @@ export default class ModuleSkipChain extends React.Component {
     this.setState({
       blocks,
       genesisList: genesisList.filter(b => {
-        const data = ByteBuffer.fromBase64(b.Data);
-        if (data.capacity() > 18) {
-          return !data.slice(18).toString('utf8').match(/^https?:\/\//);
+        if (b.Data) {
+          const data = ByteBuffer.fromBase64(b.Data);
+          if (data.capacity() > 18) {
+            return !data.slice(18).toString('utf8').match(/^https?:\/\//);
+          }
         }
 
         return true;

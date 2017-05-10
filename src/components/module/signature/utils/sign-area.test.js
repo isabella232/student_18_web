@@ -1,14 +1,14 @@
-jest.mock('../../../services/status');
-jest.mock('../../../services/websocket');
-jest.mock('../../../services/genesis');
+jest.mock('../../../../services/status');
+jest.mock('../../../../services/websocket');
+jest.mock('../../../../services/genesis');
 
 import React from 'react'
 import {mount} from 'enzyme'
 import {Button} from 'reactstrap'
 
 import SignArea from './sign-area'
-import CothorityWebsocket from '../../../services/websocket'
-import StatusService from '../../../services/status'
+import CothorityWebsocket from '../../../../services/websocket'
+import StatusService from '../../../../services/status'
 
 global.FileReader = class {
   readAsArrayBuffer() {

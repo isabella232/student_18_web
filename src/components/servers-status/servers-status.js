@@ -7,8 +7,17 @@ import LastUpdate from './last-update'
 import StatusService from '../../services/status'
 import LoadingSpinner from '../loading/loading-spinner'
 
+/**
+ * @author Gaylor Bosson (gaylor.bosson@epfl.ch)
+ *
+ * Table component which displays the list of servers and their status
+ */
 export default class ServersStatus extends React.Component {
 
+  /**
+   * @constructor
+   * @param props
+   */
   constructor(props) {
     super(props);
 
@@ -19,6 +28,11 @@ export default class ServersStatus extends React.Component {
     };
   }
 
+  /**
+   * @see StatusService._triggerEvent
+   * @param status {Object} object with the server addresses as keys
+   * @param genesisList {Array}
+   */
   onStatusUpdate(status, genesisList) {
     this.setState({
       isLoading: false,
@@ -76,6 +90,10 @@ export default class ServersStatus extends React.Component {
   }
 }
 
+/**
+ * Return the loading component
+ * @returns {XML}
+ */
 function generateLoading() {
   return (
     <div className="servers-status-loading">
@@ -86,7 +104,7 @@ function generateLoading() {
 
 /**
  * Generate a table row from a list of status responses
- * @param status
+ * @param status {Object}
  */
 function generateRows(status) {
   return status.map(status => {

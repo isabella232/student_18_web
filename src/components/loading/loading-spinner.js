@@ -3,6 +3,11 @@ import FontAwesome from 'react-fontawesome'
 
 import './loading-spinner.css'
 
+/**
+ * @author Gaylor Bosson (gaylor.bosson@epfl.ch)
+ *
+ * Display a spinning circle
+ */
 export default class LoadingSpinner extends React.Component {
   render() {
     return (

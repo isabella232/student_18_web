@@ -1,6 +1,8 @@
 import React, {PropTypes as T} from 'react'
 
 /**
+ * @author Gaylor Bosson (gaylor.bosson@epfl.ch)
+ *
  * Increase a count over time and display the time since the given timestamp
  */
 export default class LastUpdate extends React.Component {

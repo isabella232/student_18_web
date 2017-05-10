@@ -4,15 +4,24 @@ import {Row, Col, Form, FormGroup, Label, Input} from 'reactstrap'
 
 import './module-verify.css'
 import Module from '../module'
-import DropFileArea from './drop-file-area'
+import DropFileArea from './utils/drop-file-area'
 import GenesisService from '../../../services/genesis'
 import SignatureFile from '../../../models/signature-file'
 import {readAsString, hashFile} from '../../../utils/file'
 import {buf2hex} from '../../../utils/buffer'
 import {tcp2ws} from '../../../utils/network'
 
+/**
+ * @author Gaylor Bosson (gaylor.bosson@epfl.ch)
+ *
+ * Module to verify a given signature file and the target file
+ */
 export default class VerifyModule extends React.Component {
 
+  /**
+   * @constructor
+   * @param props
+   */
   constructor(props) {
     super(props);
 
@@ -43,6 +52,7 @@ export default class VerifyModule extends React.Component {
         isVerified: false,
         isSignatureCorrect: false
       });
+
       return;
     }
 
@@ -92,6 +102,11 @@ export default class VerifyModule extends React.Component {
     );
   }
 
+  /**
+   * Return the current status of the verifying process
+   * @returns {XML}
+   * @private
+   */
   _generateFeedback() {
     const {file, isVerified, isSignatureCorrect, isHashCorrect, error} = this.state;
 

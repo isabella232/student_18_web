@@ -116,6 +116,8 @@ describe(SkipChainService, () => {
       Roster: {list: []},
       ForwardLink: [],
       BackLinkIDs: [new Uint8Array([0])]
+    },{
+      Hash: new Uint8Array([0]),
     }];
 
     expect(service._verifyUpdates(blocks));
