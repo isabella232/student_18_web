@@ -14,12 +14,21 @@ export default new class {
       }
     }];
 
-    listener.onGenesisUpdate(blocks);
+    const genesisList = [{
+      GenesisID: '1',
+      Data: 'Wztc3rrGr9+feEFodHRwczovL2RlZGlzLmNo'
+    },{
+      GenesisID: '2',
+      Data: ''
+    }];
+
+    listener.onGenesisUpdate(blocks, genesisList);
   }
 
   unsubscribe = jest.fn();
 
   getLatestFromGenesisID = jest.fn().mockReturnValue(Promise.resolve({
+    Data: new Uint8Array([0, 0, 0, 0]),
     Roster: {
       list: []
     }

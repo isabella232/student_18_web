@@ -8,9 +8,7 @@ import ByteBuffer from 'bytebuffer'
  * This service displays an HTML skipchain using the genesis ID of the page you want to open. It also listen
  * the message events to know when the IFrame wants to change the page
  */
-class IFrameService {
-
-  _root = null;
+export class IFrameService {
 
   /**
    * 1. Get the html node for the service
@@ -18,10 +16,8 @@ class IFrameService {
    * @constructor
    */
   constructor() {
-    this._root = document.getElementById('block-iframe');
-
     window.addEventListener('message', (e) => {
-      console.log(e);
+      e.data = e.data || '';
       if (e.data.indexOf("skipchain://") === 0) {
         this.open(e.data.replace("skipchain://", ""));
       }
@@ -34,18 +30,21 @@ class IFrameService {
    */
   open(id) {
 
-    GenesisService.getLatestFromGenesisID(id).then((block) => {
+    return GenesisService.getLatestFromGenesisID(id).then((block) => {
       const data = ByteBuffer.wrap(block.Data);
       // buffer can have some issues to decode into UTF-8 so we force the decoding by hand
       let html = hexToUTF8(data.toHex());
       html = html.substr(html.indexOf('<!'));
 
-      this._root.className = "active";
-      this._root.innerHTML = `<div>
+      const root = this._getRoot();
+      if (root) {
+        root.className = "active";
+        root.innerHTML = `<div>
             DEDIS WebSite Emulator
             <span><a onclick="window.IFrameService.back()" href="#">Back</a></span>
         </div>
         <iframe src="data:text/html;base64,${btoa(html)}"></iframe>`
+      }
     });
   }
 
@@ -53,8 +52,14 @@ class IFrameService {
    * Hide the website emulator
    */
   back() {
-    this._root.className = "";
-    this._root.innerHTML = "";
+    const root = this._getRoot();
+
+    root.className = "";
+    root.innerHTML = "";
+  }
+
+  _getRoot() {
+    return document.getElementById('block-iframe');
   }
 
 }
@@ -70,10 +75,10 @@ export default service;
  * @param str
  * @returns {string}
  */
-function hexToUTF8(str){
+function hexToUTF8(str) {
   const hexes = str.match(/.{1,2}/g) || [];
   let back = "";
-  for(let j = 0; j<hexes.length; j++) {
+  for (let j = 0; j < hexes.length; j++) {
     back += String.fromCharCode(parseInt(hexes[j], 16));
   }
 

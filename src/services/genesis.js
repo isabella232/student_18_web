@@ -2,7 +2,7 @@ import SkipChainService from './skipchain'
 import {hex2buf, buf2hex} from '../utils/buffer'
 import {tcp2ws} from '../utils/network'
 
-const GENESIS_BLOCK_SERVER = "http://skipchain.dedis.ch/";
+const GENESIS_BLOCK_SERVER = "https://skipchain.dedis.ch/";
 
 /**
  * @author Gaylor Bosson (gaylor.bosson@epfl.ch)
@@ -101,20 +101,22 @@ export class GenesisService {
    * @param blockID {String} 64 hex-digits Block ID
    * @returns {Promise}
    */
-  getLatestFromGenesisID(id, blockID) {
+  getLatestFromGenesisID(id, blockID = null) {
     return new Promise((resolve, reject) => {
       fetch(GENESIS_BLOCK_SERVER + id + '.html', {headers: {'Content-Type': 'application/json'}})
         .then(
           (response) => response.json().then(data => {
-            SkipChainService.getLatestBlock(data.Servers.map(addr => tcp2ws(addr)), hex2buf(id)).then(data => {
-              if (blockID) {
-                const block = data.filter(block => buf2hex(block.Hash) === blockID).pop();
-                block ? resolve(block) : reject();
-              }
-              else {
-                resolve(data.pop());
-              }
-            });
+            SkipChainService.getLatestBlock(data.Servers.map(addr => tcp2ws(addr)), hex2buf(id))
+              .then(data => {
+                if (blockID) {
+                  const block = data.filter(block => buf2hex(block.Hash) === blockID).pop();
+                  block ? resolve(block) : reject();
+                }
+                else {
+                  resolve(data.pop());
+                }
+              })
+              .catch(e => reject(e));
           })
         )
         .catch(e => reject(e));

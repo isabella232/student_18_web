@@ -1,28 +1,6 @@
 jest.mock('./skipchain');
 
-fetch = (addr) => {
-  return Promise.resolve({
-    json() {
-      if (addr.indexOf('html') === -1) {
-        return Promise.resolve({
-          Blocks: [{
-            GenesisID: '00',
-            Servers: []
-          },{
-            GenesisID: '11',
-            Servers: ['127.0.0.1:7000']
-          }]
-        });
-      }
-      else {
-        return Promise.resolve({
-          GenesisID: '00',
-          Servers: []
-        })
-      }
-    }
-  });
-};
+fetch = jest.fn();
 
 import SkipChainService from './skipchain'
 import {hex2buf} from '../utils/buffer'
@@ -32,6 +10,20 @@ describe('services:genesis', () => {
 
   beforeEach(() => {
     SkipChainService.getLatestBlock.mockClear();
+    fetch.mockClear();
+    fetch.mockReturnValue(Promise.resolve({
+      json() {
+        return Promise.resolve({
+          Blocks: [{
+            GenesisID: '00',
+            Servers: []
+          }, {
+            GenesisID: '11',
+            Servers: ['127.0.0.1:7000']
+          }]
+        });
+      }
+    }));
   });
 
   it('should manage the listeners', () => {
@@ -101,6 +93,13 @@ describe('services:genesis', () => {
   });
 
   it('should get the latest block with a genesis id', () => {
+    fetch.mockReturnValue(Promise.resolve({
+      json: () => Promise.resolve({
+        GenesisID: '00',
+        Servers: []
+      })
+    }));
+
     expect.assertions(1);
 
     SkipChainService.getLatestBlock.mockReturnValue(Promise.resolve([{
@@ -111,6 +110,57 @@ describe('services:genesis', () => {
 
     return service.getLatestFromGenesisID('00', '00').then(block => {
       expect(block).toBeDefined();
+    });
+  });
+
+  it('should get the latest block', () => {
+    fetch.mockReturnValue(Promise.resolve({
+      json: () => Promise.resolve({
+        GenesisID: '00',
+        Servers: []
+      })
+    }));
+
+    expect.assertions(1);
+
+    const block = {};
+    SkipChainService.getLatestBlock.mockReturnValue(Promise.resolve([{}, {}, {}, block]));
+
+    const service = new GenesisService();
+
+    return service.getLatestFromGenesisID('00').then(b => {
+      expect(b).toBe(block);
+    });
+  });
+
+  it('should reject when getting the latest block', () => {
+    fetch.mockReturnValue(Promise.resolve({
+      json: () => Promise.resolve({
+        GenesisID: '00',
+        Servers: []
+      })
+    }));
+
+    expect.assertions(1);
+
+    const error = new Error();
+    SkipChainService.getLatestBlock.mockReturnValue(Promise.reject(error));
+
+    const service = new GenesisService();
+    return service.getLatestFromGenesisID('00').then(() => {}, e => {
+      expect(e).toBe(error);
+    });
+  });
+
+  it('should reject on fetch error', () => {
+    const error = new Error();
+    fetch.mockReturnValue(Promise.reject(error));
+
+    expect.assertions(1);
+
+    const service = new GenesisService();
+    return service.getLatestFromGenesisID('00').then(() => {}, e => {
+      expect(e).toBe(error);
     });
   });
 

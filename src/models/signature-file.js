@@ -116,7 +116,7 @@ export default class SignatureFile {
    * @returns {Array}
    */
   getOfflineServers() {
-    return this.offlineServers;
+    return this.offlineServers || [];
   }
 
   /**

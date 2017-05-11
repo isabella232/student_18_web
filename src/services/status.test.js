@@ -89,6 +89,17 @@ describe(StatusService, () => {
     });
   });
 
+  it('should clear the timeout', () => {
+    CothorityWS.getStatus.mockReturnValue(Promise.resolve({}));
+    const service = new StatusService();
+    const obj = {};
+    service._timer = obj;
+
+    service._updateStatus();
+
+    expect(service._timer).not.toBe(obj);
+  });
+
   it('should create the server object on error', () => {
     expect.assertions(1);
     CothorityWS.getStatus.mockReturnValue(Promise.reject());

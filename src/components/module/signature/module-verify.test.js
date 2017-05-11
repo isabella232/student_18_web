@@ -5,6 +5,7 @@ import Faker from 'faker'
 import {mount} from 'enzyme'
 
 import ModuleVerify from './module-verify'
+import GenesisService from '../../../services/genesis'
 
 global.FileReader = class {
   readAsText() {
@@ -14,7 +15,8 @@ global.FileReader = class {
           signature: '000000',
           hash: '11',
           genesisID: 'aa',
-          blockID: 'bb'
+          blockID: 'bb',
+          offlineServers: ['0.0.0.0:1000']
         })
       }
     });
@@ -36,9 +38,19 @@ global.cryptoJS = {
   }
 };
 
-describe(ModuleVerify, () => {
+describe('components:module:signature:module-verify', () => {
 
   const MOCK_FILE = new File([], '');
+
+  beforeEach(() => {
+    GenesisService.getLatestFromGenesisID.mockClear();
+    GenesisService.getLatestFromGenesisID.mockReturnValue(Promise.resolve({
+      Data: new Uint8Array([0, 0, 0, 0]),
+      Roster: {
+        list: [{address: '1.1.1.1:1000'},{address: '1.1.1.1:1002'},{address: '1.1.1.1:1004'}]
+      }
+    }));
+  });
 
   it('should render without crashing', () => {
     const wrapper = mount(<ModuleVerify/>);
@@ -60,7 +72,22 @@ describe(ModuleVerify, () => {
     return wrapper.instance().handleFileDrop(MOCK_FILE)
       .then(() => {
         expect(wrapper.instance().state.isSignatureCorrect).toBeTruthy();
-      }, (e) => console.log(e));
+      });
+  });
+
+  it('should fail to verify the signature', () => {
+    const error = new Error("error");
+    GenesisService.getLatestFromGenesisID.mockClear();
+    GenesisService.getLatestFromGenesisID.mockReturnValue(Promise.reject(error));
+
+    expect.assertions(1);
+
+    const wrapper = mount(<ModuleVerify/>);
+    wrapper.instance().handleFileDrop(MOCK_FILE);
+
+    return wrapper.instance().handleFileDrop(MOCK_FILE).then(() => {
+      expect(wrapper.state('error')).toBe(error.message);
+    });
   });
 
   it('should reset the state', () => {

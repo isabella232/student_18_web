@@ -4,6 +4,7 @@ import React from 'react'
 import {mount} from 'enzyme'
 import Faker from 'faker'
 import {Input} from 'reactstrap'
+import ByteBuffer from 'bytebuffer'
 
 import ModuleSkipchain from './module-skipchain'
 import GenesisService from '../../../services/genesis'
@@ -12,7 +13,7 @@ describe('components:module:skipchain:module-skipchain', () => {
 
   beforeEach(() => {
     GenesisService.subscribe = (listener) => {
-      listener.onGenesisUpdate([], [{GenesisID: 'id1'},{GenesisID: 'id2'}], '');
+      listener.onGenesisUpdate([], [{GenesisID: 'id1', Data: generateData()},{GenesisID: 'id2'}], '');
     };
 
     GenesisService.unsubscribe = jest.fn();
@@ -52,3 +53,7 @@ describe('components:module:skipchain:module-skipchain', () => {
   });
 
 });
+
+function generateData() {
+  return ByteBuffer.fromHex('00000000000000000000000000000000000000000000').toArrayBuffer();
+}

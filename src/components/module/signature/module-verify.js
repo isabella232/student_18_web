@@ -189,8 +189,7 @@ export default class VerifyModule extends React.Component {
               })
               .catch((e) => reject(e));
           }
-        )
-        .catch(e => reject(e));
+        );
     });
   }
 }

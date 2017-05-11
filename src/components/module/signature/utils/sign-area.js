@@ -131,8 +131,7 @@ export default class SignArea extends React.Component {
                 })
             }
           }
-        )
-        .catch(e => reject(e));
+        );
     });
 
     // We want to display the error message if it occurs

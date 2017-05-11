@@ -19,7 +19,7 @@ const MOCK_STATUS_RESPONSE = {
   }
 };
 
-describe(CothorityWebsocket, () => {
+describe('services:websocket', () => {
 
   beforeAll(() => {
     const mockServer = new Server('ws://localhost/Status/Request');
@@ -154,7 +154,7 @@ describe(CothorityWebsocket, () => {
 
     const service = new CothorityWebsocket();
     const address = Faker.internet.ip();
-    const server = new Server(`ws://${address}/Skipchain/GetUpdateChain`);
+    const server = new Server(`ws://${address}/Skipchain/GetBlocks`);
     server.on('message', () => server.send(new Uint8Array([])));
 
     return service.getLatestBlock(address, new Uint8Array([])).then((m) => {
@@ -167,7 +167,7 @@ describe(CothorityWebsocket, () => {
 
     const service = new CothorityWebsocket();
     const address = Faker.internet.ip();
-    const server = new Server(`ws://${address}/Skipchain/GetUpdateChain`);
+    const server = new Server(`ws://${address}/Skipchain/GetBlocks`);
     server.on('message', () => server.emit('error'));
 
     return service.getLatestBlock(address, new Uint8Array([])).catch((e) => {
