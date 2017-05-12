@@ -1,18 +1,16 @@
 @import "../../lib/bootstrap/scss/variables";
 
 .module {
-  position: relative;
+  display: flex;
+  flex-direction: column;
   width: 350px;
   height: 200px;
   margin: 10px;
-  padding: 10px;
   background: lighten($black, 12);
 
   .module-header {
-    position: absolute;
-    top: 0;
-    height: 50px;
-    width: 100%;
+    flex: none;
+    padding: 5px;
     white-space: nowrap;
     font-size: 1.3em;
     font-weight: bold;
@@ -24,10 +22,7 @@
   }
 
   .module-body {
-    position: absolute;
-    top: 50px;
-    bottom: 10px;
-    width: 100%;
+    flex: 1;
     overflow: hidden;
 
     .module-leave {

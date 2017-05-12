@@ -93,6 +93,23 @@ export class CothorityWebsocket {
 
   }
 
+  /**
+   * Get a random number from address
+   * @param address {String} ip address
+   * @returns {Promise}
+   */
+  getRandom(address) {
+    return new Promise((resolve, reject) => {
+      this.random = createSocket(
+        this.random,
+        address + '/RandHound/Random',
+        (e) => reject(e),
+        (data) => resolve(CothorityMessages.decodeRandomResponse(data)),
+        CothorityMessages.createRandomMessage()
+      )
+    });
+  }
+
 }
 
 export default new CothorityWebsocket();

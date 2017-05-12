@@ -6,6 +6,7 @@ import ModuleSign from './components/module/signature/module-sign'
 import ModuleVerify from './components/module/signature/module-verify'
 import ModuleSkipChain from './components/module/skipchain/module-skipchain'
 import ModuleHTML from './components/module/html/module-html'
+import ModuleRandom from './components/module/random/module-random'
 
 import './app.scss';
 
@@ -26,6 +27,11 @@ class App extends React.Component {
             </Col>
             <Col>
               <ModuleHTML/>
+            </Col>
+          </Row>
+          <Row noGutters>
+            <Col xs="auto">
+              <ModuleRandom/>
             </Col>
           </Row>
           <Row>
