@@ -140,7 +140,7 @@ class CothorityMessages extends CothorityProtobuf {
   decodeRandomResponse(response) {
     response = new Uint8Array(response);
 
-    return this.decodeMessage('RandomResponse');
+    return this.decodeMessage('RandomResponse', response);
   }
   
 }

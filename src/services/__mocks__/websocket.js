@@ -9,4 +9,8 @@ export default new class {
     Update: []
   }));
 
+  getRandom = jest.fn().mockReturnValue(Promise.resolve({
+    R: 0
+  }));
+
 }

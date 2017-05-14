@@ -1,12 +1,12 @@
-import './iframe.css'
+import '../components/html-iframe/html-iframe.css'
 import GenesisService from '../services/genesis'
 import ByteBuffer from 'bytebuffer'
 
 /**
  * @author Gaylor Bosson (gaylor.bosson@epfl.ch)
  *
- * This service displays an HTML skipchain using the genesis ID of the page you want to open. It also listen
- * the message events to know when the IFrame wants to change the page
+ * This service takes care to trigger open and back events to components when the user
+ * click on an HTML skipchain
  */
 export class IFrameService {
 
@@ -16,12 +16,27 @@ export class IFrameService {
    * @constructor
    */
   constructor() {
+    this.listeners = [];
+
     window.addEventListener('message', (e) => {
       e.data = e.data || '';
       if (e.data.indexOf("skipchain://") === 0) {
         this.open(e.data.replace("skipchain://", ""));
       }
     });
+  }
+
+  subscribe(listener) {
+    if (this.listeners.indexOf(listener) === -1) {
+      this.listeners.push(listener);
+    }
+  }
+
+  unsubscribe(listener) {
+    const index = this.listeners.indexOf(listener);
+    if (index > -1) {
+      this.listeners.splice(index, 1);
+    }
   }
 
   /**
@@ -36,15 +51,7 @@ export class IFrameService {
       let html = hexToUTF8(data.toHex());
       html = html.substr(html.indexOf('<!'));
 
-      const root = this._getRoot();
-      if (root) {
-        root.className = "active";
-        root.innerHTML = `<div>
-            DEDIS WebSite Emulator
-            <span><a onclick="window.IFrameService.back()" href="#">Back</a></span>
-        </div>
-        <iframe src="data:text/html;base64,${btoa(html)}"></iframe>`
-      }
+      this.listeners.forEach(listener => IFrameService._triggerOpenEvent(listener, html));
     });
   }
 
@@ -52,23 +59,35 @@ export class IFrameService {
    * Hide the website emulator
    */
   back() {
-    const root = this._getRoot();
-
-    root.className = "";
-    root.innerHTML = "";
+    this.listeners.forEach(listener => IFrameService._triggerBackEvent(listener));
   }
 
-  _getRoot() {
-    return document.getElementById('block-iframe');
+  /**
+   * Call the open callback of each listener
+   * @param listener
+   * @param html
+   * @private
+   */
+  static _triggerOpenEvent(listener, html) {
+    if (typeof listener.onOpenHTML === 'function') {
+      listener.onOpenHTML(html);
+    }
+  }
+
+  /**
+   * Call the back callback of each listener
+   * @param listener
+   * @private
+   */
+  static _triggerBackEvent(listener) {
+    if (typeof listener.onCloseHTML === 'function') {
+      listener.onCloseHTML();
+    }
   }
 
 }
 
-const service = new IFrameService();
-
-window.IFrameService = service;
-
-export default service;
+export default new IFrameService();
 
 /**
  * Translate char by char a sequence of hex digit to UTF-8 digit

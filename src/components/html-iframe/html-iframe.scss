@@ -1,17 +1,13 @@
 
-#block-iframe {
-  display: none;
+.block-iframe {
+  display: flex;
+  flex-direction: column;
   position: fixed;
   z-index: 9999;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-
-  &.active {
-    display: flex;
-    flex-direction: column;
-  }
 
   > div {
     flex: none;
@@ -26,7 +22,7 @@
     }
   }
 
-  iframe {
+  > iframe {
     flex: 1;
     width: 100%;
     background: white;

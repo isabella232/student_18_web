@@ -111,7 +111,7 @@ function populateConfig() {
  * @returns {*}
  */
 function createSkipChain(url) {
-  const out = exec(`scmgr create --html ${url} ${params.file}`).toString('utf8');
+  const out = exec(`scmgr create --url ${url} ${params.file}`).toString('utf8');
 
   const matches = out.match(/[0-9a-f]{64}/);
   if (matches) {
@@ -202,7 +202,7 @@ else {
   const re = /https?:\/\//;
   let out = '';
   try {
-    out = exec(`scmgr create --html config://${baseURL.replace(re, '')} ${params.file}`).toString('utf8');
+    out = exec(`scmgr create --url config://${baseURL.replace(re, '')} ${params.file}`).toString('utf8');
   }
   catch (e) {
     console.log(e.stdout.toString('utf8'));
@@ -216,6 +216,7 @@ else {
     console.log(`Config block ID: ${params.block.substr(0, 10)}`);
   }
   else {
+    console.log(out);
     throw new Error("Cannot create the skip-chain for the config");
   }
 }

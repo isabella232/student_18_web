@@ -19,6 +19,10 @@ const MOCK_STATUS_RESPONSE = {
   }
 };
 
+const MOCK_RANDOM_RESPONSE = {
+  R: new Uint8Array([5, 5, 5, 5])
+};
+
 describe('services:websocket', () => {
 
   beforeAll(() => {
@@ -173,6 +177,30 @@ describe('services:websocket', () => {
     return service.getLatestBlock(address, new Uint8Array([])).catch((e) => {
       expect(e).toBeDefined();
     });
+  });
+
+  it('should get a random number', () => {
+    expect.assertions(1);
+
+    const service = new CothorityWebsocket();
+    const address = Faker.internet.ip();
+    const server = new Server(`ws://${address}/RandHound/Random`);
+    server.on('message', () => server.send(CothorityMessages.encodeMessage('RandomResponse', MOCK_RANDOM_RESPONSE)));
+
+    return service.getRandom(address).then((msg) => {
+      expect(msg).toBeDefined();
+    });
+  });
+
+  it('should manage an error when getting the random number', () => {
+    expect.assertions(1);
+
+    const service = new CothorityWebsocket();
+    const address = Faker.internet.ip();
+    const server = new Server(`ws://${address}/RandHound/Random`);
+    server.on('message', () => server.emit('error'));
+
+    return service.getRandom(address).catch(e => expect(e).toBeDefined());
   });
 
 });

@@ -4,10 +4,6 @@ import {IFrameService} from './iframe'
 
 describe('services:iframe', () => {
 
-  it('should be defined in the window object', () => {
-    expect(window.IFrameService).toBeDefined();
-  });
-
   it('should listen for message', () => {
     const service = new IFrameService();
     service.open = jest.fn();
@@ -23,22 +19,31 @@ describe('services:iframe', () => {
     expect(service.open).toHaveBeenCalledTimes(1);
   });
 
-  it('should open the page', () => {
+  it('should manage the listeners', () => {
     expect.assertions(4);
 
+    const listener = {
+      onOpenHTML: jest.fn(),
+      onCloseHTML: jest.fn()
+    };
+    const dummyListener = {};
     const service = new IFrameService();
-    service._getRoot = jest.fn();
-    const root = {};
-    service._getRoot.mockReturnValue(root);
 
-    return service.open('').then(() => {
-      expect(root.className).toBe('active');
-      expect(root.innerHTML).toBeDefined();
+    service.subscribe(listener);
+    service.subscribe(listener);
+    expect(service.listeners).toHaveLength(1);
 
-      service.back();
+    service.unsubscribe(listener);
+    service.unsubscribe(listener);
+    expect(service.listeners).toHaveLength(0);
 
-      expect(root.className).toHaveLength(0);
-      expect(root.innerHTML).toHaveLength(0);
+    service.subscribe(listener);
+    service.subscribe(dummyListener);
+    service.back();
+    expect(listener.onCloseHTML).toHaveBeenCalledTimes(1);
+
+    return service.open('1').then(() => {
+      expect(listener.onOpenHTML).toHaveBeenCalledTimes(1);
     });
   });
 
