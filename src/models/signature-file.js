@@ -7,12 +7,18 @@ import {buf2hex, hex2buf} from '../utils/buffer'
  * This model defines the structure of the signature file the user can download after a signature request
  */
 export default class SignatureFile {
-  filename = null;
-  signature = null;
-  hash = null;
-  genesisID = null;
-  blockID = null;
-  offlineServers = null;
+
+  /**
+   * @constructor
+   */
+  constructor() {
+    this.filename = null;
+    this.signature = null;
+    this.hash = null;
+    this.genesisID = null;
+    this.blockID = null;
+    this.offlineServers = null;
+  }
 
   /**
    * @param name {String}

@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../../../../../">
+  <title data-ice="title">src/lib/bootstrap/js/tests/unit/popover.js | API Document</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  
+  
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/app.js~App.html">App</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/html-iframe</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/html-iframe/html-iframe.js~HTMLIFrame.html">HTMLIFrame</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/loading</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/loading/loading-spinner.js~LoadingSpinner.html">LoadingSpinner</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/html</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/html/module-html.js~ModuleHTML.html">ModuleHTML</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/random</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/random/module-random.js~ModuleRandom.html">ModuleRandom</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/signature</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/signature/module-sign.js~BlockSign.html">BlockSign</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/signature/module-verify.js~VerifyModule.html">VerifyModule</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/skipchain</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/skipchain/module-skipchain.js~ModuleSkipChain.html">ModuleSkipChain</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/servers-status</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/servers-status/servers-status.js~ServersStatus.html">ServersStatus</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">lib</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/lib/cothority-messages.js~CothorityMessages.html">CothorityMessages</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/lib/cothority-messages.js~CothorityProtobuf.html">CothorityProtobuf</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-index">index</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">lib/bootstrap/js/src</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Alert">Alert</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Button">Button</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Carousel">Carousel</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Collapse">Collapse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Dropdown">Dropdown</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Modal">Modal</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Popover">Popover</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ScrollSpy">ScrollSpy</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Tab">Tab</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Tooltip">Tooltip</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Util">Util</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">services</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/iframe.js~IFrameService.html">IFrameService</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/skipchain.js~SkipChainService.html">SkipChainService</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">utils</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-buf2hex">buf2hex</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-hex2buf">hex2buf</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-hashFile">hashFile</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-readAsString">readAsString</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-tcp2ws">tcp2ws</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/lib/bootstrap/js/tests/unit/popover.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">$(function () {
+  &apos;use strict&apos;
+
+  QUnit.module(&apos;popover plugin&apos;)
+
+  QUnit.test(&apos;should be defined on jquery object&apos;, function (assert) {
+    assert.expect(1)
+    assert.ok($(document.body).popover, &apos;popover method is defined&apos;)
+  })
+
+  QUnit.module(&apos;popover&apos;, {
+    beforeEach: function () {
+      // Run all tests in noConflict mode -- it&apos;s the only way to ensure that the plugin works in noConflict mode
+      $.fn.bootstrapPopover = $.fn.popover.noConflict()
+    },
+    afterEach: function () {
+      $.fn.popover = $.fn.bootstrapPopover
+      delete $.fn.bootstrapPopover
+      $(&apos;.popover&apos;).remove()
+    }
+  })
+
+  QUnit.test(&apos;should provide no conflict&apos;, function (assert) {
+    assert.expect(1)
+    assert.strictEqual($.fn.popover, undefined, &apos;popover was set back to undefined (org value)&apos;)
+  })
+
+  QUnit.test(&apos;should throw explicit error on undefined method&apos;, function (assert) {
+    assert.expect(1)
+    var $el = $(&apos;&lt;div/&gt;&apos;)
+    $el.bootstrapPopover()
+    try {
+      $el.bootstrapPopover(&apos;noMethod&apos;)
+    }
+    catch (err) {
+      assert.strictEqual(err.message, &apos;No method named &quot;noMethod&quot;&apos;)
+    }
+  })
+
+  QUnit.test(&apos;should return jquery collection containing the element&apos;, function (assert) {
+    assert.expect(2)
+    var $el = $(&apos;&lt;div/&gt;&apos;)
+    var $popover = $el.bootstrapPopover()
+    assert.ok($popover instanceof $, &apos;returns jquery collection&apos;)
+    assert.strictEqual($popover[0], $el[0], &apos;collection contains element&apos;)
+  })
+
+  QUnit.test(&apos;should render popover element&apos;, function (assert) {
+    assert.expect(2)
+    var $popover = $(&apos;&lt;a href=&quot;#&quot; title=&quot;mdo&quot; data-content=&quot;https://twitter.com/mdo&quot;&gt;@mdo&lt;/a&gt;&apos;)
+      .appendTo(&apos;#qunit-fixture&apos;)
+      .bootstrapPopover(&apos;show&apos;)
+
+    assert.notEqual($(&apos;.popover&apos;).length, 0, &apos;popover was inserted&apos;)
+    $popover.bootstrapPopover(&apos;hide&apos;)
+    assert.strictEqual($(&apos;.popover&apos;).length, 0, &apos;popover removed&apos;)
+  })
+
+  QUnit.test(&apos;should store popover instance in popover data object&apos;, function (assert) {
+    assert.expect(1)
+    var $popover = $(&apos;&lt;a href=&quot;#&quot; title=&quot;mdo&quot; data-content=&quot;https://twitter.com/mdo&quot;&gt;@mdo&lt;/a&gt;&apos;).bootstrapPopover()
+
+    assert.ok($popover.data(&apos;bs.popover&apos;), &apos;popover instance exists&apos;)
+  })
+
+  QUnit.test(&apos;should store popover trigger in popover instance data object&apos;, function (assert) {
+    assert.expect(1)
+    var $popover = $(&apos;&lt;a href=&quot;#&quot; title=&quot;ResentedHook&quot;&gt;@ResentedHook&lt;/a&gt;&apos;)
+      .appendTo(&apos;#qunit-fixture&apos;)
+      .bootstrapPopover()
+
+    $popover.bootstrapPopover(&apos;show&apos;)
+
+    assert.ok($(&apos;.popover&apos;).data(&apos;bs.popover&apos;), &apos;popover trigger stored in instance data&apos;)
+  })
+
+  QUnit.test(&apos;should get title and content from options&apos;, function (assert) {
+    assert.expect(4)
+    var $popover = $(&apos;&lt;a href=&quot;#&quot;&gt;@fat&lt;/a&gt;&apos;)
+      .appendTo(&apos;#qunit-fixture&apos;)
+      .bootstrapPopover({
+        title: function () {
+          return &apos;@fat&apos;
+        },
+        content: function () {
+          return &apos;loves writing tests &#xFF08;&#x256F;&#xB0;&#x25A1;&#xB0;&#xFF09;&#x256F;&#xFE35; &#x253B;&#x2501;&#x253B;&apos;
+        }
+      })
+
+    $popover.bootstrapPopover(&apos;show&apos;)
+
+    assert.notEqual($(&apos;.popover&apos;).length, 0, &apos;popover was inserted&apos;)
+    assert.strictEqual($(&apos;.popover .popover-title&apos;).text(), &apos;@fat&apos;, &apos;title correctly inserted&apos;)
+    assert.strictEqual($(&apos;.popover .popover-content&apos;).text(), &apos;loves writing tests &#xFF08;&#x256F;&#xB0;&#x25A1;&#xB0;&#xFF09;&#x256F;&#xFE35; &#x253B;&#x2501;&#x253B;&apos;, &apos;content correctly inserted&apos;)
+
+    $popover.bootstrapPopover(&apos;hide&apos;)
+
+    assert.strictEqual($(&apos;.popover&apos;).length, 0, &apos;popover was removed&apos;)
+  })
+
+  QUnit.test(&apos;should allow DOMElement title and content (html: true)&apos;, function (assert) {
+    assert.expect(5)
+    var title = document.createTextNode(&apos;@glebm &lt;3 writing tests&apos;)
+    var content = $(&apos;&lt;i&gt;&#xAF;\\_(&#x30C4;)_/&#xAF;&lt;/i&gt;&apos;).get(0)
+    var $popover = $(&apos;&lt;a href=&quot;#&quot; rel=&quot;tooltip&quot;/&gt;&apos;)
+      .appendTo(&apos;#qunit-fixture&apos;)
+      .bootstrapPopover({ html: true, title: title, content: content })
+
+    $popover.bootstrapPopover(&apos;show&apos;)
+
+    assert.notEqual($(&apos;.popover&apos;).length, 0, &apos;popover inserted&apos;)
+    assert.strictEqual($(&apos;.popover .popover-title&apos;).text(), &apos;@glebm &lt;3 writing tests&apos;, &apos;title inserted&apos;)
+    assert.ok($.contains($(&apos;.popover&apos;).get(0), title), &apos;title node moved, not copied&apos;)
+    // toLowerCase because IE8 will return &lt;I&gt;...&lt;/I&gt;
+    assert.strictEqual($(&apos;.popover .popover-content&apos;).html().toLowerCase(), &apos;&lt;i&gt;&#xAF;\\_(&#x30C4;)_/&#xAF;&lt;/i&gt;&apos;, &apos;content inserted&apos;)
+    assert.ok($.contains($(&apos;.popover&apos;).get(0), content), &apos;content node moved, not copied&apos;)
+  })
+
+  QUnit.test(&apos;should allow DOMElement title and content (html: false)&apos;, function (assert) {
+    assert.expect(5)
+    var title = document.createTextNode(&apos;@glebm &lt;3 writing tests&apos;)
+    var content = $(&apos;&lt;i&gt;&#xAF;\\_(&#x30C4;)_/&#xAF;&lt;/i&gt;&apos;).get(0)
+    var $popover = $(&apos;&lt;a href=&quot;#&quot; rel=&quot;tooltip&quot;/&gt;&apos;)
+      .appendTo(&apos;#qunit-fixture&apos;)
+      .bootstrapPopover({ title: title, content: content })
+
+    $popover.bootstrapPopover(&apos;show&apos;)
+
+    assert.notEqual($(&apos;.popover&apos;).length, 0, &apos;popover inserted&apos;)
+    assert.strictEqual($(&apos;.popover .popover-title&apos;).text(), &apos;@glebm &lt;3 writing tests&apos;, &apos;title inserted&apos;)
+    assert.ok(!$.contains($(&apos;.popover&apos;).get(0), title), &apos;title node copied, not moved&apos;)
+    assert.strictEqual($(&apos;.popover .popover-content&apos;).html(), &apos;&#xAF;\\_(&#x30C4;)_/&#xAF;&apos;, &apos;content inserted&apos;)
+    assert.ok(!$.contains($(&apos;.popover&apos;).get(0), content), &apos;content node copied, not moved&apos;)
+  })
+
+
+  QUnit.test(&apos;should not duplicate HTML object&apos;, function (assert) {
+    assert.expect(6)
+    var $div = $(&apos;&lt;div/&gt;&apos;).html(&apos;loves writing tests &#xFF08;&#x256F;&#xB0;&#x25A1;&#xB0;&#xFF09;&#x256F;&#xFE35; &#x253B;&#x2501;&#x253B;&apos;)
+
+    var $popover = $(&apos;&lt;a href=&quot;#&quot;&gt;@fat&lt;/a&gt;&apos;)
+      .appendTo(&apos;#qunit-fixture&apos;)
+      .bootstrapPopover({
+        html: true,
+        content: function () {
+          return $div
+        }
+      })
+
+    $popover.bootstrapPopover(&apos;show&apos;)
+    assert.notEqual($(&apos;.popover&apos;).length, 0, &apos;popover was inserted&apos;)
+    assert.equal($(&apos;.popover .popover-content&apos;).html(), $div[0].outerHTML, &apos;content correctly inserted&apos;)
+
+    $popover.bootstrapPopover(&apos;hide&apos;)
+    assert.strictEqual($(&apos;.popover&apos;).length, 0, &apos;popover was removed&apos;)
+
+    $popover.bootstrapPopover(&apos;show&apos;)
+    assert.notEqual($(&apos;.popover&apos;).length, 0, &apos;popover was inserted&apos;)
+    assert.equal($(&apos;.popover .popover-content&apos;).html(), $div[0].outerHTML, &apos;content correctly inserted&apos;)
+
+    $popover.bootstrapPopover(&apos;hide&apos;)
+    assert.strictEqual($(&apos;.popover&apos;).length, 0, &apos;popover was removed&apos;)
+  })
+
+  QUnit.test(&apos;should get title and content from attributes&apos;, function (assert) {
+    assert.expect(4)
+    var $popover = $(&apos;&lt;a href=&quot;#&quot; title=&quot;@mdo&quot; data-content=&quot;loves data attributes (&#x3065;&#xFF61;&#x25D5;&#x203F;&#x203F;&#x25D5;&#xFF61;)&#x3065; &#xFE35; &#x253B;&#x2501;&#x253B;&quot; &gt;@mdo&lt;/a&gt;&apos;)
+      .appendTo(&apos;#qunit-fixture&apos;)
+      .bootstrapPopover()
+      .bootstrapPopover(&apos;show&apos;)
+
+    assert.notEqual($(&apos;.popover&apos;).length, 0, &apos;popover was inserted&apos;)
+    assert.strictEqual($(&apos;.popover .popover-title&apos;).text(), &apos;@mdo&apos;, &apos;title correctly inserted&apos;)
+    assert.strictEqual($(&apos;.popover .popover-content&apos;).text(), &apos;loves data attributes (&#x3065;&#xFF61;&#x25D5;&#x203F;&#x203F;&#x25D5;&#xFF61;)&#x3065; &#xFE35; &#x253B;&#x2501;&#x253B;&apos;, &apos;content correctly inserted&apos;)
+
+    $popover.bootstrapPopover(&apos;hide&apos;)
+    assert.strictEqual($(&apos;.popover&apos;).length, 0, &apos;popover was removed&apos;)
+  })
+
+  QUnit.test(&apos;should get title and content from attributes ignoring options passed via js&apos;, function (assert) {
+    assert.expect(4)
+    var $popover = $(&apos;&lt;a href=&quot;#&quot; title=&quot;@mdo&quot; data-content=&quot;loves data attributes (&#x3065;&#xFF61;&#x25D5;&#x203F;&#x203F;&#x25D5;&#xFF61;)&#x3065; &#xFE35; &#x253B;&#x2501;&#x253B;&quot; &gt;@mdo&lt;/a&gt;&apos;)
+      .appendTo(&apos;#qunit-fixture&apos;)
+      .bootstrapPopover({
+        title: &apos;ignored title option&apos;,
+        content: &apos;ignored content option&apos;
+      })
+      .bootstrapPopover(&apos;show&apos;)
+
+    assert.notEqual($(&apos;.popover&apos;).length, 0, &apos;popover was inserted&apos;)
+    assert.strictEqual($(&apos;.popover .popover-title&apos;).text(), &apos;@mdo&apos;, &apos;title correctly inserted&apos;)
+    assert.strictEqual($(&apos;.popover .popover-content&apos;).text(), &apos;loves data attributes (&#x3065;&#xFF61;&#x25D5;&#x203F;&#x203F;&#x25D5;&#xFF61;)&#x3065; &#xFE35; &#x253B;&#x2501;&#x253B;&apos;, &apos;content correctly inserted&apos;)
+
+    $popover.bootstrapPopover(&apos;hide&apos;)
+    assert.strictEqual($(&apos;.popover&apos;).length, 0, &apos;popover was removed&apos;)
+  })
+
+  QUnit.test(&apos;should respect custom template&apos;, function (assert) {
+    assert.expect(3)
+    var $popover = $(&apos;&lt;a href=&quot;#&quot;&gt;@fat&lt;/a&gt;&apos;)
+      .appendTo(&apos;#qunit-fixture&apos;)
+      .bootstrapPopover({
+        title: &apos;Test&apos;,
+        content: &apos;Test&apos;,
+        template: &apos;&lt;div class=&quot;popover foobar&quot;&gt;&lt;div class=&quot;arrow&quot;&gt;&lt;/div&gt;&lt;div class=&quot;inner&quot;&gt;&lt;h3 class=&quot;title&quot;/&gt;&lt;div class=&quot;content&quot;&gt;&lt;p/&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&apos;
+      })
+
+    $popover.bootstrapPopover(&apos;show&apos;)
+
+    assert.notEqual($(&apos;.popover&apos;).length, 0, &apos;popover was inserted&apos;)
+    assert.ok($(&apos;.popover&apos;).hasClass(&apos;foobar&apos;), &apos;custom class is present&apos;)
+
+    $popover.bootstrapPopover(&apos;hide&apos;)
+    assert.strictEqual($(&apos;.popover&apos;).length, 0, &apos;popover was removed&apos;)
+  })
+
+  QUnit.test(&apos;should destroy popover&apos;, function (assert) {
+    assert.expect(7)
+    var $popover = $(&apos;&lt;div/&gt;&apos;)
+      .bootstrapPopover({
+        trigger: &apos;hover&apos;
+      })
+      .on(&apos;click.foo&apos;, $.noop)
+
+    assert.ok($popover.data(&apos;bs.popover&apos;), &apos;popover has data&apos;)
+    assert.ok($._data($popover[0], &apos;events&apos;).mouseover &amp;&amp; $._data($popover[0], &apos;events&apos;).mouseout, &apos;popover has hover event&apos;)
+    assert.strictEqual($._data($popover[0], &apos;events&apos;).click[0].namespace, &apos;foo&apos;, &apos;popover has extra click.foo event&apos;)
+
+    $popover.bootstrapPopover(&apos;show&apos;)
+    $popover.bootstrapPopover(&apos;dispose&apos;)
+
+    assert.ok(!$popover.hasClass(&apos;show&apos;), &apos;popover is hidden&apos;)
+    assert.ok(!$popover.data(&apos;popover&apos;), &apos;popover does not have data&apos;)
+    assert.strictEqual($._data($popover[0], &apos;events&apos;).click[0].namespace, &apos;foo&apos;, &apos;popover still has click.foo&apos;)
+    assert.ok(!$._data($popover[0], &apos;events&apos;).mouseover &amp;&amp; !$._data($popover[0], &apos;events&apos;).mouseout, &apos;popover does not have any events&apos;)
+  })
+
+  QUnit.test(&apos;should render popover element using delegated selector&apos;, function (assert) {
+    assert.expect(2)
+    var $div = $(&apos;&lt;div&gt;&lt;a href=&quot;#&quot; title=&quot;mdo&quot; data-content=&quot;http://twitter.com/mdo&quot;&gt;@mdo&lt;/a&gt;&lt;/div&gt;&apos;)
+      .appendTo(&apos;#qunit-fixture&apos;)
+      .bootstrapPopover({
+        selector: &apos;a&apos;,
+        trigger: &apos;click&apos;
+      })
+
+    $div.find(&apos;a&apos;).trigger(&apos;click&apos;)
+    assert.notEqual($(&apos;.popover&apos;).length, 0, &apos;popover was inserted&apos;)
+
+    $div.find(&apos;a&apos;).trigger(&apos;click&apos;)
+    assert.strictEqual($(&apos;.popover&apos;).length, 0, &apos;popover was removed&apos;)
+  })
+
+  QUnit.test(&apos;should detach popover content rather than removing it so that event handlers are left intact&apos;, function (assert) {
+    assert.expect(1)
+    var $content = $(&apos;&lt;div class=&quot;content-with-handler&quot;&gt;&lt;a class=&quot;btn btn-warning&quot;&gt;Button with event handler&lt;/a&gt;&lt;/div&gt;&apos;).appendTo(&apos;#qunit-fixture&apos;)
+
+    var handlerCalled = false
+    $(&apos;.content-with-handler .btn&apos;).on(&apos;click&apos;, function () {
+      handlerCalled = true
+    })
+
+    var $div = $(&apos;&lt;div&gt;&lt;a href=&quot;#&quot;&gt;Show popover&lt;/a&gt;&lt;/div&gt;&apos;)
+      .appendTo(&apos;#qunit-fixture&apos;)
+      .bootstrapPopover({
+        html: true,
+        trigger: &apos;manual&apos;,
+        container: &apos;body&apos;,
+        content: function () {
+          return $content
+        }
+      })
+
+    var done = assert.async()
+    $div
+      .one(&apos;shown.bs.popover&apos;, function () {
+        $div
+          .one(&apos;hidden.bs.popover&apos;, function () {
+            $div
+              .one(&apos;shown.bs.popover&apos;, function () {
+                $(&apos;.content-with-handler .btn&apos;).trigger(&apos;click&apos;)
+                $div.bootstrapPopover(&apos;dispose&apos;)
+                assert.ok(handlerCalled, &apos;content\&apos;s event handler still present&apos;)
+                done()
+              })
+              .bootstrapPopover(&apos;show&apos;)
+          })
+          .bootstrapPopover(&apos;hide&apos;)
+      })
+      .bootstrapPopover(&apos;show&apos;)
+  })
+
+  QUnit.test(&apos;should do nothing when an attempt is made to hide an uninitialized popover&apos;, function (assert) {
+    assert.expect(1)
+
+    var $popover = $(&apos;&lt;span data-toggle=&quot;popover&quot; data-title=&quot;some title&quot; data-content=&quot;some content&quot;&gt;some text&lt;/span&gt;&apos;)
+      .appendTo(&apos;#qunit-fixture&apos;)
+      .on(&apos;hidden.bs.popover shown.bs.popover&apos;, function () {
+        assert.ok(false, &apos;should not fire any popover events&apos;)
+      })
+      .bootstrapPopover(&apos;hide&apos;)
+    assert.strictEqual($popover.data(&apos;bs.popover&apos;), undefined, &apos;should not initialize the popover&apos;)
+  })
+
+  QUnit.test(&apos;should fire inserted event&apos;, function (assert) {
+    assert.expect(2)
+    var done = assert.async()
+
+    $(&apos;&lt;a href=&quot;#&quot;&gt;@Johann-S&lt;/a&gt;&apos;)
+      .appendTo(&apos;#qunit-fixture&apos;)
+      .on(&apos;inserted.bs.popover&apos;, function () {
+        assert.notEqual($(&apos;.popover&apos;).length, 0, &apos;popover was inserted&apos;)
+        assert.ok(true, &apos;inserted event fired&apos;)
+        done()
+      })
+      .bootstrapPopover({
+        title: &apos;Test&apos;,
+        content: &apos;Test&apos;
+      })
+      .bootstrapPopover(&apos;show&apos;)
+  })
+
+  QUnit.test(&apos;should throw an error when show is called on hidden elements&apos;, function (assert) {
+    assert.expect(1)
+    var done = assert.async()
+
+    try {
+      $(&apos;&lt;div data-toggle=&quot;popover&quot; data-title=&quot;some title&quot; data-content=&quot;@Johann-S&quot; style=&quot;display: none&quot;/&gt;&apos;).bootstrapPopover(&apos;show&apos;)
+    }
+    catch (err) {
+      assert.strictEqual(err.message, &apos;Please use show on visible elements&apos;)
+      done()
+    }
+  })
+
+  QUnit.test(&apos;should hide popovers when their containing modal is closed&apos;, function (assert) {
+    assert.expect(1)
+    var done = assert.async()
+    var templateHTML = &apos;&lt;div id=&quot;modal-test&quot; class=&quot;modal&quot;&gt;&apos; +
+                          &apos;&lt;div class=&quot;modal-dialog&quot; role=&quot;document&quot;&gt;&apos; +
+                            &apos;&lt;div class=&quot;modal-content&quot;&gt;&apos; +
+                              &apos;&lt;div class=&quot;modal-body&quot;&gt;&apos; +
+                                &apos;&lt;button id=&quot;popover-test&quot; type=&quot;button&quot; class=&quot;btn btn-secondary&quot; data-toggle=&quot;popover&quot; data-placement=&quot;top&quot; data-content=&quot;Popover&quot;&gt;&apos; +
+                                  &apos;Popover on top&apos; +
+                                &apos;&lt;/button&gt;&apos; +
+                              &apos;&lt;/div&gt;&apos; +
+                            &apos;&lt;/div&gt;&apos; +
+                          &apos;&lt;/div&gt;&apos; +
+                        &apos;&lt;/div&gt;&apos;
+
+    $(templateHTML).appendTo(&apos;#qunit-fixture&apos;)
+    $(&apos;#popover-test&apos;)
+      .on(&apos;shown.bs.popover&apos;, function () {
+        $(&apos;#modal-test&apos;).modal(&apos;hide&apos;)
+      })
+      .on(&apos;hide.bs.popover&apos;, function () {
+        assert.ok(true, &apos;popover hide&apos;)
+        done()
+      })
+
+    $(&apos;#modal-test&apos;)
+      .on(&apos;shown.bs.modal&apos;, function () {
+        $(&apos;#popover-test&apos;).bootstrapPopover(&apos;show&apos;)
+      })
+      .modal(&apos;show&apos;)
+  })
+})
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.5.2)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

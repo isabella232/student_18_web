@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../../../../">
+  <title data-ice="title">src/lib/bootstrap/js/src/carousel.js | API Document</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  
+  
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/app.js~App.html">App</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/html-iframe</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/html-iframe/html-iframe.js~HTMLIFrame.html">HTMLIFrame</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/loading</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/loading/loading-spinner.js~LoadingSpinner.html">LoadingSpinner</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/html</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/html/module-html.js~ModuleHTML.html">ModuleHTML</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/random</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/random/module-random.js~ModuleRandom.html">ModuleRandom</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/signature</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/signature/module-sign.js~BlockSign.html">BlockSign</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/signature/module-verify.js~VerifyModule.html">VerifyModule</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/skipchain</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/skipchain/module-skipchain.js~ModuleSkipChain.html">ModuleSkipChain</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/servers-status</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/servers-status/servers-status.js~ServersStatus.html">ServersStatus</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">lib</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/lib/cothority-messages.js~CothorityMessages.html">CothorityMessages</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/lib/cothority-messages.js~CothorityProtobuf.html">CothorityProtobuf</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-index">index</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">lib/bootstrap/js/src</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Alert">Alert</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Button">Button</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Carousel">Carousel</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Collapse">Collapse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Dropdown">Dropdown</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Modal">Modal</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Popover">Popover</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ScrollSpy">ScrollSpy</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Tab">Tab</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Tooltip">Tooltip</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Util">Util</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">services</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/iframe.js~IFrameService.html">IFrameService</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/skipchain.js~SkipChainService.html">SkipChainService</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">utils</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-buf2hex">buf2hex</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-hex2buf">hex2buf</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-hashFile">hashFile</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-readAsString">readAsString</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-tcp2ws">tcp2ws</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/lib/bootstrap/js/src/carousel.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import Util from &apos;./util&apos;
+
+
+/**
+ * --------------------------------------------------------------------------
+ * Bootstrap (v4.0.0-alpha.6): carousel.js
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * --------------------------------------------------------------------------
+ */
+
+const Carousel = (($) =&gt; {
+
+
+  /**
+   * ------------------------------------------------------------------------
+   * Constants
+   * ------------------------------------------------------------------------
+   */
+
+  const NAME                = &apos;carousel&apos;
+  const VERSION             = &apos;4.0.0-alpha.6&apos;
+  const DATA_KEY            = &apos;bs.carousel&apos;
+  const EVENT_KEY           = `.${DATA_KEY}`
+  const DATA_API_KEY        = &apos;.data-api&apos;
+  const JQUERY_NO_CONFLICT  = $.fn[NAME]
+  const TRANSITION_DURATION = 600
+  const ARROW_LEFT_KEYCODE  = 37 // KeyboardEvent.which value for left arrow key
+  const ARROW_RIGHT_KEYCODE = 39 // KeyboardEvent.which value for right arrow key
+
+  const Default = {
+    interval : 5000,
+    keyboard : true,
+    slide    : false,
+    pause    : &apos;hover&apos;,
+    wrap     : true
+  }
+
+  const DefaultType = {
+    interval : &apos;(number|boolean)&apos;,
+    keyboard : &apos;boolean&apos;,
+    slide    : &apos;(boolean|string)&apos;,
+    pause    : &apos;(string|boolean)&apos;,
+    wrap     : &apos;boolean&apos;
+  }
+
+  const Direction = {
+    NEXT     : &apos;next&apos;,
+    PREV     : &apos;prev&apos;,
+    LEFT     : &apos;left&apos;,
+    RIGHT    : &apos;right&apos;
+  }
+
+  const Event = {
+    SLIDE          : `slide${EVENT_KEY}`,
+    SLID           : `slid${EVENT_KEY}`,
+    KEYDOWN        : `keydown${EVENT_KEY}`,
+    MOUSEENTER     : `mouseenter${EVENT_KEY}`,
+    MOUSELEAVE     : `mouseleave${EVENT_KEY}`,
+    LOAD_DATA_API  : `load${EVENT_KEY}${DATA_API_KEY}`,
+    CLICK_DATA_API : `click${EVENT_KEY}${DATA_API_KEY}`
+  }
+
+  const ClassName = {
+    CAROUSEL : &apos;carousel&apos;,
+    ACTIVE   : &apos;active&apos;,
+    SLIDE    : &apos;slide&apos;,
+    RIGHT    : &apos;carousel-item-right&apos;,
+    LEFT     : &apos;carousel-item-left&apos;,
+    NEXT     : &apos;carousel-item-next&apos;,
+    PREV     : &apos;carousel-item-prev&apos;,
+    ITEM     : &apos;carousel-item&apos;
+  }
+
+  const Selector = {
+    ACTIVE      : &apos;.active&apos;,
+    ACTIVE_ITEM : &apos;.active.carousel-item&apos;,
+    ITEM        : &apos;.carousel-item&apos;,
+    NEXT_PREV   : &apos;.carousel-item-next, .carousel-item-prev&apos;,
+    INDICATORS  : &apos;.carousel-indicators&apos;,
+    DATA_SLIDE  : &apos;[data-slide], [data-slide-to]&apos;,
+    DATA_RIDE   : &apos;[data-ride=&quot;carousel&quot;]&apos;
+  }
+
+
+  /**
+   * ------------------------------------------------------------------------
+   * Class Definition
+   * ------------------------------------------------------------------------
+   */
+
+  class Carousel {
+
+    constructor(element, config) {
+      this._items             = null
+      this._interval          = null
+      this._activeElement     = null
+
+      this._isPaused          = false
+      this._isSliding         = false
+
+      this._config            = this._getConfig(config)
+      this._element           = $(element)[0]
+      this._indicatorsElement = $(this._element).find(Selector.INDICATORS)[0]
+
+      this._addEventListeners()
+    }
+
+
+    // getters
+
+    static get VERSION() {
+      return VERSION
+    }
+
+    static get Default() {
+      return Default
+    }
+
+
+    // public
+
+    next() {
+      if (this._isSliding) {
+        throw new Error(&apos;Carousel is sliding&apos;)
+      }
+      this._slide(Direction.NEXT)
+    }
+
+    nextWhenVisible() {
+      // Don&apos;t call next when the page isn&apos;t visible
+      if (!document.hidden) {
+        this.next()
+      }
+    }
+
+    prev() {
+      if (this._isSliding) {
+        throw new Error(&apos;Carousel is sliding&apos;)
+      }
+      this._slide(Direction.PREVIOUS)
+    }
+
+    pause(event) {
+      if (!event) {
+        this._isPaused = true
+      }
+
+      if ($(this._element).find(Selector.NEXT_PREV)[0] &amp;&amp;
+        Util.supportsTransitionEnd()) {
+        Util.triggerTransitionEnd(this._element)
+        this.cycle(true)
+      }
+
+      clearInterval(this._interval)
+      this._interval = null
+    }
+
+    cycle(event) {
+      if (!event) {
+        this._isPaused = false
+      }
+
+      if (this._interval) {
+        clearInterval(this._interval)
+        this._interval = null
+      }
+
+      if (this._config.interval &amp;&amp; !this._isPaused) {
+        this._interval = setInterval(
+          (document.visibilityState ? this.nextWhenVisible : this.next).bind(this),
+          this._config.interval
+        )
+      }
+    }
+
+    to(index) {
+      this._activeElement = $(this._element).find(Selector.ACTIVE_ITEM)[0]
+
+      const activeIndex = this._getItemIndex(this._activeElement)
+
+      if (index &gt; this._items.length - 1 || index &lt; 0) {
+        return
+      }
+
+      if (this._isSliding) {
+        $(this._element).one(Event.SLID, () =&gt; this.to(index))
+        return
+      }
+
+      if (activeIndex === index) {
+        this.pause()
+        this.cycle()
+        return
+      }
+
+      const direction = index &gt; activeIndex ?
+        Direction.NEXT :
+        Direction.PREVIOUS
+
+      this._slide(direction, this._items[index])
+    }
+
+    dispose() {
+      $(this._element).off(EVENT_KEY)
+      $.removeData(this._element, DATA_KEY)
+
+      this._items             = null
+      this._config            = null
+      this._element           = null
+      this._interval          = null
+      this._isPaused          = null
+      this._isSliding         = null
+      this._activeElement     = null
+      this._indicatorsElement = null
+    }
+
+
+    // private
+
+    _getConfig(config) {
+      config = $.extend({}, Default, config)
+      Util.typeCheckConfig(NAME, config, DefaultType)
+      return config
+    }
+
+    _addEventListeners() {
+      if (this._config.keyboard) {
+        $(this._element)
+          .on(Event.KEYDOWN, (event) =&gt; this._keydown(event))
+      }
+
+      if (this._config.pause === &apos;hover&apos; &amp;&amp;
+        !(&apos;ontouchstart&apos; in document.documentElement)) {
+        $(this._element)
+          .on(Event.MOUSEENTER, (event) =&gt; this.pause(event))
+          .on(Event.MOUSELEAVE, (event) =&gt; this.cycle(event))
+      }
+    }
+
+    _keydown(event) {
+      if (/input|textarea/i.test(event.target.tagName)) {
+        return
+      }
+
+      switch (event.which) {
+        case ARROW_LEFT_KEYCODE:
+          event.preventDefault()
+          this.prev()
+          break
+        case ARROW_RIGHT_KEYCODE:
+          event.preventDefault()
+          this.next()
+          break
+        default:
+          return
+      }
+    }
+
+    _getItemIndex(element) {
+      this._items = $.makeArray($(element).parent().find(Selector.ITEM))
+      return this._items.indexOf(element)
+    }
+
+    _getItemByDirection(direction, activeElement) {
+      const isNextDirection = direction === Direction.NEXT
+      const isPrevDirection = direction === Direction.PREVIOUS
+      const activeIndex     = this._getItemIndex(activeElement)
+      const lastItemIndex   = this._items.length - 1
+      const isGoingToWrap   = isPrevDirection &amp;&amp; activeIndex === 0 ||
+                              isNextDirection &amp;&amp; activeIndex === lastItemIndex
+
+      if (isGoingToWrap &amp;&amp; !this._config.wrap) {
+        return activeElement
+      }
+
+      const delta     = direction === Direction.PREVIOUS ? -1 : 1
+      const itemIndex = (activeIndex + delta) % this._items.length
+
+      return itemIndex === -1 ?
+        this._items[this._items.length - 1] : this._items[itemIndex]
+    }
+
+
+    _triggerSlideEvent(relatedTarget, eventDirectionName) {
+      const slideEvent = $.Event(Event.SLIDE, {
+        relatedTarget,
+        direction: eventDirectionName
+      })
+
+      $(this._element).trigger(slideEvent)
+
+      return slideEvent
+    }
+
+    _setActiveIndicatorElement(element) {
+      if (this._indicatorsElement) {
+        $(this._indicatorsElement)
+          .find(Selector.ACTIVE)
+          .removeClass(ClassName.ACTIVE)
+
+        const nextIndicator = this._indicatorsElement.children[
+          this._getItemIndex(element)
+        ]
+
+        if (nextIndicator) {
+          $(nextIndicator).addClass(ClassName.ACTIVE)
+        }
+      }
+    }
+
+    _slide(direction, element) {
+      const activeElement = $(this._element).find(Selector.ACTIVE_ITEM)[0]
+      const nextElement   = element || activeElement &amp;&amp;
+        this._getItemByDirection(direction, activeElement)
+
+      const isCycling = Boolean(this._interval)
+
+      let directionalClassName
+      let orderClassName
+      let eventDirectionName
+
+      if (direction === Direction.NEXT) {
+        directionalClassName = ClassName.LEFT
+        orderClassName = ClassName.NEXT
+        eventDirectionName = Direction.LEFT
+      } else {
+        directionalClassName = ClassName.RIGHT
+        orderClassName = ClassName.PREV
+        eventDirectionName = Direction.RIGHT
+      }
+
+      if (nextElement &amp;&amp; $(nextElement).hasClass(ClassName.ACTIVE)) {
+        this._isSliding = false
+        return
+      }
+
+      const slideEvent = this._triggerSlideEvent(nextElement, eventDirectionName)
+      if (slideEvent.isDefaultPrevented()) {
+        return
+      }
+
+      if (!activeElement || !nextElement) {
+        // some weirdness is happening, so we bail
+        return
+      }
+
+      this._isSliding = true
+
+      if (isCycling) {
+        this.pause()
+      }
+
+      this._setActiveIndicatorElement(nextElement)
+
+      const slidEvent = $.Event(Event.SLID, {
+        relatedTarget: nextElement,
+        direction: eventDirectionName
+      })
+
+      if (Util.supportsTransitionEnd() &amp;&amp;
+        $(this._element).hasClass(ClassName.SLIDE)) {
+
+        $(nextElement).addClass(orderClassName)
+
+        Util.reflow(nextElement)
+
+        $(activeElement).addClass(directionalClassName)
+        $(nextElement).addClass(directionalClassName)
+
+        $(activeElement)
+          .one(Util.TRANSITION_END, () =&gt; {
+            $(nextElement)
+              .removeClass(`${directionalClassName} ${orderClassName}`)
+              .addClass(ClassName.ACTIVE)
+
+            $(activeElement).removeClass(`${ClassName.ACTIVE} ${orderClassName} ${directionalClassName}`)
+
+            this._isSliding = false
+
+            setTimeout(() =&gt; $(this._element).trigger(slidEvent), 0)
+
+          })
+          .emulateTransitionEnd(TRANSITION_DURATION)
+
+      } else {
+        $(activeElement).removeClass(ClassName.ACTIVE)
+        $(nextElement).addClass(ClassName.ACTIVE)
+
+        this._isSliding = false
+        $(this._element).trigger(slidEvent)
+      }
+
+      if (isCycling) {
+        this.cycle()
+      }
+    }
+
+
+    // static
+
+    static _jQueryInterface(config) {
+      return this.each(function () {
+        let data      = $(this).data(DATA_KEY)
+        const _config = $.extend({}, Default, $(this).data())
+
+        if (typeof config === &apos;object&apos;) {
+          $.extend(_config, config)
+        }
+
+        const action = typeof config === &apos;string&apos; ? config : _config.slide
+
+        if (!data) {
+          data = new Carousel(this, _config)
+          $(this).data(DATA_KEY, data)
+        }
+
+        if (typeof config === &apos;number&apos;) {
+          data.to(config)
+        } else if (typeof action === &apos;string&apos;) {
+          if (data[action] === undefined) {
+            throw new Error(`No method named &quot;${action}&quot;`)
+          }
+          data[action]()
+        } else if (_config.interval) {
+          data.pause()
+          data.cycle()
+        }
+      })
+    }
+
+    static _dataApiClickHandler(event) {
+      const selector = Util.getSelectorFromElement(this)
+
+      if (!selector) {
+        return
+      }
+
+      const target = $(selector)[0]
+
+      if (!target || !$(target).hasClass(ClassName.CAROUSEL)) {
+        return
+      }
+
+      const config     = $.extend({}, $(target).data(), $(this).data())
+      const slideIndex = this.getAttribute(&apos;data-slide-to&apos;)
+
+      if (slideIndex) {
+        config.interval = false
+      }
+
+      Carousel._jQueryInterface.call($(target), config)
+
+      if (slideIndex) {
+        $(target).data(DATA_KEY).to(slideIndex)
+      }
+
+      event.preventDefault()
+    }
+
+  }
+
+
+  /**
+   * ------------------------------------------------------------------------
+   * Data Api implementation
+   * ------------------------------------------------------------------------
+   */
+
+  $(document)
+    .on(Event.CLICK_DATA_API, Selector.DATA_SLIDE, Carousel._dataApiClickHandler)
+
+  $(window).on(Event.LOAD_DATA_API, () =&gt; {
+    $(Selector.DATA_RIDE).each(function () {
+      const $carousel = $(this)
+      Carousel._jQueryInterface.call($carousel, $carousel.data())
+    })
+  })
+
+
+  /**
+   * ------------------------------------------------------------------------
+   * jQuery
+   * ------------------------------------------------------------------------
+   */
+
+  $.fn[NAME]             = Carousel._jQueryInterface
+  $.fn[NAME].Constructor = Carousel
+  $.fn[NAME].noConflict  = function () {
+    $.fn[NAME] = JQUERY_NO_CONFLICT
+    return Carousel._jQueryInterface
+  }
+
+  return Carousel
+
+})(jQuery)
+
+export default Carousel
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.5.2)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

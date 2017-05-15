@@ -13,16 +13,16 @@ const GENESIS_BLOCK_SERVER = "https://skipchain.dedis.ch/";
  */
 export class GenesisService {
 
-  listeners = [];
-  genesisList = [];
-  curr_genesis = ''; // hex form
-  blocks = [];
-
   /**
    * Make a request to the GENESIS_BLOCK_SERVER url to get the list of genesis IDs of the skipchains
    * @constructor
    */
   constructor() {
+    this.listeners = [];
+    this.genesisList = [];
+    this.curr_genesis = ''; // hex form
+    this.blocks = [];
+
     // Get the servers list and the genesis block id
     this._fetch_request = fetch(GENESIS_BLOCK_SERVER, {headers: {'Content-Type': 'application/json'}})
       .then(

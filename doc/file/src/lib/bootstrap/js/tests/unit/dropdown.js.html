@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../../../../../">
+  <title data-ice="title">src/lib/bootstrap/js/tests/unit/dropdown.js | API Document</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  
+  
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/app.js~App.html">App</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/html-iframe</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/html-iframe/html-iframe.js~HTMLIFrame.html">HTMLIFrame</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/loading</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/loading/loading-spinner.js~LoadingSpinner.html">LoadingSpinner</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/html</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/html/module-html.js~ModuleHTML.html">ModuleHTML</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/random</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/random/module-random.js~ModuleRandom.html">ModuleRandom</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/signature</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/signature/module-sign.js~BlockSign.html">BlockSign</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/signature/module-verify.js~VerifyModule.html">VerifyModule</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/skipchain</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/skipchain/module-skipchain.js~ModuleSkipChain.html">ModuleSkipChain</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/servers-status</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/servers-status/servers-status.js~ServersStatus.html">ServersStatus</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">lib</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/lib/cothority-messages.js~CothorityMessages.html">CothorityMessages</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/lib/cothority-messages.js~CothorityProtobuf.html">CothorityProtobuf</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-index">index</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">lib/bootstrap/js/src</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Alert">Alert</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Button">Button</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Carousel">Carousel</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Collapse">Collapse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Dropdown">Dropdown</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Modal">Modal</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Popover">Popover</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ScrollSpy">ScrollSpy</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Tab">Tab</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Tooltip">Tooltip</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Util">Util</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">services</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/iframe.js~IFrameService.html">IFrameService</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/skipchain.js~SkipChainService.html">SkipChainService</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">utils</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-buf2hex">buf2hex</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-hex2buf">hex2buf</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-hashFile">hashFile</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-readAsString">readAsString</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-tcp2ws">tcp2ws</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/lib/bootstrap/js/tests/unit/dropdown.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">$(function () {
+  &apos;use strict&apos;
+
+  QUnit.module(&apos;dropdowns plugin&apos;)
+
+  QUnit.test(&apos;should be defined on jquery object&apos;, function (assert) {
+    assert.expect(1)
+    assert.ok($(document.body).dropdown, &apos;dropdown method is defined&apos;)
+  })
+
+  QUnit.module(&apos;dropdowns&apos;, {
+    beforeEach: function () {
+      // Run all tests in noConflict mode -- it&apos;s the only way to ensure that the plugin works in noConflict mode
+      $.fn.bootstrapDropdown = $.fn.dropdown.noConflict()
+    },
+    afterEach: function () {
+      $.fn.dropdown = $.fn.bootstrapDropdown
+      delete $.fn.bootstrapDropdown
+    }
+  })
+
+  QUnit.test(&apos;should provide no conflict&apos;, function (assert) {
+    assert.expect(1)
+    assert.strictEqual($.fn.dropdown, undefined, &apos;dropdown was set back to undefined (org value)&apos;)
+  })
+
+  QUnit.test(&apos;should throw explicit error on undefined method&apos;, function (assert) {
+    assert.expect(1)
+    var $el = $(&apos;&lt;div/&gt;&apos;)
+    $el.bootstrapDropdown()
+    try {
+      $el.bootstrapDropdown(&apos;noMethod&apos;)
+    }
+    catch (err) {
+      assert.strictEqual(err.message, &apos;No method named &quot;noMethod&quot;&apos;)
+    }
+  })
+
+  QUnit.test(&apos;should return jquery collection containing the element&apos;, function (assert) {
+    assert.expect(2)
+    var $el = $(&apos;&lt;div/&gt;&apos;)
+    var $dropdown = $el.bootstrapDropdown()
+    assert.ok($dropdown instanceof $, &apos;returns jquery collection&apos;)
+    assert.strictEqual($dropdown[0], $el[0], &apos;collection contains element&apos;)
+  })
+
+  QUnit.test(&apos;should not open dropdown if target is disabled via attribute&apos;, function (assert) {
+    assert.expect(1)
+    var dropdownHTML = &apos;&lt;ul class=&quot;tabs&quot;&gt;&apos;
+        + &apos;&lt;li class=&quot;dropdown&quot;&gt;&apos;
+        + &apos;&lt;button disabled href=&quot;#&quot; class=&quot;btn dropdown-toggle&quot; data-toggle=&quot;dropdown&quot;&gt;Dropdown&lt;/button&gt;&apos;
+        + &apos;&lt;ul class=&quot;dropdown-menu&quot;&gt;&apos;
+        + &apos;&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Secondary link&lt;/a&gt;&lt;/li&gt;&apos;
+        + &apos;&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Something else here&lt;/a&gt;&lt;/li&gt;&apos;
+        + &apos;&lt;li class=&quot;divider&quot;/&gt;&apos;
+        + &apos;&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Another link&lt;/a&gt;&lt;/li&gt;&apos;
+        + &apos;&lt;/ul&gt;&apos;
+        + &apos;&lt;/li&gt;&apos;
+        + &apos;&lt;/ul&gt;&apos;
+    var $dropdown = $(dropdownHTML).find(&apos;[data-toggle=&quot;dropdown&quot;]&apos;).bootstrapDropdown().trigger(&apos;click&apos;)
+
+    assert.ok(!$dropdown.parent(&apos;.dropdown&apos;).hasClass(&apos;show&apos;), &apos;&quot;show&quot; class added on click&apos;)
+  })
+
+  QUnit.test(&apos;should set aria-expanded=&quot;true&quot; on target when dropdown menu is shown&apos;, function (assert) {
+    assert.expect(1)
+    var dropdownHTML = &apos;&lt;ul class=&quot;tabs&quot;&gt;&apos;
+        + &apos;&lt;li class=&quot;dropdown&quot;&gt;&apos;
+        + &apos;&lt;a href=&quot;#&quot; class=&quot;dropdown-toggle&quot; data-toggle=&quot;dropdown&quot; aria-expanded=&quot;false&quot;&gt;Dropdown&lt;/a&gt;&apos;
+        + &apos;&lt;ul class=&quot;dropdown-menu&quot;&gt;&apos;
+        + &apos;&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Secondary link&lt;/a&gt;&lt;/li&gt;&apos;
+        + &apos;&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Something else here&lt;/a&gt;&lt;/li&gt;&apos;
+        + &apos;&lt;li class=&quot;divider&quot;/&gt;&apos;
+        + &apos;&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Another link&lt;/a&gt;&lt;/li&gt;&apos;
+        + &apos;&lt;/ul&gt;&apos;
+        + &apos;&lt;/li&gt;&apos;
+        + &apos;&lt;/ul&gt;&apos;
+    var $dropdown = $(dropdownHTML)
+      .find(&apos;[data-toggle=&quot;dropdown&quot;]&apos;)
+      .bootstrapDropdown()
+      .trigger(&apos;click&apos;)
+
+    assert.strictEqual($dropdown.attr(&apos;aria-expanded&apos;), &apos;true&apos;, &apos;aria-expanded is set to string &quot;true&quot; on click&apos;)
+  })
+
+  QUnit.test(&apos;should set aria-expanded=&quot;false&quot; on target when dropdown menu is hidden&apos;, function (assert) {
+    assert.expect(1)
+    var done = assert.async()
+    var dropdownHTML = &apos;&lt;ul class=&quot;tabs&quot;&gt;&apos;
+        + &apos;&lt;li class=&quot;dropdown&quot;&gt;&apos;
+        + &apos;&lt;a href=&quot;#&quot; class=&quot;dropdown-toggle&quot; aria-expanded=&quot;false&quot; data-toggle=&quot;dropdown&quot;&gt;Dropdown&lt;/a&gt;&apos;
+        + &apos;&lt;ul class=&quot;dropdown-menu&quot;&gt;&apos;
+        + &apos;&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Secondary link&lt;/a&gt;&lt;/li&gt;&apos;
+        + &apos;&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Something else here&lt;/a&gt;&lt;/li&gt;&apos;
+        + &apos;&lt;li class=&quot;divider&quot;/&gt;&apos;
+        + &apos;&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Another link&lt;/a&gt;&lt;/li&gt;&apos;
+        + &apos;&lt;/ul&gt;&apos;
+        + &apos;&lt;/li&gt;&apos;
+        + &apos;&lt;/ul&gt;&apos;
+    var $dropdown = $(dropdownHTML)
+      .appendTo(&apos;#qunit-fixture&apos;)
+      .find(&apos;[data-toggle=&quot;dropdown&quot;]&apos;)
+      .bootstrapDropdown()
+
+    $dropdown
+      .parent(&apos;.dropdown&apos;)
+      .on(&apos;hidden.bs.dropdown&apos;, function () {
+        assert.strictEqual($dropdown.attr(&apos;aria-expanded&apos;), &apos;false&apos;, &apos;aria-expanded is set to string &quot;false&quot; on hide&apos;)
+        done()
+      })
+
+    $dropdown.trigger(&apos;click&apos;)
+    $(document.body).trigger(&apos;click&apos;)
+  })
+
+  QUnit.test(&apos;should not open dropdown if target is disabled via class&apos;, function (assert) {
+    assert.expect(1)
+    var dropdownHTML = &apos;&lt;ul class=&quot;tabs&quot;&gt;&apos;
+        + &apos;&lt;li class=&quot;dropdown&quot;&gt;&apos;
+        + &apos;&lt;button href=&quot;#&quot; class=&quot;btn dropdown-toggle disabled&quot; data-toggle=&quot;dropdown&quot;&gt;Dropdown&lt;/button&gt;&apos;
+        + &apos;&lt;ul class=&quot;dropdown-menu&quot;&gt;&apos;
+        + &apos;&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Secondary link&lt;/a&gt;&lt;/li&gt;&apos;
+        + &apos;&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Something else here&lt;/a&gt;&lt;/li&gt;&apos;
+        + &apos;&lt;li class=&quot;divider&quot;/&gt;&apos;
+        + &apos;&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Another link&lt;/a&gt;&lt;/li&gt;&apos;
+        + &apos;&lt;/ul&gt;&apos;
+        + &apos;&lt;/li&gt;&apos;
+        + &apos;&lt;/ul&gt;&apos;
+    var $dropdown = $(dropdownHTML).find(&apos;[data-toggle=&quot;dropdown&quot;]&apos;).bootstrapDropdown().trigger(&apos;click&apos;)
+
+    assert.ok(!$dropdown.parent(&apos;.dropdown&apos;).hasClass(&apos;show&apos;), &apos;&quot;show&quot; class added on click&apos;)
+  })
+
+  QUnit.test(&apos;should add class show to menu if clicked&apos;, function (assert) {
+    assert.expect(1)
+    var dropdownHTML = &apos;&lt;ul class=&quot;tabs&quot;&gt;&apos;
+        + &apos;&lt;li class=&quot;dropdown&quot;&gt;&apos;
+        + &apos;&lt;a href=&quot;#&quot; class=&quot;dropdown-toggle&quot; data-toggle=&quot;dropdown&quot;&gt;Dropdown&lt;/a&gt;&apos;
+        + &apos;&lt;ul class=&quot;dropdown-menu&quot;&gt;&apos;
+        + &apos;&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Secondary link&lt;/a&gt;&lt;/li&gt;&apos;
+        + &apos;&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Something else here&lt;/a&gt;&lt;/li&gt;&apos;
+        + &apos;&lt;li class=&quot;divider&quot;/&gt;&apos;
+        + &apos;&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Another link&lt;/a&gt;&lt;/li&gt;&apos;
+        + &apos;&lt;/ul&gt;&apos;
+        + &apos;&lt;/li&gt;&apos;
+        + &apos;&lt;/ul&gt;&apos;
+    var $dropdown = $(dropdownHTML).find(&apos;[data-toggle=&quot;dropdown&quot;]&apos;).bootstrapDropdown().trigger(&apos;click&apos;)
+
+    assert.ok($dropdown.parent(&apos;.dropdown&apos;).hasClass(&apos;show&apos;), &apos;&quot;show&quot; class added on click&apos;)
+  })
+
+  QUnit.test(&apos;should test if element has a # before assuming it\&apos;s a selector&apos;, function (assert) {
+    assert.expect(1)
+    var dropdownHTML = &apos;&lt;ul class=&quot;tabs&quot;&gt;&apos;
+        + &apos;&lt;li class=&quot;dropdown&quot;&gt;&apos;
+        + &apos;&lt;a href=&quot;/foo/&quot; class=&quot;dropdown-toggle&quot; data-toggle=&quot;dropdown&quot;&gt;Dropdown&lt;/a&gt;&apos;
+        + &apos;&lt;ul class=&quot;dropdown-menu&quot;&gt;&apos;
+        + &apos;&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Secondary link&lt;/a&gt;&lt;/li&gt;&apos;
+        + &apos;&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Something else here&lt;/a&gt;&lt;/li&gt;&apos;
+        + &apos;&lt;li class=&quot;divider&quot;/&gt;&apos;
+        + &apos;&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Another link&lt;/a&gt;&lt;/li&gt;&apos;
+        + &apos;&lt;/ul&gt;&apos;
+        + &apos;&lt;/li&gt;&apos;
+        + &apos;&lt;/ul&gt;&apos;
+    var $dropdown = $(dropdownHTML).find(&apos;[data-toggle=&quot;dropdown&quot;]&apos;).bootstrapDropdown().trigger(&apos;click&apos;)
+
+    assert.ok($dropdown.parent(&apos;.dropdown&apos;).hasClass(&apos;show&apos;), &apos;&quot;show&quot; class added on click&apos;)
+  })
+
+
+  QUnit.test(&apos;should remove &quot;show&quot; class if body is clicked&apos;, function (assert) {
+    assert.expect(2)
+    var dropdownHTML = &apos;&lt;ul class=&quot;tabs&quot;&gt;&apos;
+        + &apos;&lt;li class=&quot;dropdown&quot;&gt;&apos;
+        + &apos;&lt;a href=&quot;#&quot; class=&quot;dropdown-toggle&quot; data-toggle=&quot;dropdown&quot;&gt;Dropdown&lt;/a&gt;&apos;
+        + &apos;&lt;ul class=&quot;dropdown-menu&quot;&gt;&apos;
+        + &apos;&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Secondary link&lt;/a&gt;&lt;/li&gt;&apos;
+        + &apos;&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Something else here&lt;/a&gt;&lt;/li&gt;&apos;
+        + &apos;&lt;li class=&quot;divider&quot;/&gt;&apos;
+        + &apos;&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Another link&lt;/a&gt;&lt;/li&gt;&apos;
+        + &apos;&lt;/ul&gt;&apos;
+        + &apos;&lt;/li&gt;&apos;
+        + &apos;&lt;/ul&gt;&apos;
+    var $dropdown = $(dropdownHTML)
+      .appendTo(&apos;#qunit-fixture&apos;)
+      .find(&apos;[data-toggle=&quot;dropdown&quot;]&apos;)
+      .bootstrapDropdown()
+      .trigger(&apos;click&apos;)
+
+    assert.ok($dropdown.parent(&apos;.dropdown&apos;).hasClass(&apos;show&apos;), &apos;&quot;show&quot; class added on click&apos;)
+    $(document.body).trigger(&apos;click&apos;)
+    assert.ok(!$dropdown.parent(&apos;.dropdown&apos;).hasClass(&apos;show&apos;), &apos;&quot;show&quot; class removed&apos;)
+  })
+
+  QUnit.test(&apos;should remove &quot;show&quot; class if body is focused&apos;, function (assert) {
+    assert.expect(2)
+    var dropdownHTML = &apos;&lt;div class=&quot;tabs&quot;&gt;&apos;
+        + &apos;&lt;div class=&quot;dropdown&quot;&gt;&apos;
+        + &apos;&lt;a href=&quot;#&quot; class=&quot;dropdown-toggle&quot; data-toggle=&quot;dropdown&quot;&gt;Dropdown&lt;/a&gt;&apos;
+        + &apos;&lt;div class=&quot;dropdown-menu&quot;&gt;&apos;
+        + &apos;&lt;a class=&quot;dropdown-item&quot; href=&quot;#&quot;&gt;Secondary link&lt;/a&gt;&apos;
+        + &apos;&lt;a class=&quot;dropdown-item&quot; href=&quot;#&quot;&gt;Something else here&lt;/a&gt;&apos;
+        + &apos;&lt;div class=&quot;dropdown-divider&quot;/&gt;&apos;
+        + &apos;&lt;a class=&quot;dropdown-item&quot; href=&quot;#&quot;&gt;Another link&lt;/a&gt;&apos;
+        + &apos;&lt;/div&gt;&apos;
+        + &apos;&lt;/div&gt;&apos;
+        + &apos;&lt;/div&gt;&apos;
+    var $dropdown = $(dropdownHTML)
+       .appendTo(&apos;#qunit-fixture&apos;)
+       .find(&apos;[data-toggle=&quot;dropdown&quot;]&apos;)
+       .bootstrapDropdown()
+       .trigger(&apos;click&apos;)
+
+    assert.ok($dropdown.parent(&apos;.dropdown&apos;).hasClass(&apos;show&apos;), &apos;&quot;show&quot; class added on click&apos;)
+    $(document.body).trigger(&apos;focusin&apos;)
+    assert.ok(!$dropdown.parent(&apos;.dropdown&apos;).hasClass(&apos;show&apos;), &apos;&quot;show&quot; class removed&apos;)
+  })
+
+  QUnit.test(&apos;should remove &quot;show&quot; class if body is clicked, with multiple dropdowns&apos;, function (assert) {
+    assert.expect(7)
+    var dropdownHTML = &apos;&lt;ul class=&quot;nav&quot;&gt;&apos;
+        + &apos;&lt;li&gt;&lt;a href=&quot;#menu1&quot;&gt;Menu 1&lt;/a&gt;&lt;/li&gt;&apos;
+        + &apos;&lt;li class=&quot;dropdown&quot; id=&quot;testmenu&quot;&gt;&apos;
+        + &apos;&lt;a class=&quot;dropdown-toggle&quot; data-toggle=&quot;dropdown&quot; href=&quot;#testmenu&quot;&gt;Test menu &lt;span class=&quot;caret&quot;/&gt;&lt;/a&gt;&apos;
+        + &apos;&lt;ul class=&quot;dropdown-menu&quot;&gt;&apos;
+        + &apos;&lt;li&gt;&lt;a href=&quot;#sub1&quot;&gt;Submenu 1&lt;/a&gt;&lt;/li&gt;&apos;
+        + &apos;&lt;/ul&gt;&apos;
+        + &apos;&lt;/li&gt;&apos;
+        + &apos;&lt;/ul&gt;&apos;
+        + &apos;&lt;div class=&quot;btn-group&quot;&gt;&apos;
+        + &apos;&lt;button class=&quot;btn&quot;&gt;Actions&lt;/button&gt;&apos;
+        + &apos;&lt;button class=&quot;btn dropdown-toggle&quot; data-toggle=&quot;dropdown&quot;&gt;&lt;span class=&quot;caret&quot;/&gt;&lt;/button&gt;&apos;
+        + &apos;&lt;ul class=&quot;dropdown-menu&quot;&gt;&apos;
+        + &apos;&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Action 1&lt;/a&gt;&lt;/li&gt;&apos;
+        + &apos;&lt;/ul&gt;&apos;
+        + &apos;&lt;/div&gt;&apos;
+    var $dropdowns = $(dropdownHTML).appendTo(&apos;#qunit-fixture&apos;).find(&apos;[data-toggle=&quot;dropdown&quot;]&apos;)
+    var $first = $dropdowns.first()
+    var $last = $dropdowns.last()
+
+    assert.strictEqual($dropdowns.length, 2, &apos;two dropdowns&apos;)
+
+    $first.trigger(&apos;click&apos;)
+    assert.strictEqual($first.parents(&apos;.show&apos;).length, 1, &apos;&quot;show&quot; class added on click&apos;)
+    assert.strictEqual($(&apos;#qunit-fixture .show&apos;).length, 1, &apos;only one dropdown is shown&apos;)
+    $(document.body).trigger(&apos;click&apos;)
+    assert.strictEqual($(&apos;#qunit-fixture .show&apos;).length, 0, &apos;&quot;show&quot; class removed&apos;)
+
+    $last.trigger(&apos;click&apos;)
+    assert.strictEqual($last.parent(&apos;.show&apos;).length, 1, &apos;&quot;show&quot; class added on click&apos;)
+    assert.strictEqual($(&apos;#qunit-fixture .show&apos;).length, 1, &apos;only one dropdown is shown&apos;)
+    $(document.body).trigger(&apos;click&apos;)
+    assert.strictEqual($(&apos;#qunit-fixture .show&apos;).length, 0, &apos;&quot;show&quot; class removed&apos;)
+  })
+
+  QUnit.test(&apos;should remove &quot;show&quot; class if body is focused, with multiple dropdowns&apos;, function (assert) {
+    assert.expect(7)
+    var dropdownHTML = &apos;&lt;div class=&quot;nav&quot;&gt;&apos;
+        + &apos;&lt;div class=&quot;dropdown&quot; id=&quot;testmenu&quot;&gt;&apos;
+        + &apos;&lt;a class=&quot;dropdown-toggle&quot; data-toggle=&quot;dropdown&quot; href=&quot;#testmenu&quot;&gt;Test menu &lt;span class=&quot;caret&quot;/&gt;&lt;/a&gt;&apos;
+        + &apos;&lt;div class=&quot;dropdown-menu&quot;&gt;&apos;
+        + &apos;&lt;a class=&quot;dropdown-item&quot; href=&quot;#sub1&quot;&gt;Submenu 1&lt;/a&gt;&apos;
+        + &apos;&lt;/div&gt;&apos;
+        + &apos;&lt;/div&gt;&apos;
+        + &apos;&lt;/div&gt;&apos;
+        + &apos;&lt;div class=&quot;btn-group&quot;&gt;&apos;
+        + &apos;&lt;button class=&quot;btn&quot;&gt;Actions&lt;/button&gt;&apos;
+        + &apos;&lt;button class=&quot;btn dropdown-toggle&quot; data-toggle=&quot;dropdown&quot;&gt;&lt;span class=&quot;caret&quot;/&gt;&lt;/button&gt;&apos;
+        + &apos;&lt;div class=&quot;dropdown-menu&quot;&gt;&apos;
+        + &apos;&lt;a class=&quot;dropdown-item&quot; href=&quot;#&quot;&gt;Action 1&lt;/a&gt;&apos;
+        + &apos;&lt;/div&gt;&apos;
+        + &apos;&lt;/div&gt;&apos;
+    var $dropdowns = $(dropdownHTML).appendTo(&apos;#qunit-fixture&apos;).find(&apos;[data-toggle=&quot;dropdown&quot;]&apos;)
+    var $first = $dropdowns.first()
+    var $last = $dropdowns.last()
+
+    assert.strictEqual($dropdowns.length, 2, &apos;two dropdowns&apos;)
+
+    $first.trigger(&apos;click&apos;)
+    assert.strictEqual($first.parents(&apos;.show&apos;).length, 1, &apos;&quot;show&quot; class added on click&apos;)
+    assert.strictEqual($(&apos;#qunit-fixture .show&apos;).length, 1, &apos;only one dropdown is show&apos;)
+    $(document.body).trigger(&apos;focusin&apos;)
+    assert.strictEqual($(&apos;#qunit-fixture .show&apos;).length, 0, &apos;&quot;show&quot; class removed&apos;)
+
+    $last.trigger(&apos;click&apos;)
+    assert.strictEqual($last.parent(&apos;.show&apos;).length, 1, &apos;&quot;show&quot; class added on click&apos;)
+    assert.strictEqual($(&apos;#qunit-fixture .show&apos;).length, 1, &apos;only one dropdown is show&apos;)
+    $(document.body).trigger(&apos;focusin&apos;)
+    assert.strictEqual($(&apos;#qunit-fixture .show&apos;).length, 0, &apos;&quot;show&quot; class removed&apos;)
+  })
+
+  QUnit.test(&apos;should fire show and hide event&apos;, function (assert) {
+    assert.expect(2)
+    var dropdownHTML = &apos;&lt;ul class=&quot;tabs&quot;&gt;&apos;
+        + &apos;&lt;li class=&quot;dropdown&quot;&gt;&apos;
+        + &apos;&lt;a href=&quot;#&quot; class=&quot;dropdown-toggle&quot; data-toggle=&quot;dropdown&quot;&gt;Dropdown&lt;/a&gt;&apos;
+        + &apos;&lt;ul class=&quot;dropdown-menu&quot;&gt;&apos;
+        + &apos;&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Secondary link&lt;/a&gt;&lt;/li&gt;&apos;
+        + &apos;&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Something else here&lt;/a&gt;&lt;/li&gt;&apos;
+        + &apos;&lt;li class=&quot;divider&quot;/&gt;&apos;
+        + &apos;&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Another link&lt;/a&gt;&lt;/li&gt;&apos;
+        + &apos;&lt;/ul&gt;&apos;
+        + &apos;&lt;/li&gt;&apos;
+        + &apos;&lt;/ul&gt;&apos;
+    var $dropdown = $(dropdownHTML)
+      .appendTo(&apos;#qunit-fixture&apos;)
+      .find(&apos;[data-toggle=&quot;dropdown&quot;]&apos;)
+      .bootstrapDropdown()
+
+    var done = assert.async()
+
+    $dropdown
+      .parent(&apos;.dropdown&apos;)
+      .on(&apos;show.bs.dropdown&apos;, function () {
+        assert.ok(true, &apos;show was fired&apos;)
+      })
+      .on(&apos;hide.bs.dropdown&apos;, function () {
+        assert.ok(true, &apos;hide was fired&apos;)
+        done()
+      })
+
+    $dropdown.trigger(&apos;click&apos;)
+    $(document.body).trigger(&apos;click&apos;)
+  })
+
+
+  QUnit.test(&apos;should fire shown and hidden event&apos;, function (assert) {
+    assert.expect(2)
+    var dropdownHTML = &apos;&lt;ul class=&quot;tabs&quot;&gt;&apos;
+        + &apos;&lt;li class=&quot;dropdown&quot;&gt;&apos;
+        + &apos;&lt;a href=&quot;#&quot; class=&quot;dropdown-toggle&quot; data-toggle=&quot;dropdown&quot;&gt;Dropdown&lt;/a&gt;&apos;
+        + &apos;&lt;ul class=&quot;dropdown-menu&quot;&gt;&apos;
+        + &apos;&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Secondary link&lt;/a&gt;&lt;/li&gt;&apos;
+        + &apos;&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Something else here&lt;/a&gt;&lt;/li&gt;&apos;
+        + &apos;&lt;li class=&quot;divider&quot;/&gt;&apos;
+        + &apos;&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Another link&lt;/a&gt;&lt;/li&gt;&apos;
+        + &apos;&lt;/ul&gt;&apos;
+        + &apos;&lt;/li&gt;&apos;
+        + &apos;&lt;/ul&gt;&apos;
+    var $dropdown = $(dropdownHTML)
+      .appendTo(&apos;#qunit-fixture&apos;)
+      .find(&apos;[data-toggle=&quot;dropdown&quot;]&apos;)
+      .bootstrapDropdown()
+
+    var done = assert.async()
+
+    $dropdown
+      .parent(&apos;.dropdown&apos;)
+      .on(&apos;shown.bs.dropdown&apos;, function () {
+        assert.ok(true, &apos;shown was fired&apos;)
+      })
+      .on(&apos;hidden.bs.dropdown&apos;, function () {
+        assert.ok(true, &apos;hidden was fired&apos;)
+        done()
+      })
+
+    $dropdown.trigger(&apos;click&apos;)
+    $(document.body).trigger(&apos;click&apos;)
+  })
+
+  QUnit.test(&apos;should fire shown and hidden event with a relatedTarget&apos;, function (assert) {
+    assert.expect(2)
+    var dropdownHTML = &apos;&lt;ul class=&quot;tabs&quot;&gt;&apos;
+        + &apos;&lt;li class=&quot;dropdown&quot;&gt;&apos;
+        + &apos;&lt;a href=&quot;#&quot; class=&quot;dropdown-toggle&quot; data-toggle=&quot;dropdown&quot;&gt;Dropdown&lt;/a&gt;&apos;
+        + &apos;&lt;ul class=&quot;dropdown-menu&quot;&gt;&apos;
+        + &apos;&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Secondary link&lt;/a&gt;&lt;/li&gt;&apos;
+        + &apos;&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Something else here&lt;/a&gt;&lt;/li&gt;&apos;
+        + &apos;&lt;li class=&quot;divider&quot;/&gt;&apos;
+        + &apos;&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Another link&lt;/a&gt;&lt;/li&gt;&apos;
+        + &apos;&lt;/ul&gt;&apos;
+        + &apos;&lt;/li&gt;&apos;
+        + &apos;&lt;/ul&gt;&apos;
+    var $dropdown = $(dropdownHTML)
+      .appendTo(&apos;#qunit-fixture&apos;)
+      .find(&apos;[data-toggle=&quot;dropdown&quot;]&apos;)
+      .bootstrapDropdown()
+    var done = assert.async()
+
+    $dropdown.parent(&apos;.dropdown&apos;)
+      .on(&apos;hidden.bs.dropdown&apos;, function (e) {
+        assert.strictEqual(e.relatedTarget, $dropdown[0])
+        done()
+      })
+      .on(&apos;shown.bs.dropdown&apos;, function (e) {
+        assert.strictEqual(e.relatedTarget, $dropdown[0])
+        $(document.body).trigger(&apos;click&apos;)
+      })
+
+    $dropdown.trigger(&apos;click&apos;)
+  })
+
+  QUnit.test(&apos;should ignore keyboard events within &lt;input&gt;s and &lt;textarea&gt;s&apos;, function (assert) {
+    assert.expect(3)
+    var done = assert.async()
+
+    var dropdownHTML = &apos;&lt;ul class=&quot;tabs&quot;&gt;&apos;
+        + &apos;&lt;li class=&quot;dropdown&quot;&gt;&apos;
+        + &apos;&lt;a href=&quot;#&quot; class=&quot;dropdown-toggle&quot; data-toggle=&quot;dropdown&quot;&gt;Dropdown&lt;/a&gt;&apos;
+        + &apos;&lt;ul class=&quot;dropdown-menu&quot;&gt;&apos;
+        + &apos;&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Secondary link&lt;/a&gt;&lt;/li&gt;&apos;
+        + &apos;&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Something else here&lt;/a&gt;&lt;/li&gt;&apos;
+        + &apos;&lt;li class=&quot;divider&quot;/&gt;&apos;
+        + &apos;&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Another link&lt;/a&gt;&lt;/li&gt;&apos;
+        + &apos;&lt;li&gt;&lt;input type=&quot;text&quot; id=&quot;input&quot;&gt;&lt;/li&gt;&apos;
+        + &apos;&lt;li&gt;&lt;textarea id=&quot;textarea&quot;/&gt;&lt;/li&gt;&apos;
+        + &apos;&lt;/ul&gt;&apos;
+        + &apos;&lt;/li&gt;&apos;
+        + &apos;&lt;/ul&gt;&apos;
+    var $dropdown = $(dropdownHTML)
+      .appendTo(&apos;#qunit-fixture&apos;)
+      .find(&apos;[data-toggle=&quot;dropdown&quot;]&apos;)
+      .bootstrapDropdown()
+
+    var $input = $(&apos;#input&apos;)
+    var $textarea = $(&apos;#textarea&apos;)
+
+    $dropdown
+      .parent(&apos;.dropdown&apos;)
+      .on(&apos;shown.bs.dropdown&apos;, function () {
+        assert.ok(true, &apos;shown was fired&apos;)
+
+        $input.trigger(&apos;focus&apos;).trigger($.Event(&apos;keydown&apos;, { which: 38 }))
+        assert.ok($(document.activeElement).is($input), &apos;input still focused&apos;)
+
+        $textarea.trigger(&apos;focus&apos;).trigger($.Event(&apos;keydown&apos;, { which: 38 }))
+        assert.ok($(document.activeElement).is($textarea), &apos;textarea still focused&apos;)
+
+        done()
+      })
+
+    $dropdown.trigger(&apos;click&apos;)
+  })
+
+  QUnit.test(&apos;should skip disabled element when using keyboard navigation&apos;, function (assert) {
+    assert.expect(1)
+    var dropdownHTML = &apos;&lt;ul class=&quot;tabs&quot;&gt;&apos;
+        + &apos;&lt;li class=&quot;dropdown&quot;&gt;&apos;
+        + &apos;&lt;a href=&quot;#&quot; class=&quot;dropdown-toggle&quot; data-toggle=&quot;dropdown&quot;&gt;Dropdown&lt;/a&gt;&apos;
+        + &apos;&lt;ul class=&quot;dropdown-menu&quot;&gt;&apos;
+        + &apos;&lt;li class=&quot;disabled&quot;&gt;&lt;a href=&quot;#&quot;&gt;Disabled link&lt;/a&gt;&lt;/li&gt;&apos;
+        + &apos;&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Another link&lt;/a&gt;&lt;/li&gt;&apos;
+        + &apos;&lt;/ul&gt;&apos;
+        + &apos;&lt;/li&gt;&apos;
+        + &apos;&lt;/ul&gt;&apos;
+    var $dropdown = $(dropdownHTML)
+      .appendTo(&apos;#qunit-fixture&apos;)
+      .find(&apos;[data-toggle=&quot;dropdown&quot;]&apos;)
+      .bootstrapDropdown()
+      .trigger(&apos;click&apos;)
+
+    $dropdown.trigger($.Event(&apos;keydown&apos;, { which: 40 }))
+    $dropdown.trigger($.Event(&apos;keydown&apos;, { which: 40 }))
+
+    assert.ok(!$(document.activeElement).parent().is(&apos;.disabled&apos;), &apos;.disabled is not focused&apos;)
+  })
+
+  QUnit.test(&apos;should not close the dropdown if the user clicks on a text field&apos;, function (assert) {
+    assert.expect(1)
+    var dropdownHTML = &apos;&lt;div class=&quot;btn-group&quot;&gt;&apos;
+        + &apos;&lt;button type=&quot;button&quot; data-toggle=&quot;dropdown&quot;&gt;Dropdown&lt;/button&gt;&apos;
+        + &apos;&lt;ul class=&quot;dropdown-menu&quot;&gt;&apos;
+        + &apos;&lt;li&gt;&lt;input id=&quot;textField&quot; type=&quot;text&quot; /&gt;&lt;/li&gt;&apos;
+        + &apos;&lt;/ul&gt;&apos;
+        + &apos;&lt;/div&gt;&apos;
+    var $dropdown = $(dropdownHTML)
+      .appendTo(&apos;#qunit-fixture&apos;)
+      .find(&apos;[data-toggle=&quot;dropdown&quot;]&apos;)
+      .bootstrapDropdown()
+      .trigger(&apos;click&apos;)
+
+    $(&apos;#textField&apos;).trigger(&apos;click&apos;)
+
+    assert.ok($dropdown.parent(&apos;.btn-group&apos;).hasClass(&apos;show&apos;), &apos;dropdown menu is shown&apos;)
+  })
+
+  QUnit.test(&apos;should not close the dropdown if the user clicks on a textarea&apos;, function (assert) {
+    assert.expect(1)
+    var dropdownHTML = &apos;&lt;div class=&quot;btn-group&quot;&gt;&apos;
+        + &apos;&lt;button type=&quot;button&quot; data-toggle=&quot;dropdown&quot;&gt;Dropdown&lt;/button&gt;&apos;
+        + &apos;&lt;ul class=&quot;dropdown-menu&quot;&gt;&apos;
+        + &apos;&lt;li&gt;&lt;textarea id=&quot;textArea&quot;&gt;&lt;/textarea&gt;&lt;/li&gt;&apos;
+        + &apos;&lt;/ul&gt;&apos;
+        + &apos;&lt;/div&gt;&apos;
+    var $dropdown = $(dropdownHTML)
+      .appendTo(&apos;#qunit-fixture&apos;)
+      .find(&apos;[data-toggle=&quot;dropdown&quot;]&apos;)
+      .bootstrapDropdown()
+      .trigger(&apos;click&apos;)
+
+    $(&apos;#textArea&apos;).trigger(&apos;click&apos;)
+
+    assert.ok($dropdown.parent(&apos;.btn-group&apos;).hasClass(&apos;show&apos;), &apos;dropdown menu is shown&apos;)
+  })
+})
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.5.2)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

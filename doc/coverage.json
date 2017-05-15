@@ -1,0 +1,224 @@
+{
+  "coverage": "51.46%",
+  "expectCount": 171,
+  "actualCount": 88,
+  "files": {
+    "src/app.js": {
+      "expectCount": 2,
+      "actualCount": 0,
+      "undocumentLines": [
+        14,
+        15
+      ]
+    },
+    "src/components/module/signature/module-sign.js": {
+      "expectCount": 6,
+      "actualCount": 4,
+      "undocumentLines": [
+        47,
+        22
+      ]
+    },
+    "src/lib/cothority-messages.js": {
+      "expectCount": 17,
+      "actualCount": 6,
+      "undocumentLines": [
+        51,
+        9,
+        11,
+        120,
+        136,
+        96,
+        130,
+        140,
+        114,
+        150,
+        12
+      ]
+    },
+    "src/services/websocket.js": {
+      "expectCount": 12,
+      "actualCount": 7,
+      "undocumentLines": [
+        69,
+        108,
+        49,
+        16,
+        90
+      ]
+    },
+    "src/components/module/signature/utils/drop-file-area.js": {
+      "expectCount": 7,
+      "actualCount": 5,
+      "undocumentLines": [
+        13,
+        54
+      ]
+    },
+    "src/services/genesis.js": {
+      "expectCount": 12,
+      "actualCount": 7,
+      "undocumentLines": [
+        24,
+        23,
+        77,
+        22,
+        21
+      ]
+    },
+    "src/components/html-iframe/html-iframe.js": {
+      "expectCount": 9,
+      "actualCount": 5,
+      "undocumentLines": [
+        51,
+        55,
+        59,
+        20
+      ]
+    },
+    "src/services/iframe.js": {
+      "expectCount": 7,
+      "actualCount": 4,
+      "undocumentLines": [
+        19,
+        29,
+        35
+      ]
+    },
+    "src/components/servers-status/last-update.js": {
+      "expectCount": 7,
+      "actualCount": 1,
+      "undocumentLines": [
+        19,
+        25,
+        15,
+        10,
+        22,
+        29
+      ]
+    },
+    "src/components/loading/loading-spinner.js": {
+      "expectCount": 2,
+      "actualCount": 1,
+      "undocumentLines": [
+        12
+      ]
+    },
+    "src/components/module/module.js": {
+      "expectCount": 3,
+      "actualCount": 1,
+      "undocumentLines": [
+        14,
+        20
+      ]
+    },
+    "src/components/module/html/module-html.js": {
+      "expectCount": 8,
+      "actualCount": 4,
+      "undocumentLines": [
+        55,
+        59,
+        63,
+        24
+      ]
+    },
+    "src/components/module/random/module-random.js": {
+      "expectCount": 5,
+      "actualCount": 0,
+      "undocumentLines": [
+        11,
+        21,
+        13,
+        25,
+        16
+      ]
+    },
+    "src/components/module/skipchain/module-skipchain.js": {
+      "expectCount": 9,
+      "actualCount": 0,
+      "undocumentLines": [
+        10,
+        52,
+        56,
+        12,
+        44,
+        40,
+        23,
+        60,
+        15
+      ]
+    },
+    "src/components/servers-status/servers-status.js": {
+      "expectCount": 7,
+      "actualCount": 3,
+      "undocumentLines": [
+        44,
+        48,
+        52,
+        24
+      ]
+    },
+    "src/components/module/signature/utils/sign-area.js": {
+      "expectCount": 11,
+      "actualCount": 6,
+      "undocumentLines": [
+        44,
+        48,
+        20,
+        143,
+        32
+      ]
+    },
+    "src/models/signature-file.js": {
+      "expectCount": 22,
+      "actualCount": 16,
+      "undocumentLines": [
+        19,
+        15,
+        18,
+        17,
+        20,
+        16
+      ]
+    },
+    "src/services/skipchain.js": {
+      "expectCount": 2,
+      "actualCount": 2,
+      "undocumentLines": []
+    },
+    "src/services/status.js": {
+      "expectCount": 12,
+      "actualCount": 7,
+      "undocumentLines": [
+        22,
+        20,
+        23,
+        21,
+        19
+      ]
+    },
+    "src/components/module/signature/module-verify.js": {
+      "expectCount": 6,
+      "actualCount": 4,
+      "undocumentLines": [
+        84,
+        28
+      ]
+    },
+    "src/utils/buffer.js": {
+      "expectCount": 2,
+      "actualCount": 2,
+      "undocumentLines": []
+    },
+    "src/utils/file.js": {
+      "expectCount": 2,
+      "actualCount": 2,
+      "undocumentLines": []
+    },
+    "src/utils/network.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    }
+  }
+}

@@ -9,7 +9,12 @@ const EMPTY_MESSAGE = new Uint8Array([]);
  */
 export class CothorityWebsocket {
 
-  status = {};
+  /**
+   * @constructor
+   */
+  constructor() {
+    this.status = {};
+  }
 
   /**
    * Get the status of the given server among a WS

@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../../../../../">
+  <title data-ice="title">src/lib/bootstrap/js/tests/unit/collapse.js | API Document</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  
+  
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/app.js~App.html">App</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/html-iframe</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/html-iframe/html-iframe.js~HTMLIFrame.html">HTMLIFrame</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/loading</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/loading/loading-spinner.js~LoadingSpinner.html">LoadingSpinner</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/html</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/html/module-html.js~ModuleHTML.html">ModuleHTML</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/random</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/random/module-random.js~ModuleRandom.html">ModuleRandom</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/signature</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/signature/module-sign.js~BlockSign.html">BlockSign</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/signature/module-verify.js~VerifyModule.html">VerifyModule</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/skipchain</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/skipchain/module-skipchain.js~ModuleSkipChain.html">ModuleSkipChain</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/servers-status</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/servers-status/servers-status.js~ServersStatus.html">ServersStatus</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">lib</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/lib/cothority-messages.js~CothorityMessages.html">CothorityMessages</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/lib/cothority-messages.js~CothorityProtobuf.html">CothorityProtobuf</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-index">index</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">lib/bootstrap/js/src</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Alert">Alert</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Button">Button</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Carousel">Carousel</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Collapse">Collapse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Dropdown">Dropdown</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Modal">Modal</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Popover">Popover</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ScrollSpy">ScrollSpy</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Tab">Tab</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Tooltip">Tooltip</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Util">Util</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">services</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/iframe.js~IFrameService.html">IFrameService</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/skipchain.js~SkipChainService.html">SkipChainService</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">utils</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-buf2hex">buf2hex</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-hex2buf">hex2buf</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-hashFile">hashFile</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-readAsString">readAsString</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-tcp2ws">tcp2ws</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/lib/bootstrap/js/tests/unit/collapse.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">$(function () {
+  &apos;use strict&apos;
+
+  QUnit.module(&apos;collapse plugin&apos;)
+
+  QUnit.test(&apos;should be defined on jquery object&apos;, function (assert) {
+    assert.expect(1)
+    assert.ok($(document.body).collapse, &apos;collapse method is defined&apos;)
+  })
+
+  QUnit.module(&apos;collapse&apos;, {
+    beforeEach: function () {
+      // Run all tests in noConflict mode -- it&apos;s the only way to ensure that the plugin works in noConflict mode
+      $.fn.bootstrapCollapse = $.fn.collapse.noConflict()
+    },
+    afterEach: function () {
+      $.fn.collapse = $.fn.bootstrapCollapse
+      delete $.fn.bootstrapCollapse
+    }
+  })
+
+  QUnit.test(&apos;should provide no conflict&apos;, function (assert) {
+    assert.expect(1)
+    assert.strictEqual($.fn.collapse, undefined, &apos;collapse was set back to undefined (org value)&apos;)
+  })
+
+  QUnit.test(&apos;should throw explicit error on undefined method&apos;, function (assert) {
+    assert.expect(1)
+    var $el = $(&apos;&lt;div/&gt;&apos;)
+    $el.bootstrapCollapse()
+    try {
+      $el.bootstrapCollapse(&apos;noMethod&apos;)
+    }
+    catch (err) {
+      assert.strictEqual(err.message, &apos;No method named &quot;noMethod&quot;&apos;)
+    }
+  })
+
+  QUnit.test(&apos;should return jquery collection containing the element&apos;, function (assert) {
+    assert.expect(2)
+    var $el = $(&apos;&lt;div/&gt;&apos;)
+    var $collapse = $el.bootstrapCollapse()
+    assert.ok($collapse instanceof $, &apos;returns jquery collection&apos;)
+    assert.strictEqual($collapse[0], $el[0], &apos;collection contains element&apos;)
+  })
+
+  QUnit.test(&apos;should show a collapsed element&apos;, function (assert) {
+    assert.expect(2)
+    var $el = $(&apos;&lt;div class=&quot;collapse&quot;/&gt;&apos;).bootstrapCollapse(&apos;show&apos;)
+
+    assert.ok($el.hasClass(&apos;show&apos;), &apos;has class &quot;show&quot;&apos;)
+    assert.ok(!/height/i.test($el.attr(&apos;style&apos;)), &apos;has height reset&apos;)
+  })
+
+  QUnit.test(&apos;should collapse only the first collapse&apos;, function (assert) {
+    assert.expect(2)
+    var html = [
+      &apos;&lt;div class=&quot;panel-group&quot; id=&quot;accordion1&quot;&gt;&apos;,
+      &apos;&lt;div class=&quot;panel&quot;&gt;&apos;,
+      &apos;&lt;div id=&quot;collapse1&quot; class=&quot;collapse&quot;/&gt;&apos;,
+      &apos;&lt;/div&gt;&apos;,
+      &apos;&lt;/div&gt;&apos;,
+      &apos;&lt;div class=&quot;panel-group&quot; id=&quot;accordion2&quot;&gt;&apos;,
+      &apos;&lt;div class=&quot;panel&quot;&gt;&apos;,
+      &apos;&lt;div id=&quot;collapse2&quot; class=&quot;collapse show&quot;/&gt;&apos;,
+      &apos;&lt;/div&gt;&apos;,
+      &apos;&lt;/div&gt;&apos;
+    ].join(&apos;&apos;)
+    $(html).appendTo(&apos;#qunit-fixture&apos;)
+    var $el1 = $(&apos;#collapse1&apos;)
+    var $el2 = $(&apos;#collapse2&apos;)
+    $el1.bootstrapCollapse(&apos;show&apos;)
+
+    assert.ok($el1.hasClass(&apos;show&apos;))
+    assert.ok($el2.hasClass(&apos;show&apos;))
+  })
+
+  QUnit.test(&apos;should hide a collapsed element&apos;, function (assert) {
+    assert.expect(1)
+    var $el = $(&apos;&lt;div class=&quot;collapse&quot;/&gt;&apos;).bootstrapCollapse(&apos;hide&apos;)
+
+    assert.ok(!$el.hasClass(&apos;show&apos;), &apos;does not have class &quot;show&quot;&apos;)
+  })
+
+  QUnit.test(&apos;should not fire shown when show is prevented&apos;, function (assert) {
+    assert.expect(1)
+    var done = assert.async()
+
+    $(&apos;&lt;div class=&quot;collapse&quot;/&gt;&apos;)
+      .on(&apos;show.bs.collapse&apos;, function (e) {
+        e.preventDefault()
+        assert.ok(true, &apos;show event fired&apos;)
+        done()
+      })
+      .on(&apos;shown.bs.collapse&apos;, function () {
+        assert.ok(false, &apos;shown event fired&apos;)
+      })
+      .bootstrapCollapse(&apos;show&apos;)
+  })
+
+  QUnit.test(&apos;should reset style to auto after finishing opening collapse&apos;, function (assert) {
+    assert.expect(2)
+    var done = assert.async()
+
+    $(&apos;&lt;div class=&quot;collapse&quot; style=&quot;height: 0px&quot;/&gt;&apos;)
+      .on(&apos;show.bs.collapse&apos;, function () {
+        assert.strictEqual(this.style.height, &apos;0px&apos;, &apos;height is 0px&apos;)
+      })
+      .on(&apos;shown.bs.collapse&apos;, function () {
+        assert.strictEqual(this.style.height, &apos;&apos;, &apos;height is auto&apos;)
+        done()
+      })
+      .bootstrapCollapse(&apos;show&apos;)
+  })
+
+  QUnit.test(&apos;should reset style to auto after finishing closing collapse&apos;, function (assert) {
+    assert.expect(1)
+    var done = assert.async()
+
+    $(&apos;&lt;div class=&quot;collapse&quot;/&gt;&apos;)
+      .on(&apos;shown.bs.collapse&apos;, function () {
+        $(this).bootstrapCollapse(&apos;hide&apos;)
+      })
+      .on(&apos;hidden.bs.collapse&apos;, function () {
+        assert.strictEqual(this.style.height, &apos;&apos;, &apos;height is auto&apos;)
+        done()
+      })
+      .bootstrapCollapse(&apos;show&apos;)
+  })
+
+  QUnit.test(&apos;should remove &quot;collapsed&quot; class from target when collapse is shown&apos;, function (assert) {
+    assert.expect(1)
+    var done = assert.async()
+
+    var $target = $(&apos;&lt;a role=&quot;button&quot; data-toggle=&quot;collapse&quot; class=&quot;collapsed&quot; href=&quot;#test1&quot;/&gt;&apos;).appendTo(&apos;#qunit-fixture&apos;)
+
+    $(&apos;&lt;div id=&quot;test1&quot;/&gt;&apos;)
+      .appendTo(&apos;#qunit-fixture&apos;)
+      .on(&apos;shown.bs.collapse&apos;, function () {
+        assert.ok(!$target.hasClass(&apos;collapsed&apos;), &apos;target does not have collapsed class&apos;)
+        done()
+      })
+
+    $target.trigger(&apos;click&apos;)
+  })
+
+  QUnit.test(&apos;should add &quot;collapsed&quot; class to target when collapse is hidden&apos;, function (assert) {
+    assert.expect(1)
+    var done = assert.async()
+
+    var $target = $(&apos;&lt;a role=&quot;button&quot; data-toggle=&quot;collapse&quot; href=&quot;#test1&quot;/&gt;&apos;).appendTo(&apos;#qunit-fixture&apos;)
+
+    $(&apos;&lt;div id=&quot;test1&quot; class=&quot;show&quot;/&gt;&apos;)
+      .appendTo(&apos;#qunit-fixture&apos;)
+      .on(&apos;hidden.bs.collapse&apos;, function () {
+        assert.ok($target.hasClass(&apos;collapsed&apos;), &apos;target has collapsed class&apos;)
+        done()
+      })
+
+    $target.trigger(&apos;click&apos;)
+  })
+
+  QUnit.test(&apos;should remove &quot;collapsed&quot; class from all triggers targeting the collapse when the collapse is shown&apos;, function (assert) {
+    assert.expect(2)
+    var done = assert.async()
+
+    var $target = $(&apos;&lt;a role=&quot;button&quot; data-toggle=&quot;collapse&quot; class=&quot;collapsed&quot; href=&quot;#test1&quot;/&gt;&apos;).appendTo(&apos;#qunit-fixture&apos;)
+    var $alt = $(&apos;&lt;a role=&quot;button&quot; data-toggle=&quot;collapse&quot; class=&quot;collapsed&quot; href=&quot;#test1&quot;/&gt;&apos;).appendTo(&apos;#qunit-fixture&apos;)
+
+    $(&apos;&lt;div id=&quot;test1&quot;/&gt;&apos;)
+      .appendTo(&apos;#qunit-fixture&apos;)
+      .on(&apos;shown.bs.collapse&apos;, function () {
+        assert.ok(!$target.hasClass(&apos;collapsed&apos;), &apos;target trigger does not have collapsed class&apos;)
+        assert.ok(!$alt.hasClass(&apos;collapsed&apos;), &apos;alt trigger does not have collapsed class&apos;)
+        done()
+      })
+
+    $target.trigger(&apos;click&apos;)
+  })
+
+  QUnit.test(&apos;should add &quot;collapsed&quot; class to all triggers targeting the collapse when the collapse is hidden&apos;, function (assert) {
+    assert.expect(2)
+    var done = assert.async()
+
+    var $target = $(&apos;&lt;a role=&quot;button&quot; data-toggle=&quot;collapse&quot; href=&quot;#test1&quot;/&gt;&apos;).appendTo(&apos;#qunit-fixture&apos;)
+    var $alt = $(&apos;&lt;a role=&quot;button&quot; data-toggle=&quot;collapse&quot; href=&quot;#test1&quot;/&gt;&apos;).appendTo(&apos;#qunit-fixture&apos;)
+
+    $(&apos;&lt;div id=&quot;test1&quot; class=&quot;show&quot;/&gt;&apos;)
+      .appendTo(&apos;#qunit-fixture&apos;)
+      .on(&apos;hidden.bs.collapse&apos;, function () {
+        assert.ok($target.hasClass(&apos;collapsed&apos;), &apos;target has collapsed class&apos;)
+        assert.ok($alt.hasClass(&apos;collapsed&apos;), &apos;alt trigger has collapsed class&apos;)
+        done()
+      })
+
+    $target.trigger(&apos;click&apos;)
+  })
+
+  QUnit.test(&apos;should not close a collapse when initialized with &quot;show&quot; option if already shown&apos;, function (assert) {
+    assert.expect(0)
+    var done = assert.async()
+
+    var $test = $(&apos;&lt;div id=&quot;test1&quot; class=&quot;show&quot;/&gt;&apos;)
+      .appendTo(&apos;#qunit-fixture&apos;)
+      .on(&apos;hide.bs.collapse&apos;, function () {
+        assert.ok(false)
+      })
+
+    $test.bootstrapCollapse(&apos;show&apos;)
+
+    setTimeout(done, 0)
+  })
+
+  QUnit.test(&apos;should open a collapse when initialized with &quot;show&quot; option if not already shown&apos;, function (assert) {
+    assert.expect(1)
+    var done = assert.async()
+
+    var $test = $(&apos;&lt;div id=&quot;test1&quot; /&gt;&apos;)
+      .appendTo(&apos;#qunit-fixture&apos;)
+      .on(&apos;show.bs.collapse&apos;, function () {
+        assert.ok(true)
+      })
+
+    $test.bootstrapCollapse(&apos;show&apos;)
+
+    setTimeout(done, 0)
+  })
+
+  QUnit.test(&apos;should not show a collapse when initialized with &quot;hide&quot; option if already hidden&apos;, function (assert) {
+    assert.expect(0)
+    var done = assert.async()
+
+    $(&apos;&lt;div class=&quot;collapse&quot;&gt;&lt;/div&gt;&apos;)
+      .appendTo(&apos;#qunit-fixture&apos;)
+      .on(&apos;show.bs.collapse&apos;, function () {
+        assert.ok(false, &apos;showing a previously-uninitialized hidden collapse when the &quot;hide&quot; method is called&apos;)
+      })
+      .bootstrapCollapse(&apos;hide&apos;)
+
+    setTimeout(done, 0)
+  })
+
+  QUnit.test(&apos;should hide a collapse when initialized with &quot;hide&quot; option if not already hidden&apos;, function (assert) {
+    assert.expect(1)
+    var done = assert.async()
+
+    $(&apos;&lt;div class=&quot;collapse show&quot;&gt;&lt;/div&gt;&apos;)
+      .appendTo(&apos;#qunit-fixture&apos;)
+      .on(&apos;hide.bs.collapse&apos;, function () {
+        assert.ok(true, &apos;hiding a previously-uninitialized shown collapse when the &quot;hide&quot; method is called&apos;)
+      })
+      .bootstrapCollapse(&apos;hide&apos;)
+
+    setTimeout(done, 0)
+  })
+
+  QUnit.test(&apos;should remove &quot;collapsed&quot; class from active accordion target&apos;, function (assert) {
+    assert.expect(3)
+    var done = assert.async()
+
+    var accordionHTML = &apos;&lt;div id=&quot;accordion&quot;&gt;&apos;
+        + &apos;&lt;div class=&quot;card&quot;/&gt;&apos;
+        + &apos;&lt;div class=&quot;card&quot;/&gt;&apos;
+        + &apos;&lt;div class=&quot;card&quot;/&gt;&apos;
+        + &apos;&lt;/div&gt;&apos;
+    var $groups = $(accordionHTML).appendTo(&apos;#qunit-fixture&apos;).find(&apos;.card&apos;)
+
+    var $target1 = $(&apos;&lt;a role=&quot;button&quot; data-toggle=&quot;collapse&quot; href=&quot;#body1&quot; data-parent=&quot;#accordion&quot;/&gt;&apos;).appendTo($groups.eq(0))
+
+    $(&apos;&lt;div id=&quot;body1&quot; class=&quot;show&quot;/&gt;&apos;).appendTo($groups.eq(0))
+
+    var $target2 = $(&apos;&lt;a class=&quot;collapsed&quot; data-toggle=&quot;collapse&quot; role=&quot;button&quot; href=&quot;#body2&quot; data-parent=&quot;#accordion&quot;/&gt;&apos;).appendTo($groups.eq(1))
+
+    $(&apos;&lt;div id=&quot;body2&quot;/&gt;&apos;).appendTo($groups.eq(1))
+
+    var $target3 = $(&apos;&lt;a class=&quot;collapsed&quot; data-toggle=&quot;collapse&quot; role=&quot;button&quot; href=&quot;#body3&quot; data-parent=&quot;#accordion&quot;/&gt;&apos;).appendTo($groups.eq(2))
+
+    $(&apos;&lt;div id=&quot;body3&quot;/&gt;&apos;)
+      .appendTo($groups.eq(2))
+      .on(&apos;shown.bs.collapse&apos;, function () {
+        assert.ok($target1.hasClass(&apos;collapsed&apos;), &apos;inactive target 1 does have class &quot;collapsed&quot;&apos;)
+        assert.ok($target2.hasClass(&apos;collapsed&apos;), &apos;inactive target 2 does have class &quot;collapsed&quot;&apos;)
+        assert.ok(!$target3.hasClass(&apos;collapsed&apos;), &apos;active target 3 does not have class &quot;collapsed&quot;&apos;)
+
+        done()
+      })
+
+    $target3.trigger(&apos;click&apos;)
+  })
+
+  QUnit.test(&apos;should allow dots in data-parent&apos;, function (assert) {
+    assert.expect(3)
+    var done = assert.async()
+
+    var accordionHTML = &apos;&lt;div class=&quot;accordion&quot;&gt;&apos;
+        + &apos;&lt;div class=&quot;card&quot;/&gt;&apos;
+        + &apos;&lt;div class=&quot;card&quot;/&gt;&apos;
+        + &apos;&lt;div class=&quot;card&quot;/&gt;&apos;
+        + &apos;&lt;/div&gt;&apos;
+    var $groups = $(accordionHTML).appendTo(&apos;#qunit-fixture&apos;).find(&apos;.card&apos;)
+
+    var $target1 = $(&apos;&lt;a role=&quot;button&quot; data-toggle=&quot;collapse&quot; href=&quot;#body1&quot; data-parent=&quot;.accordion&quot;/&gt;&apos;).appendTo($groups.eq(0))
+
+    $(&apos;&lt;div id=&quot;body1&quot; class=&quot;show&quot;/&gt;&apos;).appendTo($groups.eq(0))
+
+    var $target2 = $(&apos;&lt;a class=&quot;collapsed&quot; data-toggle=&quot;collapse&quot; role=&quot;button&quot; href=&quot;#body2&quot; data-parent=&quot;.accordion&quot;/&gt;&apos;).appendTo($groups.eq(1))
+
+    $(&apos;&lt;div id=&quot;body2&quot;/&gt;&apos;).appendTo($groups.eq(1))
+
+    var $target3 = $(&apos;&lt;a class=&quot;collapsed&quot; data-toggle=&quot;collapse&quot; role=&quot;button&quot; href=&quot;#body3&quot; data-parent=&quot;.accordion&quot;/&gt;&apos;).appendTo($groups.eq(2))
+
+    $(&apos;&lt;div id=&quot;body3&quot;/&gt;&apos;)
+      .appendTo($groups.eq(2))
+      .on(&apos;shown.bs.collapse&apos;, function () {
+        assert.ok($target1.hasClass(&apos;collapsed&apos;), &apos;inactive target 1 does have class &quot;collapsed&quot;&apos;)
+        assert.ok($target2.hasClass(&apos;collapsed&apos;), &apos;inactive target 2 does have class &quot;collapsed&quot;&apos;)
+        assert.ok(!$target3.hasClass(&apos;collapsed&apos;), &apos;active target 3 does not have class &quot;collapsed&quot;&apos;)
+
+        done()
+      })
+
+    $target3.trigger(&apos;click&apos;)
+  })
+
+  QUnit.test(&apos;should set aria-expanded=&quot;true&quot; on target when collapse is shown&apos;, function (assert) {
+    assert.expect(1)
+    var done = assert.async()
+
+    var $target = $(&apos;&lt;a role=&quot;button&quot; data-toggle=&quot;collapse&quot; class=&quot;collapsed&quot; href=&quot;#test1&quot; aria-expanded=&quot;false&quot;/&gt;&apos;).appendTo(&apos;#qunit-fixture&apos;)
+
+    $(&apos;&lt;div id=&quot;test1&quot;/&gt;&apos;)
+      .appendTo(&apos;#qunit-fixture&apos;)
+      .on(&apos;shown.bs.collapse&apos;, function () {
+        assert.strictEqual($target.attr(&apos;aria-expanded&apos;), &apos;true&apos;, &apos;aria-expanded on target is &quot;true&quot;&apos;)
+        done()
+      })
+
+    $target.trigger(&apos;click&apos;)
+  })
+
+  QUnit.test(&apos;should set aria-expanded=&quot;false&quot; on target when collapse is hidden&apos;, function (assert) {
+    assert.expect(1)
+    var done = assert.async()
+
+    var $target = $(&apos;&lt;a role=&quot;button&quot; data-toggle=&quot;collapse&quot; href=&quot;#test1&quot; aria-expanded=&quot;true&quot;/&gt;&apos;).appendTo(&apos;#qunit-fixture&apos;)
+
+    $(&apos;&lt;div id=&quot;test1&quot; class=&quot;show&quot;/&gt;&apos;)
+      .appendTo(&apos;#qunit-fixture&apos;)
+      .on(&apos;hidden.bs.collapse&apos;, function () {
+        assert.strictEqual($target.attr(&apos;aria-expanded&apos;), &apos;false&apos;, &apos;aria-expanded on target is &quot;false&quot;&apos;)
+        done()
+      })
+
+    $target.trigger(&apos;click&apos;)
+  })
+
+  QUnit.test(&apos;should set aria-expanded=&quot;true&quot; on all triggers targeting the collapse when the collapse is shown&apos;, function (assert) {
+    assert.expect(2)
+    var done = assert.async()
+
+    var $target = $(&apos;&lt;a role=&quot;button&quot; data-toggle=&quot;collapse&quot; class=&quot;collapsed&quot; href=&quot;#test1&quot; aria-expanded=&quot;false&quot;/&gt;&apos;).appendTo(&apos;#qunit-fixture&apos;)
+    var $alt = $(&apos;&lt;a role=&quot;button&quot; data-toggle=&quot;collapse&quot; class=&quot;collapsed&quot; href=&quot;#test1&quot; aria-expanded=&quot;false&quot;/&gt;&apos;).appendTo(&apos;#qunit-fixture&apos;)
+
+    $(&apos;&lt;div id=&quot;test1&quot;/&gt;&apos;)
+      .appendTo(&apos;#qunit-fixture&apos;)
+      .on(&apos;shown.bs.collapse&apos;, function () {
+        assert.strictEqual($target.attr(&apos;aria-expanded&apos;), &apos;true&apos;, &apos;aria-expanded on target is &quot;true&quot;&apos;)
+        assert.strictEqual($alt.attr(&apos;aria-expanded&apos;), &apos;true&apos;, &apos;aria-expanded on alt is &quot;true&quot;&apos;)
+        done()
+      })
+
+    $target.trigger(&apos;click&apos;)
+  })
+
+  QUnit.test(&apos;should set aria-expanded=&quot;false&quot; on all triggers targeting the collapse when the collapse is hidden&apos;, function (assert) {
+    assert.expect(2)
+    var done = assert.async()
+
+    var $target = $(&apos;&lt;a role=&quot;button&quot; data-toggle=&quot;collapse&quot; href=&quot;#test1&quot; aria-expanded=&quot;true&quot;/&gt;&apos;).appendTo(&apos;#qunit-fixture&apos;)
+    var $alt = $(&apos;&lt;a role=&quot;button&quot; data-toggle=&quot;collapse&quot; href=&quot;#test1&quot; aria-expanded=&quot;true&quot;/&gt;&apos;).appendTo(&apos;#qunit-fixture&apos;)
+
+    $(&apos;&lt;div id=&quot;test1&quot; class=&quot;show&quot;/&gt;&apos;)
+      .appendTo(&apos;#qunit-fixture&apos;)
+      .on(&apos;hidden.bs.collapse&apos;, function () {
+        assert.strictEqual($target.attr(&apos;aria-expanded&apos;), &apos;false&apos;, &apos;aria-expanded on target is &quot;false&quot;&apos;)
+        assert.strictEqual($alt.attr(&apos;aria-expanded&apos;), &apos;false&apos;, &apos;aria-expanded on alt is &quot;false&quot;&apos;)
+        done()
+      })
+
+    $target.trigger(&apos;click&apos;)
+  })
+
+  QUnit.test(&apos;should change aria-expanded from active accordion target to &quot;false&quot; and set the newly active one to &quot;true&quot;&apos;, function (assert) {
+    assert.expect(3)
+    var done = assert.async()
+
+    var accordionHTML = &apos;&lt;div id=&quot;accordion&quot;&gt;&apos;
+        + &apos;&lt;div class=&quot;card&quot;/&gt;&apos;
+        + &apos;&lt;div class=&quot;card&quot;/&gt;&apos;
+        + &apos;&lt;div class=&quot;card&quot;/&gt;&apos;
+        + &apos;&lt;/div&gt;&apos;
+    var $groups = $(accordionHTML).appendTo(&apos;#qunit-fixture&apos;).find(&apos;.card&apos;)
+
+    var $target1 = $(&apos;&lt;a role=&quot;button&quot; data-toggle=&quot;collapse&quot; href=&quot;#body1&quot; data-parent=&quot;#accordion&quot;/&gt;&apos;).appendTo($groups.eq(0))
+
+    $(&apos;&lt;div id=&quot;body1&quot; aria-expanded=&quot;true&quot; class=&quot;show&quot;/&gt;&apos;).appendTo($groups.eq(0))
+
+    var $target2 = $(&apos;&lt;a role=&quot;button&quot; data-toggle=&quot;collapse&quot; href=&quot;#body2&quot; data-parent=&quot;#accordion&quot; class=&quot;collapsed&quot; /&gt;&apos;).appendTo($groups.eq(1))
+
+    $(&apos;&lt;div id=&quot;body2&quot; aria-expanded=&quot;false&quot;/&gt;&apos;).appendTo($groups.eq(1))
+
+    var $target3 = $(&apos;&lt;a class=&quot;collapsed&quot; data-toggle=&quot;collapse&quot; role=&quot;button&quot; href=&quot;#body3&quot; data-parent=&quot;#accordion&quot;/&gt;&apos;).appendTo($groups.eq(2))
+
+    $(&apos;&lt;div id=&quot;body3&quot; aria-expanded=&quot;false&quot;/&gt;&apos;)
+      .appendTo($groups.eq(2))
+      .on(&apos;shown.bs.collapse&apos;, function () {
+        assert.strictEqual($target1.attr(&apos;aria-expanded&apos;), &apos;false&apos;, &apos;inactive target 1 has aria-expanded=&quot;false&quot;&apos;)
+        assert.strictEqual($target2.attr(&apos;aria-expanded&apos;), &apos;false&apos;, &apos;inactive target 2 has aria-expanded=&quot;false&quot;&apos;)
+        assert.strictEqual($target3.attr(&apos;aria-expanded&apos;), &apos;true&apos;, &apos;active target 3 has aria-expanded=&quot;false&quot;&apos;)
+
+        done()
+      })
+
+    $target3.trigger(&apos;click&apos;)
+  })
+
+  QUnit.test(&apos;should not fire show event if show is prevented because other element is still transitioning&apos;, function (assert) {
+    assert.expect(1)
+    var done = assert.async()
+
+    var accordionHTML = &apos;&lt;div id=&quot;accordion&quot;&gt;&apos;
+        + &apos;&lt;div class=&quot;card&quot;/&gt;&apos;
+        + &apos;&lt;div class=&quot;card&quot;/&gt;&apos;
+        + &apos;&lt;/div&gt;&apos;
+    var showFired = false
+    var $groups   = $(accordionHTML).appendTo(&apos;#qunit-fixture&apos;).find(&apos;.card&apos;)
+
+    var $target1 = $(&apos;&lt;a role=&quot;button&quot; data-toggle=&quot;collapse&quot; href=&quot;#body1&quot; data-parent=&quot;#accordion&quot;/&gt;&apos;).appendTo($groups.eq(0))
+
+    $(&apos;&lt;div id=&quot;body1&quot; class=&quot;collapse&quot;/&gt;&apos;)
+      .appendTo($groups.eq(0))
+      .on(&apos;show.bs.collapse&apos;, function () {
+        showFired = true
+      })
+
+    var $target2 = $(&apos;&lt;a role=&quot;button&quot; data-toggle=&quot;collapse&quot; href=&quot;#body2&quot; data-parent=&quot;#accordion&quot;/&gt;&apos;).appendTo($groups.eq(1))
+    var $body2   = $(&apos;&lt;div id=&quot;body2&quot; class=&quot;collapse&quot;/&gt;&apos;).appendTo($groups.eq(1))
+
+    $target2.trigger(&apos;click&apos;)
+
+    $body2
+      .toggleClass(&apos;show collapsing&apos;)
+      .data(&apos;bs.collapse&apos;)._isTransitioning = 1
+
+    $target1.trigger(&apos;click&apos;)
+
+    setTimeout(function () {
+      assert.ok(!showFired, &apos;show event did not fire&apos;)
+      done()
+    }, 1)
+  })
+
+  QUnit.test(&apos;should add &quot;collapsed&quot; class to target when collapse is hidden via manual invocation&apos;, function (assert) {
+    assert.expect(1)
+    var done = assert.async()
+
+    var $target = $(&apos;&lt;a role=&quot;button&quot; data-toggle=&quot;collapse&quot; href=&quot;#test1&quot;/&gt;&apos;).appendTo(&apos;#qunit-fixture&apos;)
+
+    $(&apos;&lt;div id=&quot;test1&quot; class=&quot;show&quot;/&gt;&apos;)
+      .appendTo(&apos;#qunit-fixture&apos;)
+      .on(&apos;hidden.bs.collapse&apos;, function () {
+        assert.ok($target.hasClass(&apos;collapsed&apos;))
+        done()
+      })
+      .bootstrapCollapse(&apos;hide&apos;)
+  })
+
+  QUnit.test(&apos;should remove &quot;collapsed&quot; class from target when collapse is shown via manual invocation&apos;, function (assert) {
+    assert.expect(1)
+    var done = assert.async()
+
+    var $target = $(&apos;&lt;a role=&quot;button&quot; data-toggle=&quot;collapse&quot; class=&quot;collapsed&quot; href=&quot;#test1&quot;/&gt;&apos;).appendTo(&apos;#qunit-fixture&apos;)
+
+    $(&apos;&lt;div id=&quot;test1&quot;/&gt;&apos;)
+      .appendTo(&apos;#qunit-fixture&apos;)
+      .on(&apos;shown.bs.collapse&apos;, function () {
+        assert.ok(!$target.hasClass(&apos;collapsed&apos;))
+        done()
+      })
+      .bootstrapCollapse(&apos;show&apos;)
+  })
+
+})
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.5.2)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

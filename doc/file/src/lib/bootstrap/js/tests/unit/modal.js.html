@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../../../../../">
+  <title data-ice="title">src/lib/bootstrap/js/tests/unit/modal.js | API Document</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  
+  
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/app.js~App.html">App</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/html-iframe</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/html-iframe/html-iframe.js~HTMLIFrame.html">HTMLIFrame</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/loading</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/loading/loading-spinner.js~LoadingSpinner.html">LoadingSpinner</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/html</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/html/module-html.js~ModuleHTML.html">ModuleHTML</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/random</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/random/module-random.js~ModuleRandom.html">ModuleRandom</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/signature</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/signature/module-sign.js~BlockSign.html">BlockSign</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/signature/module-verify.js~VerifyModule.html">VerifyModule</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/skipchain</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/skipchain/module-skipchain.js~ModuleSkipChain.html">ModuleSkipChain</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/servers-status</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/servers-status/servers-status.js~ServersStatus.html">ServersStatus</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">lib</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/lib/cothority-messages.js~CothorityMessages.html">CothorityMessages</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/lib/cothority-messages.js~CothorityProtobuf.html">CothorityProtobuf</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-index">index</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">lib/bootstrap/js/src</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Alert">Alert</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Button">Button</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Carousel">Carousel</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Collapse">Collapse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Dropdown">Dropdown</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Modal">Modal</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Popover">Popover</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ScrollSpy">ScrollSpy</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Tab">Tab</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Tooltip">Tooltip</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Util">Util</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">services</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/iframe.js~IFrameService.html">IFrameService</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/skipchain.js~SkipChainService.html">SkipChainService</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">utils</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-buf2hex">buf2hex</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-hex2buf">hex2buf</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-hashFile">hashFile</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-readAsString">readAsString</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-tcp2ws">tcp2ws</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/lib/bootstrap/js/tests/unit/modal.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">$(function () {
+  &apos;use strict&apos;
+
+  QUnit.module(&apos;modal plugin&apos;)
+
+  QUnit.test(&apos;should be defined on jquery object&apos;, function (assert) {
+    assert.expect(1)
+    assert.ok($(document.body).modal, &apos;modal method is defined&apos;)
+  })
+
+  QUnit.module(&apos;modal&apos;, {
+    beforeEach: function () {
+      // Run all tests in noConflict mode -- it&apos;s the only way to ensure that the plugin works in noConflict mode
+      $.fn.bootstrapModal = $.fn.modal.noConflict()
+    },
+    afterEach: function () {
+      $.fn.modal = $.fn.bootstrapModal
+      delete $.fn.bootstrapModal
+    }
+  })
+
+  QUnit.test(&apos;should provide no conflict&apos;, function (assert) {
+    assert.expect(1)
+    assert.strictEqual($.fn.modal, undefined, &apos;modal was set back to undefined (orig value)&apos;)
+  })
+
+  QUnit.test(&apos;should throw explicit error on undefined method&apos;, function (assert) {
+    assert.expect(1)
+    var $el = $(&apos;&lt;div id=&quot;modal-test&quot;/&gt;&apos;)
+    $el.bootstrapModal()
+    try {
+      $el.bootstrapModal(&apos;noMethod&apos;)
+    }
+    catch (err) {
+      assert.strictEqual(err.message, &apos;No method named &quot;noMethod&quot;&apos;)
+    }
+  })
+
+  QUnit.test(&apos;should return jquery collection containing the element&apos;, function (assert) {
+    assert.expect(2)
+    var $el = $(&apos;&lt;div id=&quot;modal-test&quot;/&gt;&apos;)
+    var $modal = $el.bootstrapModal()
+    assert.ok($modal instanceof $, &apos;returns jquery collection&apos;)
+    assert.strictEqual($modal[0], $el[0], &apos;collection contains element&apos;)
+  })
+
+  QUnit.test(&apos;should expose defaults var for settings&apos;, function (assert) {
+    assert.expect(1)
+    assert.ok($.fn.bootstrapModal.Constructor.Default, &apos;default object exposed&apos;)
+  })
+
+  QUnit.test(&apos;should insert into dom when show method is called&apos;, function (assert) {
+    assert.expect(1)
+    var done = assert.async()
+
+    $(&apos;&lt;div id=&quot;modal-test&quot;/&gt;&apos;)
+      .on(&apos;shown.bs.modal&apos;, function () {
+        assert.notEqual($(&apos;#modal-test&apos;).length, 0, &apos;modal inserted into dom&apos;)
+        done()
+      })
+      .bootstrapModal(&apos;show&apos;)
+  })
+
+  QUnit.test(&apos;should fire show event&apos;, function (assert) {
+    assert.expect(1)
+    var done = assert.async()
+
+    $(&apos;&lt;div id=&quot;modal-test&quot;/&gt;&apos;)
+      .on(&apos;show.bs.modal&apos;, function () {
+        assert.ok(true, &apos;show event fired&apos;)
+        done()
+      })
+      .bootstrapModal(&apos;show&apos;)
+  })
+
+  QUnit.test(&apos;should not fire shown when show was prevented&apos;, function (assert) {
+    assert.expect(1)
+    var done = assert.async()
+
+    $(&apos;&lt;div id=&quot;modal-test&quot;/&gt;&apos;)
+      .on(&apos;show.bs.modal&apos;, function (e) {
+        e.preventDefault()
+        assert.ok(true, &apos;show event fired&apos;)
+        done()
+      })
+      .on(&apos;shown.bs.modal&apos;, function () {
+        assert.ok(false, &apos;shown event fired&apos;)
+      })
+      .bootstrapModal(&apos;show&apos;)
+  })
+
+  QUnit.test(&apos;should hide modal when hide is called&apos;, function (assert) {
+    assert.expect(3)
+    var done = assert.async()
+
+    $(&apos;&lt;div id=&quot;modal-test&quot;/&gt;&apos;)
+      .on(&apos;shown.bs.modal&apos;, function () {
+        assert.ok($(&apos;#modal-test&apos;).is(&apos;:visible&apos;), &apos;modal visible&apos;)
+        assert.notEqual($(&apos;#modal-test&apos;).length, 0, &apos;modal inserted into dom&apos;)
+        $(this).bootstrapModal(&apos;hide&apos;)
+      })
+      .on(&apos;hidden.bs.modal&apos;, function () {
+        assert.ok(!$(&apos;#modal-test&apos;).is(&apos;:visible&apos;), &apos;modal hidden&apos;)
+        done()
+      })
+      .bootstrapModal(&apos;show&apos;)
+  })
+
+  QUnit.test(&apos;should toggle when toggle is called&apos;, function (assert) {
+    assert.expect(3)
+    var done = assert.async()
+
+    $(&apos;&lt;div id=&quot;modal-test&quot;/&gt;&apos;)
+      .on(&apos;shown.bs.modal&apos;, function () {
+        assert.ok($(&apos;#modal-test&apos;).is(&apos;:visible&apos;), &apos;modal visible&apos;)
+        assert.notEqual($(&apos;#modal-test&apos;).length, 0, &apos;modal inserted into dom&apos;)
+        $(this).bootstrapModal(&apos;toggle&apos;)
+      })
+      .on(&apos;hidden.bs.modal&apos;, function () {
+        assert.ok(!$(&apos;#modal-test&apos;).is(&apos;:visible&apos;), &apos;modal hidden&apos;)
+        done()
+      })
+      .bootstrapModal(&apos;toggle&apos;)
+  })
+
+  QUnit.test(&apos;should remove from dom when click [data-dismiss=&quot;modal&quot;]&apos;, function (assert) {
+    assert.expect(3)
+    var done = assert.async()
+
+    $(&apos;&lt;div id=&quot;modal-test&quot;&gt;&lt;span class=&quot;close&quot; data-dismiss=&quot;modal&quot;/&gt;&lt;/div&gt;&apos;)
+      .on(&apos;shown.bs.modal&apos;, function () {
+        assert.ok($(&apos;#modal-test&apos;).is(&apos;:visible&apos;), &apos;modal visible&apos;)
+        assert.notEqual($(&apos;#modal-test&apos;).length, 0, &apos;modal inserted into dom&apos;)
+        $(this).find(&apos;.close&apos;).trigger(&apos;click&apos;)
+      })
+      .on(&apos;hidden.bs.modal&apos;, function () {
+        assert.ok(!$(&apos;#modal-test&apos;).is(&apos;:visible&apos;), &apos;modal hidden&apos;)
+        done()
+      })
+      .bootstrapModal(&apos;toggle&apos;)
+  })
+
+  QUnit.test(&apos;should allow modal close with &quot;backdrop:false&quot;&apos;, function (assert) {
+    assert.expect(2)
+    var done = assert.async()
+
+    $(&apos;&lt;div id=&quot;modal-test&quot; data-backdrop=&quot;false&quot;/&gt;&apos;)
+      .on(&apos;shown.bs.modal&apos;, function () {
+        assert.ok($(&apos;#modal-test&apos;).is(&apos;:visible&apos;), &apos;modal visible&apos;)
+        $(this).bootstrapModal(&apos;hide&apos;)
+      })
+      .on(&apos;hidden.bs.modal&apos;, function () {
+        assert.ok(!$(&apos;#modal-test&apos;).is(&apos;:visible&apos;), &apos;modal hidden&apos;)
+        done()
+      })
+      .bootstrapModal(&apos;show&apos;)
+  })
+
+  QUnit.test(&apos;should close modal when clicking outside of modal-content&apos;, function (assert) {
+    assert.expect(3)
+    var done = assert.async()
+
+    $(&apos;&lt;div id=&quot;modal-test&quot;&gt;&lt;div class=&quot;contents&quot;/&gt;&lt;/div&gt;&apos;)
+      .on(&apos;shown.bs.modal&apos;, function () {
+        assert.notEqual($(&apos;#modal-test&apos;).length, 0, &apos;modal inserted into dom&apos;)
+        $(&apos;.contents&apos;).trigger(&apos;click&apos;)
+        assert.ok($(&apos;#modal-test&apos;).is(&apos;:visible&apos;), &apos;modal visible&apos;)
+        $(&apos;#modal-test&apos;).trigger(&apos;click&apos;)
+      })
+      .on(&apos;hidden.bs.modal&apos;, function () {
+        assert.ok(!$(&apos;#modal-test&apos;).is(&apos;:visible&apos;), &apos;modal hidden&apos;)
+        done()
+      })
+      .bootstrapModal(&apos;show&apos;)
+  })
+
+  QUnit.test(&apos;should not close modal when clicking outside of modal-content if data-backdrop=&quot;true&quot;&apos;, function (assert) {
+    assert.expect(1)
+    var done = assert.async()
+
+    $(&apos;&lt;div id=&quot;modal-test&quot; data-backdrop=&quot;false&quot;&gt;&lt;div class=&quot;contents&quot;/&gt;&lt;/div&gt;&apos;)
+      .on(&apos;shown.bs.modal&apos;, function () {
+        $(&apos;#modal-test&apos;).trigger(&apos;click&apos;)
+        assert.ok($(&apos;#modal-test&apos;).is(&apos;:visible&apos;), &apos;modal not hidden&apos;)
+        done()
+      })
+      .bootstrapModal(&apos;show&apos;)
+  })
+
+  QUnit.test(&apos;should close modal when escape key is pressed via keydown&apos;, function (assert) {
+    assert.expect(3)
+    var done = assert.async()
+
+    var $div = $(&apos;&lt;div id=&quot;modal-test&quot;/&gt;&apos;)
+    $div
+      .on(&apos;shown.bs.modal&apos;, function () {
+        assert.ok($(&apos;#modal-test&apos;).length, &apos;modal inserted into dom&apos;)
+        assert.ok($(&apos;#modal-test&apos;).is(&apos;:visible&apos;), &apos;modal visible&apos;)
+        $div.trigger($.Event(&apos;keydown&apos;, { which: 27 }))
+
+        setTimeout(function () {
+          assert.ok(!$(&apos;#modal-test&apos;).is(&apos;:visible&apos;), &apos;modal hidden&apos;)
+          $div.remove()
+          done()
+        }, 0)
+      })
+      .bootstrapModal(&apos;show&apos;)
+  })
+
+  QUnit.test(&apos;should not close modal when escape key is pressed via keyup&apos;, function (assert) {
+    assert.expect(3)
+    var done = assert.async()
+
+    var $div = $(&apos;&lt;div id=&quot;modal-test&quot;/&gt;&apos;)
+    $div
+      .on(&apos;shown.bs.modal&apos;, function () {
+        assert.ok($(&apos;#modal-test&apos;).length, &apos;modal inserted into dom&apos;)
+        assert.ok($(&apos;#modal-test&apos;).is(&apos;:visible&apos;), &apos;modal visible&apos;)
+        $div.trigger($.Event(&apos;keyup&apos;, { which: 27 }))
+
+        setTimeout(function () {
+          assert.ok($div.is(&apos;:visible&apos;), &apos;modal still visible&apos;)
+          $div.remove()
+          done()
+        }, 0)
+      })
+      .bootstrapModal(&apos;show&apos;)
+  })
+
+  QUnit.test(&apos;should trigger hide event once when clicking outside of modal-content&apos;, function (assert) {
+    assert.expect(1)
+    var done = assert.async()
+
+    var triggered
+
+    $(&apos;&lt;div id=&quot;modal-test&quot;&gt;&lt;div class=&quot;contents&quot;/&gt;&lt;/div&gt;&apos;)
+      .on(&apos;shown.bs.modal&apos;, function () {
+        triggered = 0
+        $(&apos;#modal-test&apos;).trigger(&apos;click&apos;)
+      })
+      .on(&apos;hide.bs.modal&apos;, function () {
+        triggered += 1
+        assert.strictEqual(triggered, 1, &apos;modal hide triggered once&apos;)
+        done()
+      })
+      .bootstrapModal(&apos;show&apos;)
+  })
+
+  QUnit.test(&apos;should remove aria-hidden attribute when shown, add it back when hidden&apos;, function (assert) {
+    assert.expect(3)
+    var done = assert.async()
+
+    $(&apos;&lt;div id=&quot;modal-test&quot; aria-hidden=&quot;true&quot;/&gt;&apos;)
+      .on(&apos;shown.bs.modal&apos;, function () {
+        assert.notOk($(&apos;#modal-test&apos;).is(&apos;[aria-hidden]&apos;), &apos;aria-hidden attribute removed&apos;)
+        $(this).bootstrapModal(&apos;hide&apos;)
+      })
+      .on(&apos;hidden.bs.modal&apos;, function () {
+        assert.ok($(&apos;#modal-test&apos;).is(&apos;[aria-hidden]&apos;), &apos;aria-hidden attribute added&apos;)
+        assert.strictEqual($(&apos;#modal-test&apos;).attr(&apos;aria-hidden&apos;), &apos;true&apos;, &apos;correct aria-hidden=&quot;true&quot; added&apos;)
+        done()
+      })
+      .bootstrapModal(&apos;show&apos;)
+  })
+
+  QUnit.test(&apos;should close reopened modal with [data-dismiss=&quot;modal&quot;] click&apos;, function (assert) {
+    assert.expect(2)
+    var done = assert.async()
+
+    $(&apos;&lt;div id=&quot;modal-test&quot;&gt;&lt;div class=&quot;contents&quot;&gt;&lt;div id=&quot;close&quot; data-dismiss=&quot;modal&quot;/&gt;&lt;/div&gt;&lt;/div&gt;&apos;)
+      .one(&apos;shown.bs.modal&apos;, function () {
+        $(&apos;#close&apos;).trigger(&apos;click&apos;)
+      })
+      .one(&apos;hidden.bs.modal&apos;, function () {
+        // after one open-close cycle
+        assert.ok(!$(&apos;#modal-test&apos;).is(&apos;:visible&apos;), &apos;modal hidden&apos;)
+        $(this)
+          .one(&apos;shown.bs.modal&apos;, function () {
+            $(&apos;#close&apos;).trigger(&apos;click&apos;)
+          })
+          .one(&apos;hidden.bs.modal&apos;, function () {
+            assert.ok(!$(&apos;#modal-test&apos;).is(&apos;:visible&apos;), &apos;modal hidden&apos;)
+            done()
+          })
+          .bootstrapModal(&apos;show&apos;)
+      })
+      .bootstrapModal(&apos;show&apos;)
+  })
+
+  QUnit.test(&apos;should restore focus to toggling element when modal is hidden after having been opened via data-api&apos;, function (assert) {
+    assert.expect(1)
+    var done = assert.async()
+
+    var $toggleBtn = $(&apos;&lt;button data-toggle=&quot;modal&quot; data-target=&quot;#modal-test&quot;/&gt;&apos;).appendTo(&apos;#qunit-fixture&apos;)
+
+    $(&apos;&lt;div id=&quot;modal-test&quot;&gt;&lt;div class=&quot;contents&quot;&gt;&lt;div id=&quot;close&quot; data-dismiss=&quot;modal&quot;/&gt;&lt;/div&gt;&lt;/div&gt;&apos;)
+      .on(&apos;hidden.bs.modal&apos;, function () {
+        setTimeout(function () {
+          assert.ok($(document.activeElement).is($toggleBtn), &apos;toggling element is once again focused&apos;)
+          done()
+        }, 0)
+      })
+      .on(&apos;shown.bs.modal&apos;, function () {
+        $(&apos;#close&apos;).trigger(&apos;click&apos;)
+      })
+      .appendTo(&apos;#qunit-fixture&apos;)
+
+    $toggleBtn.trigger(&apos;click&apos;)
+  })
+
+  QUnit.test(&apos;should not restore focus to toggling element if the associated show event gets prevented&apos;, function (assert) {
+    assert.expect(1)
+    var done = assert.async()
+    var $toggleBtn = $(&apos;&lt;button data-toggle=&quot;modal&quot; data-target=&quot;#modal-test&quot;/&gt;&apos;).appendTo(&apos;#qunit-fixture&apos;)
+    var $otherBtn = $(&apos;&lt;button id=&quot;other-btn&quot;/&gt;&apos;).appendTo(&apos;#qunit-fixture&apos;)
+
+    $(&apos;&lt;div id=&quot;modal-test&quot;&gt;&lt;div class=&quot;contents&quot;&gt;&lt;div id=&quot;close&quot; data-dismiss=&quot;modal&quot;/&gt;&lt;/div&gt;&apos;)
+      .one(&apos;show.bs.modal&apos;, function (e) {
+        e.preventDefault()
+        $otherBtn.trigger(&apos;focus&apos;)
+        setTimeout($.proxy(function () {
+          $(this).bootstrapModal(&apos;show&apos;)
+        }, this), 0)
+      })
+      .on(&apos;hidden.bs.modal&apos;, function () {
+        setTimeout(function () {
+          assert.ok($(document.activeElement).is($otherBtn), &apos;focus returned to toggling element&apos;)
+          done()
+        }, 0)
+      })
+      .on(&apos;shown.bs.modal&apos;, function () {
+        $(&apos;#close&apos;).trigger(&apos;click&apos;)
+      })
+      .appendTo(&apos;#qunit-fixture&apos;)
+
+    $toggleBtn.trigger(&apos;click&apos;)
+  })
+
+  QUnit.test(&apos;should restore inline body padding after closing&apos;, function (assert) {
+    assert.expect(2)
+    var done = assert.async()
+    var originalBodyPad = 0
+    var $body = $(document.body)
+
+    $body.css(&apos;padding-right&apos;, originalBodyPad)
+
+    $(&apos;&lt;div id=&quot;modal-test&quot;/&gt;&apos;)
+      .on(&apos;hidden.bs.modal&apos;, function () {
+        var currentBodyPad = parseInt($body.css(&apos;padding-right&apos;), 10)
+        assert.notStrictEqual($body.attr(&apos;style&apos;), &apos;&apos;, &apos;body has non-empty style attribute&apos;)
+        assert.strictEqual(currentBodyPad, originalBodyPad, &apos;original body padding was not changed&apos;)
+        $body.removeAttr(&apos;style&apos;)
+        done()
+      })
+      .on(&apos;shown.bs.modal&apos;, function () {
+        $(this).bootstrapModal(&apos;hide&apos;)
+      })
+      .bootstrapModal(&apos;show&apos;)
+  })
+
+  QUnit.test(&apos;should ignore values set via CSS when trying to restore body padding after closing&apos;, function (assert) {
+    assert.expect(1)
+    var done = assert.async()
+    var $body = $(document.body)
+    var $style = $(&apos;&lt;style&gt;body { padding-right: 42px; }&lt;/style&gt;&apos;).appendTo(&apos;head&apos;)
+
+    $(&apos;&lt;div id=&quot;modal-test&quot;/&gt;&apos;)
+      .on(&apos;hidden.bs.modal&apos;, function () {
+        assert.ok(!$body.attr(&apos;style&apos;), &apos;body does not have inline padding set&apos;)
+        $style.remove()
+        done()
+      })
+      .on(&apos;shown.bs.modal&apos;, function () {
+        $(this).bootstrapModal(&apos;hide&apos;)
+      })
+      .bootstrapModal(&apos;show&apos;)
+  })
+
+  QUnit.test(&apos;should have a paddingRight when the modal is taller than the viewport&apos;, function (assert) {
+    assert.expect(2)
+    var done = assert.async()
+    $(&apos;&lt;div class=&quot;fixed-top fixed-bottom sticky-top is-fixed&quot;&gt;@Johann-S&lt;/div&gt;&apos;).appendTo(&apos;#qunit-fixture&apos;)
+    $(&apos;.fixed-top, .fixed-bottom, .is-fixed, .sticky-top&apos;).css(&apos;padding-right&apos;, &apos;10px&apos;)
+
+    $(&apos;&lt;div id=&quot;modal-test&quot;/&gt;&apos;)
+      .on(&apos;shown.bs.modal&apos;, function () {
+        var paddingRight = parseInt($(document.body).css(&apos;padding-right&apos;), 10)
+        assert.strictEqual(isNaN(paddingRight), false)
+        assert.strictEqual(paddingRight !== 0, true)
+        $(document.body).css(&apos;padding-right&apos;, &apos;&apos;) // Because test case &quot;should ignore other inline styles when trying to restore body padding after closing&quot; fail if not
+        done()
+      })
+      .bootstrapModal(&apos;show&apos;)
+  })
+
+  QUnit.test(&apos;should remove padding-right on modal after closing&apos;, function (assert) {
+    assert.expect(3)
+    var done = assert.async()
+    $(&apos;&lt;div class=&quot;fixed-top fixed-bottom is-fixed sticky-top&quot;&gt;@Johann-S&lt;/div&gt;&apos;).appendTo(&apos;#qunit-fixture&apos;)
+    $(&apos;.fixed-top, .fixed-bottom, .is-fixed, .sticky-top&apos;).css(&apos;padding-right&apos;, &apos;10px&apos;)
+
+    $(&apos;&lt;div id=&quot;modal-test&quot;/&gt;&apos;)
+      .on(&apos;shown.bs.modal&apos;, function () {
+        var paddingRight = parseInt($(document.body).css(&apos;padding-right&apos;), 10)
+        assert.strictEqual(isNaN(paddingRight), false)
+        assert.strictEqual(paddingRight !== 0, true)
+        $(this).bootstrapModal(&apos;hide&apos;)
+      })
+      .on(&apos;hidden.bs.modal&apos;, function () {
+        var paddingRight = parseInt($(document.body).css(&apos;padding-right&apos;), 10)
+        assert.strictEqual(paddingRight, 0)
+        done()
+      })
+      .bootstrapModal(&apos;show&apos;)
+  })
+
+  QUnit.test(&apos;should ignore other inline styles when trying to restore body padding after closing&apos;, function (assert) {
+    assert.expect(2)
+    var done = assert.async()
+    var $body = $(document.body)
+    var $style = $(&apos;&lt;style&gt;body { padding-right: 42px; }&lt;/style&gt;&apos;).appendTo(&apos;head&apos;)
+
+    $body.css(&apos;color&apos;, &apos;red&apos;)
+
+    $(&apos;&lt;div id=&quot;modal-test&quot;/&gt;&apos;)
+      .on(&apos;hidden.bs.modal&apos;, function () {
+        assert.strictEqual($body[0].style.paddingRight, &apos;&apos;, &apos;body does not have inline padding set&apos;)
+        assert.strictEqual($body[0].style.color, &apos;red&apos;, &apos;body still has other inline styles set&apos;)
+        $body.removeAttr(&apos;style&apos;)
+        $style.remove()
+        done()
+      })
+      .on(&apos;shown.bs.modal&apos;, function () {
+        $(this).bootstrapModal(&apos;hide&apos;)
+      })
+      .bootstrapModal(&apos;show&apos;)
+  })
+
+  QUnit.test(&apos;should properly restore non-pixel inline body padding after closing&apos;, function (assert) {
+    assert.expect(1)
+    var done = assert.async()
+    var $body = $(document.body)
+
+    $body.css(&apos;padding-right&apos;, &apos;5%&apos;)
+
+    $(&apos;&lt;div id=&quot;modal-test&quot;/&gt;&apos;)
+      .on(&apos;hidden.bs.modal&apos;, function () {
+        assert.strictEqual($body[0].style.paddingRight, &apos;5%&apos;, &apos;body does not have inline padding set&apos;)
+        $body.removeAttr(&apos;style&apos;)
+        done()
+      })
+      .on(&apos;shown.bs.modal&apos;, function () {
+        $(this).bootstrapModal(&apos;hide&apos;)
+      })
+      .bootstrapModal(&apos;show&apos;)
+  })
+
+  QUnit.test(&apos;should not follow link in area tag&apos;, function (assert) {
+    assert.expect(2)
+    var done = assert.async()
+
+    $(&apos;&lt;map&gt;&lt;area id=&quot;test&quot; shape=&quot;default&quot; data-toggle=&quot;modal&quot; data-target=&quot;#modal-test&quot; href=&quot;demo.html&quot;/&gt;&lt;/map&gt;&apos;)
+      .appendTo(&apos;#qunit-fixture&apos;)
+
+    $(&apos;&lt;div id=&quot;modal-test&quot;&gt;&lt;div class=&quot;contents&quot;&gt;&lt;div id=&quot;close&quot; data-dismiss=&quot;modal&quot;/&gt;&lt;/div&gt;&lt;/div&gt;&apos;)
+      .appendTo(&apos;#qunit-fixture&apos;)
+
+    $(&apos;#test&apos;)
+      .on(&apos;click.bs.modal.data-api&apos;, function (event) {
+        assert.notOk(event.isDefaultPrevented(), &apos;navigating to href will happen&apos;)
+
+        setTimeout(function () {
+          assert.ok(event.isDefaultPrevented(), &apos;model shown instead of navigating to href&apos;)
+          done()
+        }, 1)
+      })
+      .trigger(&apos;click&apos;)
+  })
+})
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.5.2)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../../../../../">
+  <title data-ice="title">src/lib/bootstrap/js/tests/unit/tooltip.js | API Document</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  
+  
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/app.js~App.html">App</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/html-iframe</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/html-iframe/html-iframe.js~HTMLIFrame.html">HTMLIFrame</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/loading</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/loading/loading-spinner.js~LoadingSpinner.html">LoadingSpinner</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/html</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/html/module-html.js~ModuleHTML.html">ModuleHTML</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/random</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/random/module-random.js~ModuleRandom.html">ModuleRandom</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/signature</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/signature/module-sign.js~BlockSign.html">BlockSign</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/signature/module-verify.js~VerifyModule.html">VerifyModule</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/skipchain</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/skipchain/module-skipchain.js~ModuleSkipChain.html">ModuleSkipChain</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/servers-status</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/servers-status/servers-status.js~ServersStatus.html">ServersStatus</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">lib</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/lib/cothority-messages.js~CothorityMessages.html">CothorityMessages</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/lib/cothority-messages.js~CothorityProtobuf.html">CothorityProtobuf</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-index">index</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">lib/bootstrap/js/src</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Alert">Alert</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Button">Button</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Carousel">Carousel</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Collapse">Collapse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Dropdown">Dropdown</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Modal">Modal</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Popover">Popover</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ScrollSpy">ScrollSpy</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Tab">Tab</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Tooltip">Tooltip</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Util">Util</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">services</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/iframe.js~IFrameService.html">IFrameService</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/skipchain.js~SkipChainService.html">SkipChainService</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">utils</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-buf2hex">buf2hex</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-hex2buf">hex2buf</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-hashFile">hashFile</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-readAsString">readAsString</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-tcp2ws">tcp2ws</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/lib/bootstrap/js/tests/unit/tooltip.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">$(function () {
+  &apos;use strict&apos;
+
+  QUnit.module(&apos;tooltip plugin&apos;)
+
+  QUnit.test(&apos;should be defined on jquery object&apos;, function (assert) {
+    assert.expect(1)
+    assert.ok($(document.body).tooltip, &apos;tooltip method is defined&apos;)
+  })
+
+  QUnit.module(&apos;tooltip&apos;, {
+    beforeEach: function () {
+      // Run all tests in noConflict mode -- it&apos;s the only way to ensure that the plugin works in noConflict mode
+      $.fn.bootstrapTooltip = $.fn.tooltip.noConflict()
+    },
+    afterEach: function () {
+      $.fn.tooltip = $.fn.bootstrapTooltip
+      delete $.fn.bootstrapTooltip
+      $(&apos;.tooltip&apos;).remove()
+    }
+  })
+
+  QUnit.test(&apos;should provide no conflict&apos;, function (assert) {
+    assert.expect(1)
+    assert.strictEqual($.fn.tooltip, undefined, &apos;tooltip was set back to undefined (org value)&apos;)
+  })
+
+  QUnit.test(&apos;should throw explicit error on undefined method&apos;, function (assert) {
+    assert.expect(1)
+    var $el = $(&apos;&lt;div/&gt;&apos;)
+    $el.bootstrapTooltip()
+    try {
+      $el.bootstrapTooltip(&apos;noMethod&apos;)
+    }
+    catch (err) {
+      assert.strictEqual(err.message, &apos;No method named &quot;noMethod&quot;&apos;)
+    }
+  })
+
+  QUnit.test(&apos;should return jquery collection containing the element&apos;, function (assert) {
+    assert.expect(2)
+    var $el = $(&apos;&lt;div/&gt;&apos;)
+    var $tooltip = $el.bootstrapTooltip()
+    assert.ok($tooltip instanceof $, &apos;returns jquery collection&apos;)
+    assert.strictEqual($tooltip[0], $el[0], &apos;collection contains element&apos;)
+  })
+
+  QUnit.test(&apos;should expose default settings&apos;, function (assert) {
+    assert.expect(1)
+    assert.ok($.fn.bootstrapTooltip.Constructor.Default, &apos;defaults is defined&apos;)
+  })
+
+  QUnit.test(&apos;should empty title attribute&apos;, function (assert) {
+    assert.expect(1)
+    var $trigger = $(&apos;&lt;a href=&quot;#&quot; rel=&quot;tooltip&quot; title=&quot;Another tooltip&quot;/&gt;&apos;).bootstrapTooltip()
+    assert.strictEqual($trigger.attr(&apos;title&apos;), &apos;&apos;, &apos;title attribute was emptied&apos;)
+  })
+
+  QUnit.test(&apos;should add data attribute for referencing original title&apos;, function (assert) {
+    assert.expect(1)
+    var $trigger = $(&apos;&lt;a href=&quot;#&quot; rel=&quot;tooltip&quot; title=&quot;Another tooltip&quot;/&gt;&apos;).bootstrapTooltip()
+    assert.strictEqual($trigger.attr(&apos;data-original-title&apos;), &apos;Another tooltip&apos;, &apos;original title preserved in data attribute&apos;)
+  })
+
+  QUnit.test(&apos;should add aria-describedby to the trigger on show&apos;, function (assert) {
+    assert.expect(3)
+    var $trigger = $(&apos;&lt;a href=&quot;#&quot; rel=&quot;tooltip&quot; title=&quot;Another tooltip&quot;/&gt;&apos;)
+      .bootstrapTooltip()
+      .appendTo(&apos;#qunit-fixture&apos;)
+      .bootstrapTooltip(&apos;show&apos;)
+
+    var id = $(&apos;.tooltip&apos;).attr(&apos;id&apos;)
+
+    assert.strictEqual($(&apos;#&apos; + id).length, 1, &apos;has a unique id&apos;)
+    assert.strictEqual($(&apos;.tooltip&apos;).attr(&apos;aria-describedby&apos;), $trigger.attr(&apos;id&apos;), &apos;tooltip id and aria-describedby on trigger match&apos;)
+    assert.ok($trigger[0].hasAttribute(&apos;aria-describedby&apos;), &apos;trigger has aria-describedby&apos;)
+  })
+
+  QUnit.test(&apos;should remove aria-describedby from trigger on hide&apos;, function (assert) {
+    assert.expect(2)
+    var $trigger = $(&apos;&lt;a href=&quot;#&quot; rel=&quot;tooltip&quot; title=&quot;Another tooltip&quot;/&gt;&apos;)
+      .bootstrapTooltip()
+      .appendTo(&apos;#qunit-fixture&apos;)
+
+    $trigger.bootstrapTooltip(&apos;show&apos;)
+    assert.ok($trigger[0].hasAttribute(&apos;aria-describedby&apos;), &apos;trigger has aria-describedby&apos;)
+
+    $trigger.bootstrapTooltip(&apos;hide&apos;)
+    assert.ok(!$trigger[0].hasAttribute(&apos;aria-describedby&apos;), &apos;trigger does not have aria-describedby&apos;)
+  })
+
+  QUnit.test(&apos;should assign a unique id tooltip element&apos;, function (assert) {
+    assert.expect(2)
+    $(&apos;&lt;a href=&quot;#&quot; rel=&quot;tooltip&quot; title=&quot;Another tooltip&quot;/&gt;&apos;)
+      .appendTo(&apos;#qunit-fixture&apos;)
+      .bootstrapTooltip(&apos;show&apos;)
+
+    var id = $(&apos;.tooltip&apos;).attr(&apos;id&apos;)
+
+    assert.strictEqual($(&apos;#&apos; + id).length, 1, &apos;tooltip has unique id&apos;)
+    assert.strictEqual(id.indexOf(&apos;tooltip&apos;), 0, &apos;tooltip id has prefix&apos;)
+  })
+
+  QUnit.test(&apos;should place tooltips relative to placement option&apos;, function (assert) {
+    assert.expect(2)
+    var $tooltip = $(&apos;&lt;a href=&quot;#&quot; rel=&quot;tooltip&quot; title=&quot;Another tooltip&quot;/&gt;&apos;)
+      .appendTo(&apos;#qunit-fixture&apos;)
+      .bootstrapTooltip({ placement: &apos;bottom&apos; })
+
+    $tooltip.bootstrapTooltip(&apos;show&apos;)
+
+    assert
+      .ok($(&apos;.tooltip&apos;)
+      .is(&apos;.fade.bs-tether-element-attached-top.bs-tether-element-attached-center.show&apos;), &apos;has correct classes applied&apos;)
+
+    $tooltip.bootstrapTooltip(&apos;hide&apos;)
+
+    assert.strictEqual($tooltip.data(&apos;bs.tooltip&apos;).tip.parentNode, null, &apos;tooltip removed&apos;)
+  })
+
+  QUnit.test(&apos;should allow html entities&apos;, function (assert) {
+    assert.expect(2)
+    var $tooltip = $(&apos;&lt;a href=&quot;#&quot; rel=&quot;tooltip&quot; title=&quot;&amp;lt;b&amp;gt;@fat&amp;lt;/b&amp;gt;&quot;/&gt;&apos;)
+      .appendTo(&apos;#qunit-fixture&apos;)
+      .bootstrapTooltip({ html: true })
+
+    $tooltip.bootstrapTooltip(&apos;show&apos;)
+    assert.notEqual($(&apos;.tooltip b&apos;).length, 0, &apos;b tag was inserted&apos;)
+
+    $tooltip.bootstrapTooltip(&apos;hide&apos;)
+    assert.strictEqual($tooltip.data(&apos;bs.tooltip&apos;).tip.parentNode, null, &apos;tooltip removed&apos;)
+  })
+
+  QUnit.test(&apos;should allow DOMElement title (html: false)&apos;, function (assert) {
+    assert.expect(3)
+    var title = document.createTextNode(&apos;&lt;3 writing tests&apos;)
+    var $tooltip = $(&apos;&lt;a href=&quot;#&quot; rel=&quot;tooltip&quot;/&gt;&apos;)
+      .appendTo(&apos;#qunit-fixture&apos;)
+      .bootstrapTooltip({ title: title })
+
+    $tooltip.bootstrapTooltip(&apos;show&apos;)
+
+    assert.notEqual($(&apos;.tooltip&apos;).length, 0, &apos;tooltip inserted&apos;)
+    assert.strictEqual($(&apos;.tooltip&apos;).text(), &apos;&lt;3 writing tests&apos;, &apos;title inserted&apos;)
+    assert.ok(!$.contains($(&apos;.tooltip&apos;).get(0), title), &apos;title node copied, not moved&apos;)
+  })
+
+  QUnit.test(&apos;should allow DOMElement title (html: true)&apos;, function (assert) {
+    assert.expect(3)
+    var title = document.createTextNode(&apos;&lt;3 writing tests&apos;)
+    var $tooltip = $(&apos;&lt;a href=&quot;#&quot; rel=&quot;tooltip&quot;/&gt;&apos;)
+      .appendTo(&apos;#qunit-fixture&apos;)
+      .bootstrapTooltip({ html: true, title: title })
+
+    $tooltip.bootstrapTooltip(&apos;show&apos;)
+
+    assert.notEqual($(&apos;.tooltip&apos;).length, 0, &apos;tooltip inserted&apos;)
+    assert.strictEqual($(&apos;.tooltip&apos;).text(), &apos;&lt;3 writing tests&apos;, &apos;title inserted&apos;)
+    assert.ok($.contains($(&apos;.tooltip&apos;).get(0), title), &apos;title node moved, not copied&apos;)
+  })
+
+
+  QUnit.test(&apos;should respect custom classes&apos;, function (assert) {
+    assert.expect(2)
+    var $tooltip = $(&apos;&lt;a href=&quot;#&quot; rel=&quot;tooltip&quot; title=&quot;Another tooltip&quot;/&gt;&apos;)
+      .appendTo(&apos;#qunit-fixture&apos;)
+      .bootstrapTooltip({ template: &apos;&lt;div class=&quot;tooltip some-class&quot;&gt;&lt;div class=&quot;tooltip-arrow&quot;/&gt;&lt;div class=&quot;tooltip-inner&quot;/&gt;&lt;/div&gt;&apos; })
+
+    $tooltip.bootstrapTooltip(&apos;show&apos;)
+    assert.ok($(&apos;.tooltip&apos;).hasClass(&apos;some-class&apos;), &apos;custom class is present&apos;)
+
+    $tooltip.bootstrapTooltip(&apos;hide&apos;)
+    assert.strictEqual($tooltip.data(&apos;bs.tooltip&apos;).tip.parentNode, null, &apos;tooltip removed&apos;)
+  })
+
+  QUnit.test(&apos;should fire show event&apos;, function (assert) {
+    assert.expect(1)
+    var done = assert.async()
+
+    $(&apos;&lt;div title=&quot;tooltip title&quot;/&gt;&apos;)
+      .on(&apos;show.bs.tooltip&apos;, function () {
+        assert.ok(true, &apos;show event fired&apos;)
+        done()
+      })
+      .bootstrapTooltip(&apos;show&apos;)
+  })
+
+  QUnit.test(&apos;should throw an error when show is called on hidden elements&apos;, function (assert) {
+    assert.expect(1)
+    var done = assert.async()
+
+    try {
+      $(&apos;&lt;div title=&quot;tooltip title&quot; style=&quot;display: none&quot;/&gt;&apos;).bootstrapTooltip(&apos;show&apos;)
+    }
+    catch (err) {
+      assert.strictEqual(err.message, &apos;Please use show on visible elements&apos;)
+      done()
+    }
+  })
+
+  QUnit.test(&apos;should fire inserted event&apos;, function (assert) {
+    assert.expect(2)
+    var done = assert.async()
+
+    $(&apos;&lt;div title=&quot;tooltip title&quot;/&gt;&apos;)
+      .appendTo(&apos;#qunit-fixture&apos;)
+      .on(&apos;inserted.bs.tooltip&apos;, function () {
+        assert.notEqual($(&apos;.tooltip&apos;).length, 0, &apos;tooltip was inserted&apos;)
+        assert.ok(true, &apos;inserted event fired&apos;)
+        done()
+      })
+      .bootstrapTooltip(&apos;show&apos;)
+  })
+
+  QUnit.test(&apos;should fire shown event&apos;, function (assert) {
+    assert.expect(1)
+    var done = assert.async()
+
+    $(&apos;&lt;div title=&quot;tooltip title&quot;&gt;&lt;/div&gt;&apos;)
+      .appendTo(&apos;#qunit-fixture&apos;)
+      .on(&apos;shown.bs.tooltip&apos;, function () {
+        assert.ok(true, &apos;shown was called&apos;)
+        done()
+      })
+      .bootstrapTooltip(&apos;show&apos;)
+  })
+
+  QUnit.test(&apos;should not fire shown event when show was prevented&apos;, function (assert) {
+    assert.expect(1)
+    var done = assert.async()
+
+    $(&apos;&lt;div title=&quot;tooltip title&quot;/&gt;&apos;)
+      .on(&apos;show.bs.tooltip&apos;, function (e) {
+        e.preventDefault()
+        assert.ok(true, &apos;show event fired&apos;)
+        done()
+      })
+      .on(&apos;shown.bs.tooltip&apos;, function () {
+        assert.ok(false, &apos;shown event fired&apos;)
+      })
+      .bootstrapTooltip(&apos;show&apos;)
+  })
+
+  QUnit.test(&apos;should fire hide event&apos;, function (assert) {
+    assert.expect(1)
+    var done = assert.async()
+
+    $(&apos;&lt;div title=&quot;tooltip title&quot;/&gt;&apos;)
+      .appendTo(&apos;#qunit-fixture&apos;)
+      .on(&apos;shown.bs.tooltip&apos;, function () {
+        $(this).bootstrapTooltip(&apos;hide&apos;)
+      })
+      .on(&apos;hide.bs.tooltip&apos;, function () {
+        assert.ok(true, &apos;hide event fired&apos;)
+        done()
+      })
+      .bootstrapTooltip(&apos;show&apos;)
+  })
+
+  QUnit.test(&apos;should fire hidden event&apos;, function (assert) {
+    assert.expect(1)
+    var done = assert.async()
+
+    $(&apos;&lt;div title=&quot;tooltip title&quot;/&gt;&apos;)
+      .appendTo(&apos;#qunit-fixture&apos;)
+      .on(&apos;shown.bs.tooltip&apos;, function () {
+        $(this).bootstrapTooltip(&apos;hide&apos;)
+      })
+      .on(&apos;hidden.bs.tooltip&apos;, function () {
+        assert.ok(true, &apos;hidden event fired&apos;)
+        done()
+      })
+      .bootstrapTooltip(&apos;show&apos;)
+  })
+
+  QUnit.test(&apos;should not fire hidden event when hide was prevented&apos;, function (assert) {
+    assert.expect(1)
+    var done = assert.async()
+
+    $(&apos;&lt;div title=&quot;tooltip title&quot;/&gt;&apos;)
+      .appendTo(&apos;#qunit-fixture&apos;)
+      .on(&apos;shown.bs.tooltip&apos;, function () {
+        $(this).bootstrapTooltip(&apos;hide&apos;)
+      })
+      .on(&apos;hide.bs.tooltip&apos;, function (e) {
+        e.preventDefault()
+        assert.ok(true, &apos;hide event fired&apos;)
+        done()
+      })
+      .on(&apos;hidden.bs.tooltip&apos;, function () {
+        assert.ok(false, &apos;hidden event fired&apos;)
+      })
+      .bootstrapTooltip(&apos;show&apos;)
+  })
+
+  QUnit.test(&apos;should destroy tooltip&apos;, function (assert) {
+    assert.expect(7)
+    var $tooltip = $(&apos;&lt;div/&gt;&apos;)
+      .bootstrapTooltip()
+      .on(&apos;click.foo&apos;, function () {})
+
+    assert.ok($tooltip.data(&apos;bs.tooltip&apos;), &apos;tooltip has data&apos;)
+    assert.ok($._data($tooltip[0], &apos;events&apos;).mouseover &amp;&amp; $._data($tooltip[0], &apos;events&apos;).mouseout, &apos;tooltip has hover events&apos;)
+    assert.strictEqual($._data($tooltip[0], &apos;events&apos;).click[0].namespace, &apos;foo&apos;, &apos;tooltip has extra click.foo event&apos;)
+
+    $tooltip.bootstrapTooltip(&apos;show&apos;)
+    $tooltip.bootstrapTooltip(&apos;dispose&apos;)
+
+    assert.ok(!$tooltip.hasClass(&apos;show&apos;), &apos;tooltip is hidden&apos;)
+    assert.ok(!$._data($tooltip[0], &apos;bs.tooltip&apos;), &apos;tooltip does not have data&apos;)
+    assert.strictEqual($._data($tooltip[0], &apos;events&apos;).click[0].namespace, &apos;foo&apos;, &apos;tooltip still has click.foo&apos;)
+    assert.ok(!$._data($tooltip[0], &apos;events&apos;).mouseover &amp;&amp; !$._data($tooltip[0], &apos;events&apos;).mouseout, &apos;tooltip does not have hover events&apos;)
+  })
+
+  // QUnit.test(&apos;should show tooltip with delegate selector on click&apos;, function (assert) {
+  //   assert.expect(2)
+  //   var $div = $(&apos;&lt;div&gt;&lt;a href=&quot;#&quot; rel=&quot;tooltip&quot; title=&quot;Another tooltip&quot;/&gt;&lt;/div&gt;&apos;)
+  //     .appendTo(&apos;#qunit-fixture&apos;)
+  //     .bootstrapTooltip({
+  //       selector: &apos;a[rel=&quot;tooltip&quot;]&apos;,
+  //       trigger: &apos;click&apos;
+  //     })
+
+  //   $div.find(&apos;a&apos;).trigger(&apos;click&apos;)
+  //   assert.ok($(&apos;.tooltip&apos;).is(&apos;.fade.in&apos;), &apos;tooltip is faded in&apos;)
+
+  //   $div.find(&apos;a&apos;).trigger(&apos;click&apos;)
+  //   assert.strictEqual($div.data(&apos;bs.tooltip&apos;).tip.parentNode, null, &apos;tooltip removed&apos;)
+  // })
+
+  QUnit.test(&apos;should show tooltip when toggle is called&apos;, function (assert) {
+    assert.expect(1)
+    $(&apos;&lt;a href=&quot;#&quot; rel=&quot;tooltip&quot; title=&quot;tooltip on toggle&quot;/&gt;&apos;)
+      .appendTo(&apos;#qunit-fixture&apos;)
+      .bootstrapTooltip({ trigger: &apos;manual&apos; })
+      .bootstrapTooltip(&apos;toggle&apos;)
+
+    assert.ok($(&apos;.tooltip&apos;).is(&apos;.fade.show&apos;), &apos;tooltip is faded active&apos;)
+  })
+
+  QUnit.test(&apos;should hide previously shown tooltip when toggle is called on tooltip&apos;, function (assert) {
+    assert.expect(1)
+    $(&apos;&lt;a href=&quot;#&quot; rel=&quot;tooltip&quot; title=&quot;tooltip on toggle&quot;&gt;@ResentedHook&lt;/a&gt;&apos;)
+      .appendTo(&apos;#qunit-fixture&apos;)
+      .bootstrapTooltip({ trigger: &apos;manual&apos; })
+      .bootstrapTooltip(&apos;show&apos;)
+
+    $(&apos;.tooltip&apos;).bootstrapTooltip(&apos;toggle&apos;)
+    assert.ok($(&apos;.tooltip&apos;).not(&apos;.fade.show&apos;), &apos;tooltip was faded out&apos;)
+  })
+
+  QUnit.test(&apos;should place tooltips inside body when container is body&apos;, function (assert) {
+    assert.expect(3)
+    var $tooltip = $(&apos;&lt;a href=&quot;#&quot; rel=&quot;tooltip&quot; title=&quot;Another tooltip&quot;/&gt;&apos;)
+      .appendTo(&apos;#qunit-fixture&apos;)
+      .bootstrapTooltip({ container: &apos;body&apos; })
+      .bootstrapTooltip(&apos;show&apos;)
+
+    assert.notEqual($(&apos;body &gt; .tooltip&apos;).length, 0, &apos;tooltip is direct descendant of body&apos;)
+    assert.strictEqual($(&apos;#qunit-fixture &gt; .tooltip&apos;).length, 0, &apos;tooltip is not in parent&apos;)
+
+    $tooltip.bootstrapTooltip(&apos;hide&apos;)
+    assert.strictEqual($(&apos;body &gt; .tooltip&apos;).length, 0, &apos;tooltip was removed from dom&apos;)
+  })
+
+  QUnit.test(&apos;should add position class before positioning so that position-specific styles are taken into account&apos;, function (assert) {
+    assert.expect(1)
+    var styles = &apos;&lt;style&gt;&apos;
+      + &apos;.tooltip.right { white-space: nowrap; }&apos;
+      + &apos;.tooltip.right .tooltip-inner { max-width: none; }&apos;
+      + &apos;&lt;/style&gt;&apos;
+    var $styles = $(styles).appendTo(&apos;head&apos;)
+
+    var $container = $(&apos;&lt;div/&gt;&apos;).appendTo(&apos;#qunit-fixture&apos;)
+    var $target = $(&apos;&lt;a href=&quot;#&quot; rel=&quot;tooltip&quot; title=&quot;very very very very very very very very long tooltip in one line&quot;/&gt;&apos;)
+      .appendTo($container)
+      .bootstrapTooltip({
+        placement: &apos;right&apos;
+      })
+      .bootstrapTooltip(&apos;show&apos;)
+
+    var $tooltip = $($target.data(&apos;bs.tooltip&apos;).tip)
+
+    // this is some dumb hack stuff because sub pixels in firefox
+    var top = Math.round($target.offset().top + $target[0].offsetHeight / 2 - $tooltip[0].offsetHeight / 2)
+    var top2 = Math.round($tooltip.offset().top)
+    var topDiff = top - top2
+    assert.ok(topDiff &lt;= 1 &amp;&amp; topDiff &gt;= -1)
+    $target.bootstrapTooltip(&apos;hide&apos;)
+
+    $container.remove()
+    $styles.remove()
+  })
+
+  QUnit.test(&apos;should use title attribute for tooltip text&apos;, function (assert) {
+    assert.expect(2)
+    var $tooltip = $(&apos;&lt;a href=&quot;#&quot; rel=&quot;tooltip&quot; title=&quot;Simple tooltip&quot;/&gt;&apos;)
+      .appendTo(&apos;#qunit-fixture&apos;)
+      .bootstrapTooltip()
+
+    $tooltip.bootstrapTooltip(&apos;show&apos;)
+    assert.strictEqual($(&apos;.tooltip&apos;).children(&apos;.tooltip-inner&apos;).text(), &apos;Simple tooltip&apos;, &apos;title from title attribute is set&apos;)
+
+    $tooltip.bootstrapTooltip(&apos;hide&apos;)
+    assert.strictEqual($(&apos;.tooltip&apos;).length, 0, &apos;tooltip removed from dom&apos;)
+  })
+
+  QUnit.test(&apos;should prefer title attribute over title option&apos;, function (assert) {
+    assert.expect(2)
+    var $tooltip = $(&apos;&lt;a href=&quot;#&quot; rel=&quot;tooltip&quot; title=&quot;Simple tooltip&quot;/&gt;&apos;)
+      .appendTo(&apos;#qunit-fixture&apos;)
+      .bootstrapTooltip({
+        title: &apos;This is a tooltip with some content&apos;
+      })
+
+    $tooltip.bootstrapTooltip(&apos;show&apos;)
+    assert.strictEqual($(&apos;.tooltip&apos;).children(&apos;.tooltip-inner&apos;).text(), &apos;Simple tooltip&apos;, &apos;title is set from title attribute while preferred over title option&apos;)
+
+    $tooltip.bootstrapTooltip(&apos;hide&apos;)
+    assert.strictEqual($(&apos;.tooltip&apos;).length, 0, &apos;tooltip removed from dom&apos;)
+  })
+
+  QUnit.test(&apos;should use title option&apos;, function (assert) {
+    assert.expect(2)
+    var $tooltip = $(&apos;&lt;a href=&quot;#&quot; rel=&quot;tooltip&quot;/&gt;&apos;)
+      .appendTo(&apos;#qunit-fixture&apos;)
+      .bootstrapTooltip({
+        title: &apos;This is a tooltip with some content&apos;
+      })
+
+    $tooltip.bootstrapTooltip(&apos;show&apos;)
+    assert.strictEqual($(&apos;.tooltip&apos;).children(&apos;.tooltip-inner&apos;).text(), &apos;This is a tooltip with some content&apos;, &apos;title from title option is set&apos;)
+
+    $tooltip.bootstrapTooltip(&apos;hide&apos;)
+    assert.strictEqual($(&apos;.tooltip&apos;).length, 0, &apos;tooltip removed from dom&apos;)
+  })
+
+  QUnit.test(&apos;should not error when trying to show an top-placed tooltip that has been removed from the dom&apos;, function (assert) {
+    assert.expect(1)
+    var passed = true
+    var $tooltip = $(&apos;&lt;a href=&quot;#&quot; rel=&quot;tooltip&quot; title=&quot;Another tooltip&quot;/&gt;&apos;)
+      .appendTo(&apos;#qunit-fixture&apos;)
+      .one(&apos;show.bs.tooltip&apos;, function () {
+        $(this).remove()
+      })
+      .bootstrapTooltip({ placement: &apos;top&apos; })
+
+    try {
+      $tooltip.bootstrapTooltip(&apos;show&apos;)
+    } catch (err) {
+      passed = false
+      console.log(err)
+    }
+
+    assert.ok(passed, &apos;.tooltip(\&apos;show\&apos;) should not throw an error if element no longer is in dom&apos;)
+  })
+
+  QUnit.test(&apos;should place tooltip on top of element&apos;, function (assert) {
+    assert.expect(1)
+    var done = assert.async()
+
+    var containerHTML = &apos;&lt;div&gt;&apos;
+        + &apos;&lt;p style=&quot;margin-top: 200px&quot;&gt;&apos;
+        + &apos;&lt;a href=&quot;#&quot; title=&quot;very very very very very very very long tooltip&quot;&gt;Hover me&lt;/a&gt;&apos;
+        + &apos;&lt;/p&gt;&apos;
+        + &apos;&lt;/div&gt;&apos;
+
+    var $container = $(containerHTML)
+      .css({
+        position: &apos;absolute&apos;,
+        bottom: 0,
+        left: 0,
+        textAlign: &apos;right&apos;,
+        width: 300,
+        height: 300
+      })
+      .appendTo(&apos;#qunit-fixture&apos;)
+
+    var $trigger = $container
+      .find(&apos;a&apos;)
+      .css(&apos;margin-top&apos;, 200)
+      .bootstrapTooltip({
+        placement: &apos;top&apos;,
+        animate: false
+      })
+      .bootstrapTooltip(&apos;show&apos;)
+
+    var $tooltip = $($trigger.data(&apos;bs.tooltip&apos;).tip)
+
+    setTimeout(function () {
+      assert.ok(Math.round($tooltip.offset().top + $tooltip.outerHeight()) &lt;= Math.round($trigger.offset().top))
+      done()
+    }, 0)
+  })
+
+  QUnit.test(&apos;should show tooltip if leave event hasn\&apos;t occurred before delay expires&apos;, function (assert) {
+    assert.expect(2)
+    var done = assert.async()
+
+    var $tooltip = $(&apos;&lt;a href=&quot;#&quot; rel=&quot;tooltip&quot; title=&quot;Another tooltip&quot;/&gt;&apos;)
+      .appendTo(&apos;#qunit-fixture&apos;)
+      .bootstrapTooltip({ delay: 150 })
+
+    setTimeout(function () {
+      assert.ok(!$(&apos;.tooltip&apos;).is(&apos;.fade.show&apos;), &apos;100ms: tooltip is not faded active&apos;)
+    }, 100)
+
+    setTimeout(function () {
+      assert.ok($(&apos;.tooltip&apos;).is(&apos;.fade.show&apos;), &apos;200ms: tooltip is faded active&apos;)
+      done()
+    }, 200)
+
+    $tooltip.trigger(&apos;mouseenter&apos;)
+  })
+
+  QUnit.test(&apos;should not show tooltip if leave event occurs before delay expires&apos;, function (assert) {
+    assert.expect(2)
+    var done = assert.async()
+
+    var $tooltip = $(&apos;&lt;a href=&quot;#&quot; rel=&quot;tooltip&quot; title=&quot;Another tooltip&quot;/&gt;&apos;)
+      .appendTo(&apos;#qunit-fixture&apos;)
+      .bootstrapTooltip({ delay: 150 })
+
+    setTimeout(function () {
+      assert.ok(!$(&apos;.tooltip&apos;).is(&apos;.fade.show&apos;), &apos;100ms: tooltip not faded active&apos;)
+      $tooltip.trigger(&apos;mouseout&apos;)
+    }, 100)
+
+    setTimeout(function () {
+      assert.ok(!$(&apos;.tooltip&apos;).is(&apos;.fade.show&apos;), &apos;200ms: tooltip not faded active&apos;)
+      done()
+    }, 200)
+
+    $tooltip.trigger(&apos;mouseenter&apos;)
+  })
+
+  QUnit.test(&apos;should not hide tooltip if leave event occurs and enter event occurs within the hide delay&apos;, function (assert) {
+    assert.expect(3)
+    var done = assert.async()
+
+    var $tooltip = $(&apos;&lt;a href=&quot;#&quot; rel=&quot;tooltip&quot; title=&quot;Another tooltip&quot;/&gt;&apos;)
+      .appendTo(&apos;#qunit-fixture&apos;)
+      .bootstrapTooltip({ delay: { show: 0, hide: 150 } })
+
+    setTimeout(function () {
+      assert.ok($(&apos;.tooltip&apos;).is(&apos;.fade.show&apos;), &apos;1ms: tooltip faded active&apos;)
+      $tooltip.trigger(&apos;mouseout&apos;)
+
+      setTimeout(function () {
+        assert.ok($(&apos;.tooltip&apos;).is(&apos;.fade.show&apos;), &apos;100ms: tooltip still faded active&apos;)
+        $tooltip.trigger(&apos;mouseenter&apos;)
+      }, 100)
+
+      setTimeout(function () {
+        assert.ok($(&apos;.tooltip&apos;).is(&apos;.fade.show&apos;), &apos;200ms: tooltip still faded active&apos;)
+        done()
+      }, 200)
+    }, 0)
+
+    $tooltip.trigger(&apos;mouseenter&apos;)
+  })
+
+  QUnit.test(&apos;should not show tooltip if leave event occurs before delay expires&apos;, function (assert) {
+    assert.expect(2)
+    var done = assert.async()
+
+    var $tooltip = $(&apos;&lt;a href=&quot;#&quot; rel=&quot;tooltip&quot; title=&quot;Another tooltip&quot;/&gt;&apos;)
+      .appendTo(&apos;#qunit-fixture&apos;)
+      .bootstrapTooltip({ delay: 150 })
+
+    setTimeout(function () {
+      assert.ok(!$(&apos;.tooltip&apos;).is(&apos;.fade.show&apos;), &apos;100ms: tooltip not faded active&apos;)
+      $tooltip.trigger(&apos;mouseout&apos;)
+    }, 100)
+
+    setTimeout(function () {
+      assert.ok(!$(&apos;.tooltip&apos;).is(&apos;.fade.show&apos;), &apos;200ms: tooltip not faded active&apos;)
+      done()
+    }, 200)
+
+    $tooltip.trigger(&apos;mouseenter&apos;)
+  })
+
+  QUnit.test(&apos;should not show tooltip if leave event occurs before delay expires, even if hide delay is 0&apos;, function (assert) {
+    assert.expect(2)
+    var done = assert.async()
+
+    var $tooltip = $(&apos;&lt;a href=&quot;#&quot; rel=&quot;tooltip&quot; title=&quot;Another tooltip&quot;/&gt;&apos;)
+      .appendTo(&apos;#qunit-fixture&apos;)
+      .bootstrapTooltip({ delay: { show: 150, hide: 0 } })
+
+    setTimeout(function () {
+      assert.ok(!$(&apos;.tooltip&apos;).is(&apos;.fade.show&apos;), &apos;100ms: tooltip not faded active&apos;)
+      $tooltip.trigger(&apos;mouseout&apos;)
+    }, 100)
+
+    setTimeout(function () {
+      assert.ok(!$(&apos;.tooltip&apos;).is(&apos;.fade.show&apos;), &apos;250ms: tooltip not faded active&apos;)
+      done()
+    }, 250)
+
+    $tooltip.trigger(&apos;mouseenter&apos;)
+  })
+
+  QUnit.test(&apos;should wait 200ms before hiding the tooltip&apos;, function (assert) {
+    assert.expect(3)
+    var done = assert.async()
+
+    var $tooltip = $(&apos;&lt;a href=&quot;#&quot; rel=&quot;tooltip&quot; title=&quot;Another tooltip&quot;/&gt;&apos;)
+      .appendTo(&apos;#qunit-fixture&apos;)
+      .bootstrapTooltip({ delay: { show: 0, hide: 150 } })
+
+    setTimeout(function () {
+      assert.ok($($tooltip.data(&apos;bs.tooltip&apos;).tip).is(&apos;.fade.show&apos;), &apos;1ms: tooltip faded active&apos;)
+
+      $tooltip.trigger(&apos;mouseout&apos;)
+
+      setTimeout(function () {
+        assert.ok($($tooltip.data(&apos;bs.tooltip&apos;).tip).is(&apos;.fade.show&apos;), &apos;100ms: tooltip still faded active&apos;)
+      }, 100)
+
+      setTimeout(function () {
+        assert.ok(!$($tooltip.data(&apos;bs.tooltip&apos;).tip).is(&apos;.show&apos;), &apos;200ms: tooltip removed&apos;)
+        done()
+      }, 200)
+
+    }, 0)
+
+    $tooltip.trigger(&apos;mouseenter&apos;)
+  })
+
+  QUnit.test(&apos;should correctly position tooltips on SVG elements&apos;, function (assert) {
+    if (!window.SVGElement) {
+      // Skip IE8 since it doesn&apos;t support SVG
+      assert.expect(0)
+      return
+    }
+    assert.expect(2)
+
+    var done = assert.async()
+
+    var styles = &apos;&lt;style&gt;&apos;
+        + &apos;.tooltip, .tooltip *, .tooltip *:before, .tooltip *:after { box-sizing: border-box; }&apos;
+        + &apos;.tooltip { position: absolute; }&apos;
+        + &apos;.tooltip .tooltip-inner { width: 24px; height: 24px; font-family: Helvetica; }&apos;
+        + &apos;&lt;/style&gt;&apos;
+    var $styles = $(styles).appendTo(&apos;head&apos;)
+
+    $(&apos;#qunit-fixture&apos;).append(
+        &apos;&lt;div style=&quot;position: fixed; top: 0; left: 0;&quot;&gt;&apos;
+      + &apos;  &lt;svg width=&quot;200&quot; height=&quot;200&quot;&gt;&apos;
+      + &apos;    &lt;circle cx=&quot;100&quot; cy=&quot;100&quot; r=&quot;10&quot; title=&quot;m&quot; id=&quot;theCircle&quot; /&gt;&apos;
+      + &apos;  &lt;/svg&gt;&apos;
+      + &apos;&lt;/div&gt;&apos;)
+    var $circle = $(&apos;#theCircle&apos;)
+
+    $circle
+      .on(&apos;shown.bs.tooltip&apos;, function () {
+        var offset = $(&apos;.tooltip&apos;).offset()
+        $styles.remove()
+        assert.ok(Math.abs(offset.left - 88) &lt;= 1, &apos;tooltip has correct horizontal location&apos;)
+        $circle.bootstrapTooltip(&apos;hide&apos;)
+        assert.strictEqual($(&apos;.tooltip&apos;).length, 0, &apos;tooltip removed from dom&apos;)
+        done()
+      })
+      .bootstrapTooltip({ placement: &apos;top&apos;, trigger: &apos;manual&apos; })
+
+    $circle.bootstrapTooltip(&apos;show&apos;)
+  })
+
+  QUnit.test(&apos;should not reload the tooltip on subsequent mouseenter events&apos;, function (assert) {
+    assert.expect(1)
+    var titleHtml = function () {
+      var uid = Util.getUID(&apos;tooltip&apos;)
+      return &apos;&lt;p id=&quot;tt-content&quot;&gt;&apos; + uid + &apos;&lt;/p&gt;&lt;p&gt;&apos; + uid + &apos;&lt;/p&gt;&lt;p&gt;&apos; + uid + &apos;&lt;/p&gt;&apos;
+    }
+
+    var $tooltip = $(&apos;&lt;span id=&quot;tt-outer&quot; rel=&quot;tooltip&quot; data-trigger=&quot;hover&quot; data-placement=&quot;top&quot;&gt;some text&lt;/span&gt;&apos;)
+      .appendTo(&apos;#qunit-fixture&apos;)
+
+    $tooltip.bootstrapTooltip({
+      html: true,
+      animation: false,
+      trigger: &apos;hover&apos;,
+      delay: { show: 0, hide: 500 },
+      container: $tooltip,
+      title: titleHtml
+    })
+
+    $(&apos;#tt-outer&apos;).trigger(&apos;mouseenter&apos;)
+
+    var currentUid = $(&apos;#tt-content&apos;).text()
+
+    $(&apos;#tt-content&apos;).trigger(&apos;mouseenter&apos;)
+    assert.strictEqual(currentUid, $(&apos;#tt-content&apos;).text())
+  })
+
+  QUnit.test(&apos;should not reload the tooltip if the mouse leaves and re-enters before hiding&apos;, function (assert) {
+    assert.expect(4)
+
+    var titleHtml = function () {
+      var uid = Util.getUID(&apos;tooltip&apos;)
+      return &apos;&lt;p id=&quot;tt-content&quot;&gt;&apos; + uid + &apos;&lt;/p&gt;&lt;p&gt;&apos; + uid + &apos;&lt;/p&gt;&lt;p&gt;&apos; + uid + &apos;&lt;/p&gt;&apos;
+    }
+
+    var $tooltip = $(&apos;&lt;span id=&quot;tt-outer&quot; rel=&quot;tooltip&quot; data-trigger=&quot;hover&quot; data-placement=&quot;top&quot;&gt;some text&lt;/span&gt;&apos;)
+      .appendTo(&apos;#qunit-fixture&apos;)
+
+    $tooltip.bootstrapTooltip({
+      html: true,
+      animation: false,
+      trigger: &apos;hover&apos;,
+      delay: { show: 0, hide: 500 },
+      title: titleHtml
+    })
+
+    var obj = $tooltip.data(&apos;bs.tooltip&apos;)
+
+    $(&apos;#tt-outer&apos;).trigger(&apos;mouseenter&apos;)
+
+    var currentUid = $(&apos;#tt-content&apos;).text()
+
+    $(&apos;#tt-outer&apos;).trigger(&apos;mouseleave&apos;)
+    assert.strictEqual(currentUid, $(&apos;#tt-content&apos;).text())
+
+    assert.ok(obj._hoverState === &apos;out&apos;, &apos;the tooltip hoverState should be set to &quot;out&quot;&apos;)
+
+    $(&apos;#tt-outer&apos;).trigger(&apos;mouseenter&apos;)
+    assert.ok(obj._hoverState === &apos;show&apos;, &apos;the tooltip hoverState should be set to &quot;show&quot;&apos;)
+
+    assert.strictEqual(currentUid, $(&apos;#tt-content&apos;).text())
+  })
+
+  QUnit.test(&apos;should correctly position tooltips on transformed elements&apos;, function (assert) {
+    var styleProps = document.documentElement.style
+    if (!(&apos;transform&apos; in styleProps) &amp;&amp; !(&apos;webkitTransform&apos; in styleProps) &amp;&amp; !(&apos;msTransform&apos; in styleProps)) {
+      assert.expect(0)
+      return
+    }
+    assert.expect(2)
+
+    var done = assert.async()
+
+    var styles = &apos;&lt;style&gt;&apos;
+        + &apos;#qunit-fixture { top: 0; left: 0; }&apos;
+        + &apos;.tooltip, .tooltip *, .tooltip *:before, .tooltip *:after { box-sizing: border-box; }&apos;
+        + &apos;.tooltip { position: absolute; }&apos;
+        + &apos;.tooltip .tooltip-inner { width: 24px; height: 24px; font-family: Helvetica; }&apos;
+        + &apos;#target { position: absolute; top: 100px; left: 50px; width: 100px; height: 200px; -webkit-transform: rotate(270deg); -ms-transform: rotate(270deg); transform: rotate(270deg); }&apos;
+        + &apos;&lt;/style&gt;&apos;
+    var $styles = $(styles).appendTo(&apos;head&apos;)
+
+    var $element = $(&apos;&lt;div id=&quot;target&quot; title=&quot;1&quot;/&gt;&apos;).appendTo(&apos;#qunit-fixture&apos;)
+
+    $element
+      .on(&apos;shown.bs.tooltip&apos;, function () {
+        var offset = $(&apos;.tooltip&apos;).offset()
+        $styles.remove()
+        assert.ok(Math.abs(offset.left - 88) &lt;= 1, &apos;tooltip has correct horizontal location&apos;)
+        assert.ok(Math.abs(offset.top - 126) &lt;= 1, &apos;tooltip has correct vertical location&apos;)
+        $element.bootstrapTooltip(&apos;hide&apos;)
+        done()
+      })
+      .bootstrapTooltip({
+        trigger: &apos;manual&apos;
+      })
+
+    $element.bootstrapTooltip(&apos;show&apos;)
+  })
+
+  QUnit.test(&apos;should do nothing when an attempt is made to hide an uninitialized tooltip&apos;, function (assert) {
+    assert.expect(1)
+
+    var $tooltip = $(&apos;&lt;span data-toggle=&quot;tooltip&quot; title=&quot;some tip&quot;&gt;some text&lt;/span&gt;&apos;)
+      .appendTo(&apos;#qunit-fixture&apos;)
+      .on(&apos;hidden.bs.tooltip shown.bs.tooltip&apos;, function () {
+        assert.ok(false, &apos;should not fire any tooltip events&apos;)
+      })
+      .bootstrapTooltip(&apos;hide&apos;)
+    assert.strictEqual($tooltip.data(&apos;bs.tooltip&apos;), undefined, &apos;should not initialize the tooltip&apos;)
+  })
+
+  QUnit.test(&apos;should not remove tooltip if multiple triggers are set and one is still active&apos;, function (assert) {
+    assert.expect(41)
+    var $el = $(&apos;&lt;button&gt;Trigger&lt;/button&gt;&apos;)
+      .appendTo(&apos;#qunit-fixture&apos;)
+      .bootstrapTooltip({ trigger: &apos;click hover focus&apos;, animation: false })
+    var tooltip = $el.data(&apos;bs.tooltip&apos;)
+    var $tooltip = $(tooltip.getTipElement())
+
+    function showingTooltip() { return $tooltip.hasClass(&apos;show&apos;) || tooltip._hoverState === &apos;show&apos; }
+
+    var tests = [
+        [&apos;mouseenter&apos;, &apos;mouseleave&apos;],
+
+        [&apos;focusin&apos;, &apos;focusout&apos;],
+
+        [&apos;click&apos;, &apos;click&apos;],
+
+        [&apos;mouseenter&apos;, &apos;focusin&apos;, &apos;focusout&apos;, &apos;mouseleave&apos;],
+        [&apos;mouseenter&apos;, &apos;focusin&apos;, &apos;mouseleave&apos;, &apos;focusout&apos;],
+
+        [&apos;focusin&apos;, &apos;mouseenter&apos;, &apos;mouseleave&apos;, &apos;focusout&apos;],
+        [&apos;focusin&apos;, &apos;mouseenter&apos;, &apos;focusout&apos;, &apos;mouseleave&apos;],
+
+        [&apos;click&apos;, &apos;focusin&apos;, &apos;mouseenter&apos;, &apos;focusout&apos;, &apos;mouseleave&apos;, &apos;click&apos;],
+        [&apos;mouseenter&apos;, &apos;click&apos;, &apos;focusin&apos;, &apos;focusout&apos;, &apos;mouseleave&apos;, &apos;click&apos;],
+        [&apos;mouseenter&apos;, &apos;focusin&apos;, &apos;click&apos;, &apos;click&apos;, &apos;mouseleave&apos;, &apos;focusout&apos;]
+    ]
+
+    assert.ok(!showingTooltip())
+
+    $.each(tests, function (idx, triggers) {
+      for (var i = 0, len = triggers.length; i &lt; len; i++) {
+        $el.trigger(triggers[i])
+        assert.equal(i &lt; len - 1, showingTooltip())
+      }
+    })
+  })
+
+  QUnit.test(&apos;should show on first trigger after hide&apos;, function (assert) {
+    assert.expect(3)
+    var $el = $(&apos;&lt;a href=&quot;#&quot; rel=&quot;tooltip&quot; title=&quot;Test tooltip&quot;/&gt;&apos;)
+      .appendTo(&apos;#qunit-fixture&apos;)
+      .bootstrapTooltip({ trigger: &apos;click hover focus&apos;, animation: false })
+
+    var tooltip = $el.data(&apos;bs.tooltip&apos;)
+    var $tooltip = $(tooltip.getTipElement())
+
+    function showingTooltip() { return $tooltip.hasClass(&apos;show&apos;) || tooltip._hoverState === &apos;show&apos; }
+
+    $el.trigger(&apos;click&apos;)
+    assert.ok(showingTooltip(), &apos;tooltip is faded in&apos;)
+
+    $el.bootstrapTooltip(&apos;hide&apos;)
+    assert.ok(!showingTooltip(), &apos;tooltip was faded out&apos;)
+
+    $el.trigger(&apos;click&apos;)
+    assert.ok(showingTooltip(), &apos;tooltip is faded in again&apos;)
+  })
+
+  QUnit.test(&apos;should hide tooltip when their containing modal is closed&apos;, function (assert) {
+    assert.expect(1)
+    var done = assert.async()
+    var templateHTML = &apos;&lt;div id=&quot;modal-test&quot; class=&quot;modal&quot;&gt;&apos; +
+                          &apos;&lt;div class=&quot;modal-dialog&quot; role=&quot;document&quot;&gt;&apos; +
+                            &apos;&lt;div class=&quot;modal-content&quot;&gt;&apos; +
+                              &apos;&lt;div class=&quot;modal-body&quot;&gt;&apos; +
+                                &apos;&lt;a id=&quot;tooltipTest&quot; href=&quot;#&quot; data-toggle=&quot;tooltip&quot; title=&quot;Some tooltip text!&quot;&gt;Tooltip&lt;/a&gt;&apos; +
+                              &apos;&lt;/div&gt;&apos; +
+                            &apos;&lt;/div&gt;&apos; +
+                          &apos;&lt;/div&gt;&apos; +
+                        &apos;&lt;/div&gt;&apos;
+
+    $(templateHTML).appendTo(&apos;#qunit-fixture&apos;)
+    $(&apos;#tooltipTest&apos;)
+      .bootstrapTooltip({ trigger: &apos;manuel&apos; })
+      .on(&apos;shown.bs.tooltip&apos;, function () {
+        $(&apos;#modal-test&apos;).modal(&apos;hide&apos;)
+      })
+      .on(&apos;hide.bs.tooltip&apos;, function () {
+        assert.ok(true, &apos;tooltip hide&apos;)
+        done()
+      })
+
+    $(&apos;#modal-test&apos;)
+      .on(&apos;shown.bs.modal&apos;, function () {
+        $(&apos;#tooltipTest&apos;).bootstrapTooltip(&apos;show&apos;)
+      })
+      .modal(&apos;show&apos;)
+  })
+})
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.5.2)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

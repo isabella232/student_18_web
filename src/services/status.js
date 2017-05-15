@@ -11,17 +11,15 @@ const REFRESH_INTERVAL = 30000;
  */
 export class StatusService {
 
-  status = {};
-  listeners = [];
-
-  servers = [];
-  genesisList = [];
-
   /**
    * Subscribe the the genesis service
    * @constructor
    */
   constructor() {
+    this.status = {};
+    this.listeners = [];
+    this.servers = [];
+    this.genesisList = [];
     this.refreshInterval = REFRESH_INTERVAL;
 
     GenesisService.subscribe(this);
