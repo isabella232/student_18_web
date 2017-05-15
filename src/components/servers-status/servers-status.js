@@ -8,9 +8,9 @@ import StatusService from '../../services/status'
 import LoadingSpinner from '../loading/loading-spinner'
 
 /**
- * @author Gaylor Bosson (gaylor.bosson@epfl.ch)
- *
  * Table component which displays the list of servers and their status
+ *
+ * @author Gaylor Bosson (gaylor.bosson@epfl.ch)
  */
 export default class ServersStatus extends React.Component {
 
@@ -41,14 +41,27 @@ export default class ServersStatus extends React.Component {
     });
   }
 
+  /**
+   * @override
+   * @see https://facebook.github.io/react/docs/react-component.html
+   */
   componentDidMount() {
     StatusService.subscribe(this);
   }
 
+  /**
+   * @override
+   * @see https://facebook.github.io/react/docs/react-component.html
+   */
   componentWillUnmount() {
     StatusService.unsubscribe(this);
   }
 
+  /**
+   * @override
+   * @see https://facebook.github.io/react/docs/react-component.html
+   * @returns {XML}
+   */
   render() {
     const {status, genesisList, isLoading} = this.state;
 

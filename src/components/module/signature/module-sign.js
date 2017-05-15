@@ -6,11 +6,11 @@ import FileDropArea from './utils/drop-file-area'
 import SignArea from './utils/sign-area'
 
 /**
- * @author Gaylor Bosson (gaylor.bosson@epfl.ch)
- *
  * Module to upload a file and sign it using the current skipchain
+ *
+ * @author Gaylor Bosson (gaylor.bosson@epfl.ch)
  */
-export default class BlockSign extends React.Component {
+export default class ModuleSign extends React.Component {
 
   /**
    * @constructor
@@ -29,7 +29,7 @@ export default class BlockSign extends React.Component {
 
   /**
    * Change the file we want to sign
-   * @param file
+   * @param {File} file
    */
   handleFileDropped(file) {
     this.setState({
@@ -44,6 +44,11 @@ export default class BlockSign extends React.Component {
     this.setState({file: undefined});
   }
 
+  /**
+   * @override
+   * @see https://facebook.github.io/react/docs/react-component.html
+   * @returns {XML}
+   */
   render() {
     const {file} = this.state;
     const body = file ?

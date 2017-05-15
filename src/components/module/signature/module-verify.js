@@ -12,11 +12,11 @@ import {buf2hex} from '../../../utils/buffer'
 import {tcp2ws} from '../../../utils/network'
 
 /**
- * @author Gaylor Bosson (gaylor.bosson@epfl.ch)
- *
  * Module to verify a given signature file and the target file
+ *
+ * @author Gaylor Bosson (gaylor.bosson@epfl.ch)
  */
-export default class VerifyModule extends React.Component {
+export default class ModuleVerify extends React.Component {
 
   /**
    * @constructor
@@ -39,7 +39,7 @@ export default class VerifyModule extends React.Component {
 
   /**
    * Handle a file dropped in the drop area
-   * @param fileDropped {File}
+   * @param {File} fileDropped
    */
   handleFileDrop(fileDropped) {
     const {file, isVerified} = this.state;
@@ -81,6 +81,11 @@ export default class VerifyModule extends React.Component {
     });
   }
 
+  /**
+   * @override
+   * @see https://facebook.github.io/react/docs/react-component.html
+   * @returns {XML}
+   */
   render() {
     const feedback = this._generateFeedback();
 

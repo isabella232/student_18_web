@@ -8,8 +8,19 @@ import {buf2hex} from '../../../utils/buffer'
 const REFRESH_RANDOM_INTERVAL = 30 * 1000;
 const REFRESH_COUNTER_INTERVAL = 100;
 
+/**
+ * This module will ask for a random number every fixed interval and display the result
+ *
+ * The count down is shown with a kind of loading bar
+ *
+ * @author Gaylor Bosson (gaylor.bosson@epfl.ch)
+ */
 export default class ModuleRandom extends React.Component {
 
+  /**
+   * @constructor
+   * @param props
+   */
   constructor(props) {
     super(props);
 
@@ -18,10 +29,19 @@ export default class ModuleRandom extends React.Component {
     };
   }
 
+  /**
+   * @override
+   * @see https://facebook.github.io/react/docs/react-component.html
+   */
   componentWillMount() {
     this._triggerRandomUpdate();
   }
 
+  /**
+   * @override
+   * @see https://facebook.github.io/react/docs/react-component.html
+   * @returns {XML}
+   */
   render() {
     const {random, counter} = this.state;
 
@@ -37,6 +57,10 @@ export default class ModuleRandom extends React.Component {
     );
   }
 
+  /**
+   * Send a random request to the server and update the state with the result number
+   * @private
+   */
   _triggerRandomUpdate() {
     // todo fix servers
     WebSocketService.getRandom('192.33.210.8:7021').then(msg => {
@@ -60,6 +84,11 @@ export default class ModuleRandom extends React.Component {
     setTimeout(() => self._checkCountDown(), REFRESH_COUNTER_INTERVAL);
   }
 
+  /**
+   * This function will recursively call itself until the counter is reached to update the loading
+   * animation. When the counter reached 1, it will trigger an update
+   * @private
+   */
   _checkCountDown() {
     // counter from 0 to 1
     const counter = Math.min(1, (Date.now() - this._timestamp) / REFRESH_RANDOM_INTERVAL);

@@ -32,14 +32,15 @@
 <nav class="navigation" data-ice="nav"><div>
   <ul>
     
-  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/app.js~App.html">App</a></span></span></li>
+  <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-App">App</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">app</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/app/home.js~Home.html">Home</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/html-iframe</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/html-iframe/html-iframe.js~HTMLIFrame.html">HTMLIFrame</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/loading</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/loading/loading-spinner.js~LoadingSpinner.html">LoadingSpinner</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/module.js~Module.html">Module</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/html</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/html/module-html.js~ModuleHTML.html">ModuleHTML</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/random</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/random/module-random.js~ModuleRandom.html">ModuleRandom</a></span></span></li>
-<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/signature</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/signature/module-sign.js~BlockSign.html">BlockSign</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/signature/module-verify.js~VerifyModule.html">VerifyModule</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/signature</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/signature/module-sign.js~ModuleSign.html">ModuleSign</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/signature/module-verify.js~ModuleVerify.html">ModuleVerify</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/signature/utils</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/signature/utils/drop-file-area.js~DropFileArea.html">DropFileArea</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/signature/utils/sign-area.js~SignArea.html">SignArea</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/skipchain</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/skipchain/module-skipchain.js~ModuleSkipChain.html">ModuleSkipChain</a></span></span></li>
@@ -72,11 +73,11 @@ import FileDropArea from &apos;./utils/drop-file-area&apos;
 import SignArea from &apos;./utils/sign-area&apos;
 
 /**
- * @author Gaylor Bosson (gaylor.bosson@epfl.ch)
- *
  * Module to upload a file and sign it using the current skipchain
+ *
+ * @author Gaylor Bosson (gaylor.bosson@epfl.ch)
  */
-export default class BlockSign extends React.Component {
+export default class ModuleSign extends React.Component {
 
   /**
    * @constructor
@@ -95,7 +96,7 @@ export default class BlockSign extends React.Component {
 
   /**
    * Change the file we want to sign
-   * @param file
+   * @param {File} file
    */
   handleFileDropped(file) {
     this.setState({
@@ -110,6 +111,11 @@ export default class BlockSign extends React.Component {
     this.setState({file: undefined});
   }
 
+  /**
+   * @override
+   * @see https://facebook.github.io/react/docs/react-component.html
+   * @returns {XML}
+   */
   render() {
     const {file} = this.state;
     const body = file ?

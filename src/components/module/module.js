@@ -4,10 +4,10 @@ import FontAwesome from 'react-fontawesome'
 import './module.css'
 
 /**
- * @author Gaylor Bosson (gaylor.bosson@epfl.ch)
- *
  * Base component of a module. You can define the title of the module and its icon using the name
  * of an icon in http://fontawesome.io/icons/
+ *
+ * @author Gaylor Bosson (gaylor.bosson@epfl.ch)
  */
 export default class Module extends React.Component {
   
@@ -16,7 +16,12 @@ export default class Module extends React.Component {
     title: T.string,
     icon: T.string
   };
-  
+
+  /**
+   * @override
+   * @see https://facebook.github.io/react/docs/react-component.html
+   * @returns {XML}
+   */
   render() {
     const {icon, title} = this.props;
     const className = `module ${this.props.className || ''}`;

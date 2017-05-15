@@ -3,10 +3,10 @@ import GenesisService from '../services/genesis'
 import ByteBuffer from 'bytebuffer'
 
 /**
- * @author Gaylor Bosson (gaylor.bosson@epfl.ch)
- *
  * This service takes care to trigger open and back events to components when the user
  * click on an HTML skipchain
+ *
+ * @author Gaylor Bosson (gaylor.bosson@epfl.ch)
  */
 export class IFrameService {
 
@@ -26,12 +26,20 @@ export class IFrameService {
     });
   }
 
+  /**
+   * Subscribe the listener to the upcoming events
+   * @param {Object} listener
+   */
   subscribe(listener) {
     if (this.listeners.indexOf(listener) === -1) {
       this.listeners.push(listener);
     }
   }
 
+  /**
+   * Remove the listener from the list of subscribed objects
+   * @param {Object} listener
+   */
   unsubscribe(listener) {
     const index = this.listeners.indexOf(listener);
     if (index > -1) {
@@ -41,7 +49,7 @@ export class IFrameService {
 
   /**
    * Fetch and display the page of the skipchain with the given genesis ID
-   * @param id {String} 64 hex-digits ID of the genesis block
+   * @param {String} id - 64 hex-digits ID of the genesis block
    */
   open(id) {
 
@@ -64,8 +72,8 @@ export class IFrameService {
 
   /**
    * Call the open callback of each listener
-   * @param listener
-   * @param html
+   * @param {Object} listener
+   * @param {String} html
    * @private
    */
   static _triggerOpenEvent(listener, html) {
@@ -76,7 +84,7 @@ export class IFrameService {
 
   /**
    * Call the back callback of each listener
-   * @param listener
+   * @param {Object} listener
    * @private
    */
   static _triggerBackEvent(listener) {

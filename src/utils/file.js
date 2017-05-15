@@ -1,6 +1,6 @@
 /**
  * Read the given file object and return a promise that will resolve with the hash of the file
- * @param file File
+ * @param {File} file
  */
 export function hashFile(file) {
   
@@ -18,7 +18,7 @@ export function hashFile(file) {
 
 /**
  * Read a file as a string
- * @param file
+ * @param {File} file
  * @returns {Promise}
  */
 export function readAsString(file) {

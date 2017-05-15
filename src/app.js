@@ -7,6 +7,13 @@ import {
 import Home from './app/home'
 import ModuleRandom from './components/module/random/module-random'
 
+/**
+ * Entry point of the application
+ * External routes are used to integrate modules in an IFrame for distant website
+ *
+ * @author Gaylor Bosson (gaylor.bosson@epfl.ch)
+ * @constructor
+ */
 const App = () => (
   <BrowserRouter>
     <div>

@@ -236,7 +236,7 @@
         "trailingComments": [
           {
             "type": "CommentBlock",
-            "value": "*\n * @author Gaylor Bosson (gaylor.bosson@epfl.ch)\n *\n * This model defines the structure of the signature file the user can download after a signature request\n ",
+            "value": "*\n * This model defines the structure of the signature file the user can download after a signature request\n *\n * @author Gaylor Bosson (gaylor.bosson@epfl.ch)\n ",
             "start": 78,
             "end": 243,
             "loc": {
@@ -958,7 +958,7 @@
                 "trailingComments": [
                   {
                     "type": "CommentBlock",
-                    "value": "*\n   * @param name {String}\n   ",
+                    "value": "*\n   * @param {String} name\n   ",
                     "start": 496,
                     "end": 531,
                     "loc": {
@@ -1150,7 +1150,7 @@
                 "leadingComments": [
                   {
                     "type": "CommentBlock",
-                    "value": "*\n   * @param name {String}\n   ",
+                    "value": "*\n   * @param {String} name\n   ",
                     "start": 496,
                     "end": 531,
                     "loc": {
@@ -1327,7 +1327,7 @@
                 "trailingComments": [
                   {
                     "type": "CommentBlock",
-                    "value": "*\n   *\n   * @param signature {Uint8Array}\n   ",
+                    "value": "*\n   *\n   * @param {Uint8Array} signature\n   ",
                     "start": 671,
                     "end": 720,
                     "loc": {
@@ -1553,7 +1553,7 @@
                 "leadingComments": [
                   {
                     "type": "CommentBlock",
-                    "value": "*\n   *\n   * @param signature {Uint8Array}\n   ",
+                    "value": "*\n   *\n   * @param {Uint8Array} signature\n   ",
                     "start": 671,
                     "end": 720,
                     "loc": {
@@ -1764,7 +1764,7 @@
                 "trailingComments": [
                   {
                     "type": "CommentBlock",
-                    "value": "*\n   *\n   * @param hash {Uint8Array}\n   ",
+                    "value": "*\n   *\n   * @param {Uint8Array} hash\n   ",
                     "start": 901,
                     "end": 945,
                     "loc": {
@@ -1990,7 +1990,7 @@
                 "leadingComments": [
                   {
                     "type": "CommentBlock",
-                    "value": "*\n   *\n   * @param hash {Uint8Array}\n   ",
+                    "value": "*\n   *\n   * @param {Uint8Array} hash\n   ",
                     "start": 901,
                     "end": 945,
                     "loc": {
@@ -2008,7 +2008,7 @@
                 "trailingComments": [
                   {
                     "type": "CommentBlock",
-                    "value": "*\n   * Return the hash in hex or buffer form\n   * @param hex {Boolean}\n   * @returns {Uint8Array}\n   ",
+                    "value": "*\n   * Return the hash in hex or buffer form\n   * @param {Boolean} hex\n   * @returns {Uint8Array}\n   ",
                     "start": 1002,
                     "end": 1107,
                     "loc": {
@@ -2312,7 +2312,7 @@
                 "leadingComments": [
                   {
                     "type": "CommentBlock",
-                    "value": "*\n   * Return the hash in hex or buffer form\n   * @param hex {Boolean}\n   * @returns {Uint8Array}\n   ",
+                    "value": "*\n   * Return the hash in hex or buffer form\n   * @param {Boolean} hex\n   * @returns {Uint8Array}\n   ",
                     "start": 1002,
                     "end": 1107,
                     "loc": {
@@ -2330,7 +2330,7 @@
                 "trailingComments": [
                   {
                     "type": "CommentBlock",
-                    "value": "*\n   *\n   * @param id {String|Uint8Array}\n   ",
+                    "value": "*\n   *\n   * @param {String|Uint8Array} id\n   ",
                     "start": 1189,
                     "end": 1238,
                     "loc": {
@@ -2728,7 +2728,7 @@
                 "leadingComments": [
                   {
                     "type": "CommentBlock",
-                    "value": "*\n   *\n   * @param id {String|Uint8Array}\n   ",
+                    "value": "*\n   *\n   * @param {String|Uint8Array} id\n   ",
                     "start": 1189,
                     "end": 1238,
                     "loc": {
@@ -2746,7 +2746,7 @@
                 "trailingComments": [
                   {
                     "type": "CommentBlock",
-                    "value": "*\n   *\n   * @param hex {Boolean}\n   * @returns {String|Uint8Array}\n   ",
+                    "value": "*\n   *\n   * @param {Boolean} hex\n   * @returns {String|Uint8Array}\n   ",
                     "start": 1357,
                     "end": 1431,
                     "loc": {
@@ -3050,7 +3050,7 @@
                 "leadingComments": [
                   {
                     "type": "CommentBlock",
-                    "value": "*\n   *\n   * @param hex {Boolean}\n   * @returns {String|Uint8Array}\n   ",
+                    "value": "*\n   *\n   * @param {Boolean} hex\n   * @returns {String|Uint8Array}\n   ",
                     "start": 1357,
                     "end": 1431,
                     "loc": {
@@ -3068,7 +3068,7 @@
                 "trailingComments": [
                   {
                     "type": "CommentBlock",
-                    "value": "*\n   *\n   * @param id {Uint8Array|String}\n   ",
+                    "value": "*\n   *\n   * @param {Uint8Array|String} id\n   ",
                     "start": 1528,
                     "end": 1577,
                     "loc": {
@@ -3466,7 +3466,7 @@
                 "leadingComments": [
                   {
                     "type": "CommentBlock",
-                    "value": "*\n   *\n   * @param id {Uint8Array|String}\n   ",
+                    "value": "*\n   *\n   * @param {Uint8Array|String} id\n   ",
                     "start": 1528,
                     "end": 1577,
                     "loc": {
@@ -3484,7 +3484,7 @@
                 "trailingComments": [
                   {
                     "type": "CommentBlock",
-                    "value": "*\n   *\n   * @param hex {Boolean}\n   * @returns {String|Uint8Array}\n   ",
+                    "value": "*\n   *\n   * @param {Boolean} hex\n   * @returns {String|Uint8Array}\n   ",
                     "start": 1692,
                     "end": 1766,
                     "loc": {
@@ -3788,7 +3788,7 @@
                 "leadingComments": [
                   {
                     "type": "CommentBlock",
-                    "value": "*\n   *\n   * @param hex {Boolean}\n   * @returns {String|Uint8Array}\n   ",
+                    "value": "*\n   *\n   * @param {Boolean} hex\n   * @returns {String|Uint8Array}\n   ",
                     "start": 1692,
                     "end": 1766,
                     "loc": {
@@ -3806,7 +3806,7 @@
                 "trailingComments": [
                   {
                     "type": "CommentBlock",
-                    "value": "*\n   *\n   * @param servers {Array}\n   ",
+                    "value": "*\n   *\n   * @param {Array} servers\n   ",
                     "start": 1857,
                     "end": 1899,
                     "loc": {
@@ -3998,7 +3998,7 @@
                 "leadingComments": [
                   {
                     "type": "CommentBlock",
-                    "value": "*\n   *\n   * @param servers {Array}\n   ",
+                    "value": "*\n   *\n   * @param {Array} servers\n   ",
                     "start": 1857,
                     "end": 1899,
                     "loc": {
@@ -5438,7 +5438,7 @@
                 "trailingComments": [
                   {
                     "type": "CommentBlock",
-                    "value": "*\n   * Parse a given string from a signature file and populate the fields\n   * @param content {String}\n   ",
+                    "value": "*\n   * Parse a given string from a signature file and populate the fields\n   * @param {String} content\n   ",
                     "start": 2590,
                     "end": 2700,
                     "loc": {
@@ -7143,7 +7143,7 @@
                 "leadingComments": [
                   {
                     "type": "CommentBlock",
-                    "value": "*\n   * Parse a given string from a signature file and populate the fields\n   * @param content {String}\n   ",
+                    "value": "*\n   * Parse a given string from a signature file and populate the fields\n   * @param {String} content\n   ",
                     "start": 2590,
                     "end": 2700,
                     "loc": {
@@ -7164,7 +7164,7 @@
           "leadingComments": [
             {
               "type": "CommentBlock",
-              "value": "*\n * @author Gaylor Bosson (gaylor.bosson@epfl.ch)\n *\n * This model defines the structure of the signature file the user can download after a signature request\n ",
+              "value": "*\n * This model defines the structure of the signature file the user can download after a signature request\n *\n * @author Gaylor Bosson (gaylor.bosson@epfl.ch)\n ",
               "start": 78,
               "end": 243,
               "loc": {
@@ -7184,7 +7184,7 @@
         "leadingComments": [
           {
             "type": "CommentBlock",
-            "value": "*\n * @author Gaylor Bosson (gaylor.bosson@epfl.ch)\n *\n * This model defines the structure of the signature file the user can download after a signature request\n ",
+            "value": "*\n * This model defines the structure of the signature file the user can download after a signature request\n *\n * @author Gaylor Bosson (gaylor.bosson@epfl.ch)\n ",
             "start": 78,
             "end": 243,
             "loc": {
@@ -7206,7 +7206,7 @@
   "comments": [
     {
       "type": "CommentBlock",
-      "value": "*\n * @author Gaylor Bosson (gaylor.bosson@epfl.ch)\n *\n * This model defines the structure of the signature file the user can download after a signature request\n ",
+      "value": "*\n * This model defines the structure of the signature file the user can download after a signature request\n *\n * @author Gaylor Bosson (gaylor.bosson@epfl.ch)\n ",
       "start": 78,
       "end": 243,
       "loc": {
@@ -7238,7 +7238,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   * @param name {String}\n   ",
+      "value": "*\n   * @param {String} name\n   ",
       "start": 496,
       "end": 531,
       "loc": {
@@ -7270,7 +7270,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   *\n   * @param signature {Uint8Array}\n   ",
+      "value": "*\n   *\n   * @param {Uint8Array} signature\n   ",
       "start": 671,
       "end": 720,
       "loc": {
@@ -7302,7 +7302,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   *\n   * @param hash {Uint8Array}\n   ",
+      "value": "*\n   *\n   * @param {Uint8Array} hash\n   ",
       "start": 901,
       "end": 945,
       "loc": {
@@ -7318,7 +7318,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   * Return the hash in hex or buffer form\n   * @param hex {Boolean}\n   * @returns {Uint8Array}\n   ",
+      "value": "*\n   * Return the hash in hex or buffer form\n   * @param {Boolean} hex\n   * @returns {Uint8Array}\n   ",
       "start": 1002,
       "end": 1107,
       "loc": {
@@ -7334,7 +7334,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   *\n   * @param id {String|Uint8Array}\n   ",
+      "value": "*\n   *\n   * @param {String|Uint8Array} id\n   ",
       "start": 1189,
       "end": 1238,
       "loc": {
@@ -7350,7 +7350,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   *\n   * @param hex {Boolean}\n   * @returns {String|Uint8Array}\n   ",
+      "value": "*\n   *\n   * @param {Boolean} hex\n   * @returns {String|Uint8Array}\n   ",
       "start": 1357,
       "end": 1431,
       "loc": {
@@ -7366,7 +7366,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   *\n   * @param id {Uint8Array|String}\n   ",
+      "value": "*\n   *\n   * @param {Uint8Array|String} id\n   ",
       "start": 1528,
       "end": 1577,
       "loc": {
@@ -7382,7 +7382,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   *\n   * @param hex {Boolean}\n   * @returns {String|Uint8Array}\n   ",
+      "value": "*\n   *\n   * @param {Boolean} hex\n   * @returns {String|Uint8Array}\n   ",
       "start": 1692,
       "end": 1766,
       "loc": {
@@ -7398,7 +7398,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   *\n   * @param servers {Array}\n   ",
+      "value": "*\n   *\n   * @param {Array} servers\n   ",
       "start": 1857,
       "end": 1899,
       "loc": {
@@ -7462,7 +7462,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   * Parse a given string from a signature file and populate the fields\n   * @param content {String}\n   ",
+      "value": "*\n   * Parse a given string from a signature file and populate the fields\n   * @param {String} content\n   ",
       "start": 2590,
       "end": 2700,
       "loc": {
@@ -7796,7 +7796,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n * @author Gaylor Bosson (gaylor.bosson@epfl.ch)\n *\n * This model defines the structure of the signature file the user can download after a signature request\n ",
+      "value": "*\n * This model defines the structure of the signature file the user can download after a signature request\n *\n * @author Gaylor Bosson (gaylor.bosson@epfl.ch)\n ",
       "start": 78,
       "end": 243,
       "loc": {
@@ -9055,7 +9055,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   * @param name {String}\n   ",
+      "value": "*\n   * @param {String} name\n   ",
       "start": 496,
       "end": 531,
       "loc": {
@@ -9658,7 +9658,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   *\n   * @param signature {Uint8Array}\n   ",
+      "value": "*\n   *\n   * @param {Uint8Array} signature\n   ",
       "start": 671,
       "end": 720,
       "loc": {
@@ -10413,7 +10413,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   *\n   * @param hash {Uint8Array}\n   ",
+      "value": "*\n   *\n   * @param {Uint8Array} hash\n   ",
       "start": 901,
       "end": 945,
       "loc": {
@@ -10816,7 +10816,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   * Return the hash in hex or buffer form\n   * @param hex {Boolean}\n   * @returns {Uint8Array}\n   ",
+      "value": "*\n   * Return the hash in hex or buffer form\n   * @param {Boolean} hex\n   * @returns {Uint8Array}\n   ",
       "start": 1002,
       "end": 1107,
       "loc": {
@@ -11407,7 +11407,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   *\n   * @param id {String|Uint8Array}\n   ",
+      "value": "*\n   *\n   * @param {String|Uint8Array} id\n   ",
       "start": 1189,
       "end": 1238,
       "loc": {
@@ -12151,7 +12151,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   *\n   * @param hex {Boolean}\n   * @returns {String|Uint8Array}\n   ",
+      "value": "*\n   *\n   * @param {Boolean} hex\n   * @returns {String|Uint8Array}\n   ",
       "start": 1357,
       "end": 1431,
       "loc": {
@@ -12742,7 +12742,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   *\n   * @param id {Uint8Array|String}\n   ",
+      "value": "*\n   *\n   * @param {Uint8Array|String} id\n   ",
       "start": 1528,
       "end": 1577,
       "loc": {
@@ -13486,7 +13486,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   *\n   * @param hex {Boolean}\n   * @returns {String|Uint8Array}\n   ",
+      "value": "*\n   *\n   * @param {Boolean} hex\n   * @returns {String|Uint8Array}\n   ",
       "start": 1692,
       "end": 1766,
       "loc": {
@@ -14077,7 +14077,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   *\n   * @param servers {Array}\n   ",
+      "value": "*\n   *\n   * @param {Array} servers\n   ",
       "start": 1857,
       "end": 1899,
       "loc": {
@@ -17267,7 +17267,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   * Parse a given string from a signature file and populate the fields\n   * @param content {String}\n   ",
+      "value": "*\n   * Parse a given string from a signature file and populate the fields\n   * @param {String} content\n   ",
       "start": 2590,
       "end": 2700,
       "loc": {

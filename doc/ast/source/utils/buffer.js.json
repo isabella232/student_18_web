@@ -101,7 +101,7 @@
         "trailingComments": [
           {
             "type": "CommentBlock",
-            "value": "*\n * Given a hexadecimal string it converts it to a Uint8Array buffer\n * @param hex {String}\n * @returns {Uint8Array}\n ",
+            "value": "*\n * Given a hexadecimal string it converts it to a Uint8Array buffer\n * @param {String} hex\n * @returns {Uint8Array}\n ",
             "start": 37,
             "end": 160,
             "loc": {
@@ -375,7 +375,7 @@
           "leadingComments": [
             {
               "type": "CommentBlock",
-              "value": "*\n * Given a hexadecimal string it converts it to a Uint8Array buffer\n * @param hex {String}\n * @returns {Uint8Array}\n ",
+              "value": "*\n * Given a hexadecimal string it converts it to a Uint8Array buffer\n * @param {String} hex\n * @returns {Uint8Array}\n ",
               "start": 37,
               "end": 160,
               "loc": {
@@ -393,7 +393,7 @@
           "trailingComments": [
             {
               "type": "CommentBlock",
-              "value": "*\n * Given a buffer, convert it to an hexadecimal string\n * @param buffer {Uint8Array}\n * @returns {String}\n ",
+              "value": "*\n * Given a buffer, convert it to an hexadecimal string\n * @param {Uint8Array} buffer\n * @returns {String}\n ",
               "start": 252,
               "end": 365,
               "loc": {
@@ -412,7 +412,7 @@
         "leadingComments": [
           {
             "type": "CommentBlock",
-            "value": "*\n * Given a hexadecimal string it converts it to a Uint8Array buffer\n * @param hex {String}\n * @returns {Uint8Array}\n ",
+            "value": "*\n * Given a hexadecimal string it converts it to a Uint8Array buffer\n * @param {String} hex\n * @returns {Uint8Array}\n ",
             "start": 37,
             "end": 160,
             "loc": {
@@ -430,7 +430,7 @@
         "trailingComments": [
           {
             "type": "CommentBlock",
-            "value": "*\n * Given a buffer, convert it to an hexadecimal string\n * @param buffer {Uint8Array}\n * @returns {String}\n ",
+            "value": "*\n * Given a buffer, convert it to an hexadecimal string\n * @param {Uint8Array} buffer\n * @returns {String}\n ",
             "start": 252,
             "end": 365,
             "loc": {
@@ -791,7 +791,7 @@
           "leadingComments": [
             {
               "type": "CommentBlock",
-              "value": "*\n * Given a buffer, convert it to an hexadecimal string\n * @param buffer {Uint8Array}\n * @returns {String}\n ",
+              "value": "*\n * Given a buffer, convert it to an hexadecimal string\n * @param {Uint8Array} buffer\n * @returns {String}\n ",
               "start": 252,
               "end": 365,
               "loc": {
@@ -811,7 +811,7 @@
         "leadingComments": [
           {
             "type": "CommentBlock",
-            "value": "*\n * Given a buffer, convert it to an hexadecimal string\n * @param buffer {Uint8Array}\n * @returns {String}\n ",
+            "value": "*\n * Given a buffer, convert it to an hexadecimal string\n * @param {Uint8Array} buffer\n * @returns {String}\n ",
             "start": 252,
             "end": 365,
             "loc": {
@@ -833,7 +833,7 @@
   "comments": [
     {
       "type": "CommentBlock",
-      "value": "*\n * Given a hexadecimal string it converts it to a Uint8Array buffer\n * @param hex {String}\n * @returns {Uint8Array}\n ",
+      "value": "*\n * Given a hexadecimal string it converts it to a Uint8Array buffer\n * @param {String} hex\n * @returns {Uint8Array}\n ",
       "start": 37,
       "end": 160,
       "loc": {
@@ -849,7 +849,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n * Given a buffer, convert it to an hexadecimal string\n * @param buffer {Uint8Array}\n * @returns {String}\n ",
+      "value": "*\n * Given a buffer, convert it to an hexadecimal string\n * @param {Uint8Array} buffer\n * @returns {String}\n ",
       "start": 252,
       "end": 365,
       "loc": {
@@ -974,7 +974,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n * Given a hexadecimal string it converts it to a Uint8Array buffer\n * @param hex {String}\n * @returns {Uint8Array}\n ",
+      "value": "*\n * Given a hexadecimal string it converts it to a Uint8Array buffer\n * @param {String} hex\n * @returns {Uint8Array}\n ",
       "start": 37,
       "end": 160,
       "loc": {
@@ -1561,7 +1561,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n * Given a buffer, convert it to an hexadecimal string\n * @param buffer {Uint8Array}\n * @returns {String}\n ",
+      "value": "*\n * Given a buffer, convert it to an hexadecimal string\n * @param {Uint8Array} buffer\n * @returns {String}\n ",
       "start": 252,
       "end": 365,
       "loc": {

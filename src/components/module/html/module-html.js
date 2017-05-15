@@ -7,10 +7,10 @@ import GenesisService from '../../../services/genesis'
 import IFrameService from '../../../services/iframe'
 
 /**
- * @author Gaylor Bosson (gaylor.bosson@epfl.ch)
- *
  * This module diplays the list of HTML skipchain. It shows only the ones with a base URL meaning that https://dedis.ch
  * will be shown but not https://dedis.ch/blabla
+ *
+ * @author Gaylor Bosson (gaylor.bosson@epfl.ch)
  */
 export default class ModuleHTML extends React.Component {
 
@@ -28,8 +28,8 @@ export default class ModuleHTML extends React.Component {
 
   /**
    * @see GenesisService._triggerEvent
-   * @param blocks {Array}
-   * @param genesisList {Array}
+   * @param {Array} blocks - unused
+   * @param {Array} genesisList - List of the genesis blocks available
    */
   onGenesisUpdate(blocks, genesisList) {
     this.setState({
@@ -52,14 +52,27 @@ export default class ModuleHTML extends React.Component {
     IFrameService.open(id)
   }
 
+  /**
+   * @override
+   * @see https://facebook.github.io/react/docs/react-component.html
+   */
   componentWillMount() {
     GenesisService.subscribe(this);
   }
 
+  /**
+   * @override
+   * @see https://facebook.github.io/react/docs/react-component.html
+   */
   componentWillUnmount() {
     GenesisService.unsubscribe(this);
   }
 
+  /**
+   * @override
+   * @see https://facebook.github.io/react/docs/react-component.html
+   * @returns {XML}
+   */
   render() {
     const {genesisList} = this.state;
 

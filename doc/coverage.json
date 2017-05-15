@@ -1,23 +1,12 @@
 {
-  "coverage": "51.46%",
-  "expectCount": 171,
-  "actualCount": 88,
+  "coverage": "72.67%",
+  "expectCount": 172,
+  "actualCount": 125,
   "files": {
     "src/app.js": {
-      "expectCount": 2,
-      "actualCount": 0,
-      "undocumentLines": [
-        14,
-        15
-      ]
-    },
-    "src/components/module/signature/module-sign.js": {
-      "expectCount": 6,
-      "actualCount": 4,
-      "undocumentLines": [
-        47,
-        22
-      ]
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
     },
     "src/lib/cothority-messages.js": {
       "expectCount": 17,
@@ -49,123 +38,109 @@
     },
     "src/components/module/signature/utils/drop-file-area.js": {
       "expectCount": 7,
-      "actualCount": 5,
+      "actualCount": 6,
       "undocumentLines": [
-        13,
-        54
+        13
       ]
     },
     "src/services/genesis.js": {
       "expectCount": 12,
       "actualCount": 7,
       "undocumentLines": [
+        25,
         24,
+        78,
         23,
-        77,
-        22,
-        21
+        22
       ]
     },
     "src/components/html-iframe/html-iframe.js": {
       "expectCount": 9,
-      "actualCount": 5,
+      "actualCount": 8,
       "undocumentLines": [
-        51,
-        55,
-        59,
         20
       ]
     },
+    "src/app/home.js": {
+      "expectCount": 2,
+      "actualCount": 2,
+      "undocumentLines": []
+    },
     "src/services/iframe.js": {
       "expectCount": 7,
-      "actualCount": 4,
+      "actualCount": 6,
       "undocumentLines": [
-        19,
-        29,
-        35
+        19
       ]
     },
     "src/components/servers-status/last-update.js": {
       "expectCount": 7,
-      "actualCount": 1,
+      "actualCount": 4,
       "undocumentLines": [
-        19,
-        25,
         15,
         10,
-        22,
-        29
+        26
       ]
     },
     "src/components/loading/loading-spinner.js": {
       "expectCount": 2,
-      "actualCount": 1,
-      "undocumentLines": [
-        12
-      ]
+      "actualCount": 2,
+      "undocumentLines": []
     },
     "src/components/module/module.js": {
       "expectCount": 3,
-      "actualCount": 1,
+      "actualCount": 2,
       "undocumentLines": [
-        14,
-        20
+        14
       ]
     },
     "src/components/module/html/module-html.js": {
       "expectCount": 8,
-      "actualCount": 4,
+      "actualCount": 7,
       "undocumentLines": [
-        55,
-        59,
-        63,
         24
       ]
     },
     "src/components/module/random/module-random.js": {
       "expectCount": 5,
-      "actualCount": 0,
+      "actualCount": 4,
       "undocumentLines": [
-        11,
-        21,
-        13,
-        25,
-        16
+        27
+      ]
+    },
+    "src/components/module/signature/module-sign.js": {
+      "expectCount": 6,
+      "actualCount": 5,
+      "undocumentLines": [
+        22
       ]
     },
     "src/components/module/skipchain/module-skipchain.js": {
       "expectCount": 9,
-      "actualCount": 0,
+      "actualCount": 8,
       "undocumentLines": [
-        10,
-        52,
-        56,
-        12,
-        44,
-        40,
-        23,
-        60,
-        15
+        25
+      ]
+    },
+    "src/components/module/signature/module-verify.js": {
+      "expectCount": 6,
+      "actualCount": 5,
+      "undocumentLines": [
+        28
       ]
     },
     "src/components/servers-status/servers-status.js": {
       "expectCount": 7,
-      "actualCount": 3,
+      "actualCount": 6,
       "undocumentLines": [
-        44,
-        48,
-        52,
         24
       ]
     },
     "src/components/module/signature/utils/sign-area.js": {
       "expectCount": 11,
-      "actualCount": 6,
+      "actualCount": 9,
       "undocumentLines": [
-        44,
-        48,
         20,
-        143,
         32
       ]
     },
@@ -195,14 +170,6 @@
         23,
         21,
         19
-      ]
-    },
-    "src/components/module/signature/module-verify.js": {
-      "expectCount": 6,
-      "actualCount": 4,
-      "undocumentLines": [
-        84,
-        28
       ]
     },
     "src/utils/buffer.js": {

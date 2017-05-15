@@ -32,14 +32,15 @@
 <nav class="navigation" data-ice="nav"><div>
   <ul>
     
-  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/app.js~App.html">App</a></span></span></li>
+  <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-App">App</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">app</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/app/home.js~Home.html">Home</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/html-iframe</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/html-iframe/html-iframe.js~HTMLIFrame.html">HTMLIFrame</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/loading</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/loading/loading-spinner.js~LoadingSpinner.html">LoadingSpinner</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/module.js~Module.html">Module</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/html</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/html/module-html.js~ModuleHTML.html">ModuleHTML</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/random</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/random/module-random.js~ModuleRandom.html">ModuleRandom</a></span></span></li>
-<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/signature</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/signature/module-sign.js~BlockSign.html">BlockSign</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/signature/module-verify.js~VerifyModule.html">VerifyModule</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/signature</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/signature/module-sign.js~ModuleSign.html">ModuleSign</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/signature/module-verify.js~ModuleVerify.html">ModuleVerify</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/signature/utils</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/signature/utils/drop-file-area.js~DropFileArea.html">DropFileArea</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/signature/utils/sign-area.js~SignArea.html">SignArea</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/skipchain</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/skipchain/module-skipchain.js~ModuleSkipChain.html">ModuleSkipChain</a></span></span></li>
@@ -73,8 +74,18 @@ import {Scrollbars} from &apos;react-custom-scrollbars&apos;;
 import &apos;./module-skipchain.css&apos;
 import GenesisService from &apos;../../../services/genesis&apos;
 
+/**
+ * This module displays the list of the available skipchains except the ones
+ * that contains an URL in the data
+ *
+ * @author Gaylor Bosson (gaylor.bosson@dmetrics.com)
+ */
 export default class ModuleSkipChain extends React.Component {
 
+  /**
+   * @constructor
+   * @param props
+   */
   constructor(props) {
     super(props);
 
@@ -86,6 +97,12 @@ export default class ModuleSkipChain extends React.Component {
     this.handleGenesisChange = this.handleGenesisChange.bind(this);
   }
 
+  /**
+   * It will update the state with the current skipchain
+   * @param {Array} blocks
+   * @param {Array} genesisList
+   * @param {String} curr_genesis
+   */
   onGenesisUpdate(blocks, genesisList, curr_genesis) {
     this.setState({
       blocks,
@@ -103,10 +120,18 @@ export default class ModuleSkipChain extends React.Component {
     });
   }
 
+  /**
+   * Update the state to display the error
+   * @param {Error} error
+   */
   onGenesisError(error) {
     this.setState({error});
   }
 
+  /**
+   * It will trigger the skipchain change to the genesis service
+   * @param {String} id - the new genesis block
+   */
   handleGenesisChange(id) {
     const {currGenesis} = this.state;
 
@@ -115,19 +140,32 @@ export default class ModuleSkipChain extends React.Component {
     }
   }
 
+  /**
+   * @override
+   * @see https://facebook.github.io/react/docs/react-component.html
+   */
   componentWillMount() {
     GenesisService.subscribe(this);
   }
 
+  /**
+   * @override
+   * @see https://facebook.github.io/react/docs/react-component.html
+   */
   componentWillUnmount() {
     GenesisService.unsubscribe(this);
   }
 
+  /**
+   * @override
+   * @see https://facebook.github.io/react/docs/react-component.html
+   * @returns {XML}
+   */
   render() {
     const {genesisList, currGenesis, error} = this.state;
 
     if (error) {
-      return this._renderError(error);
+      return ModuleSkipChain._renderError(error);
     }
 
     const rows = genesisList.map(b =&gt; {
@@ -152,7 +190,13 @@ export default class ModuleSkipChain extends React.Component {
     );
   }
 
-  _renderError(error) {
+  /**
+   * Return the XML to display an error when it occurs
+   * @param {Error} error
+   * @returns {XML}
+   * @private
+   */
+  static _renderError(error) {
     return (
       &lt;Module title=&quot;SkipChain&quot; icon=&quot;chain&quot; className=&quot;module-skip-chain&quot;&gt;
         &lt;p className=&quot;has-error&quot;&gt;

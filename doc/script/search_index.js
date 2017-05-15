@@ -1,15 +1,9 @@
 window.esdocSearchIndex = [
   [
     "cothority-web/src/app.js~app",
-    "class/src/app.js~App.html",
+    "function/index.html#static-function-App",
     "<span>App</span> <span class=\"search-result-import-path\">cothority-web/src/app.js</span>",
-    "class"
-  ],
-  [
-    "cothority-web/src/components/module/signature/module-sign.js~blocksign",
-    "class/src/components/module/signature/module-sign.js~BlockSign.html",
-    "<span>BlockSign</span> <span class=\"search-result-import-path\">cothority-web/src/components/module/signature/module-sign.js</span>",
-    "class"
+    "function"
   ],
   [
     "cothority-web/src/lib/cothority-messages.js~cothoritymessages",
@@ -45,6 +39,12 @@ window.esdocSearchIndex = [
     "cothority-web/src/components/html-iframe/html-iframe.js~htmliframe",
     "class/src/components/html-iframe/html-iframe.js~HTMLIFrame.html",
     "<span>HTMLIFrame</span> <span class=\"search-result-import-path\">cothority-web/src/components/html-iframe/html-iframe.js</span>",
+    "class"
+  ],
+  [
+    "cothority-web/src/app/home.js~home",
+    "class/src/app/home.js~Home.html",
+    "<span>Home</span> <span class=\"search-result-import-path\">cothority-web/src/app/home.js</span>",
     "class"
   ],
   [
@@ -84,9 +84,21 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "cothority-web/src/components/module/signature/module-sign.js~modulesign",
+    "class/src/components/module/signature/module-sign.js~ModuleSign.html",
+    "<span>ModuleSign</span> <span class=\"search-result-import-path\">cothority-web/src/components/module/signature/module-sign.js</span>",
+    "class"
+  ],
+  [
     "cothority-web/src/components/module/skipchain/module-skipchain.js~moduleskipchain",
     "class/src/components/module/skipchain/module-skipchain.js~ModuleSkipChain.html",
     "<span>ModuleSkipChain</span> <span class=\"search-result-import-path\">cothority-web/src/components/module/skipchain/module-skipchain.js</span>",
+    "class"
+  ],
+  [
+    "cothority-web/src/components/module/signature/module-verify.js~moduleverify",
+    "class/src/components/module/signature/module-verify.js~ModuleVerify.html",
+    "<span>ModuleVerify</span> <span class=\"search-result-import-path\">cothority-web/src/components/module/signature/module-verify.js</span>",
     "class"
   ],
   [
@@ -117,12 +129,6 @@ window.esdocSearchIndex = [
     "cothority-web/src/services/status.js~statusservice",
     "class/src/services/status.js~StatusService.html",
     "<span>StatusService</span> <span class=\"search-result-import-path\">cothority-web/src/services/status.js</span>",
-    "class"
-  ],
-  [
-    "cothority-web/src/components/module/signature/module-verify.js~verifymodule",
-    "class/src/components/module/signature/module-verify.js~VerifyModule.html",
-    "<span>VerifyModule</span> <span class=\"search-result-import-path\">cothority-web/src/components/module/signature/module-verify.js</span>",
     "class"
   ],
   [
@@ -498,9 +504,15 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/app.js~app#render",
-    "class/src/app.js~App.html#instance-method-render",
-    "src/app.js~App#render",
+    "src/app/home.js",
+    "file/src/app/home.js.html",
+    "src/app/home.js",
+    "file"
+  ],
+  [
+    "src/app/home.js~home#render",
+    "class/src/app/home.js~Home.html#instance-method-render",
+    "src/app/home.js~Home#render",
     "method"
   ],
   [
@@ -672,33 +684,33 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/components/module/signature/module-sign.js~blocksign#constructor",
-    "class/src/components/module/signature/module-sign.js~BlockSign.html#instance-constructor-constructor",
-    "src/components/module/signature/module-sign.js~BlockSign#constructor",
+    "src/components/module/signature/module-sign.js~modulesign#constructor",
+    "class/src/components/module/signature/module-sign.js~ModuleSign.html#instance-constructor-constructor",
+    "src/components/module/signature/module-sign.js~ModuleSign#constructor",
     "method"
   ],
   [
-    "src/components/module/signature/module-sign.js~blocksign#handleback",
-    "class/src/components/module/signature/module-sign.js~BlockSign.html#instance-method-handleBack",
-    "src/components/module/signature/module-sign.js~BlockSign#handleBack",
+    "src/components/module/signature/module-sign.js~modulesign#handleback",
+    "class/src/components/module/signature/module-sign.js~ModuleSign.html#instance-method-handleBack",
+    "src/components/module/signature/module-sign.js~ModuleSign#handleBack",
     "method"
   ],
   [
-    "src/components/module/signature/module-sign.js~blocksign#handlefiledropped",
-    "class/src/components/module/signature/module-sign.js~BlockSign.html#instance-method-handleFileDropped",
-    "src/components/module/signature/module-sign.js~BlockSign#handleFileDropped",
+    "src/components/module/signature/module-sign.js~modulesign#handlefiledropped",
+    "class/src/components/module/signature/module-sign.js~ModuleSign.html#instance-method-handleFileDropped",
+    "src/components/module/signature/module-sign.js~ModuleSign#handleFileDropped",
     "method"
   ],
   [
-    "src/components/module/signature/module-sign.js~blocksign#render",
-    "class/src/components/module/signature/module-sign.js~BlockSign.html#instance-method-render",
-    "src/components/module/signature/module-sign.js~BlockSign#render",
+    "src/components/module/signature/module-sign.js~modulesign#render",
+    "class/src/components/module/signature/module-sign.js~ModuleSign.html#instance-method-render",
+    "src/components/module/signature/module-sign.js~ModuleSign#render",
     "method"
   ],
   [
-    "src/components/module/signature/module-sign.js~blocksign#state",
-    "class/src/components/module/signature/module-sign.js~BlockSign.html#instance-member-state",
-    "src/components/module/signature/module-sign.js~BlockSign#state",
+    "src/components/module/signature/module-sign.js~modulesign#state",
+    "class/src/components/module/signature/module-sign.js~ModuleSign.html#instance-member-state",
+    "src/components/module/signature/module-sign.js~ModuleSign#state",
     "member"
   ],
   [
@@ -708,33 +720,33 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/components/module/signature/module-verify.js~verifymodule#constructor",
-    "class/src/components/module/signature/module-verify.js~VerifyModule.html#instance-constructor-constructor",
-    "src/components/module/signature/module-verify.js~VerifyModule#constructor",
+    "src/components/module/signature/module-verify.js~moduleverify#constructor",
+    "class/src/components/module/signature/module-verify.js~ModuleVerify.html#instance-constructor-constructor",
+    "src/components/module/signature/module-verify.js~ModuleVerify#constructor",
     "method"
   ],
   [
-    "src/components/module/signature/module-verify.js~verifymodule#handlefiledrop",
-    "class/src/components/module/signature/module-verify.js~VerifyModule.html#instance-method-handleFileDrop",
-    "src/components/module/signature/module-verify.js~VerifyModule#handleFileDrop",
+    "src/components/module/signature/module-verify.js~moduleverify#handlefiledrop",
+    "class/src/components/module/signature/module-verify.js~ModuleVerify.html#instance-method-handleFileDrop",
+    "src/components/module/signature/module-verify.js~ModuleVerify#handleFileDrop",
     "method"
   ],
   [
-    "src/components/module/signature/module-verify.js~verifymodule#handlefilereset",
-    "class/src/components/module/signature/module-verify.js~VerifyModule.html#instance-method-handleFileReset",
-    "src/components/module/signature/module-verify.js~VerifyModule#handleFileReset",
+    "src/components/module/signature/module-verify.js~moduleverify#handlefilereset",
+    "class/src/components/module/signature/module-verify.js~ModuleVerify.html#instance-method-handleFileReset",
+    "src/components/module/signature/module-verify.js~ModuleVerify#handleFileReset",
     "method"
   ],
   [
-    "src/components/module/signature/module-verify.js~verifymodule#render",
-    "class/src/components/module/signature/module-verify.js~VerifyModule.html#instance-method-render",
-    "src/components/module/signature/module-verify.js~VerifyModule#render",
+    "src/components/module/signature/module-verify.js~moduleverify#render",
+    "class/src/components/module/signature/module-verify.js~ModuleVerify.html#instance-method-render",
+    "src/components/module/signature/module-verify.js~ModuleVerify#render",
     "method"
   ],
   [
-    "src/components/module/signature/module-verify.js~verifymodule#state",
-    "class/src/components/module/signature/module-verify.js~VerifyModule.html#instance-member-state",
-    "src/components/module/signature/module-verify.js~VerifyModule#state",
+    "src/components/module/signature/module-verify.js~moduleverify#state",
+    "class/src/components/module/signature/module-verify.js~ModuleVerify.html#instance-member-state",
+    "src/components/module/signature/module-verify.js~ModuleVerify#state",
     "member"
   ],
   [

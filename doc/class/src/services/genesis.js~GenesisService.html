@@ -32,14 +32,15 @@
 <nav class="navigation" data-ice="nav"><div>
   <ul>
     
-  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/app.js~App.html">App</a></span></span></li>
+  <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-App">App</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">app</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/app/home.js~Home.html">Home</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/html-iframe</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/html-iframe/html-iframe.js~HTMLIFrame.html">HTMLIFrame</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/loading</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/loading/loading-spinner.js~LoadingSpinner.html">LoadingSpinner</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/module.js~Module.html">Module</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/html</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/html/module-html.js~ModuleHTML.html">ModuleHTML</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/random</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/random/module-random.js~ModuleRandom.html">ModuleRandom</a></span></span></li>
-<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/signature</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/signature/module-sign.js~BlockSign.html">BlockSign</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/signature/module-verify.js~VerifyModule.html">VerifyModule</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/signature</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/signature/module-sign.js~ModuleSign.html">ModuleSign</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/signature/module-verify.js~ModuleVerify.html">ModuleVerify</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/signature/utils</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/signature/utils/drop-file-area.js~DropFileArea.html">DropFileArea</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/signature/utils/sign-area.js~SignArea.html">SignArea</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/skipchain</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/skipchain/module-skipchain.js~ModuleSkipChain.html">ModuleSkipChain</a></span></span></li>
@@ -64,13 +65,13 @@
 </nav>
 
 <div class="content" data-ice="content"><div class="header-notice">
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {GenesisService} from &apos;<span><a href="file/src/services/genesis.js.html#lineNumber14">cothority-web/src/services/genesis.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {GenesisService} from &apos;<span><a href="file/src/services/genesis.js.html#lineNumber15">cothority-web/src/services/genesis.js</a></span>&apos;</code></pre></div>
   <span data-ice="access">public</span>
   <span data-ice="kind">class</span>
   
   
   
-  <span data-ice="source">| <span><a href="file/src/services/genesis.js.html#lineNumber14">source</a></span></span>
+  <span data-ice="source">| <span><a href="file/src/services/genesis.js.html#lineNumber15">source</a></span></span>
 </div>
 
 <div class="self-detail detail">
@@ -90,7 +91,9 @@
 
   
   
-  
+  <div class="description" data-ice="description"><p>This service will contact the DEDIS server to get the list of skipchains with their servers. Those servers may
+not be available.</p>
+</div>
   
 
   
@@ -298,7 +301,7 @@
         <p>
           
           
-          <span data-ice="name"><span><a href="class/src/services/genesis.js~GenesisService.html#instance-method-getLatestFromGenesisID">getLatestFromGenesisID</a></span></span><span data-ice="signature">(id: <span>*</span>, blockID: <span>*</span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
+          <span data-ice="name"><span><a href="class/src/services/genesis.js~GenesisService.html#instance-method-getLatestFromGenesisID">getLatestFromGenesisID</a></span></span><span data-ice="signature">(id: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>, blockID: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
         </p>
       </div>
       <div>
@@ -328,7 +331,7 @@ If the block ID is not provided, we return the latest block</p>
         <p>
           
           
-          <span data-ice="name"><span><a href="class/src/services/genesis.js~GenesisService.html#instance-method-setCurrentGenesisID">setCurrentGenesisID</a></span></span><span data-ice="signature">(id: <span>*</span>)</span>
+          <span data-ice="name"><span><a href="class/src/services/genesis.js~GenesisService.html#instance-method-setCurrentGenesisID">setCurrentGenesisID</a></span></span><span data-ice="signature">(id: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>)</span>
         </p>
       </div>
       <div>
@@ -356,7 +359,7 @@ If the block ID is not provided, we return the latest block</p>
         <p>
           
           
-          <span data-ice="name"><span><a href="class/src/services/genesis.js~GenesisService.html#instance-method-subscribe">subscribe</a></span></span><span data-ice="signature">(listener: <span>*</span>)</span>
+          <span data-ice="name"><span><a href="class/src/services/genesis.js~GenesisService.html#instance-method-subscribe">subscribe</a></span></span><span data-ice="signature">(listener: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>)</span>
         </p>
       </div>
       <div>
@@ -384,7 +387,7 @@ If the block ID is not provided, we return the latest block</p>
         <p>
           
           
-          <span data-ice="name"><span><a href="class/src/services/genesis.js~GenesisService.html#instance-method-unsubscribe">unsubscribe</a></span></span><span data-ice="signature">(listener: <span>*</span>)</span>
+          <span data-ice="name"><span><a href="class/src/services/genesis.js~GenesisService.html#instance-method-unsubscribe">unsubscribe</a></span></span><span data-ice="signature">(listener: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>)</span>
         </p>
       </div>
       <div>
@@ -412,7 +415,7 @@ If the block ID is not provided, we return the latest block</p>
         <p>
           
           
-          <span data-ice="name"><span><a href="class/src/services/genesis.js~GenesisService.html#instance-method-updateGenesis">updateGenesis</a></span></span><span data-ice="signature">(error: <span>*</span>)</span>
+          <span data-ice="name"><span><a href="class/src/services/genesis.js~GenesisService.html#instance-method-updateGenesis">updateGenesis</a></span></span><span data-ice="signature">(error: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error">Error</a></span>)</span>
         </p>
       </div>
       <div>
@@ -449,7 +452,7 @@ If the block ID is not provided, we return the latest block</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/services/genesis.js.html#lineNumber20">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/services/genesis.js.html#lineNumber21">source</a></span></span>
     </span>
   </h3>
 
@@ -496,7 +499,7 @@ If the block ID is not provided, we return the latest block</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/services/genesis.js.html#lineNumber24">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/services/genesis.js.html#lineNumber25">source</a></span></span>
     </span>
   </h3>
 
@@ -539,7 +542,7 @@ If the block ID is not provided, we return the latest block</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/services/genesis.js.html#lineNumber23">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/services/genesis.js.html#lineNumber24">source</a></span></span>
     </span>
   </h3>
 
@@ -582,7 +585,7 @@ If the block ID is not provided, we return the latest block</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/services/genesis.js.html#lineNumber77">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/services/genesis.js.html#lineNumber78">source</a></span></span>
     </span>
   </h3>
 
@@ -625,7 +628,7 @@ If the block ID is not provided, we return the latest block</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/services/genesis.js.html#lineNumber22">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/services/genesis.js.html#lineNumber23">source</a></span></span>
     </span>
   </h3>
 
@@ -668,7 +671,7 @@ If the block ID is not provided, we return the latest block</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/services/genesis.js.html#lineNumber21">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/services/genesis.js.html#lineNumber22">source</a></span></span>
     </span>
   </h3>
 
@@ -710,11 +713,11 @@ If the block ID is not provided, we return the latest block</p>
     
     
     
-    <span data-ice="name">getLatestFromGenesisID</span><span data-ice="signature">(id: <span>*</span>, blockID: <span>*</span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
+    <span data-ice="name">getLatestFromGenesisID</span><span data-ice="signature">(id: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>, blockID: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/services/genesis.js.html#lineNumber106">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/services/genesis.js.html#lineNumber107">source</a></span></span>
     </span>
   </h3>
 
@@ -738,16 +741,16 @@ If the block ID is not provided, we return the latest block</p>
     
     <tr data-ice="property" data-depth="0">
       <td data-ice="name" data-depth="0">id</td>
-      <td data-ice="type"><span>*</span></td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"><p>{String} Genesis ID</p>
+      <td data-ice="description"><p>Genesis ID</p>
 </td>
     </tr>
 <tr data-ice="property" data-depth="0">
       <td data-ice="name" data-depth="0">blockID</td>
-      <td data-ice="type"><span>*</span></td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"><p>{String} 64 hex-digits Block ID</p>
+      <td data-ice="description"><p>64 hex-digits Block ID</p>
 </td>
     </tr>
 </tbody>
@@ -792,11 +795,11 @@ If the block ID is not provided, we return the latest block</p>
     
     
     
-    <span data-ice="name">setCurrentGenesisID</span><span data-ice="signature">(id: <span>*</span>)</span>
+    <span data-ice="name">setCurrentGenesisID</span><span data-ice="signature">(id: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>)</span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/services/genesis.js.html#lineNumber89">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/services/genesis.js.html#lineNumber90">source</a></span></span>
     </span>
   </h3>
 
@@ -818,9 +821,9 @@ If the block ID is not provided, we return the latest block</p>
     
     <tr data-ice="property" data-depth="0">
       <td data-ice="name" data-depth="0">id</td>
-      <td data-ice="type"><span>*</span></td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"><p>{String} hex form of the ID</p>
+      <td data-ice="description"><p>hex form of the ID</p>
 </td>
     </tr>
 </tbody>
@@ -853,11 +856,11 @@ If the block ID is not provided, we return the latest block</p>
     
     
     
-    <span data-ice="name">subscribe</span><span data-ice="signature">(listener: <span>*</span>)</span>
+    <span data-ice="name">subscribe</span><span data-ice="signature">(listener: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>)</span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/services/genesis.js.html#lineNumber46">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/services/genesis.js.html#lineNumber47">source</a></span></span>
     </span>
   </h3>
 
@@ -879,9 +882,9 @@ If the block ID is not provided, we return the latest block</p>
     
     <tr data-ice="property" data-depth="0">
       <td data-ice="name" data-depth="0">listener</td>
-      <td data-ice="type"><span>*</span></td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"><p>{Object} must have onGenesisUpdate function to get the updates</p>
+      <td data-ice="description"><p>must have onGenesisUpdate function to get the updates</p>
 </td>
     </tr>
 </tbody>
@@ -914,11 +917,11 @@ If the block ID is not provided, we return the latest block</p>
     
     
     
-    <span data-ice="name">unsubscribe</span><span data-ice="signature">(listener: <span>*</span>)</span>
+    <span data-ice="name">unsubscribe</span><span data-ice="signature">(listener: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>)</span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/services/genesis.js.html#lineNumber64">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/services/genesis.js.html#lineNumber65">source</a></span></span>
     </span>
   </h3>
 
@@ -940,10 +943,9 @@ If the block ID is not provided, we return the latest block</p>
     
     <tr data-ice="property" data-depth="0">
       <td data-ice="name" data-depth="0">listener</td>
-      <td data-ice="type"><span>*</span></td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"><p>{Object}</p>
-</td>
+      <td data-ice="description"></td>
     </tr>
 </tbody>
   </table>
@@ -975,11 +977,11 @@ If the block ID is not provided, we return the latest block</p>
     
     
     
-    <span data-ice="name">updateGenesis</span><span data-ice="signature">(error: <span>*</span>)</span>
+    <span data-ice="name">updateGenesis</span><span data-ice="signature">(error: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error">Error</a></span>)</span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/services/genesis.js.html#lineNumber75">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/services/genesis.js.html#lineNumber76">source</a></span></span>
     </span>
   </h3>
 
@@ -1001,9 +1003,9 @@ If the block ID is not provided, we return the latest block</p>
     
     <tr data-ice="property" data-depth="0">
       <td data-ice="name" data-depth="0">error</td>
-      <td data-ice="type"><span>*</span></td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error">Error</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"><p>{Error} a potential error that triggered</p>
+      <td data-ice="description"><p>a potential error that triggered</p>
 </td>
     </tr>
 </tbody>

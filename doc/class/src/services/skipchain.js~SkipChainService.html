@@ -32,14 +32,15 @@
 <nav class="navigation" data-ice="nav"><div>
   <ul>
     
-  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/app.js~App.html">App</a></span></span></li>
+  <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-App">App</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">app</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/app/home.js~Home.html">Home</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/html-iframe</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/html-iframe/html-iframe.js~HTMLIFrame.html">HTMLIFrame</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/loading</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/loading/loading-spinner.js~LoadingSpinner.html">LoadingSpinner</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/module.js~Module.html">Module</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/html</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/html/module-html.js~ModuleHTML.html">ModuleHTML</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/random</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/random/module-random.js~ModuleRandom.html">ModuleRandom</a></span></span></li>
-<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/signature</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/signature/module-sign.js~BlockSign.html">BlockSign</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/signature/module-verify.js~VerifyModule.html">VerifyModule</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/signature</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/signature/module-sign.js~ModuleSign.html">ModuleSign</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/signature/module-verify.js~ModuleVerify.html">ModuleVerify</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/signature/utils</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/signature/utils/drop-file-area.js~DropFileArea.html">DropFileArea</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/signature/utils/sign-area.js~SignArea.html">SignArea</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/skipchain</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/skipchain/module-skipchain.js~ModuleSkipChain.html">ModuleSkipChain</a></span></span></li>
@@ -90,7 +91,9 @@
 
   
   
-  
+  <div class="description" data-ice="description"><p>This service provide the function to get the list of blocks of the skipchain with the
+underlying logic and verification</p>
+</div>
   
 
   
@@ -123,7 +126,7 @@
         <p>
           
           
-          <span data-ice="name"><span><a href="class/src/services/skipchain.js~SkipChainService.html#instance-method-getLatestBlock">getLatestBlock</a></span></span><span data-ice="signature">(servers: <span>*</span>, genesisID: <span>*</span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
+          <span data-ice="name"><span><a href="class/src/services/skipchain.js~SkipChainService.html#instance-method-getLatestBlock">getLatestBlock</a></span></span><span data-ice="signature">(servers: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span>, genesisID: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
         </p>
       </div>
       <div>
@@ -159,7 +162,7 @@ with the list of server&apos;s addresses (WebSocket address)</p>
     
     
     
-    <span data-ice="name">getLatestBlock</span><span data-ice="signature">(servers: <span>*</span>, genesisID: <span>*</span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
+    <span data-ice="name">getLatestBlock</span><span data-ice="signature">(servers: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span>, genesisID: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
     <span class="right-info">
       
       
@@ -186,13 +189,13 @@ with the list of server&apos;s addresses (WebSocket address)</p>
     
     <tr data-ice="property" data-depth="0">
       <td data-ice="name" data-depth="0">servers</td>
-      <td data-ice="type"><span>*</span></td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></td>
       <td data-ice="appendix"></td>
       <td data-ice="description"></td>
     </tr>
 <tr data-ice="property" data-depth="0">
       <td data-ice="name" data-depth="0">genesisID</td>
-      <td data-ice="type"><span>*</span></td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span></td>
       <td data-ice="appendix"></td>
       <td data-ice="description"></td>
     </tr>

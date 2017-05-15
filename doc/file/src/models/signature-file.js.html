@@ -32,14 +32,15 @@
 <nav class="navigation" data-ice="nav"><div>
   <ul>
     
-  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/app.js~App.html">App</a></span></span></li>
+  <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-App">App</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">app</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/app/home.js~Home.html">Home</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/html-iframe</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/html-iframe/html-iframe.js~HTMLIFrame.html">HTMLIFrame</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/loading</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/loading/loading-spinner.js~LoadingSpinner.html">LoadingSpinner</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/module.js~Module.html">Module</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/html</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/html/module-html.js~ModuleHTML.html">ModuleHTML</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/random</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/random/module-random.js~ModuleRandom.html">ModuleRandom</a></span></span></li>
-<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/signature</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/signature/module-sign.js~BlockSign.html">BlockSign</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/signature/module-verify.js~VerifyModule.html">VerifyModule</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/signature</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/signature/module-sign.js~ModuleSign.html">ModuleSign</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/signature/module-verify.js~ModuleVerify.html">ModuleVerify</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/signature/utils</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/signature/utils/drop-file-area.js~DropFileArea.html">DropFileArea</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/signature/utils/sign-area.js~SignArea.html">SignArea</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/skipchain</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/skipchain/module-skipchain.js~ModuleSkipChain.html">ModuleSkipChain</a></span></span></li>
@@ -68,9 +69,9 @@
 import {buf2hex, hex2buf} from &apos;../utils/buffer&apos;
 
 /**
- * @author Gaylor Bosson (gaylor.bosson@epfl.ch)
- *
  * This model defines the structure of the signature file the user can download after a signature request
+ *
+ * @author Gaylor Bosson (gaylor.bosson@epfl.ch)
  */
 export default class SignatureFile {
 
@@ -87,7 +88,7 @@ export default class SignatureFile {
   }
 
   /**
-   * @param name {String}
+   * @param {String} name
    */
   setFileName(name) {
     this.filename = name;
@@ -102,7 +103,7 @@ export default class SignatureFile {
 
   /**
    *
-   * @param signature {Uint8Array}
+   * @param {Uint8Array} signature
    */
   setSignature(signature) {
     this.signature = buf2hex(signature);
@@ -118,7 +119,7 @@ export default class SignatureFile {
 
   /**
    *
-   * @param hash {Uint8Array}
+   * @param {Uint8Array} hash
    */
   setHash(hash) {
     this.hash = buf2hex(hash);
@@ -126,7 +127,7 @@ export default class SignatureFile {
 
   /**
    * Return the hash in hex or buffer form
-   * @param hex {Boolean}
+   * @param {Boolean} hex
    * @returns {Uint8Array}
    */
   getHash(hex = false) {
@@ -135,7 +136,7 @@ export default class SignatureFile {
 
   /**
    *
-   * @param id {String|Uint8Array}
+   * @param {String|Uint8Array} id
    */
   setGenesisID(id) {
     if (typeof id !== &apos;string&apos;) {
@@ -147,7 +148,7 @@ export default class SignatureFile {
 
   /**
    *
-   * @param hex {Boolean}
+   * @param {Boolean} hex
    * @returns {String|Uint8Array}
    */
   getGenesisID(hex = false) {
@@ -156,7 +157,7 @@ export default class SignatureFile {
 
   /**
    *
-   * @param id {Uint8Array|String}
+   * @param {Uint8Array|String} id
    */
   setBlockID(id) {
     if (typeof id !== &apos;string&apos;) {
@@ -168,7 +169,7 @@ export default class SignatureFile {
 
   /**
    *
-   * @param hex {Boolean}
+   * @param {Boolean} hex
    * @returns {String|Uint8Array}
    */
   getBlockID(hex = false) {
@@ -177,7 +178,7 @@ export default class SignatureFile {
 
   /**
    *
-   * @param servers {Array}
+   * @param {Array} servers
    */
   setOfflineServers(servers) {
     this.offlineServers = servers;
@@ -210,7 +211,7 @@ export default class SignatureFile {
 
   /**
    * Parse a given string from a signature file and populate the fields
-   * @param content {String}
+   * @param {String} content
    */
   parse(content) {
     let data;

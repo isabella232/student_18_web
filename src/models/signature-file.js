@@ -2,9 +2,9 @@ import Moment from 'moment'
 import {buf2hex, hex2buf} from '../utils/buffer'
 
 /**
- * @author Gaylor Bosson (gaylor.bosson@epfl.ch)
- *
  * This model defines the structure of the signature file the user can download after a signature request
+ *
+ * @author Gaylor Bosson (gaylor.bosson@epfl.ch)
  */
 export default class SignatureFile {
 
@@ -21,7 +21,7 @@ export default class SignatureFile {
   }
 
   /**
-   * @param name {String}
+   * @param {String} name
    */
   setFileName(name) {
     this.filename = name;
@@ -36,7 +36,7 @@ export default class SignatureFile {
 
   /**
    *
-   * @param signature {Uint8Array}
+   * @param {Uint8Array} signature
    */
   setSignature(signature) {
     this.signature = buf2hex(signature);
@@ -52,7 +52,7 @@ export default class SignatureFile {
 
   /**
    *
-   * @param hash {Uint8Array}
+   * @param {Uint8Array} hash
    */
   setHash(hash) {
     this.hash = buf2hex(hash);
@@ -60,7 +60,7 @@ export default class SignatureFile {
 
   /**
    * Return the hash in hex or buffer form
-   * @param hex {Boolean}
+   * @param {Boolean} hex
    * @returns {Uint8Array}
    */
   getHash(hex = false) {
@@ -69,7 +69,7 @@ export default class SignatureFile {
 
   /**
    *
-   * @param id {String|Uint8Array}
+   * @param {String|Uint8Array} id
    */
   setGenesisID(id) {
     if (typeof id !== 'string') {
@@ -81,7 +81,7 @@ export default class SignatureFile {
 
   /**
    *
-   * @param hex {Boolean}
+   * @param {Boolean} hex
    * @returns {String|Uint8Array}
    */
   getGenesisID(hex = false) {
@@ -90,7 +90,7 @@ export default class SignatureFile {
 
   /**
    *
-   * @param id {Uint8Array|String}
+   * @param {Uint8Array|String} id
    */
   setBlockID(id) {
     if (typeof id !== 'string') {
@@ -102,7 +102,7 @@ export default class SignatureFile {
 
   /**
    *
-   * @param hex {Boolean}
+   * @param {Boolean} hex
    * @returns {String|Uint8Array}
    */
   getBlockID(hex = false) {
@@ -111,7 +111,7 @@ export default class SignatureFile {
 
   /**
    *
-   * @param servers {Array}
+   * @param {Array} servers
    */
   setOfflineServers(servers) {
     this.offlineServers = servers;
@@ -144,7 +144,7 @@ export default class SignatureFile {
 
   /**
    * Parse a given string from a signature file and populate the fields
-   * @param content {String}
+   * @param {String} content
    */
   parse(content) {
     let data;

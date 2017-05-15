@@ -32,14 +32,15 @@
 <nav class="navigation" data-ice="nav"><div>
   <ul>
     
-  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/app.js~App.html">App</a></span></span></li>
+  <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-App">App</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">app</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/app/home.js~Home.html">Home</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/html-iframe</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/html-iframe/html-iframe.js~HTMLIFrame.html">HTMLIFrame</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/loading</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/loading/loading-spinner.js~LoadingSpinner.html">LoadingSpinner</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/module.js~Module.html">Module</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/html</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/html/module-html.js~ModuleHTML.html">ModuleHTML</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/random</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/random/module-random.js~ModuleRandom.html">ModuleRandom</a></span></span></li>
-<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/signature</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/signature/module-sign.js~BlockSign.html">BlockSign</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/signature/module-verify.js~VerifyModule.html">VerifyModule</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/signature</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/signature/module-sign.js~ModuleSign.html">ModuleSign</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/signature/module-verify.js~ModuleVerify.html">ModuleVerify</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/signature/utils</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/signature/utils/drop-file-area.js~DropFileArea.html">DropFileArea</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/signature/utils/sign-area.js~SignArea.html">SignArea</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/skipchain</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/skipchain/module-skipchain.js~ModuleSkipChain.html">ModuleSkipChain</a></span></span></li>
@@ -65,56 +66,31 @@
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/app.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import React from &apos;react&apos;
-import {Container, Row, Col} from &apos;reactstrap&apos;
+import {
+  BrowserRouter,
+  Route
+} from &apos;react-router-dom&apos;
 
-import ServersStatus from &apos;./components/servers-status/servers-status&apos;
-import HTMLIFrame from &apos;./components/html-iframe/html-iframe&apos;
-import ModuleSign from &apos;./components/module/signature/module-sign&apos;
-import ModuleVerify from &apos;./components/module/signature/module-verify&apos;
-import ModuleSkipChain from &apos;./components/module/skipchain/module-skipchain&apos;
-import ModuleHTML from &apos;./components/module/html/module-html&apos;
+import Home from &apos;./app/home&apos;
 import ModuleRandom from &apos;./components/module/random/module-random&apos;
 
-import &apos;./app.scss&apos;;
+/**
+ * Entry point of the application
+ * External routes are used to integrate modules in an IFrame for distant website
+ *
+ * @author Gaylor Bosson (gaylor.bosson@epfl.ch)
+ * @constructor
+ */
+const App = () =&gt; (
+  &lt;BrowserRouter&gt;
+    &lt;div&gt;
+      &lt;Route exact path=&quot;/&quot; component={Home}/&gt;
+      &lt;Route path=&quot;/external/random&quot; component={ModuleRandom}/&gt;
+    &lt;/div&gt;
+  &lt;/BrowserRouter&gt;
+);
 
-class App extends React.Component {
-  render() {
-    return (
-      &lt;div className=&quot;App&quot;&gt;
-        &lt;HTMLIFrame/&gt;
-
-        &lt;Container fluid={true}&gt;
-          &lt;Row noGutters&gt;
-            &lt;Col xs=&quot;auto&quot;&gt;
-              &lt;ModuleSign/&gt;
-            &lt;/Col&gt;
-            &lt;Col xs=&quot;auto&quot;&gt;
-              &lt;ModuleVerify/&gt;
-            &lt;/Col&gt;
-            &lt;Col&gt;
-              &lt;ModuleSkipChain/&gt;
-            &lt;/Col&gt;
-            &lt;Col&gt;
-              &lt;ModuleHTML/&gt;
-            &lt;/Col&gt;
-          &lt;/Row&gt;
-          &lt;Row noGutters&gt;
-            &lt;Col xs=&quot;auto&quot;&gt;
-              &lt;ModuleRandom/&gt;
-            &lt;/Col&gt;
-          &lt;/Row&gt;
-          &lt;Row&gt;
-            &lt;Col&gt;
-              &lt;ServersStatus/&gt;
-            &lt;/Col&gt;
-          &lt;/Row&gt;
-        &lt;/Container&gt;
-      &lt;/div&gt;
-    );
-  }
-}
-
-export default App;
+export default App
 </code></pre>
 
 </div>

@@ -7,9 +7,10 @@ import {tcp2ws} from '../utils/network'
 const GENESIS_BLOCK_SERVER = "https://skipchain.dedis.ch/";
 
 /**
- * @author Gaylor Bosson (gaylor.bosson@epfl.ch)
  * This service will contact the DEDIS server to get the list of skipchains with their servers. Those servers may
  * not be available.
+ *
+ * @author Gaylor Bosson (gaylor.bosson@epfl.ch)
  */
 export class GenesisService {
 
@@ -41,7 +42,7 @@ export class GenesisService {
 
   /**
    * Add the given listener to the list of object which will be called on update events
-   * @param listener {Object} must have onGenesisUpdate function to get the updates
+   * @param {Object} listener must have onGenesisUpdate function to get the updates
    */
   subscribe(listener) {
     if (this.listeners.indexOf(listener < 0)) {
@@ -59,7 +60,7 @@ export class GenesisService {
 
   /**
    * Remove the given listener from the list
-   * @param listener {Object}
+   * @param {Object} listener
    */
   unsubscribe(listener) {
     const index = this.listeners.indexOf(listener);
@@ -70,7 +71,7 @@ export class GenesisService {
 
   /**
    * Trigger either an update or an error update
-   * @param error {Error} a potential error that triggered
+   * @param {Error} error a potential error that triggered
    */
   updateGenesis(error) {
     if (error) {
@@ -84,7 +85,7 @@ export class GenesisService {
 
   /**
    * Change the current skipchain given the ID of the genesis block
-   * @param id {String} hex form of the ID
+   * @param {String} id hex form of the ID
    */
   setCurrentGenesisID(id) {
     const block = this.genesisList.filter(b => b.GenesisID === id).pop();
@@ -99,8 +100,8 @@ export class GenesisService {
    * Given a genesis ID and a block ID, it will get the servers of the skipchain and then fetch the list of
    * blocks of the skipchain to finally return the block if it exists
    * If the block ID is not provided, we return the latest block
-   * @param id {String} Genesis ID
-   * @param blockID {String} 64 hex-digits Block ID
+   * @param {String} id - Genesis ID
+   * @param {String} blockID - 64 hex-digits Block ID
    * @returns {Promise}
    */
   getLatestFromGenesisID(id, blockID = null) {
@@ -130,7 +131,7 @@ export class GenesisService {
    *  1. blocks The list of blocks of the skipchain
    *  2. genesisList The current list of available skipchains
    *  3. curr_genesis The current genesis ID of the current skipchain
-   * @param listener {object} An object with a declaration of onGenesisUpdate
+   * @param {object} listener - An object with a declaration of onGenesisUpdate
    * @private
    */
   _triggerEvent(listener) {
@@ -141,7 +142,7 @@ export class GenesisService {
 
   /**
    * Trigger an error event
-   * @param listener
+   * @param {Object} listener
    * @private
    */
   _triggerError(listener) {
@@ -153,7 +154,7 @@ export class GenesisService {
   /**
    * It will check that the skipchain exists and then it gets the list of blocks. Finally
    * it trigger according to the result either an update or an error
-   * @param id {String} The genesis ID
+   * @param {String} id - The genesis ID
    * @private
    */
   _fetchStatusForGenesisID(id) {

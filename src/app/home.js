@@ -11,7 +11,17 @@ import ModuleRandom from '../components/module/random/module-random'
 
 import './home.css';
 
-class App extends React.Component {
+/**
+ * @author Gaylor Bosson (gaylor.bosson@epfl.ch)
+ *
+ * Index of the website where we display everything in a single page
+ */
+class Home extends React.Component {
+
+  /**
+   * @override
+   * @returns {XML}
+   */
   render() {
     return (
       <div className="cothority-app">
@@ -48,4 +58,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default Home;

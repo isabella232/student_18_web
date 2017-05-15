@@ -5,9 +5,9 @@ import {tcp2ws} from '../utils/network'
 const REFRESH_INTERVAL = 30000;
 
 /**
- * @author Gaylor Bosson (gaylor.bosson@epfl.ch)
- *
  * This service takes care of keeping the status of the roster of the current skipchain up-to-date
+ *
+ * @author Gaylor Bosson (gaylor.bosson@epfl.ch)
  */
 export class StatusService {
 
@@ -27,8 +27,8 @@ export class StatusService {
 
   /**
    * On a new skipchain it resets the status and fetch the new roster
-   * @param blocks {Array}
-   * @param genesisList {Array}
+   * @param {Array} blocks
+   * @param {Array} genesisList
    * @see GenesisService._triggerEvent
    */
   onGenesisUpdate(blocks, genesisList) {
@@ -54,7 +54,7 @@ export class StatusService {
 
   /**
    * Add the given object to the list of listeners
-   * @param listener {Object}
+   * @param {Object} listener
    */
   subscribe(listener) {
     if (this.listeners.indexOf(listener) === -1) {
@@ -66,7 +66,7 @@ export class StatusService {
 
   /**
    * Remove the listener from the list
-   * @param listener
+   * @param {object} listener
    */
   unsubscribe(listener) {
     const index = this.listeners.indexOf(listener);
@@ -118,7 +118,7 @@ export class StatusService {
 
   /**
    * Send the status to the given listener
-   * @param listener {Object}
+   * @param {Object} listener
    * @private
    */
   _triggerEvent(listener) {

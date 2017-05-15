@@ -7,8 +7,18 @@ import {Scrollbars} from 'react-custom-scrollbars';
 import './module-skipchain.css'
 import GenesisService from '../../../services/genesis'
 
+/**
+ * This module displays the list of the available skipchains except the ones
+ * that contains an URL in the data
+ *
+ * @author Gaylor Bosson (gaylor.bosson@dmetrics.com)
+ */
 export default class ModuleSkipChain extends React.Component {
 
+  /**
+   * @constructor
+   * @param props
+   */
   constructor(props) {
     super(props);
 
@@ -20,6 +30,12 @@ export default class ModuleSkipChain extends React.Component {
     this.handleGenesisChange = this.handleGenesisChange.bind(this);
   }
 
+  /**
+   * It will update the state with the current skipchain
+   * @param {Array} blocks
+   * @param {Array} genesisList
+   * @param {String} curr_genesis
+   */
   onGenesisUpdate(blocks, genesisList, curr_genesis) {
     this.setState({
       blocks,
@@ -37,10 +53,18 @@ export default class ModuleSkipChain extends React.Component {
     });
   }
 
+  /**
+   * Update the state to display the error
+   * @param {Error} error
+   */
   onGenesisError(error) {
     this.setState({error});
   }
 
+  /**
+   * It will trigger the skipchain change to the genesis service
+   * @param {String} id - the new genesis block
+   */
   handleGenesisChange(id) {
     const {currGenesis} = this.state;
 
@@ -49,19 +73,32 @@ export default class ModuleSkipChain extends React.Component {
     }
   }
 
+  /**
+   * @override
+   * @see https://facebook.github.io/react/docs/react-component.html
+   */
   componentWillMount() {
     GenesisService.subscribe(this);
   }
 
+  /**
+   * @override
+   * @see https://facebook.github.io/react/docs/react-component.html
+   */
   componentWillUnmount() {
     GenesisService.unsubscribe(this);
   }
 
+  /**
+   * @override
+   * @see https://facebook.github.io/react/docs/react-component.html
+   * @returns {XML}
+   */
   render() {
     const {genesisList, currGenesis, error} = this.state;
 
     if (error) {
-      return this._renderError(error);
+      return ModuleSkipChain._renderError(error);
     }
 
     const rows = genesisList.map(b => {
@@ -86,7 +123,13 @@ export default class ModuleSkipChain extends React.Component {
     );
   }
 
-  _renderError(error) {
+  /**
+   * Return the XML to display an error when it occurs
+   * @param {Error} error
+   * @returns {XML}
+   * @private
+   */
+  static _renderError(error) {
     return (
       <Module title="SkipChain" icon="chain" className="module-skip-chain">
         <p className="has-error">

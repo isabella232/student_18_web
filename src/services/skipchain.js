@@ -2,18 +2,18 @@ import CothorityWS from './websocket'
 import {buf2hex} from '../utils/buffer'
 
 /**
- * @author Gaylor Bosson (gaylor.bosson@epfl.ch)
- *
  * This service provide the function to get the list of blocks of the skipchain with the
  * underlying logic and verification
+ *
+ * @author Gaylor Bosson (gaylor.bosson@epfl.ch)
  */
 export class SkipChainService {
 
   /**
    * Given a list of servers and a genesis block id, try to get the latest block and return a promise that will resolve
    * with the list of server's addresses (WebSocket address)
-   * @param servers
-   * @param genesisID
+   * @param {Array} servers
+   * @param {String} genesisID
    * @returns {Promise}
    */
   getLatestBlock(servers, genesisID) {
@@ -47,8 +47,8 @@ export class SkipChainService {
   /**
    * Try to get the update list of skipblocks from an address and a genesis block id
    * Parse the response to resolve the promise with the list of WebSocket addresses of the servers
-   * @param address {String} ws address to try
-   * @param genesisID {String} Hex representation of the genesis block id
+   * @param {String} address - ws address to try
+   * @param {String} genesisID - Hex representation of the genesis block id
    * @returns {Promise.<Array>|*}
    * @private
    */
@@ -74,7 +74,7 @@ export class SkipChainService {
 
   /**
    * Check the sanity of the skip blocks and return false if an error occurred
-   * @param blocks {Array}
+   * @param {Array} blocks
    * @returns {boolean}
    * @private
    */

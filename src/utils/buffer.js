@@ -2,7 +2,7 @@ import ByteBuffer from 'bytebuffer'
 
 /**
  * Given a hexadecimal string it converts it to a Uint8Array buffer
- * @param hex {String}
+ * @param {String} hex
  * @returns {Uint8Array}
  */
 export function hex2buf(hex) {
@@ -11,7 +11,7 @@ export function hex2buf(hex) {
 
 /**
  * Given a buffer, convert it to an hexadecimal string
- * @param buffer {Uint8Array}
+ * @param {Uint8Array} buffer
  * @returns {String}
  */
 export function buf2hex(buffer) {

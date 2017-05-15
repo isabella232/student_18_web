@@ -32,14 +32,15 @@
 <nav class="navigation" data-ice="nav"><div>
   <ul>
     
-  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/app.js~App.html">App</a></span></span></li>
+  <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-App">App</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">app</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/app/home.js~Home.html">Home</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/html-iframe</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/html-iframe/html-iframe.js~HTMLIFrame.html">HTMLIFrame</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/loading</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/loading/loading-spinner.js~LoadingSpinner.html">LoadingSpinner</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/module.js~Module.html">Module</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/html</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/html/module-html.js~ModuleHTML.html">ModuleHTML</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/random</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/random/module-random.js~ModuleRandom.html">ModuleRandom</a></span></span></li>
-<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/signature</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/signature/module-sign.js~BlockSign.html">BlockSign</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/signature/module-verify.js~VerifyModule.html">VerifyModule</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/signature</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/signature/module-sign.js~ModuleSign.html">ModuleSign</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/signature/module-verify.js~ModuleVerify.html">ModuleVerify</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/signature/utils</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/signature/utils/drop-file-area.js~DropFileArea.html">DropFileArea</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/signature/utils/sign-area.js~SignArea.html">SignArea</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/skipchain</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/skipchain/module-skipchain.js~ModuleSkipChain.html">ModuleSkipChain</a></span></span></li>
@@ -90,7 +91,8 @@
 
   
   
-  
+  <div class="description" data-ice="description"><p>This model defines the structure of the signature file the user can download after a signature request</p>
+</div>
   
 
   
@@ -324,7 +326,7 @@
         <p>
           
           
-          <span data-ice="name"><span><a href="class/src/models/signature-file.js~SignatureFile.html#instance-method-getBlockID">getBlockID</a></span></span><span data-ice="signature">(hex: <span>*</span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array">Uint8Array</a></span></span>
+          <span data-ice="name"><span><a href="class/src/models/signature-file.js~SignatureFile.html#instance-method-getBlockID">getBlockID</a></span></span><span data-ice="signature">(hex: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array">Uint8Array</a></span></span>
         </p>
       </div>
       <div>
@@ -378,7 +380,7 @@
         <p>
           
           
-          <span data-ice="name"><span><a href="class/src/models/signature-file.js~SignatureFile.html#instance-method-getGenesisID">getGenesisID</a></span></span><span data-ice="signature">(hex: <span>*</span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array">Uint8Array</a></span></span>
+          <span data-ice="name"><span><a href="class/src/models/signature-file.js~SignatureFile.html#instance-method-getGenesisID">getGenesisID</a></span></span><span data-ice="signature">(hex: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array">Uint8Array</a></span></span>
         </p>
       </div>
       <div>
@@ -405,7 +407,7 @@
         <p>
           
           
-          <span data-ice="name"><span><a href="class/src/models/signature-file.js~SignatureFile.html#instance-method-getHash">getHash</a></span></span><span data-ice="signature">(hex: <span>*</span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array">Uint8Array</a></span></span>
+          <span data-ice="name"><span><a href="class/src/models/signature-file.js~SignatureFile.html#instance-method-getHash">getHash</a></span></span><span data-ice="signature">(hex: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array">Uint8Array</a></span></span>
         </p>
       </div>
       <div>
@@ -487,7 +489,7 @@
         <p>
           
           
-          <span data-ice="name"><span><a href="class/src/models/signature-file.js~SignatureFile.html#instance-method-parse">parse</a></span></span><span data-ice="signature">(content: <span>*</span>)</span>
+          <span data-ice="name"><span><a href="class/src/models/signature-file.js~SignatureFile.html#instance-method-parse">parse</a></span></span><span data-ice="signature">(content: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>)</span>
         </p>
       </div>
       <div>
@@ -543,7 +545,7 @@
         <p>
           
           
-          <span data-ice="name"><span><a href="class/src/models/signature-file.js~SignatureFile.html#instance-method-setBlockID">setBlockID</a></span></span><span data-ice="signature">(id: <span>*</span>)</span>
+          <span data-ice="name"><span><a href="class/src/models/signature-file.js~SignatureFile.html#instance-method-setBlockID">setBlockID</a></span></span><span data-ice="signature">(id: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array">Uint8Array</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>)</span>
         </p>
       </div>
       <div>
@@ -570,7 +572,7 @@
         <p>
           
           
-          <span data-ice="name"><span><a href="class/src/models/signature-file.js~SignatureFile.html#instance-method-setFileName">setFileName</a></span></span><span data-ice="signature">(name: <span>*</span>)</span>
+          <span data-ice="name"><span><a href="class/src/models/signature-file.js~SignatureFile.html#instance-method-setFileName">setFileName</a></span></span><span data-ice="signature">(name: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>)</span>
         </p>
       </div>
       <div>
@@ -597,7 +599,7 @@
         <p>
           
           
-          <span data-ice="name"><span><a href="class/src/models/signature-file.js~SignatureFile.html#instance-method-setGenesisID">setGenesisID</a></span></span><span data-ice="signature">(id: <span>*</span>)</span>
+          <span data-ice="name"><span><a href="class/src/models/signature-file.js~SignatureFile.html#instance-method-setGenesisID">setGenesisID</a></span></span><span data-ice="signature">(id: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array">Uint8Array</a></span>)</span>
         </p>
       </div>
       <div>
@@ -624,7 +626,7 @@
         <p>
           
           
-          <span data-ice="name"><span><a href="class/src/models/signature-file.js~SignatureFile.html#instance-method-setHash">setHash</a></span></span><span data-ice="signature">(hash: <span>*</span>)</span>
+          <span data-ice="name"><span><a href="class/src/models/signature-file.js~SignatureFile.html#instance-method-setHash">setHash</a></span></span><span data-ice="signature">(hash: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array">Uint8Array</a></span>)</span>
         </p>
       </div>
       <div>
@@ -651,7 +653,7 @@
         <p>
           
           
-          <span data-ice="name"><span><a href="class/src/models/signature-file.js~SignatureFile.html#instance-method-setOfflineServers">setOfflineServers</a></span></span><span data-ice="signature">(servers: <span>*</span>)</span>
+          <span data-ice="name"><span><a href="class/src/models/signature-file.js~SignatureFile.html#instance-method-setOfflineServers">setOfflineServers</a></span></span><span data-ice="signature">(servers: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span>)</span>
         </p>
       </div>
       <div>
@@ -678,7 +680,7 @@
         <p>
           
           
-          <span data-ice="name"><span><a href="class/src/models/signature-file.js~SignatureFile.html#instance-method-setSignature">setSignature</a></span></span><span data-ice="signature">(signature: <span>*</span>)</span>
+          <span data-ice="name"><span><a href="class/src/models/signature-file.js~SignatureFile.html#instance-method-setSignature">setSignature</a></span></span><span data-ice="signature">(signature: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array">Uint8Array</a></span>)</span>
         </p>
       </div>
       <div>
@@ -1017,7 +1019,7 @@
     
     
     
-    <span data-ice="name">getBlockID</span><span data-ice="signature">(hex: <span>*</span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array">Uint8Array</a></span></span>
+    <span data-ice="name">getBlockID</span><span data-ice="signature">(hex: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array">Uint8Array</a></span></span>
     <span class="right-info">
       
       
@@ -1042,10 +1044,9 @@
     
     <tr data-ice="property" data-depth="0">
       <td data-ice="name" data-depth="0">hex</td>
-      <td data-ice="type"><span>*</span></td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"><p>{Boolean}</p>
-</td>
+      <td data-ice="description"></td>
     </tr>
 </tbody>
   </table>
@@ -1144,7 +1145,7 @@
     
     
     
-    <span data-ice="name">getGenesisID</span><span data-ice="signature">(hex: <span>*</span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array">Uint8Array</a></span></span>
+    <span data-ice="name">getGenesisID</span><span data-ice="signature">(hex: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array">Uint8Array</a></span></span>
     <span class="right-info">
       
       
@@ -1169,10 +1170,9 @@
     
     <tr data-ice="property" data-depth="0">
       <td data-ice="name" data-depth="0">hex</td>
-      <td data-ice="type"><span>*</span></td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"><p>{Boolean}</p>
-</td>
+      <td data-ice="description"></td>
     </tr>
 </tbody>
   </table>
@@ -1216,7 +1216,7 @@
     
     
     
-    <span data-ice="name">getHash</span><span data-ice="signature">(hex: <span>*</span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array">Uint8Array</a></span></span>
+    <span data-ice="name">getHash</span><span data-ice="signature">(hex: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array">Uint8Array</a></span></span>
     <span class="right-info">
       
       
@@ -1242,10 +1242,9 @@
     
     <tr data-ice="property" data-depth="0">
       <td data-ice="name" data-depth="0">hex</td>
-      <td data-ice="type"><span>*</span></td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"><p>{Boolean}</p>
-</td>
+      <td data-ice="description"></td>
     </tr>
 </tbody>
   </table>
@@ -1399,7 +1398,7 @@
     
     
     
-    <span data-ice="name">parse</span><span data-ice="signature">(content: <span>*</span>)</span>
+    <span data-ice="name">parse</span><span data-ice="signature">(content: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>)</span>
     <span class="right-info">
       
       
@@ -1425,10 +1424,9 @@
     
     <tr data-ice="property" data-depth="0">
       <td data-ice="name" data-depth="0">content</td>
-      <td data-ice="type"><span>*</span></td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"><p>{String}</p>
-</td>
+      <td data-ice="description"></td>
     </tr>
 </tbody>
   </table>
@@ -1504,7 +1502,7 @@
     
     
     
-    <span data-ice="name">setBlockID</span><span data-ice="signature">(id: <span>*</span>)</span>
+    <span data-ice="name">setBlockID</span><span data-ice="signature">(id: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array">Uint8Array</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>)</span>
     <span class="right-info">
       
       
@@ -1529,10 +1527,9 @@
     
     <tr data-ice="property" data-depth="0">
       <td data-ice="name" data-depth="0">id</td>
-      <td data-ice="type"><span>*</span></td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array">Uint8Array</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"><p>{Uint8Array|String}</p>
-</td>
+      <td data-ice="description"></td>
     </tr>
 </tbody>
   </table>
@@ -1564,7 +1561,7 @@
     
     
     
-    <span data-ice="name">setFileName</span><span data-ice="signature">(name: <span>*</span>)</span>
+    <span data-ice="name">setFileName</span><span data-ice="signature">(name: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>)</span>
     <span class="right-info">
       
       
@@ -1589,10 +1586,9 @@
     
     <tr data-ice="property" data-depth="0">
       <td data-ice="name" data-depth="0">name</td>
-      <td data-ice="type"><span>*</span></td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"><p>{String}</p>
-</td>
+      <td data-ice="description"></td>
     </tr>
 </tbody>
   </table>
@@ -1624,7 +1620,7 @@
     
     
     
-    <span data-ice="name">setGenesisID</span><span data-ice="signature">(id: <span>*</span>)</span>
+    <span data-ice="name">setGenesisID</span><span data-ice="signature">(id: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array">Uint8Array</a></span>)</span>
     <span class="right-info">
       
       
@@ -1649,10 +1645,9 @@
     
     <tr data-ice="property" data-depth="0">
       <td data-ice="name" data-depth="0">id</td>
-      <td data-ice="type"><span>*</span></td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array">Uint8Array</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"><p>{String|Uint8Array}</p>
-</td>
+      <td data-ice="description"></td>
     </tr>
 </tbody>
   </table>
@@ -1684,7 +1679,7 @@
     
     
     
-    <span data-ice="name">setHash</span><span data-ice="signature">(hash: <span>*</span>)</span>
+    <span data-ice="name">setHash</span><span data-ice="signature">(hash: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array">Uint8Array</a></span>)</span>
     <span class="right-info">
       
       
@@ -1709,10 +1704,9 @@
     
     <tr data-ice="property" data-depth="0">
       <td data-ice="name" data-depth="0">hash</td>
-      <td data-ice="type"><span>*</span></td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array">Uint8Array</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"><p>{Uint8Array}</p>
-</td>
+      <td data-ice="description"></td>
     </tr>
 </tbody>
   </table>
@@ -1744,7 +1738,7 @@
     
     
     
-    <span data-ice="name">setOfflineServers</span><span data-ice="signature">(servers: <span>*</span>)</span>
+    <span data-ice="name">setOfflineServers</span><span data-ice="signature">(servers: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span>)</span>
     <span class="right-info">
       
       
@@ -1769,10 +1763,9 @@
     
     <tr data-ice="property" data-depth="0">
       <td data-ice="name" data-depth="0">servers</td>
-      <td data-ice="type"><span>*</span></td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"><p>{Array}</p>
-</td>
+      <td data-ice="description"></td>
     </tr>
 </tbody>
   </table>
@@ -1804,7 +1797,7 @@
     
     
     
-    <span data-ice="name">setSignature</span><span data-ice="signature">(signature: <span>*</span>)</span>
+    <span data-ice="name">setSignature</span><span data-ice="signature">(signature: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array">Uint8Array</a></span>)</span>
     <span class="right-info">
       
       
@@ -1829,10 +1822,9 @@
     
     <tr data-ice="property" data-depth="0">
       <td data-ice="name" data-depth="0">signature</td>
-      <td data-ice="type"><span>*</span></td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array">Uint8Array</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"><p>{Uint8Array}</p>
-</td>
+      <td data-ice="description"></td>
     </tr>
 </tbody>
   </table>

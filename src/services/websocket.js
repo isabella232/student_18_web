@@ -3,9 +3,9 @@ import CothorityMessages from '../lib/cothority-messages'
 const EMPTY_MESSAGE = new Uint8Array([]);
 
 /**
- * @author Gaylor Bosson (gaylor.bosson@epfl.ch)
- *
  * This service maintains or create websockets for the different actions the front-end can perform
+ *
+ * @author Gaylor Bosson (gaylor.bosson@epfl.ch)
  */
 export class CothorityWebsocket {
 
@@ -18,7 +18,7 @@ export class CothorityWebsocket {
 
   /**
    * Get the status of the given server among a WS
-   * @param address {String} ip address
+   * @param {String} address - ip address
    * @returns {Promise}
    */
   getStatus(address) {
@@ -38,9 +38,9 @@ export class CothorityWebsocket {
 
   /**
    * Get the signature of the given hash with the given roster
-   * @param hash {Uint8Array} hash of the message
-   * @param address {String} ip address
-   * @param roster {Roster} check protobuf Roster message
+   * @param {Uint8Array} hash - hash of the message
+   * @param {String} address - ip address
+   * @param {Roster} roster - check protobuf Roster message
    * @returns {Promise}
    */
   getSignature(hash, address, roster) {
@@ -59,8 +59,8 @@ export class CothorityWebsocket {
 
   /**
    * Get the list of blocks of the skipchain with the given genesis ID
-   * @param address {String} ip address
-   * @param id {Uint8Array} Genesis ID
+   * @param {String} address - ip address
+   * @param {Uint8Array} id - Genesis ID
    * @returns {Promise}
    */
   getLatestBlock(address, id) {
@@ -79,9 +79,9 @@ export class CothorityWebsocket {
 
   /**
    * Store a new block with the given roster
-   * @param address {String} ip address
-   * @param id {Uint8Array} Genesis ID
-   * @param servers {Array} list of servers
+   * @param {String} address - ip address
+   * @param {Uint8Array} id - Genesis ID
+   * @param {Array} servers - list of servers
    * @returns {Promise}
    */
   storeNewBlock(address, id, servers) {
@@ -100,7 +100,7 @@ export class CothorityWebsocket {
 
   /**
    * Get a random number from address
-   * @param address {String} ip address
+   * @param {String} address - ip address
    * @returns {Promise}
    */
   getRandom(address) {
@@ -121,11 +121,11 @@ export default new CothorityWebsocket();
 
 /**
  * Use the existing socket or create a new one if required
- * @param socket WebSocket old socket
- * @param address String ws address
- * @param error Function callback if an error occurred
- * @param callback Function callback when a message is received
- * @param message ArrayBuffer the message to send
+ * @param socket - WebSocket old socket
+ * @param address - String ws address
+ * @param error - Function callback if an error occurred
+ * @param callback - Function callback when a message is received
+ * @param message - ArrayBuffer the message to send
  * @returns {*}
  */
 function createSocket(socket, address, error, callback, message) {

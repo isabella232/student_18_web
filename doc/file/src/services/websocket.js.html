@@ -32,14 +32,15 @@
 <nav class="navigation" data-ice="nav"><div>
   <ul>
     
-  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/app.js~App.html">App</a></span></span></li>
+  <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-App">App</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">app</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/app/home.js~Home.html">Home</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/html-iframe</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/html-iframe/html-iframe.js~HTMLIFrame.html">HTMLIFrame</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/loading</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/loading/loading-spinner.js~LoadingSpinner.html">LoadingSpinner</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/module.js~Module.html">Module</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/html</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/html/module-html.js~ModuleHTML.html">ModuleHTML</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/random</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/random/module-random.js~ModuleRandom.html">ModuleRandom</a></span></span></li>
-<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/signature</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/signature/module-sign.js~BlockSign.html">BlockSign</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/signature/module-verify.js~VerifyModule.html">VerifyModule</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/signature</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/signature/module-sign.js~ModuleSign.html">ModuleSign</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/signature/module-verify.js~ModuleVerify.html">ModuleVerify</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/signature/utils</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/signature/utils/drop-file-area.js~DropFileArea.html">DropFileArea</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/signature/utils/sign-area.js~SignArea.html">SignArea</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/skipchain</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/skipchain/module-skipchain.js~ModuleSkipChain.html">ModuleSkipChain</a></span></span></li>
@@ -69,9 +70,9 @@
 const EMPTY_MESSAGE = new Uint8Array([]);
 
 /**
- * @author Gaylor Bosson (gaylor.bosson@epfl.ch)
- *
  * This service maintains or create websockets for the different actions the front-end can perform
+ *
+ * @author Gaylor Bosson (gaylor.bosson@epfl.ch)
  */
 export class CothorityWebsocket {
 
@@ -84,7 +85,7 @@ export class CothorityWebsocket {
 
   /**
    * Get the status of the given server among a WS
-   * @param address {String} ip address
+   * @param {String} address - ip address
    * @returns {Promise}
    */
   getStatus(address) {
@@ -104,9 +105,9 @@ export class CothorityWebsocket {
 
   /**
    * Get the signature of the given hash with the given roster
-   * @param hash {Uint8Array} hash of the message
-   * @param address {String} ip address
-   * @param roster {Roster} check protobuf Roster message
+   * @param {Uint8Array} hash - hash of the message
+   * @param {String} address - ip address
+   * @param {Roster} roster - check protobuf Roster message
    * @returns {Promise}
    */
   getSignature(hash, address, roster) {
@@ -125,8 +126,8 @@ export class CothorityWebsocket {
 
   /**
    * Get the list of blocks of the skipchain with the given genesis ID
-   * @param address {String} ip address
-   * @param id {Uint8Array} Genesis ID
+   * @param {String} address - ip address
+   * @param {Uint8Array} id - Genesis ID
    * @returns {Promise}
    */
   getLatestBlock(address, id) {
@@ -145,9 +146,9 @@ export class CothorityWebsocket {
 
   /**
    * Store a new block with the given roster
-   * @param address {String} ip address
-   * @param id {Uint8Array} Genesis ID
-   * @param servers {Array} list of servers
+   * @param {String} address - ip address
+   * @param {Uint8Array} id - Genesis ID
+   * @param {Array} servers - list of servers
    * @returns {Promise}
    */
   storeNewBlock(address, id, servers) {
@@ -166,7 +167,7 @@ export class CothorityWebsocket {
 
   /**
    * Get a random number from address
-   * @param address {String} ip address
+   * @param {String} address - ip address
    * @returns {Promise}
    */
   getRandom(address) {
@@ -187,11 +188,11 @@ export default new CothorityWebsocket();
 
 /**
  * Use the existing socket or create a new one if required
- * @param socket WebSocket old socket
- * @param address String ws address
- * @param error Function callback if an error occurred
- * @param callback Function callback when a message is received
- * @param message ArrayBuffer the message to send
+ * @param socket - WebSocket old socket
+ * @param address - String ws address
+ * @param error - Function callback if an error occurred
+ * @param callback - Function callback when a message is received
+ * @param message - ArrayBuffer the message to send
  * @returns {*}
  */
 function createSocket(socket, address, error, callback, message) {

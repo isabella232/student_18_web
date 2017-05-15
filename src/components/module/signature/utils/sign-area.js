@@ -11,9 +11,9 @@ import StatusService from '../../../../services/status'
 import SignatureFile from '../../../../models/signature-file'
 
 /**
- * @author Gaylor Bosson (gaylor.bosson@epfl.ch)
- *
  * Show the status of the sign process
+ *
+ * @author Gaylor Bosson (gaylor.bosson@epfl.ch)
  */
 export default class SignArea extends React.Component {
 
@@ -41,19 +41,27 @@ export default class SignArea extends React.Component {
     this.handleSign = this.handleSign.bind(this);
   }
 
+  /**
+   * @override
+   * @see https://facebook.github.io/react/docs/react-component.html
+   */
   componentWillMount() {
     GenesisService.subscribe(this);
   }
 
+  /**
+   * @override
+   * @see https://facebook.github.io/react/docs/react-component.html
+   */
   componentWillUnmount() {
     GenesisService.unsubscribe(this);
   }
 
   /**
    * @see GenesisService._triggerEvent
-   * @param blocks
-   * @param genesisList
-   * @param currGenesis
+   * @param {Array} blocks
+   * @param {Array} genesisList
+   * @param {String} currGenesis
    */
   onGenesisUpdate(blocks, genesisList, currGenesis) {
     this.setState({
@@ -64,7 +72,7 @@ export default class SignArea extends React.Component {
 
   /**
    * @see GenesisService._triggerError
-   * @param error
+   * @param {Error} error
    */
   onGenesisError(error) {
     this.setState({
@@ -140,6 +148,11 @@ export default class SignArea extends React.Component {
     this._signPromise.catch(e => this.setState({error: e}));
   }
 
+  /**
+   * @override
+   * @see https://facebook.github.io/react/docs/react-component.html
+   * @returns {XML}
+   */
   render() {
     const {error} = this.state;
     if (error.length > 0) {
