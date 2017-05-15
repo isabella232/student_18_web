@@ -19,9 +19,9 @@ export class IFrameService {
     this.listeners = [];
 
     window.addEventListener('message', (e) => {
-      e.data = e.data || '';
-      if (e.data.indexOf("skipchain://") === 0) {
-        this.open(e.data.replace("skipchain://", ""));
+      const data = e.data || '';
+      if (data.indexOf("skipchain://") === 0) {
+        this.open(data.replace("skipchain://", ""));
       }
     });
   }

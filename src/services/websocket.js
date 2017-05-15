@@ -107,7 +107,7 @@ export class CothorityWebsocket {
     return new Promise((resolve, reject) => {
       this.random = createSocket(
         this.random,
-        address + '/RandHound/Random',
+        address + '/RandHound/RandRequest',
         (e) => reject(e),
         (data) => resolve(CothorityMessages.decodeRandomResponse(data)),
         CothorityMessages.createRandomMessage()
@@ -130,7 +130,9 @@ export default new CothorityWebsocket();
  */
 function createSocket(socket, address, error, callback, message) {
   if (!socket || socket.readyState > 2) {
-    socket = new WebSocket(`ws://${address}`);
+    const protocol = address.match(/^[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}/) ? 'ws' : 'wss';
+
+    socket = new WebSocket(`${protocol}://${address}`);
     socket.binaryType = 'arraybuffer';
   }
 

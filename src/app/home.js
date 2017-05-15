@@ -44,7 +44,7 @@ class Home extends React.Component {
           </Row>
           <Row noGutters>
             <Col xs="auto">
-              <ModuleRandom/>
+              <ModuleRandom />
             </Col>
           </Row>
           <Row>
