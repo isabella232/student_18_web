@@ -133,7 +133,7 @@ export default class SignatureFile {
     };
 
     const date = Moment().format("YYYY-MM-DD-hh-mm-ss");
-    saveAs(new Blob([JSON.stringify(body, null, '\t')]), `signature_${date}.json`); // eslint-disable-line
+    saveAs(new Blob([JSON.stringify(body, null, '\t')], {type : 'application/json'}), `signature_${date}.json`); // eslint-disable-line
   }
 
   /**

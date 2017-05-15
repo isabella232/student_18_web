@@ -5,6 +5,10 @@
   min-width: 300px;
   height: 200px;
 
+  .module-body {
+    position: relative;
+  }
+
   p.has-error {
     padding: 20px;
     text-align: center;

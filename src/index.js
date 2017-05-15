@@ -12,3 +12,8 @@ ReactDOM.render(
   <App />,
   document.getElementById('root')
 );
+
+/* Safari UInt8Array Fix */
+Uint8Array.prototype.slice = Uint8Array.prototype.slice || function(a,b){ // eslint-disable-line
+  return new Uint8Array(this.buffer.slice(a,b));
+};

@@ -1,3 +1,5 @@
+import 'whatwg-fetch'
+
 import SkipChainService from './skipchain'
 import {hex2buf, buf2hex} from '../utils/buffer'
 import {tcp2ws} from '../utils/network'

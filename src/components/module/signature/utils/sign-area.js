@@ -117,6 +117,7 @@ export default class SignArea extends React.Component {
               CothorityWebsocket.getSignature(hash, address, servers)
                 .then(
                   (response) => {
+                    console.log(response);
                     const signature = (response.signature || []).slice(0, 64);
                     signFile.setSignature(signature);
 
@@ -126,7 +127,8 @@ export default class SignArea extends React.Component {
                     resolve();
                   }
                 )
-                .catch(() => {
+                .catch((e) => {
+                  console.log(e);
                   reject('Oops, something went wrong...');
                 })
             }
