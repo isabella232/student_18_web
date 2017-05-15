@@ -38,6 +38,7 @@ export default class ModuleRandom extends React.Component {
   }
 
   _triggerRandomUpdate() {
+    // todo fix servers
     WebSocketService.getRandom('192.33.210.8:7021').then(msg => {
       this._timestamp = Date.now();
       this.setState({
@@ -48,6 +49,15 @@ export default class ModuleRandom extends React.Component {
       const self = this;
       setTimeout(() => self._checkCountDown(), REFRESH_COUNTER_INTERVAL);
     });
+
+    this._timestamp = Date.now();
+    this.setState({
+      random: `${Math.round(Math.random() * Math.pow(10, 20))}`,
+      counter: 0
+    });
+
+    const self = this;
+    setTimeout(() => self._checkCountDown(), REFRESH_COUNTER_INTERVAL);
   }
 
   _checkCountDown() {
