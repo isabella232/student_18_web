@@ -42,9 +42,7 @@ export default class ModuleSkipChain extends React.Component {
       genesisList: genesisList.filter(b => {
         if (b.Data) {
           const data = ByteBuffer.fromBase64(b.Data);
-          if (data.capacity() > 18) {
-            return !data.slice(18).toString('utf8').match(/^https?:\/\//);
-          }
+          return !data.toString('utf8').match(/^(https?|config):\/\//);
         }
 
         return true;

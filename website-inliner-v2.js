@@ -14,16 +14,18 @@ const GET_UPDATE_DATA_PREFIX = 'BlockData:';
  */
 
 // Get the url and the config genesis id
-const params = parser.parse(process.argv, {rules: {
-  block: {
-    type: String,
-    short: 'b'
-  },
-  file: {
-    type: String,
-    short: 'f'
+const params = parser.parse(process.argv, {
+  rules: {
+    block: {
+      type: String,
+      short: 'b'
+    },
+    file: {
+      type: String,
+      short: 'f'
+    }
   }
-}}).parsed;
+}).parsed;
 
 const baseURL = params.argv.remain[0];
 
@@ -177,24 +179,20 @@ function cleanURL(url) {
 console.log('------------- Get or create the config file');
 
 if (params.block) {
-  const out = exec('scmgr update ' + params.block).toString('utf8');
+  const out = exec('scmgr update -d ' + params.block).toString('utf8');
   const lines = out.split("\n").filter(l => l.length > 0);
 
-  let data = '';
-  if (lines[lines.length - 1].startsWith(GET_UPDATE_DATA_PREFIX)) {
-    data = lines[lines.length - 1].replace(GET_UPDATE_DATA_PREFIX, '');
-    data = Buffer.from(data, 'base64').toString('utf8');
-    data = data.substr(data.indexOf('{'));
+  let data = lines[lines.length - 1];
+  data = Buffer.from(data, 'base64').toString('utf8');
 
-    try {
-      console.log(data);
-      config = JSON.parse(data);
-    }
-    catch (e) {
-      // console.log(e);
-      console.error('Cannot parse the config from the skipchain. Are your sure you enter the good skipchain?');
-      process.exit(-1);
-    }
+  try {
+    console.log(data);
+    config = JSON.parse(data);
+  }
+  catch (e) {
+    // console.log(e);
+    console.error('Cannot parse the config from the skipchain. Are your sure you enter the good skipchain?');
+    process.exit(-1);
   }
 }
 else {

@@ -1,4 +1,5 @@
 import 'whatwg-fetch'
+import ByteBuffer from 'bytebuffer'
 
 import SkipChainService from './skipchain'
 import {hex2buf, buf2hex} from '../utils/buffer'
@@ -30,7 +31,7 @@ export class GenesisService {
         (response) => response.json().then(data => {
           // We keep the list of available blocks
           this.genesisList = data.Blocks;
-          this.curr_genesis = this.genesisList[0].GenesisID;
+          this.curr_genesis = getFirstSkipChain(this.genesisList);
 
           this._request = this._fetchStatusForGenesisID(this.curr_genesis);
         })
@@ -176,3 +177,16 @@ export class GenesisService {
 }
 
 export default new GenesisService()
+
+function getFirstSkipChain(list) {
+
+  for (let i = 0; i < list.length; i++) {
+    const block = list[i];
+
+    if (!ByteBuffer.fromBase64(block.Data).toString('utf8').match(/^(https?|config):\/\//)) {
+      return block.GenesisID;
+    }
+  }
+
+  return '';
+}

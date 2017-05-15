@@ -35,11 +35,7 @@ export default class ModuleHTML extends React.Component {
     this.setState({
       genesisList: genesisList.filter(b => {
         const data = ByteBuffer.fromBase64(b.Data);
-        if (data.capacity() > 18) {
-          return data.toString('utf8').match(/https?:\/\/[^/]+$/);
-        }
-
-        return false;
+        return data.toString('utf8').match(/^https?:\/\/[^/]+$/);
       })
     });
   }
@@ -79,7 +75,7 @@ export default class ModuleHTML extends React.Component {
     const rows = genesisList.map(block => {
       return (
         <div key={block.GenesisID} className="module-html-item" onClick={() => ModuleHTML.handleOpenPage(block.GenesisID)}>
-          {ByteBuffer.fromBase64(block.Data).slice(18).toString('utf8')}
+          {ByteBuffer.fromBase64(block.Data).toString('utf8')}
         </div>
       );
     });
