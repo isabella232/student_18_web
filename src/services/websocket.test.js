@@ -184,7 +184,7 @@ describe('services:websocket', () => {
 
     const service = new CothorityWebsocket();
     const address = Faker.internet.ip();
-    const server = new Server(`ws://${address}/RandHound/Random`);
+    const server = new Server(`ws://${address}/RandHound/RandRequest`);
     server.on('message', () => server.send(CothorityMessages.encodeMessage('RandomResponse', MOCK_RANDOM_RESPONSE)));
 
     return service.getRandom(address).then((msg) => {
@@ -197,7 +197,7 @@ describe('services:websocket', () => {
 
     const service = new CothorityWebsocket();
     const address = Faker.internet.ip();
-    const server = new Server(`ws://${address}/RandHound/Random`);
+    const server = new Server(`ws://${address}/RandHound/RandRequest`);
     server.on('message', () => server.emit('error'));
 
     return service.getRandom(address).catch(e => expect(e).toBeDefined());

@@ -16,7 +16,7 @@ export default new class {
 
     const genesisList = [{
       GenesisID: '1',
-      Data: 'Wztc3rrGr9+feEFodHRwczovL2RlZGlzLmNo'
+      Data: 'aHR0cHM6Ly9kZWRpcy5jaA=='
     },{
       GenesisID: '2',
       Data: ''
