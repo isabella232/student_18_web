@@ -7,6 +7,10 @@
   .module-body {
     padding: 20px;
 
+    p.has-error {
+      color: $red;
+    }
+
     .module-random-counter {
       margin-top: 20px;
 

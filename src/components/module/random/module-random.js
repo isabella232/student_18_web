@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {PropTypes as T} from 'react'
 
 import './module-random.css'
 import Module from '../module'
@@ -17,6 +17,10 @@ const REFRESH_COUNTER_INTERVAL = 100;
  */
 export default class ModuleRandom extends React.Component {
 
+  static propTypes = {
+    randomRefreshInterval: T.number
+  };
+
   /**
    * @constructor
    * @param props
@@ -25,7 +29,10 @@ export default class ModuleRandom extends React.Component {
     super(props);
 
     this.state = {
-      random: ''
+      random: '',
+      counter: 0,
+      error: null,
+      randomRefreshInterval: props.randomRefreshInterval || REFRESH_RANDOM_INTERVAL,
     };
   }
 
@@ -43,12 +50,14 @@ export default class ModuleRandom extends React.Component {
    * @returns {XML}
    */
   render() {
-    const {random, counter} = this.state;
+    const {random, error, counter} = this.state;
 
     return (
       <Module title="Random" icon="random" className="module-random">
         <strong>Random number</strong><br/>
-        {random}
+        {
+          error ? <p className="has-error">{error}</p> : random
+        }
 
         <div className="module-random-counter">
           <div style={{width: `${counter * 100}%`}}/>
@@ -62,16 +71,24 @@ export default class ModuleRandom extends React.Component {
    * @private
    */
   _triggerRandomUpdate() {
-    WebSocketService.getRandom('pulsar.dedis.ch:9000').then(msg => {
-      this._timestamp = Date.now();
-      this.setState({
-        random: buf2hex(msg.R),
-        counter: 0
-      });
+    WebSocketService.getRandom('pulsar.dedis.ch:9000')
+      .then(msg => {
+        this._timestamp = Date.now();
+        this.setState({
+          random: buf2hex(msg.R),
+          counter: 0
+        });
 
-      const self = this;
-      setTimeout(() => self._checkCountDown(), REFRESH_COUNTER_INTERVAL);
-    });
+        const self = this;
+        setTimeout(() => self._checkCountDown(), REFRESH_COUNTER_INTERVAL);
+      })
+      .catch((e) => {
+        console.error(e);
+
+        this.setState({
+          error: 'Oops, something went wrong.'
+        });
+      });
   }
 
   /**
@@ -80,8 +97,10 @@ export default class ModuleRandom extends React.Component {
    * @private
    */
   _checkCountDown() {
+    const {randomRefreshInterval} = this.state;
+
     // counter from 0 to 1
-    const counter = Math.min(1, (Date.now() - this._timestamp) / REFRESH_RANDOM_INTERVAL);
+    const counter = Math.min(1, (Date.now() - this._timestamp) / randomRefreshInterval);
 
     this.setState({counter});
 

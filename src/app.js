@@ -5,7 +5,7 @@ import {
 } from 'react-router-dom'
 
 import Home from './app/home'
-import ModuleRandom from './components/module/random/module-random'
+import ExternalModuleRandom from './components/external/external-random'
 
 /**
  * Entry point of the application
@@ -18,7 +18,7 @@ const App = () => (
   <BrowserRouter>
     <div>
       <Route exact path="/" component={Home}/>
-      <Route path="/external/random" component={ModuleRandom}/>
+      <Route path="/external/random" component={ExternalModuleRandom}/>
     </div>
   </BrowserRouter>
 );
