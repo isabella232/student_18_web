@@ -30,7 +30,7 @@ export default class Module extends React.Component {
       <div className={className}>
         <div className="module-header">
           <FontAwesome name={icon || ''} size="2x"/>
-          {title || 'Module'}
+          {title}
         </div>
         <div className="module-body">
           {this.props.children}

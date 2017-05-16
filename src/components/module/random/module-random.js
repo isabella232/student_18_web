@@ -18,7 +18,14 @@ const REFRESH_COUNTER_INTERVAL = 100;
 export default class ModuleRandom extends React.Component {
 
   static propTypes = {
+    title: T.string,
+    icon: T.string,
     randomRefreshInterval: T.number
+  };
+
+  static defaultProps = {
+    title: "Random",
+    icon: "random"
   };
 
   /**
@@ -50,10 +57,11 @@ export default class ModuleRandom extends React.Component {
    * @returns {XML}
    */
   render() {
+    const {title, icon} = this.props;
     const {random, error, counter} = this.state;
 
     return (
-      <Module title=" " className="module-random">
+      <Module title={title} icon={icon} className="module-random">
         {
           error ? <p className="has-error">{error}</p> : random
         }
