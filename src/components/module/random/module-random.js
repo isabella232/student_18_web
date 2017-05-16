@@ -53,8 +53,7 @@ export default class ModuleRandom extends React.Component {
     const {random, error, counter} = this.state;
 
     return (
-      <Module title="Random" icon="random" className="module-random">
-        <strong>Random number</strong><br/>
+      <Module title=" " className="module-random">
         {
           error ? <p className="has-error">{error}</p> : random
         }

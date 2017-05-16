@@ -3,12 +3,16 @@
 .external-module-random {
 
   .module-random {
-    width: 400px;
+    width: 300px;
     height: 180px;
     background: white;
 
     .module-body {
-      padding: 20px;
+      padding: 0px;
+      margin-top: -25px;
+      font-size: 15.2px;
+      font-family: monospace;
+      color: #414f57;
       word-break: break-all;
 
       p.has-error {
@@ -19,8 +23,8 @@
         margin-top: 20px;
 
         > div {
-          height: 5px;
-          background: $green;
+          height: 8px;
+          background: #414f57;
         }
       }
     }
