@@ -6,7 +6,7 @@ import WebSocketService from '../../../services/websocket'
 import {buf2hex} from '../../../utils/buffer'
 
 const REFRESH_RANDOM_INTERVAL = 30 * 1000;
-const REFRESH_COUNTER_INTERVAL = 100;
+const REFRESH_COUNTER_INTERVAL = 15;
 
 /**
  * This module will ask for a random number every fixed interval and display the result
@@ -20,12 +20,14 @@ export default class ModuleRandom extends React.Component {
   static propTypes = {
     title: T.string,
     icon: T.string,
+    showTimestamp: T.bool,
     randomRefreshInterval: T.number
   };
 
   static defaultProps = {
     title: "Random",
-    icon: "random"
+    icon: "random",
+    showTimestamp: true
   };
 
   /**
@@ -37,6 +39,7 @@ export default class ModuleRandom extends React.Component {
 
     this.state = {
       random: '',
+      timestamp: 0,
       counter: 0,
       error: null,
       randomRefreshInterval: props.randomRefreshInterval || REFRESH_RANDOM_INTERVAL,
@@ -57,13 +60,18 @@ export default class ModuleRandom extends React.Component {
    * @returns {XML}
    */
   render() {
-    const {title, icon} = this.props;
-    const {random, error, counter} = this.state;
+    const {title, icon, showTimestamp} = this.props;
+    const {random, timestamp, error, counter} = this.state;
 
     return (
       <Module title={title} icon={icon} className="module-random">
         {
-          error ? <p className="has-error">{error}</p> : random
+          error ? <p className="has-error">{error}</p> : (
+            <div>
+              {random}<br/>
+              {showTimestamp ? <span><strong>Timestamp:</strong> {timestamp}</span> : null}
+            </div>
+          )
         }
 
         <div className="module-random-counter">
@@ -83,6 +91,7 @@ export default class ModuleRandom extends React.Component {
         this._timestamp = Date.now();
         this.setState({
           random: buf2hex(msg.R),
+          timestamp: msg.T.time,
           counter: 0
         });
 

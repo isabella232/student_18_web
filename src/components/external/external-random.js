@@ -18,7 +18,7 @@ export default class ExternalModuleRandom extends React.Component {
   render () {
     return (
       <div className="external-module-random">
-        <ModuleRandom randomRefreshInterval={30 * 1000} title="" icon=""/>
+        <ModuleRandom randomRefreshInterval={30 * 1000} title="" icon="" showTimestamp={false}/>
       </div>
     );
   }
