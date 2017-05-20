@@ -4,10 +4,14 @@ export default new class {
   unsubscribe = jest.fn();
 
   getAvailableRoster = jest.fn().mockReturnValue([{
-    system: {}
+    server: {}
   }, {
-    system: {}
+    server: {}
   }, {
-    system: {}
+    server: {}
+  }]);
+
+  getOfflineRoster = jest.fn().mockReturnValue([{
+    server: {address: ''}
   }]);
 }

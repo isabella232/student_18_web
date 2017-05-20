@@ -5,7 +5,7 @@ import {StatusService} from './status'
 import CothorityWS from './websocket'
 import GenesisService from './genesis'
 
-describe(StatusService, () => {
+describe('servies:status', () => {
 
   beforeEach(() => {
     CothorityWS.getStatus = jest.fn();
@@ -133,11 +133,24 @@ describe(StatusService, () => {
     CothorityWS.getStatus.mockReturnValue(Promise.resolve());
     const service = new StatusService();
     service.status = {
-      '1': {},
-      '2': {}
+      '1': {system: {}},
+      '2': {system: {}},
+      '3': {}
     };
 
     expect(service.getAvailableRoster()).toHaveLength(2);
+  });
+
+  it('should return the offline roster', () => {
+    CothorityWS.getStatus.mockReturnValue(Promise.resolve());
+    const service = new StatusService();
+    service.status = {
+      '1': {system: {}},
+      '2': {},
+      '3': {}
+    };
+
+    expect(service.getOfflineRoster()).toHaveLength(2);
   });
 
 });

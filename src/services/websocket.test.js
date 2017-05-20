@@ -19,10 +19,6 @@ const MOCK_STATUS_RESPONSE = {
   }
 };
 
-const MOCK_RANDOM_RESPONSE = {
-  R: new Uint8Array([5, 5, 5, 5])
-};
-
 describe('services:websocket', () => {
 
   beforeAll(() => {
@@ -185,7 +181,7 @@ describe('services:websocket', () => {
     const service = new CothorityWebsocket();
     const address = Faker.internet.ip();
     const server = new Server(`ws://${address}/RandHound/RandRequest`);
-    server.on('message', () => server.send(CothorityMessages.encodeMessage('RandomResponse', MOCK_RANDOM_RESPONSE)));
+    server.on('message', () => server.send(new Uint8Array([])));
 
     return service.getRandom(address).then((msg) => {
       expect(msg).toBeDefined();

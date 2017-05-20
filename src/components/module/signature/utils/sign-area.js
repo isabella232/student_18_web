@@ -100,17 +100,17 @@ export default class SignArea extends React.Component {
     // else an error will be displayed before letting the user sign
     const {genesisID, block} = this.state;
 
-    const servers = StatusService.getAvailableRoster().filter(r => !!r.system).map(r => r.server);
+    const servers = StatusService.getAvailableRoster().map(r => r.server);
 
     const signFile = new SignatureFile();
     signFile.setFileName(file.name);
     signFile.setGenesisID(genesisID);
     signFile.setBlockID(block.Hash);
-    signFile.setOfflineServers(StatusService.getAvailableRoster().filter(r => !r.system).map(r => r.server.address));
+    signFile.setOfflineServers(StatusService.getOfflineRoster().map(r => r.server.address));
 
     this._signPromise = new Promise((resolve, reject) => {
       // Check if more than 2/3 of the servers are available
-      if (servers.length / block.Roster.list.length < 2 / 3) {
+      if (servers.length / block.Roster.list.length <= 2 / 3) {
         reject("Not enough available servers");
         return;
       }
@@ -125,7 +125,6 @@ export default class SignArea extends React.Component {
               CothorityWebsocket.getSignature(hash, address, servers)
                 .then(
                   (response) => {
-                    console.log(response);
                     const signature = (response.signature || []).slice(0, 64);
                     signFile.setSignature(signature);
 
@@ -135,8 +134,7 @@ export default class SignArea extends React.Component {
                     resolve();
                   }
                 )
-                .catch((e) => {
-                  console.log(e);
+                .catch(() => {
                   reject('Oops, something went wrong...');
                 })
             }

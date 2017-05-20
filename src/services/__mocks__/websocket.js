@@ -10,7 +10,10 @@ export default new class {
   }));
 
   getRandom = jest.fn().mockReturnValue(Promise.resolve({
-    R: 0
+    R: 0,
+    T: {
+      time: 123456789
+    }
   }));
 
 }

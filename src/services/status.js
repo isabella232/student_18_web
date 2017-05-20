@@ -77,13 +77,22 @@ export class StatusService {
 
   /**
    * Return the list of server that are responding
-   * Check the protobuf definition of a Status message for the return array
-   * @returns {Array<Status>}
+   * @returns {Array<*>}
    */
   getAvailableRoster() {
-    return Object.keys(this.status).map(key => {
-      return this.status[key];
-    });
+    return Object.keys(this.status)
+      .map(key => this.status[key])
+      .filter(r => !!r.system);
+  }
+
+  /**
+   * Return the list of server that are not responding
+   * @returns {Array.<*>}
+   */
+  getOfflineRoster() {
+    return Object.keys(this.status)
+      .map(key => this.status[key])
+      .filter(r => !r.system);
   }
 
   /**
