@@ -16,9 +16,11 @@ describe('services:genesis', () => {
         return Promise.resolve({
           Blocks: [{
             GenesisID: '00',
+            Data: 'https://google.ch',
             Servers: []
           }, {
             GenesisID: '11',
+            Data: '',
             Servers: ['127.0.0.1:7000']
           }]
         });

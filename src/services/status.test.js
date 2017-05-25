@@ -53,10 +53,14 @@ describe('servies:status', () => {
     };
 
     service.subscribe(listener);
-    expect(listener.onStatusUpdate).toHaveBeenCalledTimes(1);
+    expect(listener.onStatusUpdate).toHaveBeenCalledTimes(0);
     expect(service.listeners.indexOf(listener) >= 0).toBeTruthy();
 
+    service.unsubscribe(listener);
+
+    service.status = {'1': {}};
     service.subscribe(listener);
+    expect(listener.onStatusUpdate).toHaveBeenCalledTimes(1);
     expect(service.listeners.length).toBe(1);
 
     service.unsubscribe(listener);

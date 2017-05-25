@@ -4,8 +4,19 @@ import React from 'react'
 import {mount} from 'enzyme'
 
 import ModuleRandom from './module-random'
+import WebSocketService from '../../../services/websocket'
 
 describe('components:module:random:module-random', () => {
+
+  beforeEach(() => {
+    WebSocketService.getRandom.mockClear();
+    WebSocketService.getRandom.mockReturnValue(Promise.resolve({
+      R: 0,
+      T: {
+        time: 123456789
+      }
+    }));
+  });
 
   it('should render without crashing', () => {
     const wrapper = mount(<ModuleRandom/>);
@@ -24,6 +35,18 @@ describe('components:module:random:module-random', () => {
     wrapper.instance()._triggerRandomUpdate = jest.fn();
     wrapper.instance()._checkCountDown();
     expect(wrapper.instance()._triggerRandomUpdate).toHaveBeenCalledTimes(1);
+  });
+
+  it('should show an error', () => {
+    expect.assertions(1);
+
+    WebSocketService.getRandom.mockClear();
+    WebSocketService.getRandom.mockReturnValue(Promise.reject());
+
+    const wrapper = mount(<ModuleRandom/>);
+    return wrapper.instance()._triggerRandomUpdate().then(() => {
+      expect(wrapper.state('error')).toBe('Oops, something went wrong.');
+    });
   });
 
 });

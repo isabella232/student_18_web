@@ -86,7 +86,7 @@ export default class ModuleRandom extends React.Component {
    * @private
    */
   _triggerRandomUpdate() {
-    WebSocketService.getRandom('pulsar.dedis.ch:9000')
+    return WebSocketService.getRandom('pulsar.dedis.ch:9000')
       .then(msg => {
         this._timestamp = Date.now();
         this.setState({
