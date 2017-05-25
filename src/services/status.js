@@ -60,7 +60,9 @@ export class StatusService {
     if (this.listeners.indexOf(listener) === -1) {
       this.listeners.push(listener);
 
-      this._triggerEvent(listener);
+      if (Object.keys(this.status).length > 0) {
+        this._triggerEvent(listener);
+      }
     }
   }
 

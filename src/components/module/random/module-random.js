@@ -69,7 +69,7 @@ export default class ModuleRandom extends React.Component {
           error ? <p className="has-error">{error}</p> : (
             <div>
               {random}<br/>
-              {showTimestamp ? <span><strong>Timestamp:</strong> {timestamp}</span> : null}
+              {showTimestamp && random ? <span><strong>Timestamp:</strong> {timestamp}</span> : null}
             </div>
           )
         }
