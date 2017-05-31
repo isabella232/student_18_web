@@ -3,7 +3,7 @@ import {Button} from 'reactstrap'
 import FontAwesome from 'react-fontawesome'
 
 import './sign-area.css'
-import {hashFile} from '../../../../utils/file'
+import {hashFile, reduceFileSize} from '../../../../utils/file'
 import {tcp2ws} from '../../../../utils/network'
 import CothorityWebsocket from '../../../../services/websocket'
 import GenesisService from '../../../../services/genesis'
@@ -165,7 +165,7 @@ export default class SignArea extends React.Component {
     }
 
     const {file} = this.props;
-    const size = (file.size / (1024 * 1024)).toFixed(2);
+    let size = reduceFileSize(file);
 
     const {isSigning} = this.state;
     const signAction = isSigning ? <div className="loading"><FontAwesome name="circle-o-notch" size="2x" spin/></div> :
@@ -175,7 +175,7 @@ export default class SignArea extends React.Component {
       <div className="sign-area">
         <div className="sign-area-file">
           <div><strong>Name</strong> {file.name}</div>
-          <div><strong>Size</strong> {size}MB</div>
+          <div><strong>Size</strong> {size}</div>
         </div>
         <div className="sign-area-action">
           <Button color="danger" onClick={this.handleBackAction}>Back</Button>

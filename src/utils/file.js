@@ -33,3 +33,21 @@ export function readAsString(file) {
   });
   
 }
+
+const SIZE_ABBREVIATIONS = ['B', 'kB', 'MB', 'GB'];
+
+/**
+ * Read the size of the file and return a human readable string
+ * @param {File} file
+ */
+export function reduceFileSize(file) {
+  let size = file.size;
+  let abbr = 0;
+
+  while (abbr < SIZE_ABBREVIATIONS.length - 1 && Math.round(size) > 1024) {
+    size /= 1024;
+    abbr++;
+  }
+
+  return `${Number(size).toFixed(2)} ${SIZE_ABBREVIATIONS[abbr]}`;
+}

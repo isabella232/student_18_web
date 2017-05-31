@@ -1,4 +1,4 @@
-import {hashFile, readAsString} from './file'
+import {hashFile, readAsString, reduceFileSize} from './file'
 
 global.cryptoJS = {
   sha256: jest.fn()
@@ -39,6 +39,13 @@ describe('utils:file', () => {
       // We don't want to test FileReader, only the fact we are using it
       expect(true).toBeTruthy();
     });
+  });
+
+  it('should return the size of the file', () => {
+    const file = {size: 1024 * 1024 * 5};
+    const size = reduceFileSize(file);
+
+    expect(size).toBe('5.00 MB');
   });
   
 });
