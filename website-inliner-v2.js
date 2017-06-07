@@ -3,8 +3,6 @@ const fs = require('fs');
 const parser = require('argv-parser');
 const Inliner = require('inliner');
 
-const GET_UPDATE_DATA_PREFIX = 'BlockData:';
-
 /**
  * @author Gaylor Bosson (gaylor.bosson@epfl.ch)
  *
