@@ -68,7 +68,7 @@ export class CothorityWebsocket {
     return new Promise((resolve, reject) => {
       this.latest_block = createSocket(
         this.latest_block,
-        address + '/Skipchain/GetBlocks',
+        address + '/Skipchain/GetUpdateChain',
         (e) => reject(e),
         (data) => resolve(CothorityMessages.decodeLatestBlockResponse(data)),
         CothorityMessages.createLatestBlockRequest(id)

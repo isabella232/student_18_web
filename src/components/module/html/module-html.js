@@ -32,12 +32,12 @@ export default class ModuleHTML extends React.Component {
    * @param {Array} genesisList - List of the genesis blocks available
    */
   onGenesisUpdate(blocks, genesisList) {
-    this.setState({
-      genesisList: genesisList.filter(b => {
-        const data = ByteBuffer.fromBase64(b.Data);
-        return data.toString('utf8').match(/^https?:\/\/[^/]+$/);
-      })
-    });
+    // this.setState({
+    //   genesisList: genesisList.filter(b => {
+    //     const data = ByteBuffer.fromBase64(b.Data);
+    //     return data.toString('utf8').match(/^https?:\/\/[^/]+$/);
+    //   })
+    // });
   }
 
   /**
