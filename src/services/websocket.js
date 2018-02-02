@@ -130,8 +130,9 @@ export default new CothorityWebsocket();
  */
 function createSocket(socket, address, error, callback, message) {
   if (!socket || socket.readyState > 2) {
-    const protocol = address.match(/^([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}|localhost)/) ? 'ws' : 'wss';
-
+      const protocol = address.match(/^pulsar.dedis.ch/) ? 'wss' : 'ws';
+      // TODO: Either fix the code that's sending these, or fix this more correctly here.
+      address = address.replace("tcp://", "")  
     socket = new WebSocket(`${protocol}://${address}`);
     socket.binaryType = 'arraybuffer';
   }

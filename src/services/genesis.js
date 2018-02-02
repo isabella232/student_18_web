@@ -27,7 +27,7 @@ export class GenesisService {
     // Get the servers list and the genesis block id
     this._fetch_request = fetch(GENESIS_BLOCK_SERVER + GENESIS_BLOCK_FILE, {headers: {'Content-Type': 'application/json'}})
       .then(
-        (response) => response.json().then(data => {
+          (response) => response.json().then(data => {
           // We keep the list of available blocks
           this.genesisList = data.Blocks;
           this.curr_genesis = getFirstSkipChain(this.genesisList);
@@ -35,8 +35,8 @@ export class GenesisService {
           this._request = this._fetchStatusForGenesisID(this.curr_genesis);
         })
       )
-      .catch(() => {
-        this.updateGenesis(new Error("Failed to get the list of Genesis blocks."));
+      .catch((error) => {
+          this.updateGenesis(new Error("Failed to get the list of Genesis blocks."));
       });
   }
 
@@ -164,8 +164,9 @@ export class GenesisService {
     }
 
     const servers = block.Servers.map(addr => tcp2ws(addr));
+      
     return SkipChainService.getLatestBlock(servers, hex2buf(block.GenesisID))
-      .then((data) => {
+	  .then((data) => {
         this.blocks = data;
         this.updateGenesis(null);
       })
