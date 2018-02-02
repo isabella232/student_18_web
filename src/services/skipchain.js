@@ -55,7 +55,6 @@ export class SkipChainService {
   _getUpdates(address, genesisID) {
 
     return CothorityWS.getLatestBlock(address, genesisID).then(
-
       (response) => {
         if (!response.Update) {
           throw new Error("Malformed response");
@@ -96,15 +95,25 @@ export class SkipChainService {
       let isSignatureVerified = true;
 
       block.ForwardLink.forEach(link => {
-        const res = cryptoJS.verifyForwardLink({ // eslint-disable-line
-          publicKeys: publicKeys,
-          hash: link.Hash,
-          signature: link.Signature
-        });
-        if (!res) {
-          console.log("Wrong signature for block", blockIndex, block);
-          isSignatureVerified = false;
-        }
+	  console.log("check signature for block", blockIndex, block);
+	  var res
+	  try {
+              res = cryptoJS.verifyForwardLink({ // eslint-disable-line
+		  publicKeys: publicKeys,
+		  hash: link.Hash,
+		  signature: link.Signature
+              })
+	  }
+	  catch(error) {
+	      console.log(error)
+	  }
+	  console.log(res)
+          if (!res) {
+	      console.log("Wrong signature for block", blockIndex, block);
+	      isSignatureVerified = false;
+          } else {
+	      console.log("OK signature for block", blockIndex, block);
+	  }
       });
 
       block._signature_verified = isSignatureVerified;
