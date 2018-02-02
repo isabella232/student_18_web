@@ -6,7 +6,7 @@ import HTMLIFrame from '../components/html-iframe/html-iframe'
 import ModuleSign from '../components/module/signature/module-sign'
 import ModuleVerify from '../components/module/signature/module-verify'
 import ModuleSkipChain from '../components/module/skipchain/module-skipchain'
-import ModuleHTML from '../components/module/html/module-html'
+// import ModuleHTML from '../components/module/html/module-html'
 import ModuleRandom from '../components/module/random/module-random'
 
 import './home.css';
@@ -21,6 +21,9 @@ class Home extends React.Component {
   /**
    * @override
    * @returns {XML}
+   <Col>
+     <ModuleHTML/>
+   </Col>
    */
   render() {
     return (
@@ -37,9 +40,6 @@ class Home extends React.Component {
             </Col>
             <Col>
               <ModuleSkipChain/>
-            </Col>
-            <Col>
-              <ModuleHTML/>
             </Col>
           </Row>
           <Row noGutters>
