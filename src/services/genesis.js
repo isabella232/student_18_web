@@ -6,6 +6,7 @@ import {hex2buf, buf2hex} from '../utils/buffer'
 import {tcp2ws} from '../utils/network'
 
 const GENESIS_BLOCK_SERVER = "https://skipchain.dedis.ch/";
+const GENESIS_BLOCK_FILE = "index.js";
 
 /**
  * This service will contact the DEDIS server to get the list of skipchains with their servers. Those servers may
@@ -26,7 +27,7 @@ export class GenesisService {
     this.blocks = [];
 
     // Get the servers list and the genesis block id
-    this._fetch_request = fetch(GENESIS_BLOCK_SERVER, {headers: {'Content-Type': 'application/json'}})
+    this._fetch_request = fetch(GENESIS_BLOCK_SERVER + GENESIS_BLOCK_FILE, {headers: {'Content-Type': 'application/json'}})
       .then(
         (response) => response.json().then(data => {
           // We keep the list of available blocks
@@ -107,7 +108,7 @@ export class GenesisService {
    */
   getLatestFromGenesisID(id, blockID = null) {
     return new Promise((resolve, reject) => {
-      fetch(GENESIS_BLOCK_SERVER + id + '.html', {headers: {'Content-Type': 'application/json'}})
+      fetch(GENESIS_BLOCK_SERVER + id + '.js', {headers: {'Content-Type': 'application/json'}})
         .then(
           (response) => response.json().then(data => {
             SkipChainService.getLatestBlock(data.Servers.map(addr => tcp2ws(addr)), hex2buf(id))
