@@ -133,6 +133,7 @@ function createSocket(socket, address, error, callback, message) {
       const protocol = address.match(/^pulsar.dedis.ch/) ? 'wss' : 'ws';
       // TODO: Either fix the code that's sending these, or fix this more correctly here.
       address = address.replace("tcp://", "")  
+      address = address.replace("tls://", "")  
     socket = new WebSocket(`${protocol}://${address}`);
     socket.binaryType = 'arraybuffer';
   }

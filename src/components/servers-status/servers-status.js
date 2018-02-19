@@ -123,7 +123,7 @@ function generateRows(status) {
   return status.map(status => {
     let data;
     if (status.system) {
-      data = status.system.Status.field;
+      data = status.system.Generic.field;
     } else {
       data = {
         className: 'has-error',
