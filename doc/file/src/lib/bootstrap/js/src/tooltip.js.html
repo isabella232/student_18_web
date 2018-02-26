@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../../../../">
+  <title data-ice="title">src/lib/bootstrap/js/src/tooltip.js | API Document</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  
+  
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/app.js~App.html">App</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/html-iframe</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/html-iframe/html-iframe.js~HTMLIFrame.html">HTMLIFrame</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/loading</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/loading/loading-spinner.js~LoadingSpinner.html">LoadingSpinner</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/html</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/html/module-html.js~ModuleHTML.html">ModuleHTML</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/random</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/random/module-random.js~ModuleRandom.html">ModuleRandom</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/signature</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/signature/module-sign.js~BlockSign.html">BlockSign</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/signature/module-verify.js~VerifyModule.html">VerifyModule</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/skipchain</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/skipchain/module-skipchain.js~ModuleSkipChain.html">ModuleSkipChain</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/servers-status</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/servers-status/servers-status.js~ServersStatus.html">ServersStatus</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">lib</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/lib/cothority-messages.js~CothorityMessages.html">CothorityMessages</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/lib/cothority-messages.js~CothorityProtobuf.html">CothorityProtobuf</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-index">index</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">lib/bootstrap/js/src</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Alert">Alert</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Button">Button</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Carousel">Carousel</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Collapse">Collapse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Dropdown">Dropdown</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Modal">Modal</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Popover">Popover</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ScrollSpy">ScrollSpy</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Tab">Tab</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Tooltip">Tooltip</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Util">Util</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">services</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/iframe.js~IFrameService.html">IFrameService</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/skipchain.js~SkipChainService.html">SkipChainService</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">utils</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-buf2hex">buf2hex</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-hex2buf">hex2buf</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-hashFile">hashFile</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-readAsString">readAsString</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-tcp2ws">tcp2ws</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/lib/bootstrap/js/src/tooltip.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/* global Tether */
+
+import Util from &apos;./util&apos;
+
+
+/**
+ * --------------------------------------------------------------------------
+ * Bootstrap (v4.0.0-alpha.6): tooltip.js
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * --------------------------------------------------------------------------
+ */
+
+const Tooltip = (($) =&gt; {
+
+  /**
+   * Check for Tether dependency
+   * Tether - http://tether.io/
+   */
+  if (typeof Tether === &apos;undefined&apos;) {
+    throw new Error(&apos;Bootstrap tooltips require Tether (http://tether.io/)&apos;)
+  }
+
+
+  /**
+   * ------------------------------------------------------------------------
+   * Constants
+   * ------------------------------------------------------------------------
+   */
+
+  const NAME                = &apos;tooltip&apos;
+  const VERSION             = &apos;4.0.0-alpha.6&apos;
+  const DATA_KEY            = &apos;bs.tooltip&apos;
+  const EVENT_KEY           = `.${DATA_KEY}`
+  const JQUERY_NO_CONFLICT  = $.fn[NAME]
+  const TRANSITION_DURATION = 150
+  const CLASS_PREFIX        = &apos;bs-tether&apos;
+
+  const Default = {
+    animation   : true,
+    template    : &apos;&lt;div class=&quot;tooltip&quot; role=&quot;tooltip&quot;&gt;&apos;
+                + &apos;&lt;div class=&quot;tooltip-inner&quot;&gt;&lt;/div&gt;&lt;/div&gt;&apos;,
+    trigger     : &apos;hover focus&apos;,
+    title       : &apos;&apos;,
+    delay       : 0,
+    html        : false,
+    selector    : false,
+    placement   : &apos;top&apos;,
+    offset      : &apos;0 0&apos;,
+    constraints : [],
+    container   : false
+  }
+
+  const DefaultType = {
+    animation   : &apos;boolean&apos;,
+    template    : &apos;string&apos;,
+    title       : &apos;(string|element|function)&apos;,
+    trigger     : &apos;string&apos;,
+    delay       : &apos;(number|object)&apos;,
+    html        : &apos;boolean&apos;,
+    selector    : &apos;(string|boolean)&apos;,
+    placement   : &apos;(string|function)&apos;,
+    offset      : &apos;string&apos;,
+    constraints : &apos;array&apos;,
+    container   : &apos;(string|element|boolean)&apos;
+  }
+
+  const AttachmentMap = {
+    TOP    : &apos;bottom center&apos;,
+    RIGHT  : &apos;middle left&apos;,
+    BOTTOM : &apos;top center&apos;,
+    LEFT   : &apos;middle right&apos;
+  }
+
+  const HoverState = {
+    SHOW : &apos;show&apos;,
+    OUT  : &apos;out&apos;
+  }
+
+  const Event = {
+    HIDE       : `hide${EVENT_KEY}`,
+    HIDDEN     : `hidden${EVENT_KEY}`,
+    SHOW       : `show${EVENT_KEY}`,
+    SHOWN      : `shown${EVENT_KEY}`,
+    INSERTED   : `inserted${EVENT_KEY}`,
+    CLICK      : `click${EVENT_KEY}`,
+    FOCUSIN    : `focusin${EVENT_KEY}`,
+    FOCUSOUT   : `focusout${EVENT_KEY}`,
+    MOUSEENTER : `mouseenter${EVENT_KEY}`,
+    MOUSELEAVE : `mouseleave${EVENT_KEY}`
+  }
+
+  const ClassName = {
+    FADE : &apos;fade&apos;,
+    SHOW : &apos;show&apos;
+  }
+
+  const Selector = {
+    TOOLTIP       : &apos;.tooltip&apos;,
+    TOOLTIP_INNER : &apos;.tooltip-inner&apos;
+  }
+
+  const TetherClass = {
+    element : false,
+    enabled : false
+  }
+
+  const Trigger = {
+    HOVER  : &apos;hover&apos;,
+    FOCUS  : &apos;focus&apos;,
+    CLICK  : &apos;click&apos;,
+    MANUAL : &apos;manual&apos;
+  }
+
+
+  /**
+   * ------------------------------------------------------------------------
+   * Class Definition
+   * ------------------------------------------------------------------------
+   */
+
+  class Tooltip {
+
+    constructor(element, config) {
+
+      // private
+      this._isEnabled        = true
+      this._timeout          = 0
+      this._hoverState       = &apos;&apos;
+      this._activeTrigger    = {}
+      this._isTransitioning  = false
+      this._tether           = null
+
+      // protected
+      this.element = element
+      this.config  = this._getConfig(config)
+      this.tip     = null
+
+      this._setListeners()
+
+    }
+
+
+    // getters
+
+    static get VERSION() {
+      return VERSION
+    }
+
+    static get Default() {
+      return Default
+    }
+
+    static get NAME() {
+      return NAME
+    }
+
+    static get DATA_KEY() {
+      return DATA_KEY
+    }
+
+    static get Event() {
+      return Event
+    }
+
+    static get EVENT_KEY() {
+      return EVENT_KEY
+    }
+
+    static get DefaultType() {
+      return DefaultType
+    }
+
+
+    // public
+
+    enable() {
+      this._isEnabled = true
+    }
+
+    disable() {
+      this._isEnabled = false
+    }
+
+    toggleEnabled() {
+      this._isEnabled = !this._isEnabled
+    }
+
+    toggle(event) {
+      if (event) {
+        const dataKey = this.constructor.DATA_KEY
+        let context = $(event.currentTarget).data(dataKey)
+
+        if (!context) {
+          context = new this.constructor(
+            event.currentTarget,
+            this._getDelegateConfig()
+          )
+          $(event.currentTarget).data(dataKey, context)
+        }
+
+        context._activeTrigger.click = !context._activeTrigger.click
+
+        if (context._isWithActiveTrigger()) {
+          context._enter(null, context)
+        } else {
+          context._leave(null, context)
+        }
+
+      } else {
+
+        if ($(this.getTipElement()).hasClass(ClassName.SHOW)) {
+          this._leave(null, this)
+          return
+        }
+
+        this._enter(null, this)
+      }
+    }
+
+    dispose() {
+      clearTimeout(this._timeout)
+
+      this.cleanupTether()
+
+      $.removeData(this.element, this.constructor.DATA_KEY)
+
+      $(this.element).off(this.constructor.EVENT_KEY)
+      $(this.element).closest(&apos;.modal&apos;).off(&apos;hide.bs.modal&apos;)
+
+      if (this.tip) {
+        $(this.tip).remove()
+      }
+
+      this._isEnabled     = null
+      this._timeout       = null
+      this._hoverState    = null
+      this._activeTrigger = null
+      this._tether        = null
+
+      this.element = null
+      this.config  = null
+      this.tip     = null
+    }
+
+    show() {
+      if ($(this.element).css(&apos;display&apos;) === &apos;none&apos;) {
+        throw new Error(&apos;Please use show on visible elements&apos;)
+      }
+
+      const showEvent = $.Event(this.constructor.Event.SHOW)
+      if (this.isWithContent() &amp;&amp; this._isEnabled) {
+        if (this._isTransitioning) {
+          throw new Error(&apos;Tooltip is transitioning&apos;)
+        }
+        $(this.element).trigger(showEvent)
+
+        const isInTheDom = $.contains(
+          this.element.ownerDocument.documentElement,
+          this.element
+        )
+
+        if (showEvent.isDefaultPrevented() || !isInTheDom) {
+          return
+        }
+
+        const tip   = this.getTipElement()
+        const tipId = Util.getUID(this.constructor.NAME)
+
+        tip.setAttribute(&apos;id&apos;, tipId)
+        this.element.setAttribute(&apos;aria-describedby&apos;, tipId)
+
+        this.setContent()
+
+        if (this.config.animation) {
+          $(tip).addClass(ClassName.FADE)
+        }
+
+        const placement  = typeof this.config.placement === &apos;function&apos; ?
+          this.config.placement.call(this, tip, this.element) :
+          this.config.placement
+
+        const attachment = this._getAttachment(placement)
+
+        const container = this.config.container === false ? document.body : $(this.config.container)
+
+        $(tip)
+          .data(this.constructor.DATA_KEY, this)
+          .appendTo(container)
+
+        $(this.element).trigger(this.constructor.Event.INSERTED)
+
+        this._tether = new Tether({
+          attachment,
+          element         : tip,
+          target          : this.element,
+          classes         : TetherClass,
+          classPrefix     : CLASS_PREFIX,
+          offset          : this.config.offset,
+          constraints     : this.config.constraints,
+          addTargetClasses: false
+        })
+
+        Util.reflow(tip)
+        this._tether.position()
+
+        $(tip).addClass(ClassName.SHOW)
+
+        const complete = () =&gt; {
+          const prevHoverState = this._hoverState
+          this._hoverState   = null
+          this._isTransitioning = false
+
+          $(this.element).trigger(this.constructor.Event.SHOWN)
+
+          if (prevHoverState === HoverState.OUT) {
+            this._leave(null, this)
+          }
+        }
+
+        if (Util.supportsTransitionEnd() &amp;&amp; $(this.tip).hasClass(ClassName.FADE)) {
+          this._isTransitioning = true
+          $(this.tip)
+            .one(Util.TRANSITION_END, complete)
+            .emulateTransitionEnd(Tooltip._TRANSITION_DURATION)
+          return
+        }
+
+        complete()
+      }
+    }
+
+    hide(callback) {
+      const tip       = this.getTipElement()
+      const hideEvent = $.Event(this.constructor.Event.HIDE)
+      if (this._isTransitioning) {
+        throw new Error(&apos;Tooltip is transitioning&apos;)
+      }
+      const complete  = () =&gt; {
+        if (this._hoverState !== HoverState.SHOW &amp;&amp; tip.parentNode) {
+          tip.parentNode.removeChild(tip)
+        }
+
+        this.element.removeAttribute(&apos;aria-describedby&apos;)
+        $(this.element).trigger(this.constructor.Event.HIDDEN)
+        this._isTransitioning = false
+        this.cleanupTether()
+
+        if (callback) {
+          callback()
+        }
+      }
+
+      $(this.element).trigger(hideEvent)
+
+      if (hideEvent.isDefaultPrevented()) {
+        return
+      }
+
+      $(tip).removeClass(ClassName.SHOW)
+
+      this._activeTrigger[Trigger.CLICK] = false
+      this._activeTrigger[Trigger.FOCUS] = false
+      this._activeTrigger[Trigger.HOVER] = false
+
+      if (Util.supportsTransitionEnd() &amp;&amp;
+          $(this.tip).hasClass(ClassName.FADE)) {
+        this._isTransitioning = true
+        $(tip)
+          .one(Util.TRANSITION_END, complete)
+          .emulateTransitionEnd(TRANSITION_DURATION)
+
+      } else {
+        complete()
+      }
+
+      this._hoverState = &apos;&apos;
+    }
+
+
+    // protected
+
+    isWithContent() {
+      return Boolean(this.getTitle())
+    }
+
+    getTipElement() {
+      return this.tip = this.tip || $(this.config.template)[0]
+    }
+
+    setContent() {
+      const $tip = $(this.getTipElement())
+
+      this.setElementContent($tip.find(Selector.TOOLTIP_INNER), this.getTitle())
+
+      $tip.removeClass(`${ClassName.FADE} ${ClassName.SHOW}`)
+
+      this.cleanupTether()
+    }
+
+    setElementContent($element, content) {
+      const html = this.config.html
+      if (typeof content === &apos;object&apos; &amp;&amp; (content.nodeType || content.jquery)) {
+        // content is a DOM node or a jQuery
+        if (html) {
+          if (!$(content).parent().is($element)) {
+            $element.empty().append(content)
+          }
+        } else {
+          $element.text($(content).text())
+        }
+      } else {
+        $element[html ? &apos;html&apos; : &apos;text&apos;](content)
+      }
+    }
+
+    getTitle() {
+      let title = this.element.getAttribute(&apos;data-original-title&apos;)
+
+      if (!title) {
+        title = typeof this.config.title === &apos;function&apos; ?
+          this.config.title.call(this.element) :
+          this.config.title
+      }
+
+      return title
+    }
+
+    cleanupTether() {
+      if (this._tether) {
+        this._tether.destroy()
+      }
+    }
+
+
+    // private
+
+    _getAttachment(placement) {
+      return AttachmentMap[placement.toUpperCase()]
+    }
+
+    _setListeners() {
+      const triggers = this.config.trigger.split(&apos; &apos;)
+
+      triggers.forEach((trigger) =&gt; {
+        if (trigger === &apos;click&apos;) {
+          $(this.element).on(
+            this.constructor.Event.CLICK,
+            this.config.selector,
+            (event) =&gt; this.toggle(event)
+          )
+
+        } else if (trigger !== Trigger.MANUAL) {
+          const eventIn  = trigger === Trigger.HOVER ?
+            this.constructor.Event.MOUSEENTER :
+            this.constructor.Event.FOCUSIN
+          const eventOut = trigger === Trigger.HOVER ?
+            this.constructor.Event.MOUSELEAVE :
+            this.constructor.Event.FOCUSOUT
+
+          $(this.element)
+            .on(
+              eventIn,
+              this.config.selector,
+              (event) =&gt; this._enter(event)
+            )
+            .on(
+              eventOut,
+              this.config.selector,
+              (event) =&gt; this._leave(event)
+            )
+        }
+
+        $(this.element).closest(&apos;.modal&apos;).on(
+          &apos;hide.bs.modal&apos;,
+          () =&gt; this.hide()
+        )
+      })
+
+      if (this.config.selector) {
+        this.config = $.extend({}, this.config, {
+          trigger  : &apos;manual&apos;,
+          selector : &apos;&apos;
+        })
+      } else {
+        this._fixTitle()
+      }
+    }
+
+    _fixTitle() {
+      const titleType = typeof this.element.getAttribute(&apos;data-original-title&apos;)
+      if (this.element.getAttribute(&apos;title&apos;) ||
+         titleType !== &apos;string&apos;) {
+        this.element.setAttribute(
+          &apos;data-original-title&apos;,
+          this.element.getAttribute(&apos;title&apos;) || &apos;&apos;
+        )
+        this.element.setAttribute(&apos;title&apos;, &apos;&apos;)
+      }
+    }
+
+    _enter(event, context) {
+      const dataKey = this.constructor.DATA_KEY
+
+      context = context || $(event.currentTarget).data(dataKey)
+
+      if (!context) {
+        context = new this.constructor(
+          event.currentTarget,
+          this._getDelegateConfig()
+        )
+        $(event.currentTarget).data(dataKey, context)
+      }
+
+      if (event) {
+        context._activeTrigger[
+          event.type === &apos;focusin&apos; ? Trigger.FOCUS : Trigger.HOVER
+        ] = true
+      }
+
+      if ($(context.getTipElement()).hasClass(ClassName.SHOW) ||
+         context._hoverState === HoverState.SHOW) {
+        context._hoverState = HoverState.SHOW
+        return
+      }
+
+      clearTimeout(context._timeout)
+
+      context._hoverState = HoverState.SHOW
+
+      if (!context.config.delay || !context.config.delay.show) {
+        context.show()
+        return
+      }
+
+      context._timeout = setTimeout(() =&gt; {
+        if (context._hoverState === HoverState.SHOW) {
+          context.show()
+        }
+      }, context.config.delay.show)
+    }
+
+    _leave(event, context) {
+      const dataKey = this.constructor.DATA_KEY
+
+      context = context || $(event.currentTarget).data(dataKey)
+
+      if (!context) {
+        context = new this.constructor(
+          event.currentTarget,
+          this._getDelegateConfig()
+        )
+        $(event.currentTarget).data(dataKey, context)
+      }
+
+      if (event) {
+        context._activeTrigger[
+          event.type === &apos;focusout&apos; ? Trigger.FOCUS : Trigger.HOVER
+        ] = false
+      }
+
+      if (context._isWithActiveTrigger()) {
+        return
+      }
+
+      clearTimeout(context._timeout)
+
+      context._hoverState = HoverState.OUT
+
+      if (!context.config.delay || !context.config.delay.hide) {
+        context.hide()
+        return
+      }
+
+      context._timeout = setTimeout(() =&gt; {
+        if (context._hoverState === HoverState.OUT) {
+          context.hide()
+        }
+      }, context.config.delay.hide)
+    }
+
+    _isWithActiveTrigger() {
+      for (const trigger in this._activeTrigger) {
+        if (this._activeTrigger[trigger]) {
+          return true
+        }
+      }
+
+      return false
+    }
+
+    _getConfig(config) {
+      config = $.extend(
+        {},
+        this.constructor.Default,
+        $(this.element).data(),
+        config
+      )
+
+      if (config.delay &amp;&amp; typeof config.delay === &apos;number&apos;) {
+        config.delay = {
+          show : config.delay,
+          hide : config.delay
+        }
+      }
+
+      Util.typeCheckConfig(
+        NAME,
+        config,
+        this.constructor.DefaultType
+      )
+
+      return config
+    }
+
+    _getDelegateConfig() {
+      const config = {}
+
+      if (this.config) {
+        for (const key in this.config) {
+          if (this.constructor.Default[key] !== this.config[key]) {
+            config[key] = this.config[key]
+          }
+        }
+      }
+
+      return config
+    }
+
+
+    // static
+
+    static _jQueryInterface(config) {
+      return this.each(function () {
+        let data      = $(this).data(DATA_KEY)
+        const _config = typeof config === &apos;object&apos; &amp;&amp; config
+
+        if (!data &amp;&amp; /dispose|hide/.test(config)) {
+          return
+        }
+
+        if (!data) {
+          data = new Tooltip(this, _config)
+          $(this).data(DATA_KEY, data)
+        }
+
+        if (typeof config === &apos;string&apos;) {
+          if (data[config] === undefined) {
+            throw new Error(`No method named &quot;${config}&quot;`)
+          }
+          data[config]()
+        }
+      })
+    }
+
+  }
+
+
+  /**
+   * ------------------------------------------------------------------------
+   * jQuery
+   * ------------------------------------------------------------------------
+   */
+
+  $.fn[NAME]             = Tooltip._jQueryInterface
+  $.fn[NAME].Constructor = Tooltip
+  $.fn[NAME].noConflict  = function () {
+    $.fn[NAME] = JQUERY_NO_CONFLICT
+    return Tooltip._jQueryInterface
+  }
+
+  return Tooltip
+
+})(jQuery)
+
+export default Tooltip
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.5.2)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../../../../../">
+  <title data-ice="title">src/lib/bootstrap/js/tests/unit/scrollspy.js | API Document</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  
+  
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/app.js~App.html">App</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/html-iframe</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/html-iframe/html-iframe.js~HTMLIFrame.html">HTMLIFrame</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/loading</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/loading/loading-spinner.js~LoadingSpinner.html">LoadingSpinner</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/html</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/html/module-html.js~ModuleHTML.html">ModuleHTML</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/random</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/random/module-random.js~ModuleRandom.html">ModuleRandom</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/signature</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/signature/module-sign.js~BlockSign.html">BlockSign</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/signature/module-verify.js~VerifyModule.html">VerifyModule</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/skipchain</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/skipchain/module-skipchain.js~ModuleSkipChain.html">ModuleSkipChain</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/servers-status</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/servers-status/servers-status.js~ServersStatus.html">ServersStatus</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">lib</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/lib/cothority-messages.js~CothorityMessages.html">CothorityMessages</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/lib/cothority-messages.js~CothorityProtobuf.html">CothorityProtobuf</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-index">index</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">lib/bootstrap/js/src</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Alert">Alert</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Button">Button</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Carousel">Carousel</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Collapse">Collapse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Dropdown">Dropdown</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Modal">Modal</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Popover">Popover</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ScrollSpy">ScrollSpy</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Tab">Tab</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Tooltip">Tooltip</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Util">Util</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">services</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/iframe.js~IFrameService.html">IFrameService</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/skipchain.js~SkipChainService.html">SkipChainService</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">utils</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-buf2hex">buf2hex</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-hex2buf">hex2buf</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-hashFile">hashFile</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-readAsString">readAsString</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-tcp2ws">tcp2ws</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/lib/bootstrap/js/tests/unit/scrollspy.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">$(function () {
+  &apos;use strict&apos;
+
+  QUnit.module(&apos;scrollspy plugin&apos;)
+
+  QUnit.test(&apos;should be defined on jquery object&apos;, function (assert) {
+    assert.expect(1)
+    assert.ok($(document.body).scrollspy, &apos;scrollspy method is defined&apos;)
+  })
+
+  QUnit.module(&apos;scrollspy&apos;, {
+    beforeEach: function () {
+      // Run all tests in noConflict mode -- it&apos;s the only way to ensure that the plugin works in noConflict mode
+      $.fn.bootstrapScrollspy = $.fn.scrollspy.noConflict()
+    },
+    afterEach: function () {
+      $.fn.scrollspy = $.fn.bootstrapScrollspy
+      delete $.fn.bootstrapScrollspy
+    }
+  })
+
+  QUnit.test(&apos;should provide no conflict&apos;, function (assert) {
+    assert.expect(1)
+    assert.strictEqual($.fn.scrollspy, undefined, &apos;scrollspy was set back to undefined (org value)&apos;)
+  })
+
+  QUnit.test(&apos;should throw explicit error on undefined method&apos;, function (assert) {
+    assert.expect(1)
+    var $el = $(&apos;&lt;div/&gt;&apos;)
+    $el.bootstrapScrollspy()
+    try {
+      $el.bootstrapScrollspy(&apos;noMethod&apos;)
+    }
+    catch (err) {
+      assert.strictEqual(err.message, &apos;No method named &quot;noMethod&quot;&apos;)
+    }
+  })
+
+  QUnit.test(&apos;should return jquery collection containing the element&apos;, function (assert) {
+    assert.expect(2)
+    var $el = $(&apos;&lt;div/&gt;&apos;)
+    var $scrollspy = $el.bootstrapScrollspy()
+    assert.ok($scrollspy instanceof $, &apos;returns jquery collection&apos;)
+    assert.strictEqual($scrollspy[0], $el[0], &apos;collection contains element&apos;)
+  })
+
+  QUnit.test(&apos;should only switch &quot;active&quot; class on current target&apos;, function (assert) {
+    assert.expect(1)
+    var done = assert.async()
+
+    var sectionHTML = &apos;&lt;div id=&quot;root&quot; class=&quot;active&quot;&gt;&apos;
+        + &apos;&lt;div class=&quot;topbar&quot;&gt;&apos;
+        + &apos;&lt;div class=&quot;topbar-inner&quot;&gt;&apos;
+        + &apos;&lt;div class=&quot;container&quot; id=&quot;ss-target&quot;&gt;&apos;
+        + &apos;&lt;ul class=&quot;nav&quot;&gt;&apos;
+        + &apos;&lt;li&gt;&lt;a href=&quot;#masthead&quot;&gt;Overview&lt;/a&gt;&lt;/li&gt;&apos;
+        + &apos;&lt;li&gt;&lt;a href=&quot;#detail&quot;&gt;Detail&lt;/a&gt;&lt;/li&gt;&apos;
+        + &apos;&lt;/ul&gt;&apos;
+        + &apos;&lt;/div&gt;&apos;
+        + &apos;&lt;/div&gt;&apos;
+        + &apos;&lt;/div&gt;&apos;
+        + &apos;&lt;div id=&quot;scrollspy-example&quot; style=&quot;height: 100px; overflow: auto;&quot;&gt;&apos;
+        + &apos;&lt;div style=&quot;height: 200px;&quot;&gt;&apos;
+        + &apos;&lt;h4 id=&quot;masthead&quot;&gt;Overview&lt;/h4&gt;&apos;
+        + &apos;&lt;p style=&quot;height: 200px&quot;&gt;&apos;
+        + &apos;Ad leggings keytar, brunch id art party dolor labore.&apos;
+        + &apos;&lt;/p&gt;&apos;
+        + &apos;&lt;/div&gt;&apos;
+        + &apos;&lt;div style=&quot;height: 200px;&quot;&gt;&apos;
+        + &apos;&lt;h4 id=&quot;detail&quot;&gt;Detail&lt;/h4&gt;&apos;
+        + &apos;&lt;p style=&quot;height: 200px&quot;&gt;&apos;
+        + &apos;Veniam marfa mustache skateboard, adipisicing fugiat velit pitchfork beard.&apos;
+        + &apos;&lt;/p&gt;&apos;
+        + &apos;&lt;/div&gt;&apos;
+        + &apos;&lt;/div&gt;&apos;
+        + &apos;&lt;/div&gt;&apos;
+    var $section = $(sectionHTML).appendTo(&apos;#qunit-fixture&apos;)
+
+    var $scrollspy = $section
+      .show()
+      .find(&apos;#scrollspy-example&apos;)
+      .bootstrapScrollspy({ target: &apos;#ss-target&apos; })
+
+    $scrollspy.one(&apos;scroll&apos;, function () {
+      assert.ok($section.hasClass(&apos;active&apos;), &apos;&quot;active&quot; class still on root node&apos;)
+      done()
+    })
+
+    $scrollspy.scrollTop(350)
+  })
+
+  QUnit.test(&apos;should only switch &quot;active&quot; class on current target specified w element&apos;, function (assert) {
+    assert.expect(1)
+    var done = assert.async()
+
+    var sectionHTML = &apos;&lt;div id=&quot;root&quot; class=&quot;active&quot;&gt;&apos;
+        + &apos;&lt;div class=&quot;topbar&quot;&gt;&apos;
+        + &apos;&lt;div class=&quot;topbar-inner&quot;&gt;&apos;
+        + &apos;&lt;div class=&quot;container&quot; id=&quot;ss-target&quot;&gt;&apos;
+        + &apos;&lt;ul class=&quot;nav&quot;&gt;&apos;
+        + &apos;&lt;li&gt;&lt;a href=&quot;#masthead&quot;&gt;Overview&lt;/a&gt;&lt;/li&gt;&apos;
+        + &apos;&lt;li&gt;&lt;a href=&quot;#detail&quot;&gt;Detail&lt;/a&gt;&lt;/li&gt;&apos;
+        + &apos;&lt;/ul&gt;&apos;
+        + &apos;&lt;/div&gt;&apos;
+        + &apos;&lt;/div&gt;&apos;
+        + &apos;&lt;/div&gt;&apos;
+        + &apos;&lt;div id=&quot;scrollspy-example&quot; style=&quot;height: 100px; overflow: auto;&quot;&gt;&apos;
+        + &apos;&lt;div style=&quot;height: 200px;&quot;&gt;&apos;
+        + &apos;&lt;h4 id=&quot;masthead&quot;&gt;Overview&lt;/h4&gt;&apos;
+        + &apos;&lt;p style=&quot;height: 200px&quot;&gt;&apos;
+        + &apos;Ad leggings keytar, brunch id art party dolor labore.&apos;
+        + &apos;&lt;/p&gt;&apos;
+        + &apos;&lt;/div&gt;&apos;
+        + &apos;&lt;div style=&quot;height: 200px;&quot;&gt;&apos;
+        + &apos;&lt;h4 id=&quot;detail&quot;&gt;Detail&lt;/h4&gt;&apos;
+        + &apos;&lt;p style=&quot;height: 200px&quot;&gt;&apos;
+        + &apos;Veniam marfa mustache skateboard, adipisicing fugiat velit pitchfork beard.&apos;
+        + &apos;&lt;/p&gt;&apos;
+        + &apos;&lt;/div&gt;&apos;
+        + &apos;&lt;/div&gt;&apos;
+        + &apos;&lt;/div&gt;&apos;
+    var $section = $(sectionHTML).appendTo(&apos;#qunit-fixture&apos;)
+
+    var $scrollspy = $section
+      .show()
+      .find(&apos;#scrollspy-example&apos;)
+      .bootstrapScrollspy({ target: document.getElementById(&apos;#ss-target&apos;) })
+
+    $scrollspy.one(&apos;scroll&apos;, function () {
+      assert.ok($section.hasClass(&apos;active&apos;), &apos;&quot;active&quot; class still on root node&apos;)
+      done()
+    })
+
+    $scrollspy.scrollTop(350)
+  })
+
+  QUnit.test(&apos;should correctly select middle navigation option when large offset is used&apos;, function (assert) {
+    assert.expect(3)
+    var done = assert.async()
+
+    var sectionHTML = &apos;&lt;div id=&quot;header&quot; style=&quot;height: 500px;&quot;&gt;&lt;/div&gt;&apos;
+        + &apos;&lt;nav id=&quot;navigation&quot; class=&quot;navbar&quot;&gt;&apos;
+        + &apos;&lt;ul class=&quot;nav navbar-nav&quot;&gt;&apos;
+        + &apos;&lt;li class=&quot;active&quot;&gt;&lt;a class=&quot;nav-link&quot; id=&quot;one-link&quot; href=&quot;#one&quot;&gt;One&lt;/a&gt;&lt;/li&gt;&apos;
+        + &apos;&lt;li&gt;&lt;a class=&quot;nav-link&quot; id=&quot;two-link&quot; href=&quot;#two&quot;&gt;Two&lt;/a&gt;&lt;/li&gt;&apos;
+        + &apos;&lt;li&gt;&lt;a class=&quot;nav-link&quot; id=&quot;three-link&quot; href=&quot;#three&quot;&gt;Three&lt;/a&gt;&lt;/li&gt;&apos;
+        + &apos;&lt;/ul&gt;&apos;
+        + &apos;&lt;/nav&gt;&apos;
+        + &apos;&lt;div id=&quot;content&quot; style=&quot;height: 200px; overflow-y: auto;&quot;&gt;&apos;
+        + &apos;&lt;div id=&quot;one&quot; style=&quot;height: 500px;&quot;&gt;&lt;/div&gt;&apos;
+        + &apos;&lt;div id=&quot;two&quot; style=&quot;height: 300px;&quot;&gt;&lt;/div&gt;&apos;
+        + &apos;&lt;div id=&quot;three&quot; style=&quot;height: 10px;&quot;&gt;&lt;/div&gt;&apos;
+        + &apos;&lt;/div&gt;&apos;
+    var $section = $(sectionHTML).appendTo(&apos;#qunit-fixture&apos;)
+    var $scrollspy = $section
+      .show()
+      .filter(&apos;#content&apos;)
+
+    $scrollspy.bootstrapScrollspy({ target: &apos;#navigation&apos;, offset: $scrollspy.position().top })
+
+    $scrollspy.one(&apos;scroll&apos;, function () {
+      assert.ok(!$section.find(&apos;#one-link&apos;).hasClass(&apos;active&apos;), &apos;&quot;active&quot; class removed from first section&apos;)
+      assert.ok($section.find(&apos;#two-link&apos;).hasClass(&apos;active&apos;), &apos;&quot;active&quot; class on middle section&apos;)
+      assert.ok(!$section.find(&apos;#three-link&apos;).hasClass(&apos;active&apos;), &apos;&quot;active&quot; class not on last section&apos;)
+      done()
+    })
+
+    $scrollspy.scrollTop(550)
+  })
+
+  QUnit.test(&apos;should add the active class to the correct element&apos;, function (assert) {
+    assert.expect(2)
+    var navbarHtml =
+        &apos;&lt;nav class=&quot;navbar&quot;&gt;&apos;
+      + &apos;&lt;ul class=&quot;nav&quot;&gt;&apos;
+      + &apos;&lt;li&gt;&lt;a class=&quot;nav-link&quot; id=&quot;a-1&quot; href=&quot;#div-1&quot;&gt;div 1&lt;/a&gt;&lt;/li&gt;&apos;
+      + &apos;&lt;li&gt;&lt;a class=&quot;nav-link&quot; id=&quot;a-2&quot; href=&quot;#div-2&quot;&gt;div 2&lt;/a&gt;&lt;/li&gt;&apos;
+      + &apos;&lt;/ul&gt;&apos;
+      + &apos;&lt;/nav&gt;&apos;
+    var contentHtml =
+        &apos;&lt;div class=&quot;content&quot; style=&quot;overflow: auto; height: 50px&quot;&gt;&apos;
+      + &apos;&lt;div id=&quot;div-1&quot; style=&quot;height: 100px; padding: 0; margin: 0&quot;&gt;div 1&lt;/div&gt;&apos;
+      + &apos;&lt;div id=&quot;div-2&quot; style=&quot;height: 200px; padding: 0; margin: 0&quot;&gt;div 2&lt;/div&gt;&apos;
+      + &apos;&lt;/div&gt;&apos;
+
+    $(navbarHtml).appendTo(&apos;#qunit-fixture&apos;)
+    var $content = $(contentHtml)
+      .appendTo(&apos;#qunit-fixture&apos;)
+      .bootstrapScrollspy({ offset: 0, target: &apos;.navbar&apos; })
+
+    var done = assert.async()
+    var testElementIsActiveAfterScroll = function (element, target) {
+      var deferred = $.Deferred()
+      var scrollHeight = Math.ceil($content.scrollTop() + $(target).position().top)
+      $content.one(&apos;scroll&apos;, function () {
+        assert.ok($(element).hasClass(&apos;active&apos;), &apos;target:&apos; + target + &apos;, element&apos; + element)
+        deferred.resolve()
+      })
+      $content.scrollTop(scrollHeight)
+      return deferred.promise()
+    }
+
+    $.when(testElementIsActiveAfterScroll(&apos;#a-1&apos;, &apos;#div-1&apos;))
+      .then(function () { return testElementIsActiveAfterScroll(&apos;#a-2&apos;, &apos;#div-2&apos;) })
+      .then(function () { done() })
+  })
+
+  QUnit.test(&apos;should add the active class correctly when there are nested elements at 0 scroll offset&apos;, function (assert) {
+    assert.expect(6)
+    var times = 0
+    var done = assert.async()
+    var navbarHtml = &apos;&lt;nav id=&quot;navigation&quot; class=&quot;navbar&quot;&gt;&apos;
+      + &apos;&lt;ul class=&quot;nav&quot;&gt;&apos;
+      + &apos;&lt;li&gt;&lt;a id=&quot;a-1&quot; class=&quot;nav-link&quot; href=&quot;#div-1&quot;&gt;div 1&lt;/a&gt;&apos;
+      + &apos;&lt;ul&gt;&apos;
+      + &apos;&lt;li&gt;&lt;a id=&quot;a-2&quot; class=&quot;nav-link&quot; href=&quot;#div-2&quot;&gt;div 2&lt;/a&gt;&lt;/li&gt;&apos;
+      + &apos;&lt;/ul&gt;&apos;
+      + &apos;&lt;/li&gt;&apos;
+      + &apos;&lt;/ul&gt;&apos;
+      + &apos;&lt;/nav&gt;&apos;
+
+    var contentHtml = &apos;&lt;div class=&quot;content&quot; style=&quot;position: absolute; top: 0px; overflow: auto; height: 50px&quot;&gt;&apos;
+      + &apos;&lt;div id=&quot;div-1&quot; style=&quot;padding: 0; margin: 0&quot;&gt;&apos;
+      + &apos;&lt;div id=&quot;div-2&quot; style=&quot;height: 200px; padding: 0; margin: 0&quot;&gt;div 2&lt;/div&gt;&apos;
+      + &apos;&lt;/div&gt;&apos;
+      + &apos;&lt;/div&gt;&apos;
+
+    $(navbarHtml).appendTo(&apos;#qunit-fixture&apos;)
+
+    var $content = $(contentHtml)
+      .appendTo(&apos;#qunit-fixture&apos;)
+      .bootstrapScrollspy({ offset: 0, target: &apos;#navigation&apos; })
+
+    function testActiveElements() {
+      if (++times &gt; 3) { return done() }
+
+      $content.one(&apos;scroll&apos;, function () {
+        assert.ok($(&apos;#a-1&apos;).hasClass(&apos;active&apos;), &apos;nav item for outer element has &quot;active&quot; class&apos;)
+        assert.ok($(&apos;#a-2&apos;).hasClass(&apos;active&apos;), &apos;nav item for inner element has &quot;active&quot; class&apos;)
+        testActiveElements()
+      })
+
+      $content.scrollTop($content.scrollTop() + 10)
+    }
+
+    testActiveElements()
+  })
+
+  QUnit.test(&apos;should clear selection if above the first section&apos;, function (assert) {
+    assert.expect(3)
+    var done = assert.async()
+
+    var sectionHTML = &apos;&lt;div id=&quot;header&quot; style=&quot;height: 500px;&quot;&gt;&lt;/div&gt;&apos;
+        + &apos;&lt;nav id=&quot;navigation&quot; class=&quot;navbar&quot;&gt;&apos;
+        + &apos;&lt;ul class=&quot;nav navbar-nav&quot;&gt;&apos;
+        + &apos;&lt;li&gt;&lt;a id=&quot;one-link&quot;   class=&quot;nav-link active&quot; href=&quot;#one&quot;&gt;One&lt;/a&gt;&lt;/li&gt;&apos;
+        + &apos;&lt;li&gt;&lt;a id=&quot;two-link&quot;   class=&quot;nav-link&quot; href=&quot;#two&quot;&gt;Two&lt;/a&gt;&lt;/li&gt;&apos;
+        + &apos;&lt;li&gt;&lt;a id=&quot;three-link&quot; class=&quot;nav-link&quot; href=&quot;#three&quot;&gt;Three&lt;/a&gt;&lt;/li&gt;&apos;
+        + &apos;&lt;/ul&gt;&apos;
+        + &apos;&lt;/nav&gt;&apos;
+    $(sectionHTML).appendTo(&apos;#qunit-fixture&apos;)
+
+    var scrollspyHTML = &apos;&lt;div id=&quot;content&quot; style=&quot;height: 200px; overflow-y: auto;&quot;&gt;&apos;
+        + &apos;&lt;div id=&quot;spacer&quot; style=&quot;height: 100px;&quot;/&gt;&apos;
+        + &apos;&lt;div id=&quot;one&quot; style=&quot;height: 100px;&quot;/&gt;&apos;
+        + &apos;&lt;div id=&quot;two&quot; style=&quot;height: 100px;&quot;/&gt;&apos;
+        + &apos;&lt;div id=&quot;three&quot; style=&quot;height: 100px;&quot;/&gt;&apos;
+        + &apos;&lt;div id=&quot;spacer&quot; style=&quot;height: 100px;&quot;/&gt;&apos;
+        + &apos;&lt;/div&gt;&apos;
+    var $scrollspy = $(scrollspyHTML).appendTo(&apos;#qunit-fixture&apos;)
+
+    $scrollspy
+      .bootstrapScrollspy({
+        target: &apos;#navigation&apos;,
+        offset: $scrollspy.position().top
+      })
+      .one(&apos;scroll&apos;, function () {
+        assert.strictEqual($(&apos;.active&apos;).length, 1, &apos;&quot;active&quot; class on only one element present&apos;)
+        assert.strictEqual($(&apos;.active&apos;).is(&apos;#two-link&apos;), true, &apos;&quot;active&quot; class on second section&apos;)
+        $scrollspy
+          .one(&apos;scroll&apos;, function () {
+            assert.strictEqual($(&apos;.active&apos;).length, 0, &apos;selection cleared&apos;)
+            done()
+          })
+          .scrollTop(0)
+      })
+      .scrollTop(201)
+  })
+
+  QUnit.test(&apos;should NOT clear selection if above the first section and first section is at the top&apos;, function (assert) {
+    assert.expect(4)
+    var done = assert.async()
+
+    var sectionHTML = &apos;&lt;div id=&quot;header&quot; style=&quot;height: 500px;&quot;&gt;&lt;/div&gt;&apos;
+        + &apos;&lt;nav id=&quot;navigation&quot; class=&quot;navbar&quot;&gt;&apos;
+        + &apos;&lt;ul class=&quot;nav navbar-nav&quot;&gt;&apos;
+        + &apos;&lt;li&gt;&lt;a id=&quot;one-link&quot;   class=&quot;nav-link active&quot; href=&quot;#one&quot;&gt;One&lt;/a&gt;&lt;/li&gt;&apos;
+        + &apos;&lt;li&gt;&lt;a id=&quot;two-link&quot;   class=&quot;nav-link&quot; href=&quot;#two&quot;&gt;Two&lt;/a&gt;&lt;/li&gt;&apos;
+        + &apos;&lt;li&gt;&lt;a id=&quot;three-link&quot; class=&quot;nav-link&quot; href=&quot;#three&quot;&gt;Three&lt;/a&gt;&lt;/li&gt;&apos;
+        + &apos;&lt;/ul&gt;&apos;
+        + &apos;&lt;/nav&gt;&apos;
+    $(sectionHTML).appendTo(&apos;#qunit-fixture&apos;)
+
+    var negativeHeight = -10
+    var startOfSectionTwo = 101
+
+    var scrollspyHTML = &apos;&lt;div id=&quot;content&quot; style=&quot;height: 200px; overflow-y: auto;&quot;&gt;&apos;
+        + &apos;&lt;div id=&quot;one&quot; style=&quot;height: 100px;&quot;/&gt;&apos;
+        + &apos;&lt;div id=&quot;two&quot; style=&quot;height: 100px;&quot;/&gt;&apos;
+        + &apos;&lt;div id=&quot;three&quot; style=&quot;height: 100px;&quot;/&gt;&apos;
+        + &apos;&lt;div id=&quot;spacer&quot; style=&quot;height: 100px;&quot;/&gt;&apos;
+        + &apos;&lt;/div&gt;&apos;
+    var $scrollspy = $(scrollspyHTML).appendTo(&apos;#qunit-fixture&apos;)
+
+    $scrollspy
+      .bootstrapScrollspy({
+        target: &apos;#navigation&apos;,
+        offset: $scrollspy.position().top
+      })
+      .one(&apos;scroll&apos;, function () {
+        assert.strictEqual($(&apos;.active&apos;).length, 1, &apos;&quot;active&quot; class on only one element present&apos;)
+        assert.strictEqual($(&apos;.active&apos;).is(&apos;#two-link&apos;), true, &apos;&quot;active&quot; class on second section&apos;)
+        $scrollspy
+          .one(&apos;scroll&apos;, function () {
+            assert.strictEqual($(&apos;.active&apos;).length, 1, &apos;&quot;active&quot; class on only one element present&apos;)
+            assert.strictEqual($(&apos;.active&apos;).is(&apos;#one-link&apos;), true, &apos;&quot;active&quot; class on first section&apos;)
+            done()
+          })
+          .scrollTop(negativeHeight)
+      })
+      .scrollTop(startOfSectionTwo)
+  })
+
+  QUnit.test(&apos;should correctly select navigation element on backward scrolling when each target section height is 100%&apos;, function (assert) {
+    assert.expect(5)
+    var navbarHtml =
+        &apos;&lt;nav class=&quot;navbar&quot;&gt;&apos;
+      + &apos;&lt;ul class=&quot;nav&quot;&gt;&apos;
+      + &apos;&lt;li&gt;&lt;a id=&quot;li-100-1&quot; class=&quot;nav-link&quot; href=&quot;#div-100-1&quot;&gt;div 1&lt;/a&gt;&lt;/li&gt;&apos;
+      + &apos;&lt;li&gt;&lt;a id=&quot;li-100-2&quot; class=&quot;nav-link&quot; href=&quot;#div-100-2&quot;&gt;div 2&lt;/a&gt;&lt;/li&gt;&apos;
+      + &apos;&lt;li&gt;&lt;a id=&quot;li-100-3&quot; class=&quot;nav-link&quot; href=&quot;#div-100-3&quot;&gt;div 3&lt;/a&gt;&lt;/li&gt;&apos;
+      + &apos;&lt;li&gt;&lt;a id=&quot;li-100-4&quot; class=&quot;nav-link&quot; href=&quot;#div-100-4&quot;&gt;div 4&lt;/a&gt;&lt;/li&gt;&apos;
+      + &apos;&lt;li&gt;&lt;a id=&quot;li-100-5&quot; class=&quot;nav-link&quot; href=&quot;#div-100-5&quot;&gt;div 5&lt;/a&gt;&lt;/li&gt;&apos;
+      + &apos;&lt;/ul&gt;&apos;
+      + &apos;&lt;/nav&gt;&apos;
+    var contentHtml =
+        &apos;&lt;div class=&quot;content&quot; style=&quot;position: relative; overflow: auto; height: 100px&quot;&gt;&apos;
+      + &apos;&lt;div id=&quot;div-100-1&quot; style=&quot;position: relative; height: 100%; padding: 0; margin: 0&quot;&gt;div 1&lt;/div&gt;&apos;
+      + &apos;&lt;div id=&quot;div-100-2&quot; style=&quot;position: relative; height: 100%; padding: 0; margin: 0&quot;&gt;div 2&lt;/div&gt;&apos;
+      + &apos;&lt;div id=&quot;div-100-3&quot; style=&quot;position: relative; height: 100%; padding: 0; margin: 0&quot;&gt;div 3&lt;/div&gt;&apos;
+      + &apos;&lt;div id=&quot;div-100-4&quot; style=&quot;position: relative; height: 100%; padding: 0; margin: 0&quot;&gt;div 4&lt;/div&gt;&apos;
+      + &apos;&lt;div id=&quot;div-100-5&quot; style=&quot;position: relative; height: 100%; padding: 0; margin: 0&quot;&gt;div 5&lt;/div&gt;&apos;
+      + &apos;&lt;/div&gt;&apos;
+
+    $(navbarHtml).appendTo(&apos;#qunit-fixture&apos;)
+    var $content = $(contentHtml)
+      .appendTo(&apos;#qunit-fixture&apos;)
+      .bootstrapScrollspy({ offset: 0, target: &apos;.navbar&apos; })
+
+    var testElementIsActiveAfterScroll = function (element, target) {
+      var deferred = $.Deferred()
+      var scrollHeight = Math.ceil($content.scrollTop() + $(target).position().top)
+      $content.one(&apos;scroll&apos;, function () {
+        assert.ok($(element).hasClass(&apos;active&apos;), &apos;target:&apos; + target + &apos;, element: &apos; + element)
+        deferred.resolve()
+      })
+      $content.scrollTop(scrollHeight)
+      return deferred.promise()
+    }
+
+    var done = assert.async()
+    $.when(testElementIsActiveAfterScroll(&apos;#li-100-5&apos;, &apos;#div-100-5&apos;))
+      .then(function () { return testElementIsActiveAfterScroll(&apos;#li-100-4&apos;, &apos;#div-100-4&apos;) })
+      .then(function () { return testElementIsActiveAfterScroll(&apos;#li-100-3&apos;, &apos;#div-100-3&apos;) })
+      .then(function () { return testElementIsActiveAfterScroll(&apos;#li-100-2&apos;, &apos;#div-100-2&apos;) })
+      .then(function () { return testElementIsActiveAfterScroll(&apos;#li-100-1&apos;, &apos;#div-100-1&apos;) })
+      .then(function () { done() })
+  })
+
+  QUnit.test(&apos;should allow passed in option offset method: offset&apos;, function (assert) {
+    assert.expect(4)
+
+    var testOffsetMethod = function (type) {
+      var $navbar = $(
+          &apos;&lt;nav class=&quot;navbar&quot;&apos; + (type === &apos;data&apos; ? &apos; id=&quot;navbar-offset-method-menu&quot;&apos; : &apos;&apos;) + &apos;&gt;&apos;
+        + &apos;&lt;ul class=&quot;nav&quot;&gt;&apos;
+        + &apos;&lt;li&gt;&lt;a id=&quot;li-&apos; + type + &apos;m-1&quot; class=&quot;nav-link&quot; href=&quot;#div-&apos; + type + &apos;m-1&quot;&gt;div 1&lt;/a&gt;&lt;/li&gt;&apos;
+        + &apos;&lt;li&gt;&lt;a id=&quot;li-&apos; + type + &apos;m-2&quot; class=&quot;nav-link&quot; href=&quot;#div-&apos; + type + &apos;m-2&quot;&gt;div 2&lt;/a&gt;&lt;/li&gt;&apos;
+        + &apos;&lt;li&gt;&lt;a id=&quot;li-&apos; + type + &apos;m-3&quot; class=&quot;nav-link&quot; href=&quot;#div-&apos; + type + &apos;m-3&quot;&gt;div 3&lt;/a&gt;&lt;/li&gt;&apos;
+        + &apos;&lt;/ul&gt;&apos;
+        + &apos;&lt;/nav&gt;&apos;
+      )
+      var $content = $(
+          &apos;&lt;div class=&quot;content&quot;&apos; + (type === &apos;data&apos; ? &apos; data-spy=&quot;scroll&quot; data-target=&quot;#navbar-offset-method-menu&quot; data-offset=&quot;0&quot; data-method=&quot;offset&quot;&apos; : &apos;&apos;) + &apos; style=&quot;position: relative; overflow: auto; height: 100px&quot;&gt;&apos;
+        + &apos;&lt;div id=&quot;div-&apos; + type + &apos;m-1&quot; style=&quot;position: relative; height: 200px; padding: 0; margin: 0&quot;&gt;div 1&lt;/div&gt;&apos;
+        + &apos;&lt;div id=&quot;div-&apos; + type + &apos;m-2&quot; style=&quot;position: relative; height: 150px; padding: 0; margin: 0&quot;&gt;div 2&lt;/div&gt;&apos;
+        + &apos;&lt;div id=&quot;div-&apos; + type + &apos;m-3&quot; style=&quot;position: relative; height: 250px; padding: 0; margin: 0&quot;&gt;div 3&lt;/div&gt;&apos;
+        + &apos;&lt;/div&gt;&apos;
+      )
+
+      $navbar.appendTo(&apos;#qunit-fixture&apos;)
+      $content.appendTo(&apos;#qunit-fixture&apos;)
+
+      if (type === &apos;js&apos;) {
+        $content.bootstrapScrollspy({ target: &apos;.navbar&apos;, offset: 0, method: &apos;offset&apos; })
+      }
+      else if (type === &apos;data&apos;) {
+        $(window).trigger(&apos;load&apos;)
+      }
+
+      var $target = $(&apos;#div-&apos; + type + &apos;m-2&apos;)
+      var scrollspy = $content.data(&apos;bs.scrollspy&apos;)
+
+      assert.ok(scrollspy._offsets[1] === $target.offset().top, &apos;offset method with &apos; + type + &apos; option&apos;)
+      assert.ok(scrollspy._offsets[1] !== $target.position().top, &apos;position method with &apos; + type + &apos; option&apos;)
+      $navbar.remove()
+      $content.remove()
+    }
+
+    testOffsetMethod(&apos;js&apos;)
+    testOffsetMethod(&apos;data&apos;)
+  })
+
+  QUnit.test(&apos;should allow passed in option offset method: position&apos;, function (assert) {
+    assert.expect(4)
+
+    var testOffsetMethod = function (type) {
+      var $navbar = $(
+          &apos;&lt;nav class=&quot;navbar&quot;&apos; + (type === &apos;data&apos; ? &apos; id=&quot;navbar-offset-method-menu&quot;&apos; : &apos;&apos;) + &apos;&gt;&apos;
+        + &apos;&lt;ul class=&quot;nav&quot;&gt;&apos;
+        + &apos;&lt;li&gt;&lt;a class=&quot;nav-link&quot; id=&quot;li-&apos; + type + &apos;m-1&quot; href=&quot;#div-&apos; + type + &apos;m-1&quot;&gt;div 1&lt;/a&gt;&lt;/li&gt;&apos;
+        + &apos;&lt;li&gt;&lt;a class=&quot;nav-link&quot; id=&quot;li-&apos; + type + &apos;m-2&quot; href=&quot;#div-&apos; + type + &apos;m-2&quot;&gt;div 2&lt;/a&gt;&lt;/li&gt;&apos;
+        + &apos;&lt;li&gt;&lt;a class=&quot;nav-link&quot; id=&quot;li-&apos; + type + &apos;m-3&quot; href=&quot;#div-&apos; + type + &apos;m-3&quot;&gt;div 3&lt;/a&gt;&lt;/li&gt;&apos;
+        + &apos;&lt;/ul&gt;&apos;
+        + &apos;&lt;/nav&gt;&apos;
+      )
+      var $content = $(
+          &apos;&lt;div class=&quot;content&quot;&apos; + (type === &apos;data&apos; ? &apos; data-spy=&quot;scroll&quot; data-target=&quot;#navbar-offset-method-menu&quot; data-offset=&quot;0&quot; data-method=&quot;position&quot;&apos; : &apos;&apos;) + &apos; style=&quot;position: relative; overflow: auto; height: 100px&quot;&gt;&apos;
+        + &apos;&lt;div id=&quot;div-&apos; + type + &apos;m-1&quot; style=&quot;position: relative; height: 200px; padding: 0; margin: 0&quot;&gt;div 1&lt;/div&gt;&apos;
+        + &apos;&lt;div id=&quot;div-&apos; + type + &apos;m-2&quot; style=&quot;position: relative; height: 150px; padding: 0; margin: 0&quot;&gt;div 2&lt;/div&gt;&apos;
+        + &apos;&lt;div id=&quot;div-&apos; + type + &apos;m-3&quot; style=&quot;position: relative; height: 250px; padding: 0; margin: 0&quot;&gt;div 3&lt;/div&gt;&apos;
+        + &apos;&lt;/div&gt;&apos;
+      )
+
+      $navbar.appendTo(&apos;#qunit-fixture&apos;)
+      $content.appendTo(&apos;#qunit-fixture&apos;)
+
+      if (type === &apos;js&apos;) { $content.bootstrapScrollspy({ target: &apos;.navbar&apos;, offset: 0, method: &apos;position&apos; }) }
+      else if (type === &apos;data&apos;) { $(window).trigger(&apos;load&apos;) }
+
+      var $target = $(&apos;#div-&apos; + type + &apos;m-2&apos;)
+      var scrollspy = $content.data(&apos;bs.scrollspy&apos;)
+
+      assert.ok(scrollspy._offsets[1] !== $target.offset().top, &apos;offset method with &apos; + type + &apos; option&apos;)
+      assert.ok(scrollspy._offsets[1] === $target.position().top, &apos;position method with &apos; + type + &apos; option&apos;)
+      $navbar.remove()
+      $content.remove()
+    }
+
+    testOffsetMethod(&apos;js&apos;)
+    testOffsetMethod(&apos;data&apos;)
+  })
+
+})
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.5.2)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

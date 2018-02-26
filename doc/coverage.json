@@ -1,0 +1,191 @@
+{
+  "coverage": "72.67%",
+  "expectCount": 172,
+  "actualCount": 125,
+  "files": {
+    "src/app.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/lib/cothority-messages.js": {
+      "expectCount": 17,
+      "actualCount": 6,
+      "undocumentLines": [
+        51,
+        9,
+        11,
+        120,
+        136,
+        96,
+        130,
+        140,
+        114,
+        150,
+        12
+      ]
+    },
+    "src/services/websocket.js": {
+      "expectCount": 12,
+      "actualCount": 7,
+      "undocumentLines": [
+        69,
+        108,
+        49,
+        16,
+        90
+      ]
+    },
+    "src/components/module/signature/utils/drop-file-area.js": {
+      "expectCount": 7,
+      "actualCount": 6,
+      "undocumentLines": [
+        13
+      ]
+    },
+    "src/services/genesis.js": {
+      "expectCount": 12,
+      "actualCount": 7,
+      "undocumentLines": [
+        25,
+        24,
+        78,
+        23,
+        22
+      ]
+    },
+    "src/components/html-iframe/html-iframe.js": {
+      "expectCount": 9,
+      "actualCount": 8,
+      "undocumentLines": [
+        20
+      ]
+    },
+    "src/app/home.js": {
+      "expectCount": 2,
+      "actualCount": 2,
+      "undocumentLines": []
+    },
+    "src/services/iframe.js": {
+      "expectCount": 7,
+      "actualCount": 6,
+      "undocumentLines": [
+        19
+      ]
+    },
+    "src/components/servers-status/last-update.js": {
+      "expectCount": 7,
+      "actualCount": 4,
+      "undocumentLines": [
+        15,
+        10,
+        26
+      ]
+    },
+    "src/components/loading/loading-spinner.js": {
+      "expectCount": 2,
+      "actualCount": 2,
+      "undocumentLines": []
+    },
+    "src/components/module/module.js": {
+      "expectCount": 3,
+      "actualCount": 2,
+      "undocumentLines": [
+        14
+      ]
+    },
+    "src/components/module/html/module-html.js": {
+      "expectCount": 8,
+      "actualCount": 7,
+      "undocumentLines": [
+        24
+      ]
+    },
+    "src/components/module/random/module-random.js": {
+      "expectCount": 5,
+      "actualCount": 4,
+      "undocumentLines": [
+        27
+      ]
+    },
+    "src/components/module/signature/module-sign.js": {
+      "expectCount": 6,
+      "actualCount": 5,
+      "undocumentLines": [
+        22
+      ]
+    },
+    "src/components/module/skipchain/module-skipchain.js": {
+      "expectCount": 9,
+      "actualCount": 8,
+      "undocumentLines": [
+        25
+      ]
+    },
+    "src/components/module/signature/module-verify.js": {
+      "expectCount": 6,
+      "actualCount": 5,
+      "undocumentLines": [
+        28
+      ]
+    },
+    "src/components/servers-status/servers-status.js": {
+      "expectCount": 7,
+      "actualCount": 6,
+      "undocumentLines": [
+        24
+      ]
+    },
+    "src/components/module/signature/utils/sign-area.js": {
+      "expectCount": 11,
+      "actualCount": 9,
+      "undocumentLines": [
+        20,
+        32
+      ]
+    },
+    "src/models/signature-file.js": {
+      "expectCount": 22,
+      "actualCount": 16,
+      "undocumentLines": [
+        19,
+        15,
+        18,
+        17,
+        20,
+        16
+      ]
+    },
+    "src/services/skipchain.js": {
+      "expectCount": 2,
+      "actualCount": 2,
+      "undocumentLines": []
+    },
+    "src/services/status.js": {
+      "expectCount": 12,
+      "actualCount": 7,
+      "undocumentLines": [
+        22,
+        20,
+        23,
+        21,
+        19
+      ]
+    },
+    "src/utils/buffer.js": {
+      "expectCount": 2,
+      "actualCount": 2,
+      "undocumentLines": []
+    },
+    "src/utils/file.js": {
+      "expectCount": 2,
+      "actualCount": 2,
+      "undocumentLines": []
+    },
+    "src/utils/network.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    }
+  }
+}

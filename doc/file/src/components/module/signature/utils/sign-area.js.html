@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../../../../">
+  <title data-ice="title">src/components/module/signature/utils/sign-area.js | API Document</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  
+  
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-App">App</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">app</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/app/home.js~Home.html">Home</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/html-iframe</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/html-iframe/html-iframe.js~HTMLIFrame.html">HTMLIFrame</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/loading</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/loading/loading-spinner.js~LoadingSpinner.html">LoadingSpinner</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/module.js~Module.html">Module</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/html</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/html/module-html.js~ModuleHTML.html">ModuleHTML</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/random</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/random/module-random.js~ModuleRandom.html">ModuleRandom</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/signature</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/signature/module-sign.js~ModuleSign.html">ModuleSign</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/signature/module-verify.js~ModuleVerify.html">ModuleVerify</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/signature/utils</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/signature/utils/drop-file-area.js~DropFileArea.html">DropFileArea</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/signature/utils/sign-area.js~SignArea.html">SignArea</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/skipchain</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/skipchain/module-skipchain.js~ModuleSkipChain.html">ModuleSkipChain</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/servers-status</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/servers-status/last-update.js~LastUpdate.html">LastUpdate</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/servers-status/servers-status.js~ServersStatus.html">ServersStatus</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">lib</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/lib/cothority-messages.js~CothorityMessages.html">CothorityMessages</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/lib/cothority-messages.js~CothorityProtobuf.html">CothorityProtobuf</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-index">index</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">models</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/models/signature-file.js~SignatureFile.html">SignatureFile</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">services</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/genesis.js~GenesisService.html">GenesisService</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/iframe.js~IFrameService.html">IFrameService</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/skipchain.js~SkipChainService.html">SkipChainService</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/status.js~StatusService.html">StatusService</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/websocket.js~CothorityWebsocket.html">CothorityWebsocket</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">utils</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-buf2hex">buf2hex</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-hex2buf">hex2buf</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-hashFile">hashFile</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-readAsString">readAsString</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-tcp2ws">tcp2ws</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/components/module/signature/utils/sign-area.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import React, {PropTypes as T} from &apos;react&apos;
+import {Button} from &apos;reactstrap&apos;
+import FontAwesome from &apos;react-fontawesome&apos;
+
+import &apos;./sign-area.css&apos;
+import {hashFile} from &apos;../../../../utils/file&apos;
+import {tcp2ws} from &apos;../../../../utils/network&apos;
+import CothorityWebsocket from &apos;../../../../services/websocket&apos;
+import GenesisService from &apos;../../../../services/genesis&apos;
+import StatusService from &apos;../../../../services/status&apos;
+import SignatureFile from &apos;../../../../models/signature-file&apos;
+
+/**
+ * Show the status of the sign process
+ *
+ * @author Gaylor Bosson (gaylor.bosson@epfl.ch)
+ */
+export default class SignArea extends React.Component {
+
+  static propTypes = {
+    file: T.instanceOf(File).isRequired,
+    onBack: T.func
+  };
+
+  /**
+   * @constructor
+   * @param props
+   */
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isSigning: false,
+      error: &apos;&apos;,
+
+      latestBlock: null,
+      genesisID: &apos;&apos;
+    };
+
+    this.handleBackAction = this.handleBackAction.bind(this);
+    this.handleSign = this.handleSign.bind(this);
+  }
+
+  /**
+   * @override
+   * @see https://facebook.github.io/react/docs/react-component.html
+   */
+  componentWillMount() {
+    GenesisService.subscribe(this);
+  }
+
+  /**
+   * @override
+   * @see https://facebook.github.io/react/docs/react-component.html
+   */
+  componentWillUnmount() {
+    GenesisService.unsubscribe(this);
+  }
+
+  /**
+   * @see GenesisService._triggerEvent
+   * @param {Array} blocks
+   * @param {Array} genesisList
+   * @param {String} currGenesis
+   */
+  onGenesisUpdate(blocks, genesisList, currGenesis) {
+    this.setState({
+      genesisID: currGenesis,
+      block: blocks.slice().pop()
+    });
+  }
+
+  /**
+   * @see GenesisService._triggerError
+   * @param {Error} error
+   */
+  onGenesisError(error) {
+    this.setState({
+      error: error.message
+    });
+  }
+
+  /**
+   * Return to the drop file component
+   */
+  handleBackAction() {
+    this._triggerOnBack();
+  }
+
+  /**
+   * Send a sign request over WS with the current loaded file
+   */
+  handleSign() {
+    this.setState({
+      isSigning: true
+    });
+
+    const {file} = this.props;
+    // We assume we have a valid genesis ID and the associated block
+    // else an error will be displayed before letting the user sign
+    const {genesisID, block} = this.state;
+
+    const servers = StatusService.getAvailableRoster().filter(r =&gt; !!r.system).map(r =&gt; r.server);
+
+    const signFile = new SignatureFile();
+    signFile.setFileName(file.name);
+    signFile.setGenesisID(genesisID);
+    signFile.setBlockID(block.Hash);
+    signFile.setOfflineServers(StatusService.getAvailableRoster().filter(r =&gt; !r.system).map(r =&gt; r.server.address));
+
+    this._signPromise = new Promise((resolve, reject) =&gt; {
+      // Check if more than 2/3 of the servers are available
+      if (servers.length / block.Roster.list.length &lt; 2 / 3) {
+        reject(&quot;Not enough available servers&quot;);
+        return;
+      }
+
+      hashFile(file)
+        .then(
+          (hash) =&gt; {
+            signFile.setHash(hash);
+            const address = tcp2ws(servers[0].address);
+
+            if (address.length &gt; 0) {
+              CothorityWebsocket.getSignature(hash, address, servers)
+                .then(
+                  (response) =&gt; {
+                    console.log(response);
+                    const signature = (response.signature || []).slice(0, 64);
+                    signFile.setSignature(signature);
+
+                    signFile.save();
+                    this._triggerOnBack();
+
+                    resolve();
+                  }
+                )
+                .catch((e) =&gt; {
+                  console.log(e);
+                  reject(&apos;Oops, something went wrong...&apos;);
+                })
+            }
+          }
+        );
+    });
+
+    // We want to display the error message if it occurs
+    this._signPromise.catch(e =&gt; this.setState({error: e}));
+  }
+
+  /**
+   * @override
+   * @see https://facebook.github.io/react/docs/react-component.html
+   * @returns {XML}
+   */
+  render() {
+    const {error} = this.state;
+    if (error.length &gt; 0) {
+      return (
+        &lt;div className=&quot;sign-area&quot;&gt;
+          &lt;div className=&quot;sign-area-error&quot;&gt;{error}&lt;/div&gt;
+          &lt;div className=&quot;sign-area-action&quot;&gt;
+            &lt;Button color=&quot;danger&quot; onClick={this.handleBackAction}&gt;Ok&lt;/Button&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      );
+    }
+
+    const {file} = this.props;
+    const size = (file.size / (1024 * 1024)).toFixed(2);
+
+    const {isSigning} = this.state;
+    const signAction = isSigning ? &lt;div className=&quot;loading&quot;&gt;&lt;FontAwesome name=&quot;circle-o-notch&quot; size=&quot;2x&quot; spin/&gt;&lt;/div&gt; :
+      &lt;Button color=&quot;success&quot; onClick={this.handleSign}&gt;Sign&lt;/Button&gt;;
+
+    return (
+      &lt;div className=&quot;sign-area&quot;&gt;
+        &lt;div className=&quot;sign-area-file&quot;&gt;
+          &lt;div&gt;&lt;strong&gt;Name&lt;/strong&gt; {file.name}&lt;/div&gt;
+          &lt;div&gt;&lt;strong&gt;Size&lt;/strong&gt; {size}MB&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div className=&quot;sign-area-action&quot;&gt;
+          &lt;Button color=&quot;danger&quot; onClick={this.handleBackAction}&gt;Back&lt;/Button&gt;
+          {signAction}
+        &lt;/div&gt;
+      &lt;/div&gt;
+    );
+  }
+
+  /**
+   * Trigger the back event
+   * @private
+   */
+  _triggerOnBack() {
+    const {onBack} = this.props;
+    if (typeof onBack === &apos;function&apos;) {
+      onBack();
+    }
+  }
+}</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.5.2)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

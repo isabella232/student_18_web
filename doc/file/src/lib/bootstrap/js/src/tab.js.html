@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../../../../">
+  <title data-ice="title">src/lib/bootstrap/js/src/tab.js | API Document</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  
+  
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/app.js~App.html">App</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/html-iframe</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/html-iframe/html-iframe.js~HTMLIFrame.html">HTMLIFrame</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/loading</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/loading/loading-spinner.js~LoadingSpinner.html">LoadingSpinner</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/html</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/html/module-html.js~ModuleHTML.html">ModuleHTML</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/random</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/random/module-random.js~ModuleRandom.html">ModuleRandom</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/signature</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/signature/module-sign.js~BlockSign.html">BlockSign</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/signature/module-verify.js~VerifyModule.html">VerifyModule</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/module/skipchain</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/module/skipchain/module-skipchain.js~ModuleSkipChain.html">ModuleSkipChain</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components/servers-status</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/servers-status/servers-status.js~ServersStatus.html">ServersStatus</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">lib</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/lib/cothority-messages.js~CothorityMessages.html">CothorityMessages</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/lib/cothority-messages.js~CothorityProtobuf.html">CothorityProtobuf</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-index">index</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">lib/bootstrap/js/src</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Alert">Alert</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Button">Button</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Carousel">Carousel</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Collapse">Collapse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Dropdown">Dropdown</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Modal">Modal</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Popover">Popover</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ScrollSpy">ScrollSpy</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Tab">Tab</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Tooltip">Tooltip</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Util">Util</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">services</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/iframe.js~IFrameService.html">IFrameService</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/skipchain.js~SkipChainService.html">SkipChainService</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">utils</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-buf2hex">buf2hex</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-hex2buf">hex2buf</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-hashFile">hashFile</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-readAsString">readAsString</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-tcp2ws">tcp2ws</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/lib/bootstrap/js/src/tab.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import Util from &apos;./util&apos;
+
+
+/**
+ * --------------------------------------------------------------------------
+ * Bootstrap (v4.0.0-alpha.6): tab.js
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * --------------------------------------------------------------------------
+ */
+
+const Tab = (($) =&gt; {
+
+
+  /**
+   * ------------------------------------------------------------------------
+   * Constants
+   * ------------------------------------------------------------------------
+   */
+
+  const NAME                = &apos;tab&apos;
+  const VERSION             = &apos;4.0.0-alpha.6&apos;
+  const DATA_KEY            = &apos;bs.tab&apos;
+  const EVENT_KEY           = `.${DATA_KEY}`
+  const DATA_API_KEY        = &apos;.data-api&apos;
+  const JQUERY_NO_CONFLICT  = $.fn[NAME]
+  const TRANSITION_DURATION = 150
+
+  const Event = {
+    HIDE           : `hide${EVENT_KEY}`,
+    HIDDEN         : `hidden${EVENT_KEY}`,
+    SHOW           : `show${EVENT_KEY}`,
+    SHOWN          : `shown${EVENT_KEY}`,
+    CLICK_DATA_API : `click${EVENT_KEY}${DATA_API_KEY}`
+  }
+
+  const ClassName = {
+    DROPDOWN_MENU : &apos;dropdown-menu&apos;,
+    ACTIVE        : &apos;active&apos;,
+    DISABLED      : &apos;disabled&apos;,
+    FADE          : &apos;fade&apos;,
+    SHOW          : &apos;show&apos;
+  }
+
+  const Selector = {
+    A                     : &apos;a&apos;,
+    LI                    : &apos;li&apos;,
+    DROPDOWN              : &apos;.dropdown&apos;,
+    LIST                  : &apos;ul:not(.dropdown-menu), ol:not(.dropdown-menu), nav:not(.dropdown-menu)&apos;,
+    FADE_CHILD            : &apos;&gt; .nav-item .fade, &gt; .fade&apos;,
+    ACTIVE                : &apos;.active&apos;,
+    ACTIVE_CHILD          : &apos;&gt; .nav-item &gt; .active, &gt; .active&apos;,
+    DATA_TOGGLE           : &apos;[data-toggle=&quot;tab&quot;], [data-toggle=&quot;pill&quot;]&apos;,
+    DROPDOWN_TOGGLE       : &apos;.dropdown-toggle&apos;,
+    DROPDOWN_ACTIVE_CHILD : &apos;&gt; .dropdown-menu .active&apos;
+  }
+
+
+  /**
+   * ------------------------------------------------------------------------
+   * Class Definition
+   * ------------------------------------------------------------------------
+   */
+
+  class Tab {
+
+    constructor(element) {
+      this._element = element
+    }
+
+
+    // getters
+
+    static get VERSION() {
+      return VERSION
+    }
+
+
+    // public
+
+    show() {
+      if (this._element.parentNode &amp;&amp;
+          this._element.parentNode.nodeType === Node.ELEMENT_NODE &amp;&amp;
+          $(this._element).hasClass(ClassName.ACTIVE) ||
+          $(this._element).hasClass(ClassName.DISABLED)) {
+        return
+      }
+
+      let target
+      let previous
+      const listElement = $(this._element).closest(Selector.LIST)[0]
+      const selector    = Util.getSelectorFromElement(this._element)
+
+      if (listElement) {
+        previous = $.makeArray($(listElement).find(Selector.ACTIVE))
+        previous = previous[previous.length - 1]
+      }
+
+      const hideEvent = $.Event(Event.HIDE, {
+        relatedTarget: this._element
+      })
+
+      const showEvent = $.Event(Event.SHOW, {
+        relatedTarget: previous
+      })
+
+      if (previous) {
+        $(previous).trigger(hideEvent)
+      }
+
+      $(this._element).trigger(showEvent)
+
+      if (showEvent.isDefaultPrevented() ||
+         hideEvent.isDefaultPrevented()) {
+        return
+      }
+
+      if (selector) {
+        target = $(selector)[0]
+      }
+
+      this._activate(
+        this._element,
+        listElement
+      )
+
+      const complete = () =&gt; {
+        const hiddenEvent = $.Event(Event.HIDDEN, {
+          relatedTarget: this._element
+        })
+
+        const shownEvent = $.Event(Event.SHOWN, {
+          relatedTarget: previous
+        })
+
+        $(previous).trigger(hiddenEvent)
+        $(this._element).trigger(shownEvent)
+      }
+
+      if (target) {
+        this._activate(target, target.parentNode, complete)
+      } else {
+        complete()
+      }
+    }
+
+    dispose() {
+      $.removeClass(this._element, DATA_KEY)
+      this._element = null
+    }
+
+
+    // private
+
+    _activate(element, container, callback) {
+      const active          = $(container).find(Selector.ACTIVE_CHILD)[0]
+      const isTransitioning = callback
+        &amp;&amp; Util.supportsTransitionEnd()
+        &amp;&amp; (active &amp;&amp; $(active).hasClass(ClassName.FADE)
+           || Boolean($(container).find(Selector.FADE_CHILD)[0]))
+
+      const complete = () =&gt; this._transitionComplete(
+        element,
+        active,
+        isTransitioning,
+        callback
+      )
+
+      if (active &amp;&amp; isTransitioning) {
+        $(active)
+          .one(Util.TRANSITION_END, complete)
+          .emulateTransitionEnd(TRANSITION_DURATION)
+
+      } else {
+        complete()
+      }
+
+      if (active) {
+        $(active).removeClass(ClassName.SHOW)
+      }
+    }
+
+    _transitionComplete(element, active, isTransitioning, callback) {
+      if (active) {
+        $(active).removeClass(ClassName.ACTIVE)
+
+        const dropdownChild = $(active.parentNode).find(
+          Selector.DROPDOWN_ACTIVE_CHILD
+        )[0]
+
+        if (dropdownChild) {
+          $(dropdownChild).removeClass(ClassName.ACTIVE)
+        }
+
+        active.setAttribute(&apos;aria-expanded&apos;, false)
+      }
+
+      $(element).addClass(ClassName.ACTIVE)
+      element.setAttribute(&apos;aria-expanded&apos;, true)
+
+      if (isTransitioning) {
+        Util.reflow(element)
+        $(element).addClass(ClassName.SHOW)
+      } else {
+        $(element).removeClass(ClassName.FADE)
+      }
+
+      if (element.parentNode &amp;&amp;
+          $(element.parentNode).hasClass(ClassName.DROPDOWN_MENU)) {
+
+        const dropdownElement = $(element).closest(Selector.DROPDOWN)[0]
+        if (dropdownElement) {
+          $(dropdownElement).find(Selector.DROPDOWN_TOGGLE).addClass(ClassName.ACTIVE)
+        }
+
+        element.setAttribute(&apos;aria-expanded&apos;, true)
+      }
+
+      if (callback) {
+        callback()
+      }
+    }
+
+
+    // static
+
+    static _jQueryInterface(config) {
+      return this.each(function () {
+        const $this = $(this)
+        let data    = $this.data(DATA_KEY)
+
+        if (!data) {
+          data = new Tab(this)
+          $this.data(DATA_KEY, data)
+        }
+
+        if (typeof config === &apos;string&apos;) {
+          if (data[config] === undefined) {
+            throw new Error(`No method named &quot;${config}&quot;`)
+          }
+          data[config]()
+        }
+      })
+    }
+
+  }
+
+
+  /**
+   * ------------------------------------------------------------------------
+   * Data Api implementation
+   * ------------------------------------------------------------------------
+   */
+
+  $(document)
+    .on(Event.CLICK_DATA_API, Selector.DATA_TOGGLE, function (event) {
+      event.preventDefault()
+      Tab._jQueryInterface.call($(this), &apos;show&apos;)
+    })
+
+
+  /**
+   * ------------------------------------------------------------------------
+   * jQuery
+   * ------------------------------------------------------------------------
+   */
+
+  $.fn[NAME]             = Tab._jQueryInterface
+  $.fn[NAME].Constructor = Tab
+  $.fn[NAME].noConflict  = function () {
+    $.fn[NAME] = JQUERY_NO_CONFLICT
+    return Tab._jQueryInterface
+  }
+
+  return Tab
+
+})(jQuery)
+
+export default Tab
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.5.2)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>
