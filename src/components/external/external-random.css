@@ -1,0 +1,18 @@
+.external-module-random .module-random {
+  width: 300px;
+  height: 150px;
+  background: white; }
+  .external-module-random .module-random .module-body {
+    padding: 0px;
+    margin-top: -25px;
+    font-size: 15.2px;
+    font-family: monospace;
+    color: #414f57;
+    word-break: break-all; }
+    .external-module-random .module-random .module-body p.has-error {
+      color: #d9534f; }
+    .external-module-random .module-random .module-body .module-random-counter {
+      margin-top: 20px; }
+      .external-module-random .module-random .module-body .module-random-counter > div {
+        height: 8px;
+        background: #414f57; }

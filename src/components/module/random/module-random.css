@@ -1,0 +1,13 @@
+.module-random {
+  width: auto;
+  min-width: 200px;
+  height: auto; }
+  .module-random .module-body {
+    padding: 20px; }
+    .module-random .module-body p.has-error {
+      color: #d9534f; }
+    .module-random .module-body .module-random-counter {
+      margin-top: 20px; }
+      .module-random .module-body .module-random-counter > div {
+        height: 5px;
+        background: #5cb85c; }

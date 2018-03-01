@@ -1,0 +1,17 @@
+.module-verify {
+  width: 500px; }
+  .module-verify .module-verify-feedback .has-error {
+    color: #d9534f; }
+  .module-verify .module-verify-feedback form input {
+    margin-right: 20px; }
+  .module-verify .module-verify-feedback form .form-check.disable {
+    color: grey; }
+    .module-verify .module-verify-feedback form .form-check.disable label {
+      cursor: not-allowed; }
+  .module-verify .module-verify-feedback .feedback-leave {
+    display: none; }
+  .module-verify .module-verify-feedback .feedback-enter {
+    opacity: 0; }
+    .module-verify .module-verify-feedback .feedback-enter.feedback-enter-active {
+      opacity: 1;
+      transition: opacity 300ms ease-in-out; }

@@ -1,0 +1,17 @@
+.drop-file-area {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  align-content: stretch; }
+  .drop-file-area .drop-file-container {
+    flex: 1;
+    padding: 20px 0;
+    border: 2px dashed #5cb85c;
+    border-radius: 10px;
+    text-align: center; }
+    .drop-file-area .drop-file-container span {
+      font-size: 2em; }
+    .drop-file-area .drop-file-container:hover {
+      cursor: pointer;
+      color: #357935; }
