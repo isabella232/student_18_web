@@ -3,7 +3,8 @@ import SkipChainService from './skipchain'
 import {hex2buf, buf2hex} from '../utils/buffer'
 import {tcp2ws} from '../utils/network'
 
-const GENESIS_BLOCK_SERVER = "https://skipchain.dedis.ch/";
+
+const GENESIS_BLOCK_SERVER = "file:///Users/leobouraux/go/src/github.com/dedis/cothority/scmgr/www/"; // file:///Users/leobouraux/go/src/github.com/dedis/cothority/scmgr/www/'
 const GENESIS_BLOCK_FILE = "index.js";
 
 /**
@@ -14,6 +15,9 @@ const GENESIS_BLOCK_FILE = "index.js";
  */
 export class GenesisService {
 
+
+///TODO import index.js manually ?
+
   /**
    * Make a request to the GENESIS_BLOCK_SERVER url to get the list of genesis IDs of the skipchains
    * @constructor
@@ -23,7 +27,6 @@ export class GenesisService {
     this.genesisList = [];
     this.curr_genesis = ''; // hex form
     this.blocks = [];
-
     // Get the servers list and the genesis block id
     this._fetch_request = fetch(GENESIS_BLOCK_SERVER + GENESIS_BLOCK_FILE, {headers: {'Content-Type': 'application/json'}})
       .then(
@@ -35,6 +38,14 @@ export class GenesisService {
           this._request = this._fetchStatusForGenesisID(this.curr_genesis);
         })
       )
+      /*.then(function(response) {
+        if(response.ok) {
+          alert(response.url);
+        }
+        else {
+          alert('Mauvaise réponse du réseau');
+        }
+      })*/
       .catch((error) => {
           this.updateGenesis(new Error("Failed to get the list of Genesis blocks."));
       });
@@ -164,7 +175,7 @@ export class GenesisService {
     }
 
     const servers = block.Servers.map(addr => tcp2ws(addr));
-      
+
     return SkipChainService.getLatestBlock(servers, hex2buf(block.GenesisID))
 	  .then((data) => {
         this.blocks = data;
@@ -182,12 +193,12 @@ function getFirstSkipChain(list) {
     /*
     for (let i = 0; i < list.length; i++) {
 	const block = list[i];
-	
+
 	if (!ByteBuffer.fromBase64(block.Data).toString('utf8').match(/^(https?|config):\/\//)) {
 	    return block.GenesisID;
 	}
     }
-    
+
     return '';
     */
 }

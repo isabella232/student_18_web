@@ -22,7 +22,7 @@ export class CothorityWebsocket {
    * @returns {Promise}
    */
   getStatus(address) {
-// replace createSocket with socket.send from external/js
+//replace createSocket with socket.send from external js cothority
     // The promise will resolve when the socket sends back the response of the call
     return new Promise((resolve, reject) => {
       this.status[address] = createSocket(
