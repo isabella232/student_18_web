@@ -34,8 +34,6 @@ class Home extends React.Component {
           <Row noGutters>
             <Col xs="auto">
               <ModuleSign/>
-            </Col>
-            <Col xs="auto">
               <ModuleVerify/>
             </Col>
             <Col>
