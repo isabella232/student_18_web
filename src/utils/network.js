@@ -34,6 +34,7 @@ function splitHost(host) {
  * @returns {String} The same address with the port value +1
  */
 export function tcp2ws(address) {
-  var hp = splitHost(address)
+  let addr = address.replace('tls://', '');
+  var hp = splitHost(addr)
   return hp.host + ':' + (hp.port + 1);
 }
