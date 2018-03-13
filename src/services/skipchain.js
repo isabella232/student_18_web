@@ -53,7 +53,6 @@ export class SkipChainService {
    * @private
    */
   _getUpdates(address, genesisID) {
-
     return CothorityWS.getLatestBlock(address, genesisID).then(
       (response) => {
         if (!response.Update) {
