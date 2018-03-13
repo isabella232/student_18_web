@@ -110,20 +110,20 @@ export class StatusService {
     const self = this;
 
     this.servers.forEach((address, i) => CothorityWS.getStatus(address)
-      .then((response) => {
-        response.timestamp = Date.now(); // add the timestamp of the last check
-        self.status[address] = response;
-        self.triggerUpdate();
-      })
-      .catch(() => {
-        self.status[address] = {
-          timestamp: Date.now(),
-          server: {address}
-        };
-        self.triggerUpdate();
-      })
-    );
-
+			 .then((response) => {
+			   response.timestamp = Date.now(); // add the timestamp of the last check
+			   self.status[address] = response;
+			   self.triggerUpdate();
+			 })
+			 .catch(() => {
+			   self.status[address] = {
+			     timestamp: Date.now(),
+			     server: {address}
+			   };
+			   self.triggerUpdate();
+			 })
+			);
+    
     this._timer = setTimeout(() => self._updateStatus(), self.refreshInterval);
   }
 
