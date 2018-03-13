@@ -3,9 +3,9 @@ import SkipChainService from './skipchain'
 import {hex2buf, buf2hex} from '../utils/buffer'
 import {tcp2ws} from '../utils/network'
 
-const GENESIS_BLOCK_SERVER = /*"/Users/leobouraux/go/src/github.com/dedis/cothority/scmgr/www/";*/ "https://skipchain.dedis.ch/";
-
-const GENESIS_BLOCK_FILE = "index.js";
+const GENESIS_BLOCK_SERVER = "/Users/leobouraux/go/src/github.com/dedis/cothority/scmgr/www/"; //*/"https://skipchain.dedis.ch/";
+const LOCAL_BLOCK = [{"SkipchainID":"df4ed9f67413a57d7e52c5927bd0df85ecff5319e0fb71acc2542177fbffadb3","Servers":["localhost:7002","localhost:7004","localhost:7006"],"Data":"jlqD4y8SVW+1GklxrGzPFggEEj8SGXRzZi00ODQtd3BhLTAtMTcyLmVwZmwuY2gaIgogikjlNykJi0fKSOriwqZQtJI/qq50g/zS8ybDjIf8F0EingIKEMKgf63FyUrMsb/91xYhrfQSTAogqrpLaHUIP8zTb129WsveKe5iK6FDxEVlPZMYbWzwgvcSEPuf5UC8TVydtFeVyti9u98aFHRsczovL2xvY2FsaG9zdDo3MDAyIgASTAogPgZWWmxKJ5hglEUoPCsNLfq1C255rK0rOTUdLCNW1B0SEGhbMkdq3lp9lg2oYY3WcnwaFHRsczovL2xvY2FsaG9zdDo3MDA0IgASTAogklCU0O3dYZ1vZ+FeITsvjRaRHOa0J1554FR62uqwDMwSEGfxBwgaV11uo+HKCsutbOoaFHRsczovL2xvY2FsaG9zdDo3MDA2IgAaIEWd6YSeFu+gjWeaGnaU+Xzcys+klX5G5cNCcPkMVeFG"}];
+//const GENESIS_BLOCK_FILE = "index.js";
 
 /**
  * This service will contact the DEDIS server to get the list of skipchains with their servers. Those servers may
@@ -20,13 +20,23 @@ export class GenesisService {
    * @constructor
    */
   constructor() {
+
+    //PERSONAL CONSTRUCTOR
+    this.listeners = [];
+    this.genesisList =  LOCAL_BLOCK;
+    this.curr_genesis = getFirstSkipChain(this.genesisList); // hex form
+    this.blocks = [];
+    this._request = this._fetchStatusForSkipchainID(this.curr_genesis);
+     //*/
+
+    /*// GENERAL CONSTRUCTOR
+    // Get the servers list and the genesis block id
     this.listeners = [];
     this.genesisList = [];
     this.curr_genesis = ''; // hex form
     this.blocks = [];
 
-    // Get the servers list and the genesis block id
-    this._fetch_request = fetch(GENESIS_BLOCK_SERVER + GENESIS_BLOCK_FILE, {headers: {'Content-Type': 'application/json'}})
+    this._fetch_request = fetch(GENESIS_BLOCK_SERVER + GENESIS_BLOCK_FILE)
       .then(
           (response) => response.json().then(data => {
           // We keep the list of available blocks
@@ -39,7 +49,8 @@ export class GenesisService {
       )
       .catch((error) => {
           this.updateGenesis(new Error("Failed to get the list of Genesis blocks."));
-      });
+      });//*/
+
   }
 
   /**
