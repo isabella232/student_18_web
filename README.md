@@ -1,3 +1,6 @@
+*Work in progress*
+Credits to: Gilthoniel
+
 # Installation #
 
 First of all install [npm](https://www.npmjs.com/get-npm?utm_source=house&utm_medium=homepage&utm_campaign=free%20orgs&utm_term=Install%20npm)
@@ -22,4 +25,3 @@ npm run build
 ```
 
 It will produce the bundle in the `./build/` folder. You can upload the content in your distant server.
-

@@ -3,8 +3,10 @@ import SkipChainService from './skipchain'
 import {hex2buf, buf2hex} from '../utils/buffer'
 import {tcp2ws} from '../utils/network'
 
-const GENESIS_BLOCK_SERVER = "/Users/leobouraux/go/src/github.com/dedis/cothority/scmgr/www/"; //*/"https://skipchain.dedis.ch/";
-const LOCAL_BLOCK = [{"SkipchainID":"df4ed9f67413a57d7e52c5927bd0df85ecff5319e0fb71acc2542177fbffadb3","Servers":["localhost:7002","localhost:7004","localhost:7006"],"Data":"jlqD4y8SVW+1GklxrGzPFggEEj8SGXRzZi00ODQtd3BhLTAtMTcyLmVwZmwuY2gaIgogikjlNykJi0fKSOriwqZQtJI/qq50g/zS8ybDjIf8F0EingIKEMKgf63FyUrMsb/91xYhrfQSTAogqrpLaHUIP8zTb129WsveKe5iK6FDxEVlPZMYbWzwgvcSEPuf5UC8TVydtFeVyti9u98aFHRsczovL2xvY2FsaG9zdDo3MDAyIgASTAogPgZWWmxKJ5hglEUoPCsNLfq1C255rK0rOTUdLCNW1B0SEGhbMkdq3lp9lg2oYY3WcnwaFHRsczovL2xvY2FsaG9zdDo3MDA0IgASTAogklCU0O3dYZ1vZ+FeITsvjRaRHOa0J1554FR62uqwDMwSEGfxBwgaV11uo+HKCsutbOoaFHRsczovL2xvY2FsaG9zdDo3MDA2IgAaIEWd6YSeFu+gjWeaGnaU+Xzcys+klX5G5cNCcPkMVeFG"}];
+const LOCAL_TEST = true;
+
+const GENESIS_BLOCK_SERVER = ""; // "~/go/src/github.com/dedis/cothority/scmgr/www/" "https://skipchain.dedis.ch/";
+const LOCAL_BLOCK = [{"SkipchainID":"3fbc30e54ef45e55ddb92f3a8924a13b5afa7d55b2bef74f2322ec75244aaf0f","Servers":["localhost:7002","localhost:7004","localhost:7006"],"Data":"jlqD4y8SVW+1GklxrGzPFggEEj8SGXRzZi00ODQtd3BhLTYtMTI0LmVwZmwuY2gaIgog/AvCpWALsAFGsdl777JNf//k8kl/+iglkcjZpyVeMckingIKEPdD4GtbdUy3vUw+2TkmHW4STAogjcx+aVED3TTrY7ABGNBvuTMkCt9ftdTg+b3fUVKXA+QSEH8gzY6e+lr6n61092pgV1EaFHRsczovL2xvY2FsaG9zdDo3MDAyIgASTAogvP7EFlwvTYbLmjMGRWF6CP2KlEzyM0HDqpqH3yUeknISEGgVT+k17VjviUPyYFsPDv4aFHRsczovL2xvY2FsaG9zdDo3MDA0IgASTAogm3EC2QEaCeocqPrrcIiLs1aEAB2lWAvTdsaZsrR8630SEJMoL54fOF2pk5irbTTgx9waFHRsczovL2xvY2FsaG9zdDo3MDA2IgAaIFm5Pufz3EMz74amA8ZNygFcUAUCaSs/Bynyc3Pfn5bT"}];
 //const GENESIS_BLOCK_FILE = "index.js";
 
 /**
@@ -21,36 +23,42 @@ export class GenesisService {
    */
   constructor() {
 
-    //PERSONAL CONSTRUCTOR
-    this.listeners = [];
-    this.genesisList =  LOCAL_BLOCK;
-    this.curr_genesis = getFirstSkipChain(this.genesisList); // hex form
-    this.blocks = [];
-    this._request = this._fetchStatusForSkipchainID(this.curr_genesis);
-     //*/
+    if (LOCAL_TEST) {
 
-    /*// GENERAL CONSTRUCTOR
-    // Get the servers list and the genesis block id
-    this.listeners = [];
-    this.genesisList = [];
-    this.curr_genesis = ''; // hex form
-    this.blocks = [];
+      //PERSONAL CONSTRUCTOR
+      this.listeners = [];
+      this.genesisList =  LOCAL_BLOCK;
+      this.curr_genesis = getFirstSkipChain(this.genesisList); // hex form
+      this.blocks = [];
+      this._request = this._fetchStatusForSkipchainID(this.curr_genesis);
 
-    this._fetch_request = fetch(GENESIS_BLOCK_SERVER + GENESIS_BLOCK_FILE)
-      .then(
-          (response) => response.json().then(data => {
-          // We keep the list of available blocks
-	  console.log("got index.js");
-          this.genesisList = data.Blocks;
-          this.curr_genesis = getFirstSkipChain(this.genesisList);
+    } else {
+      /*
 
-          this._request = this._fetchStatusForSkipchainID(this.curr_genesis);
-        })
-      )
-      .catch((error) => {
-          this.updateGenesis(new Error("Failed to get the list of Genesis blocks."));
-      });//*/
+      // GENERAL CONSTRUCTOR
+      // Get the servers list and the genesis block id
+      this.listeners = [];
+      this.genesisList = [];
+      this.curr_genesis = ''; // hex form
+      this.blocks = [];
 
+      this._fetch_request = fetch(GENESIS_BLOCK_SERVER + GENESIS_BLOCK_FILE)
+        .then(
+            (response) => response.json().then(data => {
+            // We keep the list of available blocks
+  	  console.log("got index.js");
+            this.genesisList = data.Blocks;
+            this.curr_genesis = getFirstSkipChain(this.genesisList);
+
+            this._request = this._fetchStatusForSkipchainID(this.curr_genesis);
+          })
+        )
+        .catch((error) => {
+            this.updateGenesis(new Error("Failed to get the list of Genesis blocks."));
+        });
+
+        */
+    }
   }
 
   /**
