@@ -21,7 +21,8 @@
     "react-router-dom": "^4.1.1",
     "reactstrap": "^5.0.0-beta",
     "split-host": "^0.1.1",
-    "whatwg-fetch": "^2.0.3"
+    "whatwg-fetch": "^2.0.3",
+    "@dedis/cothority": "^1.0.2"
   },
   "devDependencies": {
     "argv-parser": "^0.1.4",
