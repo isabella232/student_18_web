@@ -1,9 +1,11 @@
 import CothorityWS from './websocket'
 import {buf2hex} from '../utils/buffer'
 import CothorityLib from '@dedis/cothority'
-// import KyberLib from '@dedis/kyber-js'
-import Gen, * as Genesis from './genesis'
+import Genesis from './genesis'
+import kyber from '@dedis/kyber-js'
 
+
+const curve = new kyber.curve.edwards25519.Curve();
 const net = CothorityLib.net;
 
 
@@ -25,45 +27,58 @@ export class SkipChainService {
      * @returns {Promise}
      */
     getLatestBlock(servers, genesisID) {
-        let index = 0;
 
-        return new Promise((resolve, reject) => {
-            if (!servers || !genesisID || servers.length === 0) {
-                reject(new Error("Cannot get the latest updates of the skip-chain."));
-            }
+        const id = CothorityLib;
 
-            const onSuccess = (blocks) => {
-                resolve(blocks);
-            };
+        // create empty array of ServerID
+        let serverIDs = [];
 
-            const onError = () => {
-                // Try the next server
-                index++;
-
-                if (index < servers.length) {
-                    this._getUpdates(servers[index], genesisID).then(onSuccess, onError);
-                }
-                else {
-                    reject(new Error("No servers available"));
-                }
-            };
-
-            this._getUpdates(servers[index], genesisID).then(onSuccess, onError);
-        });
-    }
-
-    getPubKey(nodeip) {
-
-        // create a 'Status' socket with the given cothority server
-        const socket = new net.Socket(nodeip, "Status");
+        console.log('1',curve instanceof kyber.Group);
 
         // initialize public key
-        let publicKey = null;
+        let publicKey;
+
+        for (let i = 0; i < servers.length; i++) {
+            publicKey = this.getPubKey(servers[i]);
+
+
+            serverIDs[i] = new id.ServerIdentity(curve, curve.point().pick(), "tcp://" + servers[i], null);
+
+            //serverIDs[i] = new id.ServerIdentity(curve, publicKey, "tcp://" + servers[i], null);
+        }
+
+        console.log('11', serverIDs);
+
+        //console.log(serverIDs);
+        const roster = new id.Roster(curve, serverIDs, null);
+
+        const sc = CothorityLib.skipchain;
+        const client = new sc.Client(curve, roster, Genesis.curr_genesis);
+
+        return client.getLatestBlock();
+    }
+
+    /**
+     * @param {String} nodeip: node IP address
+     * @returns {Uint8Array} the public key of the given node
+     */
+    getPubKey(nodeip) {
+
+        //console.log(tcp2ws(nodeip));
+        //console.log(nodeip);
+
+        // create a 'Status' socket with the given cothority server
+        const socket = new net.Socket("ws://" + nodeip, "Status");
+
+        // initialize public key
+        let publicKey = new Uint8Array(0);
 
         // send Status request and extract public key
         socket.send("Request", "Response", {})
             .then(data => {
                 publicKey = data.server.public;
+
+                console.log('publicKey instanceof Uint8Array', publicKey instanceof Uint8Array);
             })
             .catch(err => {
                 console.error(err);
