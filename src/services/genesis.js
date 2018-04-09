@@ -189,7 +189,7 @@ export class GenesisService {
 
 
 
-    return SkipChainService.getLatestBlock()
+    return SkipChainService.getLatestBlock(servers, hex2buf(block.SkipchainID))
 	  .then((data) => {
         this.blocks = data;
         this.updateGenesis(null);

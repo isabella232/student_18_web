@@ -9,7 +9,6 @@ import GenesisService from '../../../services/genesis'
 import SignatureFile from '../../../models/signature-file'
 import {readAsString, hashFile} from '../../../utils/file'
 import {buf2hex} from '../../../utils/buffer'
-import {tcp2ws} from '../../../utils/network'
 
 import KyberLib from '@dedis/kyber-js'
 const schnorr = KyberLib.sign.schnorr;

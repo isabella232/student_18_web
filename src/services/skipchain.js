@@ -33,23 +33,19 @@ export class SkipChainService {
         // create empty array of ServerID
         let serverIDs = [];
 
-        console.log('1',curve instanceof kyber.Group);
+        console.log('group instanceof kyber.Group ?',curve instanceof kyber.Group);
 
         // initialize public key
         let publicKey;
 
         for (let i = 0; i < servers.length; i++) {
             publicKey = this.getPubKey(servers[i]);
-
+            console.log('publicKey instanceof kyber.Point ?', curve.point().pick() instanceof kyber.Point)
 
             serverIDs[i] = new id.ServerIdentity(curve, curve.point().pick(), "tcp://" + servers[i], null);
-
             //serverIDs[i] = new id.ServerIdentity(curve, publicKey, "tcp://" + servers[i], null);
         }
 
-        console.log('11', serverIDs);
-
-        //console.log(serverIDs);
         const roster = new id.Roster(curve, serverIDs, null);
 
         const sc = CothorityLib.skipchain;
@@ -64,9 +60,6 @@ export class SkipChainService {
      */
     getPubKey(nodeip) {
 
-        //console.log(tcp2ws(nodeip));
-        //console.log(nodeip);
-
         // create a 'Status' socket with the given cothority server
         const socket = new net.Socket("ws://" + nodeip, "Status");
 
@@ -77,9 +70,7 @@ export class SkipChainService {
         socket.send("Request", "Response", {})
             .then(data => {
                 publicKey = data.server.public;
-
-                console.log('publicKey instanceof Uint8Array', publicKey instanceof Uint8Array);
-            })
+                })
             .catch(err => {
                 console.error(err);
             });
@@ -87,6 +78,7 @@ export class SkipChainService {
         return publicKey;
     }
 
+    //todo delete
     /**
      * Try to get the update list of skipblocks from an address and a genesis block id
      * Parse the response to resolve the promise with the list of WebSocket addresses of the servers
@@ -112,6 +104,7 @@ export class SkipChainService {
 
     }
 
+    //todo delete
     /**
      * Check the sanity of the skip blocks and return false if an error occurred
      * @param {Array} blocks
