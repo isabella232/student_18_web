@@ -33,7 +33,6 @@ export class CothorityWebsocket {
         EMPTY_MESSAGE
       );
     });
-
   }
 
   /**

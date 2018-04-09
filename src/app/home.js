@@ -10,6 +10,11 @@ import ModuleSkipChain from '../components/module/skipchain/module-skipchain'
 import ModuleRandom from '../components/module/random/module-random'
 
 import './home.css';
+import cothority from '@dedis/cothority';
+
+const net = cothority.net;
+const socket = new net.Socket("ws://127.0.0.1:7003", "Status");
+
 
 /**
  * @author Gaylor Bosson (gaylor.bosson@epfl.ch)
@@ -18,13 +23,26 @@ import './home.css';
  */
 class Home extends React.Component {
 
-  /**
-   * @override
-   * @returns {XML}
-   <Col>
+
+  componentDidMount() {
+      socket.send("Request", "Response", {})
+          .then(data => {
+              console.log(data);
+          })
+          .catch(err => {
+              console.error(err);
+          });
+
+      console.log(require)
+  }
+
+    /**
+     * @override
+     * @returns {XML}
+     <Col>
      <ModuleHTML/>
-   </Col>
-   */
+     </Col>
+     */
   render() {
     return (
       <div className="cothority-app">

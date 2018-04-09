@@ -1,3 +1,6 @@
+// import hashjs from 'hash.js';
+import crypto from 'crypto';
+
 /**
  * Read the given file object and return a promise that will resolve with the hash of the file
  * @param {File} file
@@ -9,11 +12,10 @@ export function hashFile(file) {
     
     reader.onload = (e) => {
       const buf = new Uint8Array(e.target.result);
-      resolve(cryptoJS.sha256(buf)); // eslint-disable-line
+      resolve(crypto.createHash("sha256").update(buf).digest('hex')); // eslint-disable-line
     };
     reader.readAsArrayBuffer(file);
-  });
-  
+  })
 }
 
 /**

@@ -11,6 +11,9 @@ import {readAsString, hashFile} from '../../../utils/file'
 import {buf2hex} from '../../../utils/buffer'
 import {tcp2ws} from '../../../utils/network'
 
+import KyberLib from '@dedis/kyber-js'
+const schnorr = KyberLib.sign.schnorr;
+
 /**
  * Module to verify a given signature file and the target file
  *
@@ -175,11 +178,13 @@ export default class ModuleVerify extends React.Component {
 
             GenesisService.getLatestFromGenesisID(signFile.getGenesisID(true), signFile.getBlockID(true))
               .then((block) => {
-                const pubkey = cryptoJS.aggregateKeys( // eslint-disable-line
-                  block.Roster.list
-                    .filter(s => signFile.getOfflineServers().every(off => tcp2ws(s.address).indexOf(off) === -1))
-                    .map(s => s.public)
-                );
+                // const pubkey = cryptoJS.aggregateKeys( // eslint-disable-line
+                //   block.Roster.list
+                //     .filter(s => signFile.getOfflineServers().every(off => tcp2ws(s.address).indexOf(off) === -1))
+                //     .map(s => s.public)
+                // );
+
+                  const pubkey = block.Roster.aggregateKey(); // block.Roster.list ???  CothorityLib ???
 
                 hashFile(file).then(
                   (hash) => {
@@ -187,7 +192,8 @@ export default class ModuleVerify extends React.Component {
                       error: '',
                       isVerified: true,
                       isHashCorrect: buf2hex(hash) === signFile.getHash(true),
-                      isSignatureCorrect: cryptoJS.verify(pubkey, hash, signFile.getSignature()) // eslint-disable-line
+                      isSignatureCorrect: schnorr.Verify("edwards25519", pubkey, hash, signFile.getSignature())
+                      // isSignatureCorrect: cryptoJS.verify(pubkey, hash, signFile.getSignature()) // eslint-disable-line
                     });
                   }
                 );
