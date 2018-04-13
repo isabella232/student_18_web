@@ -27,10 +27,10 @@ class Home extends React.Component {
   componentDidMount() {
       socket.send("Request", "Response", {})
           .then(data => {
-              console.log(data);
+              //console.log(data);
           })
           .catch(err => {
-              console.error(err);
+              //console.error(err);
           });
       }
 

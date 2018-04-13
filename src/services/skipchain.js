@@ -3,7 +3,7 @@ import {buf2hex} from '../utils/buffer'
 import CothorityLib from '@dedis/cothority'
 import Genesis from './genesis'
 import kyber from '@dedis/kyber-js'
-
+//const kyber = require("@dedis/kyber-js");
 
 const curve = new kyber.curve.edwards25519.Curve();
 const net = CothorityLib.net;
@@ -26,31 +26,47 @@ export class SkipChainService {
      * @param {String} genesisID
      * @returns {Promise}
      */
-    getLatestBlock(servers, genesisID) {
-
-        const id = CothorityLib;
+    async getLatestBlock(servers, genesisID) {
 
         // create empty array of ServerID
         let serverIDs = [];
 
-        console.log('group instanceof kyber.Group ?',curve instanceof kyber.Group);
+        //console.log('group instanceof kyber.Group ?',curve instanceof kyber.Group);
+        //console.log('TEST ?',id);
+
 
         // initialize public key
         let publicKey;
 
-        for (let i = 0; i < servers.length; i++) {
-            publicKey = this.getPubKey(servers[i]);
-            console.log('publicKey instanceof kyber.Point ?', curve.point().pick() instanceof kyber.Point)
+        let i;
+        for (i = 0; i < servers.length; i++) {
+            publicKey = await this.getPubKey(servers[i]);   // got the public key in bytes
+            console.log("Public Key: ", publicKey); // seems to work
 
-            serverIDs[i] = new id.ServerIdentity(curve, curve.point().pick(), "tcp://" + servers[i], null);
-            //serverIDs[i] = new id.ServerIdentity(curve, publicKey, "tcp://" + servers[i], null);
+            let pub = curve.point(); // seems to work
+            console.log(pub);
+
+            let pub2 = pub.unmarshalBinary(publicKey);  // seems to work
+            console.log(pub === pub2);  // returns false - OK
+
+            console.log("arg2 passed to ServerIdentity constructor is instanceof kyber.Point :", (pub instanceof kyber.Point));
+
+            // stuck at throwing typeerror, go to bundle
+            serverIDs[i] = new CothorityLib.ServerIdentity(curve, pub, "tcp://" + servers[i], null);
+
+            console.log("Created ServerIdentity ", i);
         }
 
-        const roster = new id.Roster(curve, serverIDs, null);
+        // WE NEVER GET HERE
+
+        console.log("ServerIDs created.");
+
+        const roster = new CothorityLib.Roster(curve, serverIDs, null);
 
         const sc = CothorityLib.skipchain;
         const client = new sc.Client(curve, roster, Genesis.curr_genesis);
 
+        console.log(client.getLatestBlock());
         return client.getLatestBlock();
     }
 
@@ -58,24 +74,19 @@ export class SkipChainService {
      * @param {String} nodeip: node IP address
      * @returns {Uint8Array} the public key of the given node
      */
-    getPubKey(nodeip) {
+    async getPubKey(nodeip) {
 
         // create a 'Status' socket with the given cothority server
         const socket = new net.Socket("ws://" + nodeip, "Status");
 
-        // initialize public key
-        let publicKey = new Uint8Array(0);
 
         // send Status request and extract public key
-        socket.send("Request", "Response", {})
-            .then(data => {
-                publicKey = data.server.public;
-                })
-            .catch(err => {
-                console.error(err);
-            });
-
-        return publicKey;
+        try {
+            const data = await socket.send("Request", "Response", {});
+            return data.server.public;
+        } catch (e) {
+            console.error(e);
+        }
     }
 
     //todo delete
@@ -132,11 +143,7 @@ export class SkipChainService {
                 console.log("check signature for block", blockIndex, block);
                 var res;
                 try {
-                    res = CothorityLib.verifyForwardLink(block.Roster.list, { // eslint-disable-line
-                        from: link.from,
-                        to: link.to,
-                        signature: link.signature
-                    })
+                    res = CothorityLib.verifyForwardLink(block.Roster, link)
                 }
 
                 catch (error) {

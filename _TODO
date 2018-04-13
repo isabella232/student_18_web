@@ -1,0 +1,35 @@
+todo
+ enlever skipchain le remplacer par l'autre de Gaurav
+ adapter les fonctions qui s'utilisent à l'extérieur (notemment dans genesis.js)
+ Dans genesis.js on utilise getLatestBlock
+ _getUpdates n'est utilisé que dans l'ancien skipchain.js
+ _verifyUpdates n'est used que dans skipchain.test blc
+
+
+todo
+do we have to import all classes like net from Gaurav work ?
+
+You don't need to.
+Rather than replacing, it's more like using the skipchain.js functions.
+So we have to do smth like
+`const skipchain = require('.../skipchain.js')`
+
+Then use the client functions like
+`const client = new skipchain.Client(curve, roster, id);`
+`last_block = yield client.getLatestBlock();`
+
+
+todo
+POUR APPELER F° IN NODEMODULES
+-->skipchain.js
+
+
+
+
+NO : socket.send(“Request”, “Response”, {})
+                                      .then(data => {publicKey = data.server.public;})
+                                      .catch(err => {console.error(err);});
+YES: try {
+     const data = await socket.send("Request", "Response", {})
+     return data.server.public;
+     } catch (e) {console.error(e);}

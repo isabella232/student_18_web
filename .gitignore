@@ -6,10 +6,9 @@
 # testing
 /coverage
 models.json
-BundleMinReformated.js
-BundleNodeMinReformated.js
-KyberReformated.js
-TODO
+_BundleMinReformated.js
+_KyberReformated.js
+_TODO
 
 # production
 /build
