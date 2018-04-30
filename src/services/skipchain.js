@@ -40,14 +40,16 @@ export class SkipChainService {
 
         let i;
         for (i = 0; i < servers.length; i++) {
+            console.log("Adress servers", servers);
+
             publicKey = await this.getPubKey(servers[i]);   // got the public key in bytes
             console.log("Public Key: ", publicKey); // seems to work
 
             let pub = curve.point(); // seems to work
             console.log(pub);
 
-            let pub2 = pub.unmarshalBinary(publicKey);  // seems to work
-            console.log(pub === pub2);  // returns false - OK
+
+            pub.unmarshalBinary(publicKey);  // seems to work
 
             console.log("arg2 passed to ServerIdentity constructor is instanceof kyber.Point :", (pub instanceof kyber.Point));
 
@@ -63,10 +65,14 @@ export class SkipChainService {
 
         const roster = new CothorityLib.Roster(curve, serverIDs, null);
 
+        console.log("Roster created w identities: ", roster.identities);
+
         const sc = CothorityLib.skipchain;
         const client = new sc.Client(curve, roster, Genesis.curr_genesis);
 
-        console.log(client.getLatestBlock());
+        console.log("Client created.");
+
+        console.log("fdxy", client.getLatestBlock());
         return client.getLatestBlock();
     }
 
@@ -78,15 +84,33 @@ export class SkipChainService {
 
         // create a 'Status' socket with the given cothority server
         const socket = new net.Socket("ws://" + nodeip, "Status");
-
-
         // send Status request and extract public key
         try {
             const data = await socket.send("Request", "Response", {});
+            console.log('data:',data);
+
             return data.server.public;
         } catch (e) {
             console.error(e);
         }
+
+
+
+
+        /*
+        * console.log("nodeip:", nodeip);
+
+        let fullAddress = parts[1].split(":");
+        fullAddress[1] = parseInt(fullAddress[1]) + 1;
+        let wsAddr = "ws://" + fullAddress.join(":");
+
+        console.log("ws address: ", wsAddr);
+
+        // create a 'Status' socket with the given cothority server
+        const socket = new net.Socket(wsAddr, "Status");
+
+
+        * */
     }
 
     //todo delete

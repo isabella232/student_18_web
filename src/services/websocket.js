@@ -56,25 +56,25 @@ export class CothorityWebsocket {
 
   }
 
-  /**
-   * Get the list of blocks of the skipchain with the given genesis ID
-   * @param {String} address - ip address
-   * @param {Uint8Array} id - Genesis ID
-   * @returns {Promise}
-   */
-  getLatestBlock(address, id) {
-
-    return new Promise((resolve, reject) => {
-      this.latest_block = createSocket(
-        this.latest_block,
-        address + '/Skipchain/GetUpdateChain',
-        (e) => reject(e),
-        (data) => resolve(CothorityMessages.decodeLatestBlockResponse(data)),
-        CothorityMessages.createLatestBlockRequest(id)
-      )
-    });
-
-  }
+  // /**
+  //  * Get the list of blocks of the skipchain with the given genesis ID
+  //  * @param {String} address - ip address
+  //  * @param {Uint8Array} id - Genesis ID
+  //  * @returns {Promise}
+  //  */
+  // getLatestBlock(address, id) {
+  //
+  //   return new Promise((resolve, reject) => {
+  //     this.latest_block = createSocket(
+  //       this.latest_block,
+  //       address + '/Skipchain/GetUpdateChain',
+  //       (e) => reject(e),
+  //       (data) => resolve(CothorityMessages.decodeLatestBlockResponse(data)),
+  //       CothorityMessages.createLatestBlockRequest(id)
+  //     )
+  //   });
+  //
+  // }
 
   /**
    * Store a new block with the given roster
