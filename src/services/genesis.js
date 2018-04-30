@@ -200,9 +200,7 @@ export class GenesisService {
         if (!block) {
             return this.updateGenesis(new Error("Cannot find the block associated with the genesis ID"));
         }
-        console.log('prev servers', block.Servers);
         const servers = block.Servers.map(addr => tcp2ws(addr));
-        console.log('next servers', servers);
 
         return SkipChainService.getLatestBlock(servers, hex2buf(block.SkipchainID))
             .then((data) => {

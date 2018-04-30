@@ -10,10 +10,11 @@ import ModuleSkipChain from '../components/module/skipchain/module-skipchain'
 import ModuleRandom from '../components/module/random/module-random'
 
 import './home.css';
-import cothority from '@dedis/cothority';
+/*import cothority from '@dedis/cothority';
 
- const net = cothority.net;
- const socket = new net.Socket("ws://127.0.0.1:7003", "Status");
+const net = cothority.net;
+const socket = new net.Socket("ws://127.0.0.1:7003", "Status");
+*/
 
 
 /**
@@ -24,7 +25,7 @@ import cothority from '@dedis/cothority';
 class Home extends React.Component {
 
 
-  componentDidMount() {
+  /*componentDidMount() {
       socket.send("Request", "Response", {})
           .then(data => {
               //console.log('data: ',data);
@@ -33,6 +34,7 @@ class Home extends React.Component {
               //console.error(err);
           });
       }
+   */
 
     /**
      * @override

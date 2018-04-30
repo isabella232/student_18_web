@@ -40,26 +40,23 @@ export class SkipChainService {
 
         let i;
         for (i = 0; i < servers.length; i++) {
-            console.log("Adress servers", servers);
+            //console.log("Adress servers", servers);
 
             publicKey = await this.getPubKey(servers[i]);   // got the public key in bytes
             console.log("Public Key: ", publicKey); // seems to work
 
             let pub = curve.point(); // seems to work
-            console.log(pub);
+            //console.log(pub);
 
 
             pub.unmarshalBinary(publicKey);  // seems to work
 
-            console.log("arg2 passed to ServerIdentity constructor is instanceof kyber.Point :", (pub instanceof kyber.Point));
-
-            // stuck at throwing typeerror, go to bundle
+            //console.log("arg2 passed to ServerIdentity constructor is instanceof kyber.Point :", (pub instanceof kyber.Point));
+            //stuck at throwing typeerror, go to bundle --> TypeError commented in ServerIdentity constructor (bundle)
             serverIDs[i] = new CothorityLib.ServerIdentity(curve, pub, "tcp://" + servers[i], null);
 
             console.log("Created ServerIdentity ", i);
         }
-
-        // WE NEVER GET HERE
 
         console.log("ServerIDs created.");
 
@@ -71,7 +68,6 @@ export class SkipChainService {
         const client = new sc.Client(curve, roster, Genesis.curr_genesis);
 
         console.log("Client created.");
-
         console.log("fdxy", client.getLatestBlock());
         return client.getLatestBlock();
     }
@@ -87,30 +83,12 @@ export class SkipChainService {
         // send Status request and extract public key
         try {
             const data = await socket.send("Request", "Response", {});
-            console.log('data:',data);
 
             return data.server.public;
         } catch (e) {
             console.error(e);
         }
 
-
-
-
-        /*
-        * console.log("nodeip:", nodeip);
-
-        let fullAddress = parts[1].split(":");
-        fullAddress[1] = parseInt(fullAddress[1]) + 1;
-        let wsAddr = "ws://" + fullAddress.join(":");
-
-        console.log("ws address: ", wsAddr);
-
-        // create a 'Status' socket with the given cothority server
-        const socket = new net.Socket(wsAddr, "Status");
-
-
-        * */
     }
 
     //todo delete
